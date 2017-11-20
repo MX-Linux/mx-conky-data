@@ -1,0 +1,48 @@
+mx-conky-data (20171116.mx17) mx; urgency=medium
+
+  * New release.
+
+ -- Steven Pusser <stevep@mxlinux.org>  Thu, 16 Nov 2017 12:38:30 -0800
+
+mx-conky-data (20171112.mx15) mx; urgency=medium
+
+  * New release.
+
+ -- Steven Pusser <stevep@mxlinux.org>  Sun, 12 Nov 2017 12:42:10 -0800
+
+mx-conky-data (20171111.mx15) mx; urgency=medium
+
+  * New release.
+
+ -- Steven Pusser <stevep@mxlinux.org>  Sat, 11 Nov 2017 14:39:21 -0800
+
+mx-conky-data (20171103.rev3.mx15) mx; urgency=medium
+
+  * Fix versioning.
+
+ -- Steven Pusser <stevep@mxlinux.org>  Sat, 04 Nov 2017 08:50:41 -0700
+
+mx-conky-data (20171103rev2.mx15) mx; urgency=medium
+
+  * Fix a few bugs in some widgets.
+
+ -- Steven Pusser <stevep@mxlinux.org>  Fri, 03 Nov 2017 14:10:37 -0700
+
+mx-conky-data (20171103.mx15) mx; urgency=medium
+
+  * New release with many more themes.
+  * Install README in docs.
+
+ -- Steven Pusser <stevep@mxlinux.org>  Fri, 03 Nov 2017 11:05:17 -0700
+
+mx-conky-data (20171028.mx17) mx; urgency=medium
+
+  * Install to /usr/share/mx-conky-data/themes.
+
+ -- Steven Pusser <stevep@mxlinux.org>  Sat, 28 Oct 2017 10:30:02 -0700
+
+mx-conky-data (20171027.mx17) mx; urgency=medium
+
+  * Initial packaging.
+
+ -- Steven Pusser <stevep@mxlinux.org>  Mon, 09 Oct 2017 19:25:03 -0700
