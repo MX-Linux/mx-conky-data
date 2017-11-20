@@ -1,0 +1,146 @@
+##############################################
+# Settings
+##############################################
+# Use Xft?
+use_xft yes
+xftfont Droid Sans:size=7.2
+xftalpha 0.8
+text_buffer_size 2048
+
+# Update interval in seconds
+update_interval 5
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Create own window instead of using desktop (required in nautilus)
+# own_window = yes fixes cairo-compmgr issue...
+own_window yes
+own_window_transparent yes
+#own_window_type normal
+#own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+#minimum_size 230 0
+#maximum_width 200
+maximum_width 270
+
+# Draw shades?
+draw_shades no
+#default_shade_color black
+
+# Draw outlines?
+draw_outline no
+#default_outline_color grey
+
+# Draw borders around text
+draw_borders no
+
+# Stippled borders?
+stippled_borders 0
+
+# border width
+border_width 1
+
+own_window_colour white
+
+############Colors#########
+default_color white   #use ${color} to revert to default
+#time, date, mx version
+color1 fdfdfd
+#sections and horizonal lines, item descriptions
+color2 F19E12
+#readings
+color3 26C7D1
+###########################
+
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 35
+gap_y 35
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# Add spaces to keep things from moving about? This only affects
+#certain objects.
+use_spacer none
+
+own_window_type desktop
+
+##############################################
+#  Output
+##############################################
+TEXT
+   ${alignc}${font Arial Black:size=28}${color1}${time %H:%M}${font}
+
+   ${alignc}${time %A %d %B %Y}
+
+${color2}SYSTEM ${hr 2}${color}
+
+
+   ${image ./MXLogoStart.png -p 97,90 -s 50x50}
+   
+   
+   ${alignc}${color1}${execi 1000 cat /etc/antix-version}
+
+${voffset 2}${color3}   Kernel: ${alignr}${color}${kernel}
+
+   ${color3}CPU1: ${color}${cpu cpu1}% ${alignr}${color}${cpubar cpu1 8,60}
+
+   ${color3}RAM: ${color}$memperc% ${alignr}${color}${membar 8,60}
+
+   ${color3}SWAP: ${color}$swap/ $swapmax ${alignr}${color}${swapbar 8,60}
+
+   ${color3}Uptime: ${alignr}${color}${uptime}
+
+${color2}MEDIA ${hr 2}${color}
+
+${execpi 10 $HOME/.conky/MX-Asq/MX-GeekyTowerLogo/conky-harddisks.sh}
+${color2}ETHERNET (${addr enp0s3}) ${hr 2}${color}
+
+   Down: ${downspeedf enp0s3}kB/s ${alignr}Up: ${upspeedf enp0s3}kB/s
+   ${downspeedgraph enp0s3 30,120 000000 000000} ${alignr}${upspeedgraph enp0s3 30,120 000000 000000}
+
+${color2}WIRELESS (${addr wlp7s0}) [${wireless_link_qual_perc wlp7s0}%] ${hr 2}${color}
+
+   Down: ${downspeedf wlp7s0}kB/s ${alignr}Up: ${upspeedf wlp7s0}kB/s
+   ${downspeedgraph wlp7s0 30,120 000000 000000} $alignr${upspeedgraph wlp7s0 30,120 000000 000000}
+
+${color2}MONITOR ${hr 2}${color}
+
+   NAME $alignr PID CPU
+   ${color3}${top name 1} $alignr${color} ${top pid 1} ${top cpu 1}
+   ${color3}${top name 2} $alignr${color} ${top pid 2} ${top cpu 2}
+   ${color3}${top name 3} $alignr${color} ${top pid 3} ${top cpu 3}
+   ${color3}${top name 4} $alignr${color} ${top pid 4} ${top cpu 4}
+   ${color3}${top name 5} $alignr${color} ${top pid 5} ${top cpu 5}
+   ${color3}${top name 6} $alignr${color} ${top pid 6} ${top cpu 6}
+   ${color3}${top name 7} $alignr${color} ${top pid 7} ${top cpu 7}
+   ${color3}${top name 8} $alignr${color} ${top pid 8} ${top cpu 8}

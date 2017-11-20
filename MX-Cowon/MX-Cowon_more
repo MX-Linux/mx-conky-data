@@ -1,0 +1,61 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Dinreg:size=180
+override_utf8_locale yes
+text_buffer_size 2048
+xftalpha 0.9
+
+#############################
+# - Window specifications - #
+#############################
+own_window_class Conky
+own_window yes
+own_window_type conky
+own_window_transparent yes
+own_window_hints undecorated,below,skip_taskbar,skip_pager
+#own_window_argb_visual yes
+#own_window_argb_value 100
+
+alignment top_left
+gap_x 100
+gap_y 80
+minimum_size 140 140
+
+
+default_bar_size 60 8
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+
+default_color BDB5A1
+default_shade_color 1d1d1d
+color0 ffffff
+color1 ffffff
+color2 ce3cd6
+
+
+
+own_window_argb_value 0
+own_window_argb_visual no
+own_window_colour 000000
+TEXT
+${voffset -220}${font Dinreg:size=13}${color2}${if_match ${time %H}<12}AM${else}${if_match ${time %H}>12}PM${endif}${endif} ${color}${font}
+${voffset -350}${time %H}
+${color2}${voffset -170}${offset 100}${time %M}${color}
+${voffset -250}${font Droid Sans:size=16}${time %A} ${time %B %d}

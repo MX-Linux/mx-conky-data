@@ -1,0 +1,50 @@
+#Conky By Jesse Avalos See me on Eye candy Linux (Google +) for more conkys.
+background no
+update_interval 1
+
+cpu_avg_samples 2
+net_avg_samples 2
+temperature_unit celsius
+
+double_buffer yes
+no_buffers yes
+text_buffer_size 2048
+alignment top_middle
+gap_x 0
+gap_y 15
+minimum_size 250 250
+maximum_width 550
+own_window yes
+own_window_type Conky
+own_window_transparent yes
+own_window_argb_visual no
+own_window_argb_value 0
+own_window_colour 000000
+own_window_hints undecorated,skip_taskbar,skip_pager,below
+border_inner_margin 0
+border_outer_margin 0
+
+
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_shade_color 112422
+
+override_utf8_locale yes
+use_xft yes
+xftfont Feena Casual:size=10
+xftalpha 1
+uppercase no
+
+default_color 5f4831
+color1 b58e32
+color2 d4d4d6
+own_window_colour 000000
+
+
+TEXT
+
+${goto 35}${color1}${font Feena Casual:size=80}${time %I }${font Feena Casual:size=36}${color2}${time %a}#$
+${color2}${goto 35}${voffset 55}${font Feena Casual:size=16}${time %d} ${font Feena Casual:size=36}${voffset -15}${time %b} ${font Feena Casual:size=16}${goto 65}${voffset 34}${time %Y}${font Feena Casual:size=80}${goto 155}${voffset -54}${color1}${time %M}
+${goto 35}${voffset -80}${font ubuntu:pixelsize=14}${color1}HD free ${offset 9}${color2}${fs_free_perc}%${offset 30}${color1}CPU use ${offset 9}${color2}${cpu cpu0}%

@@ -1,0 +1,85 @@
+# conky package by qaisar nawaz
+# Conky settings #
+background no
+update_interval 6
+double_buffer yes
+no_buffers yes
+
+# Window specifications #
+own_window yes
+own_window_type normal
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_title 
+own_window_colour 000000
+own_window_argb_visual no
+own_window_argb_value 205
+
+minimum_size 266 114
+
+# Alignment #
+alignment top_right
+gap_x 53
+gap_y 206
+
+border_inner_margin 8
+border_outer_margin 0
+
+# Graphics settings #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+# Text settings #
+use_xft yes
+xftalpha 0
+xftfont Open Sans Light:size=9
+
+# Color scheme #
+default_color 333333
+
+color1 ffffff
+color2 444444
+color3 669900
+color4 333333
+color5 0099CC
+
+
+own_window_transparent yes
+TEXT
+${voffset -2}${font Open Sans Light:bold:size=9}HARD DRIVEs$font${voffset 10}
+HOME ${alignr}${color5}${fs_bar 12,200 /home}
+${voffset -18}${offset 5}${color}${alignr 5}$color${fs_free /home}$color$font
+SYSTEM ${alignr}${color5}${fs_bar 12,200 /}
+${voffset -18}${offset 5}${color}${alignr 5}$color${fs_free /} free$color$font
+${voffset -8}
+${font Open Sans Light:bold:size=9}NETWORK$font${voffset -14}
+${if_existing /proc/net/route wlp7s0}
+${color}Up:${color} ${color2}${upspeed wlp7s0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlp7s0}${color}
+${color}Down:${color} ${color2}${downspeed wlp7s0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlp7s0}${color}
+${else}${if_existing /proc/net/route wlan1}
+${color}Up:${color} ${color2}${upspeed wlp7s0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlp7s0}${color}
+${color}Down:${color} ${color2}${downspeed wlp7s0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlp7s0}${color}
+${else}${if_existing /proc/net/route eth0}
+${color}Up:${color} ${color2}${upspeed wlp7s0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlp7s0}${color}
+${color}Down:${color} ${color2}${downspeed wlp7s0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlp7s0}${color}
+${else}${if_existing /proc/net/route eth1}
+${color}Up:${color} ${color2}${upspeed wlp7s0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlp7s0}${color}
+${color}Down:${color} ${color2}${downspeed wlp7s0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlp7s0}${color}
+${else}${if_existing /proc/net/route ppp0}
+${color}Up:${color} ${color2}${upspeed wlp7s0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlp7s0}${color}
+${color}Down:${color} ${color2}${downspeed wlp7s0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlp7s0}${color}
+${else}${if_existing /proc/net/route ppp1}
+${color}Up:${color} ${color2}${upspeed wlp7s0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlp7s0}${color}
+${color}Down:${color} ${color2}${downspeed wlp7s0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlp7s0}${color}
+${else}${if_existing /proc/net/route usb0}
+${color}Up:${color} ${color2}${upspeed wlp7s0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlp7s0}${color}
+${color}Down:${color} ${color2}${downspeed wlp7s0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlp7s0}${color}
+${else}${if_existing /proc/net/route usb1}
+${color}Up:${color} ${color2}${upspeed wlp7s0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlp7s0}${color}
+${color}Down:${color} ${color2}${downspeed wlp7s0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlp7s0}${color}
+${else}
+Network disconnected
+${color5}Connect to a network to see statistics${color}
+${voffset 74}
+${endif}${endif}${endif}${endif}${endif}${endif}${endif}${endif}${voffset -61}

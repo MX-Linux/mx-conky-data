@@ -1,0 +1,46 @@
+background yes
+imlib_cache_size 0
+use_xft yes
+xftfont Droid Sans:size=9
+xftalpha 0.9
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+#minimum_size 220 5
+#maximum_width 150
+use_spacer right
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+#stippled_borders 8
+border_margin 5
+# border_width 1
+
+alignment top_middle
+#alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+#alignment none
+gap_x 5
+gap_y 25
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale yes
+default_bar_size 45 20
+
+own_window_argb_value 0
+own_window_argb_visual no
+own_window_colour 000000
+minimum_size 0 0
+
+default_color FFFFFF
+color1 FFA300
+
+TEXT
+${color1}CPU ${offset 9}${color}${cpu cpu0}%${offset 9}${cpu cpu1}%${offset 9}${color1}HD ${color}root${offset 9}$color${fs_used_perc /}%${offset 9} home ${fs_used_perc /home}%${offset 9}${color1}RAM ${offset 9}${color}${memperc}%${offset 9}${offset 9}
