@@ -7,12 +7,12 @@ temperature_unit celsius
 
 double_buffer yes
 no_buffers yes
-text_buffer_size 2048
+text_buffer_size 500
 alignment top_right
-gap_x 20
+gap_x 30
 gap_y 15
 minimum_size 250 400
-maximum_width 550
+maximum_width 300
 own_window yes
 own_window_type Conky
 own_window_transparent yes

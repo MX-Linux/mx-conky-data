@@ -14,7 +14,7 @@ own_window_argb_value 0
 
 double_buffer yes
 #minimum_size 250 5
-#maximum_width 500
+maximum_width 500
 draw_shades no
 draw_outline no
 draw_borders no
@@ -23,8 +23,8 @@ default_color white
 default_shade_color red
 default_outline_color green
 alignment top_right
-gap_x 120
-gap_y 20
+gap_x 30
+gap_y 10
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
