@@ -121,7 +121,7 @@ ${top name 8}${goto 115}${top pid 8}${goto 160}${top cpu 8}${goto 205}${top mem 
 #----------------------------------------------------------------------------------------------------------------------------------------
 ${color 0ABFFF}${voffset 2}${hr 1}${voffset 5}
 ${color 0ABFFF}Hostname:$color${alignr}${nodename}
-${color 0ABFFF}OS:$color${alignr}${pre_exec cat /etc/issue.net} $machine
+${color 0ABFFF}OS:$color${alignr}${exec cat /etc/issue.net} $machine
 ${color 0ABFFF}Kernel:$color${alignr}${kernel}$color
 #----------------------------------------------------------------------------------------------------------------------------------------
 

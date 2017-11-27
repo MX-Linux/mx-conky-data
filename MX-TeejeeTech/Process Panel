@@ -8,7 +8,7 @@
 background yes
 double_buffer yes
 
-alignment top_left
+alignment top_right
 
 border_width 1
 cpu_avg_samples 2

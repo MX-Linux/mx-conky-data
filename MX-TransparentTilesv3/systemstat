@@ -18,8 +18,8 @@ minimum_size 266 114
 
 # Alignment #
 alignment top_right
-gap_x 53
-gap_y 206
+gap_x 50
+gap_y 50
 
 border_inner_margin 8
 border_outer_margin 0

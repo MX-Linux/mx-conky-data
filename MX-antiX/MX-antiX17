@@ -94,8 +94,8 @@ alignment top_right
 
 # Gap between borders of screen and text
 
-gap_x 10
-gap_y 20
+gap_x 30
+gap_y 30
 
 # Add spaces to keep things from moving about?  This only affects certain objects.
 use_spacer right
@@ -127,6 +127,9 @@ uppercase no
 
 # stuff after 'TEXT' will be formatted on screen
 
+own_window_argb_value 0
+own_window_argb_visual no
+own_window_colour 000000
 TEXT
 ${color3}${alignc}MX Linux
 ${color8}$alignc${font DejaVu Sans:size=12}${time %I:%M}   $font
@@ -140,22 +143,22 @@ ${color}cpu freq:${color3}${alignr}${freq}
 ${color}$alignr${cpugraph cpu0 30,170 5599cc 5599cc}
 ${color}disk I/O:${alignr}${color3}${diskio}
 ${color}${alignr}${diskiograph 30,170 5599cc 5599cc}${if_up enp6s0}
-${color}enp6s0 up: $alignr${color3} ${upspeed enp6s0}
-${color}$alignr${upspeedgraph   enp6s0 30,170 5599cc 5599cc}
-${color}enp6s0 down: $alignr${color3} ${downspeed enp6s0}
-${color2}$alignr${downspeedgraph enp6s0 30,170  5599cc 5599cc}${endif}${if_up eth1}
-${color}eth1 up: $alignr${color3} ${upspeed eth1}
-${color}$alignr${upspeedgraph   eth1 30,170 5599cc 5599cc}
-${color}eth1 down: $alignr${color3} ${downspeed eth1}
-${color2}$alignr${downspeedgraph eth1 30,170  5599cc 5599cc}${endif}${if_up wlp7s0}
+${color}enp6s0 up: $alignr${color3} ${upspeed wlp7s0}
+${color}$alignr${upspeedgraph   wlp7s0 30,170 5599cc 5599cc}
+${color}enp6s0 down: $alignr${color3} ${downspeed wlp7s0}
+${color2}$alignr${downspeedgraph wlp7s0 30,170  5599cc 5599cc}${endif}${if_up eth1}
+${color}eth1 up: $alignr${color3} ${upspeed wlp7s0}
+${color}$alignr${upspeedgraph   wlp7s0 30,170 5599cc 5599cc}
+${color}eth1 down: $alignr${color3} ${downspeed wlp7s0}
+${color2}$alignr${downspeedgraph wlp7s0 30,170  5599cc 5599cc}${endif}${if_up wlp7s0}
 ${color}wlp7s0 up: $alignr${color3} ${upspeed wlp7s0}
 ${color2}$alignr${upspeedgraph   wlp7s0 30,170 5599cc 5599cc}
 ${color}wlp7s0 down: $alignr${color3} ${downspeed wlp7s0}
 ${color2}$alignr${downspeedgraph wlp7s0 30,170 5599cc 5599cc}${endif}${if_up wlan1}
-${color}wlan1 up: $alignr${color3} ${upspeed wlan1}
-${color2}$alignr${upspeedgraph   wlan1 30,170 5599cc 5599cc}
-${color}wlan1 down: $alignr${color3} ${downspeed wlan1}
-${color2}$alignr${downspeedgraph wlan1 30,170 5599cc 5599cc}${endif}
+${color}wlan1 up: $alignr${color3} ${upspeed wlp7s0}
+${color2}$alignr${upspeedgraph   wlp7s0 30,170 5599cc 5599cc}
+${color}wlan1 down: $alignr${color3} ${downspeed wlp7s0}
+${color2}$alignr${downspeedgraph wlp7s0 30,170 5599cc 5599cc}${endif}
 ${color}${alignr}${color8}Used / Total
 ${color}mem:${alignr}$mem ${color3} /${color} $memmax
 ${color}swap:${alignr}$swap ${color3} /${color} $swapmax

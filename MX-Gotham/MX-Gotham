@@ -22,8 +22,8 @@ draw_graph_borders no
 default_color white
 default_shade_color red
 default_outline_color green
-alignment top_middle
-gap_x 100
+alignment top_right
+gap_x 20
 gap_y 20
 no_buffers yes
 uppercase no

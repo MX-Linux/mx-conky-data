@@ -104,15 +104,15 @@ TEXT
 
 ${color2}SYSTEM ${hr 2}${color}
 
+   ${image $HOME/.conky/MX-Asq/MX-GeekyTowerLogo/MXLogoStart.png -p 97,90 -s 50x50}
+   
+  
 
-   ${image ./MXLogoStart.png -p 97,90 -s 50x50}
-   
-   
-   ${alignc}${color1}${execi 1000 cat /etc/antix-version}
+ ${alignc}${color1}${execi 1000 cat /etc/antix-version}
 
 ${voffset 2}${color3}   Kernel: ${alignr}${color}${kernel}
 
-   ${color3}CPU1: ${color}${cpu cpu1}% ${alignr}${color}${cpubar cpu1 8,60}
+   ${color3}CPU: ${color}${cpu cpu0}% ${alignr}${color}${cpubar cpu0 8,60}
 
    ${color3}RAM: ${color}$memperc% ${alignr}${color}${membar 8,60}
 

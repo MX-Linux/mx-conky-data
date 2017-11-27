@@ -97,13 +97,13 @@ ${voffset -8}${font Open Sans:Bold:size=10}${color0}NETWORK ${color EC0100}${hr 
 #$color${font Open Sans:bold:size=8.5}External IP ${font}${alignr}${execi 60 curl http://google.com --connect-timeout 2 | grep -o "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*"}$font
 #${voffset -14}$alignc${execpi 4 echo "\${font}\${color}ping: \${font Open Sans:bold:size=8.5}\${color6}$(ping -W 1 -c 1 8.8.8.8 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1)\${font}\${color} ms"}
 
-${voffset -10}${font Open Sans:bold:size=8.5}Ethernet $font$alignr ${addr enp6s0}
+${voffset -10}${font Open Sans:bold:size=8.5}Ethernet $font$alignr ${addr eth0}
 ↑ ${upspeedf enp6s0} kb/s $alignr ${totalup enp6s0}
 ${voffset -14}$alignc${upspeedgraph enp6s0 10,120  ff0000 0000ff}
 ↓ ${downspeedf enp6s0} kb/s $alignr ${totaldown enp6s0}
 ${voffset -14}$alignc${downspeedgraph enp6s0 10,120  ff0000 0000ff}
 
-${voffset -10}${font Open Sans:bold:size=8.5}WiFi $font${wireless_bitrate wlp7s0} $alignr ${addr wlp7s0}
+${voffset -10}${font Open Sans:bold:size=8.5}WiFi $font${wireless_bitrate wlp7s0} $alignr ${addr wlan0}
 ${voffset -14}$alignc${wireless_essid wlp7s0}
 $alignc${color2}${wireless_link_bar 4,260 wlp7s0}${color E9E9E9} 
 ↑ ${upspeedf wlp7s0} kb/s $alignr ${totalup wlp7s0}

@@ -21,7 +21,7 @@ draw_graph_borders no
 
 default_shade_color 000000
 default_outline_color 828282
-alignment top_left
+alignment top_right
 gap_x 20
 gap_y 20
 no_buffers yes
@@ -31,16 +31,16 @@ override_utf8_locale no
 
 lua_load /home/didisoft/.conky/lua.lua
 
-# ${diskiograph /dev/sda 15,180 a7a7a7 a7a7a7} # wskaznik pracy dysku
-# ${image /home/didisoft/.conky/didisoft.jpg -p 0,80 -s 26x28} # obrazki w conky
-
 default_color edf1f6
 color1 grey
 
 
+own_window_argb_value 0
+own_window_argb_visual no
+own_window_colour 000000
 TEXT
-${color1}${font Quicksand Light - U:pixelsize=70}${time %I %M %S}${font}${voffset -20}${offset 10}${font Existence Light - U:pixelsize=20}${time %p}${font}
+${color1}${font Proxima Nova - U:pixelsize=70}${time %I %M %S}${font}${voffset -20}${offset 10}${font Proxima Nova - U:pixelsize=20}${time %p}${font}
 
 
-${voffset 10}${offset 120}${font Existence Light - U:pixelsize=20}${time %A %B %d}${font}
-${voffset -26}${offset 40}${font Existence Light - U:pixelsize=32}${time %Y}${font}
+${voffset 0}${offset 140}${font Proxima Nova - U:pixelsize=20}${time %A %B %d}${font}
+${voffset -26}${offset 30}${font Proxima Nova - U:pixelsize=32}${time %Y}${font}

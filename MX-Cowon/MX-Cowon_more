@@ -30,7 +30,7 @@ own_window_hints undecorated,below,skip_taskbar,skip_pager
 #own_window_argb_visual yes
 #own_window_argb_value 100
 
-alignment top_left
+alignment top_right
 gap_x 100
 gap_y 80
 minimum_size 140 140

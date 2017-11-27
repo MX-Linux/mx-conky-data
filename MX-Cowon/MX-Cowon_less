@@ -30,10 +30,10 @@ own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 #own_window_argb_visual yes
 #own_window_argb_value 100
 
-alignment top_left
-gap_x 0
-gap_y 0
-minimum_size 100 100
+alignment top_right
+gap_x 30
+gap_y -150
+minimum_size 100 200
 
 default_bar_size 60 8
 
@@ -55,9 +55,9 @@ TEXT
 ${font Dinreg:size=12}
 ${font}
 #hour,minute
-${voffset -100}${time %H}
+${voffset -100}${time %I}
 ${color1}${offset 30}${voffset -100}${time %M}
 #day,month,date
 ${voffset -130}${offset 10}${font Droid Sans:size=12 :bold}${color1}|${color}${time %A}${offset 10}${color1}|${color}${time %B %d}
 #am,pm
-${offset 150}${voffset -200}${font Dinreg:size=12}${color1}${if_match ${time %H}<12}AM${else} ${if_match ${time %H}>12}PM${endif}${endif}
+${offset 150}${voffset -200}${font Dinreg:size=12}${color1}${if_match ${time %I}<12}AM${else} ${if_match ${time %I}>12}PM${endif}${endif}

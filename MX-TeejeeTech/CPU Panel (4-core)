@@ -8,7 +8,7 @@
 background yes
 double_buffer yes
 
-alignment bottom_left
+alignment top_right
 
 border_width 1
 cpu_avg_samples 2
@@ -20,7 +20,7 @@ draw_graph_borders yes
 draw_outline no
 draw_shades no
 
-gap_x 20
+gap_x 40
 gap_y 40
 net_avg_samples 2
 no_buffers yes

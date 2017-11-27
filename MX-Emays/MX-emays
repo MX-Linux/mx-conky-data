@@ -16,7 +16,7 @@ draw_borders no
 draw_graph_borders no
 default_shade_color black
 default_outline_color green
-alignment top_left
+alignment top_right
 gap_x 35
 gap_y 75
 no_buffers yes

@@ -9,9 +9,9 @@ temperature_unit celsius
 double_buffer yes
 no_buffers yes
 text_buffer_size 2048
-alignment top_middle
-gap_x 150
-gap_y 15
+alignment top_right
+gap_x 20
+gap_y 20
 minimum_size 550 550
 maximum_width 550
 own_window yes

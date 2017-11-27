@@ -42,7 +42,7 @@ minimum_size 0 0
 maximum_width 800
 gap_x 20
 gap_y 40
-alignment top_left
+alignment top_right
 no_buffers yes
 uppercase no
 cpu_avg_samples 2

@@ -1,5 +1,3 @@
-
-
 # Conky settings #
 background yes
 update_interval 1
@@ -29,7 +27,7 @@ default_color white
 border_inner_margin 0
 border_outer_margin 0
 
-alignment top_middle
+alignment top_right
 gap_x 0
 gap_y 20
 minimum_size 420 160

@@ -9,7 +9,7 @@ temperature_unit celsius
 double_buffer yes
 no_buffers yes
 text_buffer_size 2048
-alignment top_left
+alignment top_right
 gap_x 50
 gap_y 15
 minimum_size 550 550
