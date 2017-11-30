@@ -33,8 +33,8 @@ override_utf8_locale yes
 default_color 1e1717
 color0 1e1717
 color1 a47a2b
-color2 ac2e65
-color3 a37a2b
+color2 fff3f9
+color3 ab2e65
 color4 1e1717
 ###########################
 
@@ -50,4 +50,4 @@ ${voffset 10}${font Roboto-Light:pixelsize=90}${color0}${time %l:%M}${color}${fo
 
 ${font Roboto-Light:pixelsize=17}${color2}${offset 30}${execi 1000 awk '{print $1,$2}' /etc/antix-version}
 #bottom system line
-${offset 30}${color3}${font Roboto-Light:pixelsize=20}MEM ${voffset 12}${color4}${font Roboto-Light:pixelsize=21}$memperc%${voffset -12}${offset 15} ${font Roboto-Light:pixelsize=20}${color3}HDD ${voffset 12}${color4}${font Roboto-Light:pixelsize=20}${fs_used_perc /}%${voffset -12}${offset 20}${font Roboto-Light:pixelsize=20}${color3}CPU ${voffset 12}${color4}${font Roboto-Light:pixelsize=20}${cpu cpu0}%${voffset -12}
+${offset 30}${color3}${font Roboto-Light:pixelsize=20}MEM use  ${voffset 12}${color4}${font Roboto-Light:pixelsize=21}$memperc%${voffset -12}${offset 15} ${font Roboto-Light:pixelsize=20}${color3}HDD free  ${voffset 12}${color4}${font Roboto-Light:pixelsize=20}${fs_used_perc /}%${voffset -12}${offset 20}${font Roboto-Light:pixelsize=20}${color3}CPU use  ${voffset 12}${color4}${font Roboto-Light:pixelsize=20}${cpu cpu0}%${voffset -12}

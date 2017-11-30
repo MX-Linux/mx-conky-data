@@ -1,1 +1,1 @@
-For the sources of these conkies, consult the appropriate folder (e.g., MX-Asq/ for MX-Asq_clock_new_default)
+For sources, consult the appropriate folder (e.g., MX-Asq/ for MX-Asq_clock_new_default)

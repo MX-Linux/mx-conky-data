@@ -14,16 +14,16 @@ own_window_argb_value 0
 
 double_buffer yes
 #minimum_size 250 5
-maximum_width 500
+maximum_width 700
 draw_shades no
 draw_outline no
 draw_borders no
 draw_graph_borders no
-default_color white
+#default_color white
 default_shade_color red
 default_outline_color green
 alignment top_right
-gap_x 30
+gap_x 10
 gap_y 10
 no_buffers yes
 uppercase no
@@ -32,22 +32,24 @@ net_avg_samples 1
 override_utf8_locale yes
 use_spacer yes
 
+minimum_size 500 250
 
-minimum_size 0 0
+#colors
+##hour,minute
+color0 EAEAEA
+##day of month, month, year
+color1 efc947
+##day of week
+color2 d2883b
+##line 2: system parameters
+color3 black
+##line 2: system values
+color4 white
+
 TEXT
 
 #top line
-${voffset 10}${color EAEAEA}${font Roboto-Light:pixelsize=120}${time %I:%M}${font}${voffset -84}${offset 20}${color FFA300}${font Roboto-Light:pixelsize=42}${time %d} ${voffset -15}${color EAEAEA}${font Roboto-Light:pixelsize=22}${time %b} ${time %Y}${font}${voffset 24}${font Roboto-Light:pixelsize=48}${offset -148}${time %A}${font}
+${voffset 10}${color0}${font Roboto-Light:pixelsize=120}${time %l:%M}${font}${voffset -84}${offset 20}${color1}${font Roboto-Light:pixelsize=42}${time %d} ${voffset -15}${color2}${font Roboto-Light:pixelsize=22}${time %b} ${time %Y}${font}${voffset 24}${font Roboto-Light:pixelsize=48}${offset -148}${time %A}${font}
 
 #bottom line
-${voffset 1}${offset 12}${font Roboto-Light:pixelsize=11}${color FFA300}HD ${offset 9}$color${fs_free /} / ${fs_size /}${offset 30}${color FFA300}RAM ${offset 9}$color$mem / $memmax${offset 30}${color FFA300}CPU ${offset 9}$color${cpu cpu0}%
-
-
-
-
-
-
-
-
-
-
+${voffset 1}${offset 15}${font Roboto-Light:pixelsize=15}${color3}HD free ${offset 9}${color4}${fs_free /} / ${fs_size /}${offset 30}${color3}MEM use ${offset 9}${color4}$mem / $memmax${offset 30}${color3}CPU use ${offset 9}${color4}${cpu cpu0}%
