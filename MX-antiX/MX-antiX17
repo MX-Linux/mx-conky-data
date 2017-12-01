@@ -120,10 +120,10 @@ uppercase no
 #${battery_bar 11,0}
 ##Wireless example##
 #${color}Wireless:
-#${color}essid: ${wireless_essid wlp7s0}
-#${color}IP:${color} ${addr wlp7s0}
-#${color}speed: ${color} ${wireless_bitrate wlp7s0}
-#${color}link strength: ${color} ${wireless_link_bar 7,50 wlp7s0}
+#${color}essid: ${wireless_essid wlan0}
+#${color}IP:${color} ${addr wlan0}
+#${color}speed: ${color} ${wireless_bitrate wlan0}
+#${color}link strength: ${color} ${wireless_link_bar 7,50 wlan0}
 
 # stuff after 'TEXT' will be formatted on screen
 
@@ -142,23 +142,23 @@ ${color}cpu use:${alignr}${color3}${cpu}${color}%
 ${color}cpu freq:${color3}${alignr}${freq}
 ${color}$alignr${cpugraph cpu0 30,170 5599cc 5599cc}
 ${color}disk I/O:${alignr}${color3}${diskio}
-${color}${alignr}${diskiograph 30,170 5599cc 5599cc}${if_up enp6s0}
-${color}enp6s0 up: $alignr${color3} ${upspeed wlp7s0}
-${color}$alignr${upspeedgraph   wlp7s0 30,170 5599cc 5599cc}
-${color}enp6s0 down: $alignr${color3} ${downspeed wlp7s0}
-${color2}$alignr${downspeedgraph wlp7s0 30,170  5599cc 5599cc}${endif}${if_up eth1}
-${color}eth1 up: $alignr${color3} ${upspeed wlp7s0}
-${color}$alignr${upspeedgraph   wlp7s0 30,170 5599cc 5599cc}
-${color}eth1 down: $alignr${color3} ${downspeed wlp7s0}
-${color2}$alignr${downspeedgraph wlp7s0 30,170  5599cc 5599cc}${endif}${if_up wlp7s0}
-${color}wlp7s0 up: $alignr${color3} ${upspeed wlp7s0}
-${color2}$alignr${upspeedgraph   wlp7s0 30,170 5599cc 5599cc}
-${color}wlp7s0 down: $alignr${color3} ${downspeed wlp7s0}
-${color2}$alignr${downspeedgraph wlp7s0 30,170 5599cc 5599cc}${endif}${if_up wlan1}
-${color}wlan1 up: $alignr${color3} ${upspeed wlp7s0}
-${color2}$alignr${upspeedgraph   wlp7s0 30,170 5599cc 5599cc}
-${color}wlan1 down: $alignr${color3} ${downspeed wlp7s0}
-${color2}$alignr${downspeedgraph wlp7s0 30,170 5599cc 5599cc}${endif}
+${color}${alignr}${diskiograph 30,170 5599cc 5599cc}${if_up eth0}
+${color}eth0 up: $alignr${color3} ${upspeed wlan0}
+${color}$alignr${upspeedgraph   wlan0 30,170 5599cc 5599cc}
+${color}eth0 down: $alignr${color3} ${downspeed wlan0}
+${color2}$alignr${downspeedgraph wlan0 30,170  5599cc 5599cc}${endif}${if_up eth1}
+${color}eth1 up: $alignr${color3} ${upspeed wlan0}
+${color}$alignr${upspeedgraph   wlan0 30,170 5599cc 5599cc}
+${color}eth1 down: $alignr${color3} ${downspeed wlan0}
+${color2}$alignr${downspeedgraph wlan0 30,170  5599cc 5599cc}${endif}${if_up wlan0}
+${color}wlan0 up: $alignr${color3} ${upspeed wlan0}
+${color2}$alignr${upspeedgraph   wlan0 30,170 5599cc 5599cc}
+${color}wlan0 down: $alignr${color3} ${downspeed wlan0}
+${color2}$alignr${downspeedgraph wlan0 30,170 5599cc 5599cc}${endif}${if_up wlan1}
+${color}wlan1 up: $alignr${color3} ${upspeed wlan0}
+${color2}$alignr${upspeedgraph   wlan0 30,170 5599cc 5599cc}
+${color}wlan1 down: $alignr${color3} ${downspeed wlan0}
+${color2}$alignr${downspeedgraph wlan0 30,170 5599cc 5599cc}${endif}
 ${color}${alignr}${color8}Used / Total
 ${color}mem:${alignr}$mem ${color3} /${color} $memmax
 ${color}swap:${alignr}$swap ${color3} /${color} $swapmax

@@ -87,13 +87,13 @@ ${color #0ABFFF}${voffset 6}Load:$color ${loadavg}
 #----------------------------------------------------------------------------------------------------------------------------------------
 ${color 0ABFFF}${voffset 2}${hr 1}
 ${color 0ABFFF}${voffset 5}Hostname: $color$alignr$nodename
-${color 0ABFFF}wlp7s0: $color$alignr${addr wlp7s0}
-${color 0ABFFF}Current: $color${alignr}${execi 10 /sbin/iwconfig wlp7s0|grep Rate|cut -d"M" -f1|cut -b20-24} Mbits/sec
+${color 0ABFFF}wlan0: $color$alignr${addr wlan0}
+${color 0ABFFF}Current: $color${alignr}${execi 10 /sbin/iwconfig wlan0|grep Rate|cut -d"M" -f1|cut -b20-24} Mbits/sec
 ${color 0ABFFF}enp6s0: $color$alignr${addr enp6s0}
 
-${color #0ABFFF}Down: $color${downspeed wlp7s0} k/s ${alignr}${color #0ABFFF}Up:$color ${upspeed wlp7s0} k/s
-${downspeedgraph wlp7s0 30,120 000000 0ABFFF} ${alignr}${upspeedgraph wlp7s0 30,120 000000 0ABFFF}$color
-${color #0ABFFF}Total:$color ${totaldown wlp7s0} ${alignr}${color #0ABFFF}Total:$color ${totalup wlp7s0}
+${color #0ABFFF}Down: $color${downspeed wlan0} k/s ${alignr}${color #0ABFFF}Up:$color ${upspeed wlan0} k/s
+${downspeedgraph wlan0 30,120 000000 0ABFFF} ${alignr}${upspeedgraph wlan0 30,120 000000 0ABFFF}$color
+${color #0ABFFF}Total:$color ${totaldown wlan0} ${alignr}${color #0ABFFF}Total:$color ${totalup wlan0}
 #----------------------------------------------------------------------------------------------------------------------------------------
 #					DISK/RAM/SWAP usage
 #----------------------------------------------------------------------------------------------------------------------------------------

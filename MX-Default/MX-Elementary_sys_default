@@ -36,12 +36,12 @@ own_window_argb_visual no
 own_window_colour 000000
 TEXT
 #time
-${offset 100}${color}${font Quicksand - U:pixelsize=70}${time %l:%M}${font}${font}${voffset -45}${offset 10}${font Roboto-Light - U:pixelsize=35}${time %P}${font}
+${offset 130}${color}${font Quicksand - U:pixelsize=70}${time %l:%M}${font}${font}${voffset -45}${offset 10}${font Roboto-Light - U:pixelsize=35}${time %P}${font}
 
 
 
 #date
-${offset 30}${color2}${font Roboto-Light:pixelsize=30}${time %A}${font}${goto 250}${voffset -17}${color2}${font Roboto-Light:pixelsize=30}${time %x}${font}
+${offset 50}${color2}${font Roboto-Light:pixelsize=30}${time %A}${font}${goto 250}${voffset -17}${color2}${font Roboto-Light:pixelsize=30}${time %x}${font}
 
 #sys
-${offset 10}${font Roboto-Light:pixelsize=20}${color1}CPU use ${offset 9}${color}${cpu}%${offset 9}${offset 9}${color1}HDD free ${color}${offset 9}$color${fs_used_perc /}%${offset 9}${color1}MEM use ${offset 9}${color}${memperc}%${offset 9}${offset 9}${font}
+${offset 10}${font Roboto-Light:pixelsize=20}${color1}CPU used ${offset 9}${color}${cpu}%${offset 9}${offset 9}${color1}HDD used ${color}${offset 9}$color${fs_used_perc /}%${offset 9}${color1}MEM used ${offset 9}${color}${memperc}%${offset 9}${offset 9}${font}

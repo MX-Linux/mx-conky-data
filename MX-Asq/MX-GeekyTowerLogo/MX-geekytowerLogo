@@ -123,15 +123,15 @@ ${voffset 2}${color3}   Kernel: ${alignr}${color}${kernel}
 ${color2}MEDIA ${hr 2}${color}
 
 ${execpi 10 $HOME/.conky/MX-Asq/MX-GeekyTowerLogo/conky-harddisks.sh}
-${color2}ETHERNET (${addr enp0s3}) ${hr 2}${color}
+${color2}ETHERNET (${addr eth0}) ${hr 2}${color}
 
-   Down: ${downspeedf enp0s3}kB/s ${alignr}Up: ${upspeedf enp0s3}kB/s
-   ${downspeedgraph enp0s3 30,120 000000 000000} ${alignr}${upspeedgraph enp0s3 30,120 000000 000000}
+   Down: ${downspeedf eth0}kB/s ${alignr}Up: ${upspeedf eth0}kB/s
+   ${downspeedgraph eth0 30,120 000000 000000} ${alignr}${upspeedgraph eth0 30,120 000000 000000}
 
-${color2}WIRELESS (${addr wlp7s0}) [${wireless_link_qual_perc wlp7s0}%] ${hr 2}${color}
+${color2}WIRELESS (${addr wlan0}) [${wireless_link_qual_perc wlan0}%] ${hr 2}${color}
 
-   Down: ${downspeedf wlp7s0}kB/s ${alignr}Up: ${upspeedf wlp7s0}kB/s
-   ${downspeedgraph wlp7s0 30,120 000000 000000} $alignr${upspeedgraph wlp7s0 30,120 000000 000000}
+   Down: ${downspeedf wlan0}kB/s ${alignr}Up: ${upspeedf wlan0}kB/s
+   ${downspeedgraph wlan0 30,120 000000 000000} $alignr${upspeedgraph wlan0 30,120 000000 000000}
 
 ${color2}MONITOR ${hr 2}${color}
 
