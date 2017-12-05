@@ -108,7 +108,7 @@ ${color2}SYSTEM ${hr 2}${color}
    
   
 
- ${alignc}${color1}${execi 1000 cat /etc/antix-version}
+ ${alignc}${color1}${execi 1000 cat /etc/mx-version}
 
 ${voffset 2}${color3}   Kernel: ${alignr}${color}${kernel}
 

@@ -48,6 +48,6 @@ own_window_colour 000000
 TEXT
 ${voffset 10}${font Roboto-Light:pixelsize=90}${color0}${time %l:%M}${color}${font}${color1}${voffset -84}${offset 40}${font Roboto-Light:pixelsize=28}${time %d} ${font Roboto-Light:pixelsize=28}${time %b} '${time %y}${font}${voffset 22}${font Roboto-Light:pixelsize=50}${offset -140}${time %A}${font}
 
-${font Roboto-Light:pixelsize=17}${color2}${offset 30}${execi 1000 awk '{print $1,$2}' /etc/antix-version}
+${font Roboto-Light:pixelsize=17}${color2}${offset 30}${execi 1000 awk '{print $1,$2}' /etc/mx-version}
 #bottom system line
-${offset 30}${color3}${font Roboto-Light:pixelsize=20}MEM used  ${voffset 12}${color4}${font Roboto-Light:pixelsize=21}$memperc%${voffset -12}${offset 15} ${font Roboto-Light:pixelsize=20}${color3}HDD free  ${voffset 12}${color4}${font Roboto-Light:pixelsize=20}${fs_used_perc /}%${voffset -12}${offset 20}${font Roboto-Light:pixelsize=20}${color3}CPU used  ${voffset 12}${color4}${font Roboto-Light:pixelsize=20}${cpu cpu0}%${voffset -12}
+${offset 30}${color3}${font Roboto-Light:pixelsize=20}${color0}USED:${color3}${offset 10} mem  ${voffset 12}${color4}${font Roboto-Light:pixelsize=21}$memperc%${voffset -12}${offset 15} ${font Roboto-Light:pixelsize=20}${color3}hdd  ${voffset 12}${color4}${font Roboto-Light:pixelsize=20}${fs_used_perc /}%${voffset -12}${offset 20}${font Roboto-Light:pixelsize=20}${color3}cpu  ${voffset 12}${color4}${font Roboto-Light:pixelsize=20}${cpu cpu0}%${voffset -12}

@@ -45,6 +45,6 @@ own_window_colour 000000
 TEXT
 ${voffset 10}${font Infini:pixelsize=90}${time %l:%M}${font}${voffset -84}${offset 40}${font Infini:pixelsize=42}${time %d} ${voffset -15}${font Infini:pixelsize=22}${time  %b} ${time '%y}${font}${voffset 24}${font Infini:pixelsize=58}${offset -140}${time %a}${font}
 
-${font Infini:pixelsize=17}${color1}${offset 30}${execi 1000 cat /etc/antix-version}
+${font Infini:pixelsize=17}${color1}${offset 30}${execi 1000 cat /etc/mx-version}
 #bottom system line
 ${offset 30}${font Infini:pixelsize=22}RAM ${voffset 12}${font Infini:pixelsize=21}$mem${voffset -11}${offset 60}    ${font Infini:pixelsize=20}${color2}CPU ${voffset 12}${font Infini:pixelsize=19}${cpu cpu0}% 

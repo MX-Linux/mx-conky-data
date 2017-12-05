@@ -45,6 +45,8 @@ color2 d2883b
 color3 black
 ##line 2: system values
 color4 white
+##line 2: word
+color5 blue
 
 TEXT
 
@@ -52,4 +54,4 @@ TEXT
 ${voffset 10}${color0}${font Roboto-Light:pixelsize=120}${time %l:%M}${font}${voffset -84}${offset 20}${color1}${font Roboto-Light:pixelsize=42}${time %d} ${voffset -15}${color2}${font Roboto-Light:pixelsize=22}${time %b} ${time %Y}${font}${voffset 24}${font Roboto-Light:pixelsize=48}${offset -148}${time %A}${font}
 
 #bottom line
-${voffset 1}${font Roboto-Light:pixelsize=15}${color3}HDD free ${offset 9}${color4}${fs_free /} / ${fs_size /}${offset 30}${color3}MEM used ${offset 9}${color4}$mem / $memmax${offset 30}${color3}CPU used ${offset 9}${color4}${cpu cpu0}%
+${voffset 1}${offset 20}${font Roboto-Light:pixelsize=15}${color5}USED: ${offset 15}${color3}hdd${offset 9}${color4}${fs_free /} / ${fs_size /}${offset 15}${color3}mem ${offset 9}${color4}$mem / $memmax${offset 15}${color3}cpu ${offset 9}${color4}${cpu cpu0}%

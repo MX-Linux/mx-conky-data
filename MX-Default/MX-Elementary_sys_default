@@ -21,7 +21,7 @@ default_shade_color 000000
 default_outline_color 828282
 alignment top_right
 gap_x 20
-gap_y 20
+gap_y 50
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
@@ -30,6 +30,7 @@ override_utf8_locale no
 default_color edf1f6
 color1 2da83b
 color2 0c1513
+color3 tan
 
 own_window_argb_value 0
 own_window_argb_visual no
@@ -41,7 +42,7 @@ ${offset 130}${color}${font Quicksand - U:pixelsize=70}${time %l:%M}${font}${fon
 
 
 #date
-${offset 50}${color2}${font Roboto-Light:pixelsize=30}${time %A}${font}${goto 250}${voffset -17}${color2}${font Roboto-Light:pixelsize=30}${time %x}${font}
+${offset 100}${color2}${font Roboto-Light:pixelsize=30}${time %A}${font}${goto 250}${voffset -17}${color2}${font Roboto-Light:pixelsize=30}${time %x}${font}
 
 #sys
-${offset 10}${font Roboto-Light:pixelsize=20}${color1}CPU used ${offset 9}${color}${cpu}%${offset 9}${offset 9}${color1}HDD used ${color}${offset 9}$color${fs_used_perc /}%${offset 9}${color1}MEM used ${offset 9}${color}${memperc}%${offset 9}${offset 9}${font}
+${offset 80}${font Roboto-Light:pixelsize=20}${color3}USED: ${offset 9}${color1}cpu${offset 9}${color}${cpu}%${offset 9}${offset 9}${color1}hdd ${color}${offset 9}$color${fs_used_perc /}%${offset 9}${color1}mem ${offset 9}${color}${memperc}%${offset 9}${offset 9}${font}
