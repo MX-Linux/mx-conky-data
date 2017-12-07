@@ -4,8 +4,9 @@ Priority: optional
 Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
 Build-Depends: debhelper (>=9)
 Standards-Version: 3.9.5
+Homepage: https://github.com/MX-Linux/mx-conky-data
 
 Package: mx-conky-data
 Architecture: all
 Description: conky themes for MX Conky
- Various attractive conky themes that have been vetted for MX Linux.
+ Various attractive conky themes that have been customized for MX Linux.

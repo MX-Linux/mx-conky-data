@@ -1,3 +1,23 @@
+mx-conky-data (20171204.mx17) mx; urgency=medium
+
+  * New git pull, build for RC 1.
+
+ -- Steven Pusser <stevep@mxlinux.org>  Mon, 04 Dec 2017 17:43:49 -0800
+
+mx-conky-data (20171201.mx15) mx; urgency=medium
+
+  * New git pull, build for RC 1.
+
+ -- Steven Pusser <stevep@mxlinux.org>  Fri, 01 Dec 2017 10:37:03 -0800
+
+mx-conky-data (20171128.mx15) mx; urgency=medium
+
+  * New git pull, build for beta 3.
+  * debian/copyright: fix source URL.
+  * debian/control: add Homepage field.
+
+ -- Steven Pusser <stevep@mxlinux.org>  Tue, 28 Nov 2017 10:24:12 -0800
+
 mx-conky-data (20171116.mx17) mx; urgency=medium
 
   * New release.
