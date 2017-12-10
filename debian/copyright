@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: mx-codecs
-Source: https://github.com/AdrianTM/mx-codecs
+Source: https://github.com/MX-Linux/mx-conky-data
 
 #----------------------------------------------------------------------------
 Copyright: 2017 MX Authors 
