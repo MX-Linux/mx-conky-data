@@ -54,30 +54,30 @@ SYSTEM ${alignr}${color5}${fs_bar 12,200 /}
 ${voffset -18}${offset 5}${color}${alignr 5}$color${fs_free /} free$color$font
 ${voffset -8}
 ${font Open Sans Light:bold:size=9}NETWORK$font${voffset -14}
-${if_existing /proc/net/route wlp7s0}
-${color}Up:${color} ${color2}${upspeed wlp7s0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlp7s0}${color}
-${color}Down:${color} ${color2}${downspeed wlp7s0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlp7s0}${color}
+${if_existing /proc/net/route wlan0}
+${color}Up:${color} ${color2}${upspeed wlan0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlan0}${color}
+${color}Down:${color} ${color2}${downspeed wlan0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlan0}${color}
 ${else}${if_existing /proc/net/route wlan1}
-${color}Up:${color} ${color2}${upspeed wlp7s0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlp7s0}${color}
-${color}Down:${color} ${color2}${downspeed wlp7s0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlp7s0}${color}
+${color}Up:${color} ${color2}${upspeed wlan0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlan0}${color}
+${color}Down:${color} ${color2}${downspeed wlan0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlan0}${color}
 ${else}${if_existing /proc/net/route eth0}
-${color}Up:${color} ${color2}${upspeed wlp7s0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlp7s0}${color}
-${color}Down:${color} ${color2}${downspeed wlp7s0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlp7s0}${color}
+${color}Up:${color} ${color2}${upspeed wlan0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlan0}${color}
+${color}Down:${color} ${color2}${downspeed wlan0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlan0}${color}
 ${else}${if_existing /proc/net/route eth1}
-${color}Up:${color} ${color2}${upspeed wlp7s0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlp7s0}${color}
-${color}Down:${color} ${color2}${downspeed wlp7s0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlp7s0}${color}
+${color}Up:${color} ${color2}${upspeed wlan0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlan0}${color}
+${color}Down:${color} ${color2}${downspeed wlan0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlan0}${color}
 ${else}${if_existing /proc/net/route ppp0}
-${color}Up:${color} ${color2}${upspeed wlp7s0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlp7s0}${color}
-${color}Down:${color} ${color2}${downspeed wlp7s0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlp7s0}${color}
+${color}Up:${color} ${color2}${upspeed wlan0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlan0}${color}
+${color}Down:${color} ${color2}${downspeed wlan0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlan0}${color}
 ${else}${if_existing /proc/net/route ppp1}
-${color}Up:${color} ${color2}${upspeed wlp7s0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlp7s0}${color}
-${color}Down:${color} ${color2}${downspeed wlp7s0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlp7s0}${color}
+${color}Up:${color} ${color2}${upspeed wlan0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlan0}${color}
+${color}Down:${color} ${color2}${downspeed wlan0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlan0}${color}
 ${else}${if_existing /proc/net/route usb0}
-${color}Up:${color} ${color2}${upspeed wlp7s0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlp7s0}${color}
-${color}Down:${color} ${color2}${downspeed wlp7s0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlp7s0}${color}
+${color}Up:${color} ${color2}${upspeed wlan0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlan0}${color}
+${color}Down:${color} ${color2}${downspeed wlan0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlan0}${color}
 ${else}${if_existing /proc/net/route usb1}
-${color}Up:${color} ${color2}${upspeed wlp7s0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlp7s0}${color}
-${color}Down:${color} ${color2}${downspeed wlp7s0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlp7s0}${color}
+${color}Up:${color} ${color2}${upspeed wlan0}${color}${alignr}${color}Sent:${color} ${color2}${totalup wlan0}${color}
+${color}Down:${color} ${color2}${downspeed wlan0}${color}${alignr}${color}Received:${color} ${color2}${totaldown wlan0}${color}
 ${else}
 Network disconnected
 ${color5}Connect to a network to see statistics${color}
