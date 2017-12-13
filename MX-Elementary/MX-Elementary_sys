@@ -42,7 +42,7 @@ ${offset 130}${color}${font Quicksand - U:pixelsize=70}${time %l:%M}${font}${fon
 
 
 #date
-${offset 100}${color2}${font Roboto-Light:pixelsize=30}${time %A}${font}${goto 250}${voffset -17}${color2}${font Roboto-Light:pixelsize=30}${time %x}${font}
+${offset 100}${color2}${font Roboto-Light:pixelsize=30}${time %A}${font}${goto 275}${voffset -17}${color2}${font Roboto-Light:pixelsize=30}${time %x}${font}
 
 #sys
 ${offset 80}${font Roboto-Light:pixelsize=20}${color3}USED: ${offset 9}${color1}cpu${offset 9}${color}${cpu}%${offset 9}${offset 9}${color1}hdd ${color}${offset 9}$color${fs_used_perc /}%${offset 9}${color1}mem ${offset 9}${color}${memperc}%${offset 9}${offset 9}${font}
