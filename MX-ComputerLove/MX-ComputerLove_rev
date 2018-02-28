@@ -24,8 +24,10 @@ own_window_type conky
 own_window_transparent yes
 own_window_hints undecorated,skip_taskbar,skip_pager,below
 
-border_inner_margin 0
-border_outer_margin 0
+##border_inner_margin 0
+##border_outer_margin 0
+border_inner_margin 5
+border_outer_margin 5
 
 minimum_size 400 100
 maximum_width 600
@@ -60,12 +62,14 @@ own_window_argb_value 0
 TEXT
 ${font Roboto:bold:size=10}${color0}SYSTEM INFO${color1}  ${hr 2}
 ${font Roboto:bold:size=8}${goto 95}${color1}$sysname $kernel $alignr $machine
-${font Roboto:bold:size=8}${goto 95}${color1}CPU${alignr 0}${color1}Intel i5-2430M ${freq_g cpu0}Ghz
+##${font Roboto:bold:size=8}${goto 95}${color1}CPU${alignr 0}${color1}Intel i5-2430M ${freq_g cpu0}Ghz
+${font Roboto:bold:size=8}${goto 95}${color1}CPU${alignr 0}${color1}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq | cut -c 1-26} ${freq_g cpu0}Ghz
 ${font Roboto:bold:size=8}${goto 95}${color1}RAM ${goto 220}$mem / $memmax $alignr $memperc%
 ${goto 95}$membar
 ${font Roboto:bold:size=8}${goto 95}${color1}Uptime ${alignr 0}${color1}${uptime_short}
 ${font Roboto:bold:size=10}${color0}HDD${color1}  ${hr 2}
-${font Roboto:bold:size=8}${goto 95}${color1}/root ${goto 220}${fs_used /home} / ${fs_size /home} $alignr ${fs_free_perc /home}%
+##${font Roboto:bold:size=8}${goto 95}${color1}/root ${goto 220}${fs_used /home} / ${fs_size /home} $alignr ${fs_free_perc /home}%
+${font Roboto:bold:size=8}${goto 95}${color1}/root ${goto 220}${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /home}%
 ${goto 95}${fs_bar /home}
 
 ${font Roboto:bold:size=10}${color0}TIME ${color1}${hr 2}${voffset 20}
