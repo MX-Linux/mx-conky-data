@@ -1,3 +1,9 @@
+mx-conky-data (20180227.mx17) mx; urgency=medium
+
+  * misc revisions 
+
+ -- Steven Pusser <dolphin@littlebyte>  Tue, 27 Feb 2018 20:55:51 -0500
+
 mx-conky-data (20171204.mx17) mx; urgency=medium
 
   * New git pull, build for RC 1.
