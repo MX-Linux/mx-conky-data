@@ -1,3 +1,9 @@
+mx-conky-data (20180312.mx17) mx; urgency=medium
+
+  * modified default conky 
+
+ -- dolphinoracle <dolphin@littlebyte>  Mon, 12 Mar 2018 18:01:42 -0400
+
 mx-conky-data (20180308.mx17) mx; urgency=medium
 
   * misc. revisions 
