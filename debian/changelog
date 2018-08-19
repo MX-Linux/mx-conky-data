@@ -1,3 +1,9 @@
+mx-conky-data (20180818.mx17) mx; urgency=medium
+
+  * update to MX-antiX conky 
+
+ -- dolphinoracle <dolphin@mx>  Sat, 18 Aug 2018 21:17:34 -0400
+
 mx-conky-data (20180312.mx17) mx; urgency=medium
 
   * modified default conky 
