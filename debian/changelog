@@ -1,3 +1,9 @@
+mx-conky-data (20181118.mx17) mx; urgency=medium
+
+  * new conky configs, MX-18 
+
+ -- dolphin <dolphin@littlebyte>  Sun, 18 Nov 2018 12:11:40 -0500
+
 mx-conky-data (20180818.mx17) mx; urgency=medium
 
   * update to MX-antiX conky 
