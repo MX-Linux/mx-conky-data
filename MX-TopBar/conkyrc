@@ -1,0 +1,105 @@
+# Conky configuration
+# Edited by mmesantos1 2011
+
+# set to yes if you want Conky to be forked in the background
+background yes
+
+# Use Xft?
+use_xft yes
+
+# Xft font when Xft is enabled
+xftfont Garuda:size=9
+
+# Text alpha when using Xft
+xftalpha 0.8
+
+# Update interval in seconds
+update_interval 1.0
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Create own window instead of using desktop (required in nautilus)
+own_window no
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+minimum_size 1280 24
+maximum_width 1280
+
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+draw_graph_borders yes
+
+# Stippled borders?
+stippled_borders 0
+
+# border margins
+border_margin 0
+
+# border width
+border_width 0
+
+# Default colors and also border colors
+default_color AD7B7B
+default_shade_color AD7B7B
+default_outline_color AD7B7B
+# own window options
+own_window		yes
+own_window_transparent no
+own_window_type		normal
+own_window_hints	undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_middle
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 0
+gap_y 28
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase none
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+use_spacer no
+
+own_window_argb_value 0
+own_window_argb_visual yes
+own_window_colour 000000
+
+color1 eaebeb
+color2 e9eaea
+color3 e9eaea
+
+TEXT
+${font clean:size=12}${offset 170}${color1}CPU ${cpubar 5,75}${offset 85}HDD ${fs_bar 3,75}${offset 85}MEM ${membar 5,75}${offset 85}BAT ${battery_bar 5,75}${offset 85}SWP ${swapbar 5,75}
+##TIME##
+${font BirchStd:pixelsize=110}${color2}${alignc}${time %l:%M}${font}
+${voffset 10}${font BirchStd:pixelsize=45}${color3}${alignc}${time %A} | ${time %d} ${time  %B} ${font}

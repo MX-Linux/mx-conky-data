@@ -1,0 +1,102 @@
+#########################################################
+#            Name: Style Conky
+#
+#          Author: Herve Simonnet
+#           rvsimonnet@gmail.com
+#
+#   Description theme futuriste 30/11/2017
+#########################################################
+
+background yes                                                     ## permet à conky de tourner en arrière-plan
+use_xft yes                                                        ## utilise la police xft
+xftalpha 1
+xftfont Roboto-Light:size=12                                             ## opacité de la police xft, ici 1=opaque
+update_interval 1.0                                                ## conky se recharge toutes les secondes
+total_run_times 0                                                  ## conky se relance à l'infini
+own_window yes                                                     ## conky utilise sa propre fenêtre
+own_window_transparent yes
+own_window_type desktop 
+own_window_class Conky
+own_window_colour 000000
+own_window_argb_value 0
+own_window_argb_visual no
+own_window_hints undecorated,below,skip_taskbar,skip_pager  ## propriétés de la fenêtre
+double_buffer yes                                                  ## empêche le clignotement
+draw_shades no                                                     ## n'affiche pas les ombres sous le texte
+draw_outline no                                                    ## n'affiche pas le contour de la police
+draw_borders no                                                   ## n'affiche pas les bordures
+draw_graph_borders yes                                              ## n'affiche pas le contour des graphiques
+default_color 7744F0                                               ## couleur des textes et bordures
+default_shade_color 000000                                         ## couleur des ombres
+default_outline_color d9d7d6                                       ## couleur du contour de la police
+no_buffers yes
+uppercase yes                                                      ## police en mode normal (Maj/min)
+cpu_avg_samples 8                                                  ## nombre de processeurs pris en compte: ici 8
+override_utf8_locale yes
+alignment top_middle
+border_width 0                                                     ## 
+default_color 5482CF                                               ## 
+
+color1 98a8db
+color2 4271B4
+color3 white
+                                                   ## couleur des textes et borduresgap_x 20
+gap_y 0
+minimum_size 300 1000
+maximum_width 650
+max_text_width 165
+net_avg_samples 2
+out_to_console no
+out_to_stderr no
+extra_newline no
+stippled_borders 0
+uppercase no
+use_spacer none
+show_graph_scale yes
+show_graph_range yes
+
+
+################################################################
+
+gap_x 0
+TEXT
+${image ~/.conky/MX-Futuriste/images/mxfcelogo-rounded.png -p 70,50 option -s 150x150}
+${image ~/.conky/MX-Futuriste/images/fond5_noA.png -p -0,360 option -s 250x650}
+#################   HORLOGE    ####################
+${goto 10}${voffset 165}${color3}${font Roboto-Light:size=40}${time %I}
+${goto 30}${voffset -10}${color3}${font Roboto-Light:size=40}${time %M}
+${goto 120}${color3}${voffset -110}${font Roboto-Light:size=15}${time %A}      
+${goto 120}${color3}${voffset 5}${font Roboto-Light:size=15}${time %d %b}
+
+${goto 65}${color1}${voffset 20}${font Roboto-Light:size=10}$sysname $kernel ${execi 6500 lsb_release -a | grep 'Release'|awk {'print $2""$3""$4""$5'}}
+${goto 65}${color1}${font Roboto-Light:size=10}${execi 6500 awk -F'=' '/DESCRIPTION/ {print $2}' /etc/lsb-release |sed 's/"//g'} - ${execi 6500 awk -F'=' '/DISTRIB_RELEASE=/ {printf $2" "} /CODENAME/ {print $2}' /etc/lsb-release}${color}
+${goto 65}${color1}${font Roboto-Light:size=10}Packages Upgrades      ${color2}${execi 3650 checkupdates | wc -l} 
+${goto 65}${color1}Uptime:   $uptime 
+${goto 65}Process:      $processes ($running_processes running)
+${goto 65}User:  $user_names
+
+#${goto 65}${font Roboto-Light:size=10}${execi 6500 cat /proc/cpuinfo | grep -i 'Model name' -m 1 | cut -c14-43}${font}
+${goto 65}AMD FX 8300 - Eight-Core Pro
+${goto 65}${voffset 3}${font Roboto-Light:size=11}${color1}CPU ${freq_g cpu0}GHz TEMP   ${hwmon temp 1}°C
+${goto 65}${font Roboto-Light:size=9}high +65.0°C - crit +95.0°C ${font}
+${goto 65}${font Roboto-Light:size=10}CPU  ${cpubar 5, 120}$color2  $cpu%${font}
+${goto 65}$color1${font Roboto-Light:size=10}RAM ${membar 5, 120}$color2  $memperc%
+$color1 ${goto 110} $mem of $memmax
+  
+${goto 65}${font Roboto-Light:size=13}${voffset -5}Top 
+${goto 65}${font Roboto-Light:size=8}${voffset -2}${top name 1} ${top cpu 1}% .. ${top mem_res 1}
+${goto 65}${font Roboto-Light:size=8}----------------------------------------------------
+${goto 65}${top name 2} ${top cpu 2}% .. ${top mem_res 2}
+${goto 65}${font Roboto-Light:size=8}-----------------------------------------------
+${goto 65}${top name 3} ${top cpu 3}% .. ${top mem_res 3}${font}
+${goto 65}${voffset -10}${font Roboto-Light:size=8}----------------------------------------------------
+
+${goto 65}${font Roboto-Light:size=13}${voffset -3}Hard drive
+${goto 65}${voffset -2}${font Roboto-Light:size=10}${fs_used /} out of ${fs_size /}
+${goto 65}${fs_bar 5, 120 /} $fs_used_perc%
+${goto 65}Swap :        $swap/$swapmax
+${goto 65}Disque: ${diskio}
+
+${goto 65}${font Roboto-Light:size=13}${voffset 2}Network
+${goto 65}${voffset -5}${font Roboto-Light:size=10}Down - $color2${downspeed eth0}/s
+${goto 65}${color1}Up - $color2${upspeed eth0}/s

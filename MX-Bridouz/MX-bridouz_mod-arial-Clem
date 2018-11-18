@@ -1,0 +1,117 @@
+### conky ###
+
+    background yes
+    update_interval 2
+
+    cpu_avg_samples 1
+    net_avg_samples 2
+    temperature_unit celsius
+
+    double_buffer yes
+    no_buffers yes
+    text_buffer_size 2048
+
+gap_x 50
+gap_y 90
+minimum_size 300 300
+    maximum_width 300
+    own_window yes
+    own_window_type normal  #desktop
+    #own_window_type panel # Just use with KWin for example in Xfce
+own_window_transparent yes
+own_window_argb_visual no
+    own_window_class conky-semi
+    own_window_hints undecorated,sticky,skip_taskbar,skip_pager,below
+    border_inner_margin 10
+    border_outer_margin 10
+alignment top_middle
+
+    draw_shades no
+    draw_outline no
+    draw_borders no
+    draw_graph_borders no
+
+    override_utf8_locale yes
+    use_xft yes
+#    xftfont caviar dreams:size=8
+    xftfont Open Sans:size=9
+    xftalpha 0.5
+    uppercase no
+    imlib_cache_size 0
+
+    # Colours
+    # 1 - Default Color
+default_color FFFFFF
+color1 DDDDDD
+#2 - DarkSlateGray (horizontal lines)
+color2 2F4F4F
+    # 3 - Most progress bars, text
+color3 888888
+    # 4 - Title Blue
+color4 5294e2
+
+
+    # Loading lua script for drawning rings
+    #lua_load ./seamod_rings.lua
+    #lua_load ~/musictools/conky/conky-music/player.lua
+    lua_draw_hook_pre main
+
+    ## System information using conky capabilities
+
+    # Header with base system info
+own_window_argb_value 180
+own_window_colour 000000
+
+   TEXT
+
+${image $HOME/.conky/MX-bridouz/sardiStart-shadow.png -p 1,0 -s 50x50}${voffset 8}${offset 58}$font${font Arial:bold:size=11}${color 4F91FB}${execi 1000 cat /etc/mx-version}
+
+${font Arial:bold:size=10}${color white}SYSTEM ${color2} ${hr 2}
+$font${color DimGray}$sysname $kernel $alignr $machine
+Uptime $alignr${uptime}
+File System $alignr${fs_type}
+$font${color DimGray}/         used $alignc ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
+$font${color DimGray}/home used $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /home}%
+#$font${color DimGray}DATA  used $alignc ${fs_used /media/Data} / ${fs_size /media/Data} $alignr ${fs_used_perc /media/Data}%
+
+${font Arial:bold:size=10}${color white}PROCESSORS ${color2}${hr 2}
+$font${color DimGray}${cpubar cpu1}
+${cpubar cpu2}
+
+${font Arial:bold:size=10}${color white}MEMORY ${color2}${hr 2}
+$font${color DimGray}MEM $alignc $mem / $memmax $alignr $memperc%
+$membar
+$font${top_mem name 1}${alignr}${top_mem mem 1}%
+$font${top_mem name 2}${alignr}${top_mem mem 2}%
+$font${top_mem name 3}${alignr}${top_mem mem 3}%
+
+${font Arial:bold:size=10}${color white}NETWORK ${color2}${hr 2}
+$font${color DimGray}IP on eth0 $alignr ${addr eth0}
+$font${color DimGray}IP on wlan0 $alignr ${addr wlan0}
+
+Down $alignr ${downspeed wlan0} kb/s
+Up $alignr ${upspeed wlan0} kb/s
+
+Downloaded: $alignr  ${totaldown wlan0}
+Uploaded: $alignr  ${totalup wlan0}
+
+${font Arial:bold:size=10}${color white}MUSIC ${color2}${hr 2}
+##
+##Clementine using mediaplayer.py script; orig ${font Open Sans:size=9}
+${if_match "${execi 10 python3 $HOME/.conky/MX-bridouz/mediaplayer.py clementine -i}"=="yes"}
+${color3}${font Open Sans:size=9}${execpi 4 python3 $HOME/.conky/MX-bridouz/mediaplayer.py clementine -tamlr -w 45}
+${if_match "${execi 4 python3 $HOME/.conky/MX-bridouz/mediaplayer.py clementine -p}"=="Unknown"}\
+Progress: ${alignr}Unknown
+${else}\
+Progress:
+${color2}${execibar 4 python3 $HOME/.conky/MX-bridouz/mediaplayer.py clementine -p}
+${execi 20 python $HOME/.conky/MX-bridouz/mediaplayer.py clementine -c /tmp/cover.jpg}${image /tmp/cover.jpg -p 114,678 -s 70x70 -n}
+
+
+
+${endif}\
+${else}
+${color3}${font Open Sans:size=9}Clementine Not Running\
+${endif}
+##
+own_window_hints 

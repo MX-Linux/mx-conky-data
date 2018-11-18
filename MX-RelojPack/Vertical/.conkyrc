@@ -1,0 +1,69 @@
+alignment top_middle
+background yes
+cpu_avg_samples 2
+default_color 000000		
+default_outline_color 000000 	
+default_shade_color 000000	
+double_buffer yes
+draw_borders no
+draw_graph_borders no
+draw_outline no
+draw_shades no
+gap_x 15
+gap_y 30
+max_specials 1024
+max_user_text 10000
+maximum_width 100
+minimum_size 300 400
+net_avg_samples 2
+no_buffers yes
+override_utf8_locale yes
+own_window yes
+own_window_colour 000000
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_type override 
+pad_percents 2			
+short_units yes			
+stippled_borders 3
+text_buffer_size 8000
+total_run_times 0
+update_interval 3.0
+uppercase no
+use_spacer right
+use_xft yes
+xftalpha 1
+
+own_window_argb_value 0
+own_window_argb_visual no
+TEXT
+${offset 8}${voffset 16}${font OldSansBlack:size=22}${color #232323}${time %I}${offset 12}${time %M}${font}
+${font pftempestafivecondensed:size=6}        
+        
+                 ${color white}Cpu: $cpu%
+                 Core:${hwmon 0 temp 1}°C
+                 Mem: $mem 
+                 Batt: ${battery_percent BAT0}%
+                   
+
+                 HOME:${fs_used_perc /home}%
+                 ROOT:${fs_used_perc /root}%
+                 FREE:${fs_free_perc /home}%
+                 Swap:${swapperc}%
+   
+                 
+                CPU:${top cpu 1}%
+                ${top name 1}
+                MEM:${top_mem mem 1}%
+                ${top_mem name 1}                     
+                 
+
+                 Signal:                                                                                        
+                 ${wireless_link_qual wlan0}% 
+                 Ul:${upspeed wlan0}
+                 Dl:${downspeed wlan0}
+${image ~/.conky/MX-RelojPack/Vertical/BackPRO.png  115x63 -p -1,204}  
+${image ~/.conky/MX-RelojPack/Vertical/BackDISK.png  115x63 -p -1,138}  
+${image ~/.conky/MX-RelojPack/Vertical/Back.png  115x63 -p -1,6}
+${image ~/.conky/MX-RelojPack/Vertical/BackSYS.png   115x63  -p   -1,72}
+${image ~/.conky/MX-RelojPack/Vertical/BackNET.png  115x63 -p -1,270} 

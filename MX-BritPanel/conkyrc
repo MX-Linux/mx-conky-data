@@ -1,0 +1,91 @@
+# Use Xft?
+use_xft yes
+xftfont DejaVu Sans:size=8
+xftalpha 0.8
+text_buffer_size 2048
+
+# Update interval in seconds
+update_interval 10
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_transparent yes
+own_window_type override
+#own_window_type override
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+background yes
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+#double_buffer no
+
+# Minimum size of text area
+minimum_size 1920 30
+maximum_width 1920
+
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+
+# Stippled borders?
+stippled_borders 0
+
+# border margins
+border_margin 0
+
+# border width
+border_width 0
+
+# Default colors and also border colors
+default_color white
+#default_shade_color black
+#default_outline_color white
+own_window_colour 000000
+
+# Text alignment, other possible values are commented
+alignment top_middle
+#alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 0
+#gap_y 50
+gap_y 30
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+use_spacer none
+
+own_window_argb_value 0
+own_window_argb_visual no
+TEXT
+${alignc}${color E04613}System:${color} $sysname $kernel $machine  |  ${color E04613}Hostname:${color} $nodename  |  ${color E04613}User:${color} $USER  |  ${color E04613}Time:${color} ${time %T}  |  ${color E04613}Uptime:${color} ${uptime}  |  ${color E04613}CPU1:${color} ${cpu cpu1}% ${cpugraph cpu1 8,60}  |  ${color E04613}CPU2:${color} ${cpu cpu2}% ${cpugraph cpu2 8,60}  |  ${color E04613}CPU Temperature:${color} ${acpitemp}°C  |  ${color E04613}Highest CPU:${color} ${top name 1}${top name 2}${top name 3} |  ${color E04613}Processes:${color} $processes ($running_processes running)  |  ${color E04613}Load:${color} $loadavg  |  ${color E04613}RAM:${color} $memperc% ${memgraph 8,60}   
+${alignc}${color E04613}Highest MEM:${color} ${top_mem name 1} ${top_mem name 2} ${top_mem name 3}  |  ${color E04613}SWAP:${color} $swapperc% ${swapbar 8,60}  |  ${color E04613}Home:${color} ${fs_free /home} / ${fs_size /} ${fs_bar 8,60 /}  |  ${color E04613}HDD Temperature:${color} ${execi 300 nc localhost 7634 | cut -c33-34}°C  |  ${color E04613}Network ${color}(${addr wlan0})  |  ${color E04613}Down:${color} $color${downspeedf wlan0}KB/s ${downspeedgraph wlan0 8,60} $color  |  ${color E04613}Total Download:${color} ${totaldown wlan0}  |  ${color E04613}Up:${color} ${upspeedf wlan0}KB/s ${upspeedgraph wlan0 8,60}  |  ${color E04613}Total Upload:${color} ${totalup wlan0}
