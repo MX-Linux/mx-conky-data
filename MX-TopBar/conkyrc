@@ -8,7 +8,7 @@ background yes
 use_xft yes
 
 # Xft font when Xft is enabled
-xftfont Garuda:size=9
+xftfont Roboto-Light:size=9
 
 # Text alpha when using Xft
 xftalpha 0.8
@@ -21,7 +21,8 @@ update_interval 1.0
 total_run_times 0
 
 # Create own window instead of using desktop (required in nautilus)
-own_window no
+own_window yes
+window_type normal
 
 # Use double buffering (reduces flicker, may not work for everyone)
 double_buffer yes
@@ -55,7 +56,7 @@ default_shade_color AD7B7B
 default_outline_color AD7B7B
 # own window options
 own_window		yes
-own_window_transparent no
+own_window_transparent yes
 own_window_type		normal
 own_window_hints	undecorated,below,sticky,skip_taskbar,skip_pager
 
@@ -85,13 +86,13 @@ cpu_avg_samples 2
 net_avg_samples 2
 
 # Force UTF8? note that UTF8 support required XFT
-override_utf8_locale no
+override_utf8_locale yes
 
 # Add spaces to keep things from moving about?  This only affects certain objects.
 use_spacer no
 
 own_window_argb_value 0
-own_window_argb_visual yes
+own_window_argb_visual no
 own_window_colour 000000
 
 color1 eaebeb

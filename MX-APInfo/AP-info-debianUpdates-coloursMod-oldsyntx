@@ -49,7 +49,7 @@ alignment top_middle
 use_xft yes
 # Requires mono font for spacing reasons
 # xftfont Liberation Mono:bold:size=9
-xftfont Roboto:size=10
+xftfont Roboto-Light:size=10
 
 
 # Alpha of Xft font. Must be a value at or between 1 and 0 ###
@@ -140,15 +140,14 @@ update_interval 1
 minimum_size 0 0
 TEXT
 
-${font Roboto:Light:size=72}$alignr${time %H}${color1}:${time %M}${font}${color}
-${font Roboto:Light:size=24}${voffset 12}$alignr${color1}${execi 300 LANG=${template9} LC_TIME=${template9} date +"%A"}${color},\
+${font Roboto-Light:Light:size=72}$alignr${time %H}${color1}:${time %M}${font}${color}
+${font Roboto-Light:Light:size=24}${voffset 12}$alignr${color1}${execi 300 LANG=${template9} LC_TIME=${template9} date +"%A"},${color}\
  ${execi 300 LANG=${template9} LC_TIME=${template9} date +"%d"}\
 ${color0} ${execi 300 LANG=${template9} LC_TIME=${template9} date +"%B"}${font}${voffset 2}
 ${hr}${color}${voffset 4}
-${font Roboto:pixelsize=13}${alignr} USER: ${color1}${execi 5000 whoami}${color} ${color1}I${color} MACHINE: ${color1}$nodename${color} ${color1}I${color} UPTIME: ${color1}$uptime${color}
-${font Roboto:pixelsize=13}${alignr} DISTRIBUTION: ${color1}${execi 6000 awk -F'=' '/DESCRIPTION/ {print $2}' /etc/lsb-release |sed 's/"//g'}${color} ${color1}I${color} VERSION: ${color1}${execi 6000 awk -F'=' '/DISTRIB_RELEASE=/ {printf $2" "} /CODENAME/ {print $2}' /etc/lsb-release}${color}
-${font Roboto:pixelsize=13}${alignr} ARCHITECTURE: ${color1}${machine}${color} ${color1}I${color} KERNEL: ${color1}${kernel}${color}
-${font Roboto:pixelsize=13}${alignr} ROOT: ${color1}${fs_used /}${color} / ${color1}${fs_size /}${color} ${color1}I${color} HOME: ${color1}${fs_used /home}${color} / ${color1}${fs_size /home}${color}
-${font Roboto:pixelsize=13}${alignr} CPU: ${color1}${cpu cpu0}%${color} ${color1}I${color} RAM: ${color1}$mem / $memmax${color} HD: ${color1}${fs_used_perc}%${color}
-${font Roboto:pixelsize=13}${alignr} SWAP: ${color1}${swap} / ${swapmax}${color} ${color1}I${color} SYS TEMP: ${color1}${hwmon temp 1}°C${color}
-${font Roboto:pixelsize=13}${alignr} YOU CAN INSTALL ${color1}${execi 3600 aptitude search "~U" | wc -l} UPDATE(S)${color}
+${font Roboto-Light:pixelsize=13}${alignr} USER: ${color1}${execi 5000 whoami}${color} ${color1}I${color} MACHINE: ${color1}$nodename${color} ${color1}I${color} UPTIME: ${color1}$uptime${color}
+${font Roboto-Light:pixelsize=13}${alignr} DISTRIBUTION: ${color1}${execi 6000 cat /etc/mx-version}${color}
+${font Roboto-Light:pixelsize=13}${alignr} ARCHITECTURE: ${color1}${machine}${color} ${color1}I${color} KERNEL: ${color1}${kernel}${color}
+${font Roboto-Light:pixelsize=13}${alignr} ROOT: ${color1}${fs_used /}${color} / ${color1}${fs_size /}${color} ${color1}I${color} HOME: ${color1}${fs_used /home}${color} / ${color1}${fs_size /home}${color}
+${font Roboto-Light:pixelsize=13}${alignr} CPU: ${color1}${cpu cpu0}%${color} ${color1}I${color} RAM: ${color1}$mem / $memmax${color} HD: ${color1}${fs_used_perc}%${color}
+${font Roboto-Light:pixelsize=13}${alignr} SWAP: ${color1}${swap} / ${swapmax}${color} ${color1}I${color} SYS TEMP: ${color1}${hwmon temp 1}°C${color}

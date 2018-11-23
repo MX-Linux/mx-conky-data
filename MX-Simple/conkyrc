@@ -8,7 +8,7 @@ update_interval 1.0
 own_window yes
 own_window_type override
 own_window_transparent yes
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_hints undecorated,below,skip_taskbar,skip_pager
 double_buffer yes
 draw_shades no
 draw_outline no

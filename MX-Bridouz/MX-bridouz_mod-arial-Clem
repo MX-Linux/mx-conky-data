@@ -64,9 +64,9 @@ own_window_colour 000000
 
    TEXT
 
-${image $HOME/.conky/MX-bridouz/sardiStart-shadow.png -p 1,0 -s 50x50}${voffset 8}${offset 58}$font${font Arial:bold:size=11}${color 4F91FB}${execi 1000 cat /etc/mx-version}
+${image $HOME/.conky/MX-bridouz/sardiStart-shadow.png -p 1,0 -s 50x50}${voffset 8}${offset 58}$font${font Roboto-Light:bold:size=11}${color 4F91FB}${execi 1000 cat /etc/mx-version}
 
-${font Arial:bold:size=10}${color white}SYSTEM ${color2} ${hr 2}
+${font Roboto-Light:bold:size=10}${color white}SYSTEM ${color2} ${hr 2}
 $font${color DimGray}$sysname $kernel $alignr $machine
 Uptime $alignr${uptime}
 File System $alignr${fs_type}
@@ -74,18 +74,18 @@ $font${color DimGray}/         used $alignc ${fs_used /} / ${fs_size /} $alignr 
 $font${color DimGray}/home used $alignc ${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /home}%
 #$font${color DimGray}DATA  used $alignc ${fs_used /media/Data} / ${fs_size /media/Data} $alignr ${fs_used_perc /media/Data}%
 
-${font Arial:bold:size=10}${color white}PROCESSORS ${color2}${hr 2}
+${font Roboto-Light:bold:size=10}${color white}PROCESSORS ${color2}${hr 2}
 $font${color DimGray}${cpubar cpu1}
 ${cpubar cpu2}
 
-${font Arial:bold:size=10}${color white}MEMORY ${color2}${hr 2}
+${font Roboto-Light:bold:size=10}${color white}MEMORY ${color2}${hr 2}
 $font${color DimGray}MEM $alignc $mem / $memmax $alignr $memperc%
 $membar
 $font${top_mem name 1}${alignr}${top_mem mem 1}%
 $font${top_mem name 2}${alignr}${top_mem mem 2}%
 $font${top_mem name 3}${alignr}${top_mem mem 3}%
 
-${font Arial:bold:size=10}${color white}NETWORK ${color2}${hr 2}
+${font Roboto-Light:bold:size=10}${color white}NETWORK ${color2}${hr 2}
 $font${color DimGray}IP on eth0 $alignr ${addr eth0}
 $font${color DimGray}IP on wlan0 $alignr ${addr wlan0}
 
@@ -95,7 +95,7 @@ Up $alignr ${upspeed wlan0} kb/s
 Downloaded: $alignr  ${totaldown wlan0}
 Uploaded: $alignr  ${totalup wlan0}
 
-${font Arial:bold:size=10}${color white}MUSIC ${color2}${hr 2}
+${font Roboto-Light:bold:size=10}${color white}MUSIC ${color2}${hr 2}
 ##
 ##Clementine using mediaplayer.py script; orig ${font Open Sans:size=9}
 ${if_match "${execi 10 python3 $HOME/.conky/MX-bridouz/mediaplayer.py clementine -i}"=="yes"}

@@ -47,7 +47,7 @@ stippled_borders 0
 # border width
 border_width 1
 
-own_window_colour white
+own_window_colour 000000
 
 ############Colors#########
 default_color white   #use ${color} to revert to default
@@ -62,7 +62,7 @@ color3 26C7D1
 
 # Text alignment, other possible values are commented
 #alignment top_left
-alignment top_right
+alignment top_middle
 #alignment bottom_left
 #alignment bottom_right
 
@@ -97,6 +97,9 @@ own_window_type desktop
 ##############################################
 #  Output
 ##############################################
+own_window_argb_value 0
+own_window_argb_visual no
+minimum_size 0 0
 TEXT
    ${alignc}${font Arial Black:size=28}${color1}${time %H:%M}${font}
 
@@ -128,10 +131,10 @@ ${color2}ETHERNET (${addr eth0}) ${hr 2}${color}
    Down: ${downspeedf eth0}kB/s ${alignr}Up: ${upspeedf eth0}kB/s
    ${downspeedgraph eth0 30,120 000000 000000} ${alignr}${upspeedgraph eth0 30,120 000000 000000}
 
-${color2}WIRELESS (${addr wlan0}) [${wireless_link_qual_perc wlan0}%] ${hr 2}${color}
+${color2}WIRELESS (${addr wlan0}) [${wireless_link_qual_perc eth0}%] ${hr 2}${color}
 
-   Down: ${downspeedf wlan0}kB/s ${alignr}Up: ${upspeedf wlan0}kB/s
-   ${downspeedgraph wlan0 30,120 000000 000000} $alignr${upspeedgraph wlan0 30,120 000000 000000}
+   Down: ${downspeedf eth0}kB/s ${alignr}Up: ${upspeedf eth0}kB/s
+   ${downspeedgraph eth0 30,120 000000 000000} $alignr${upspeedgraph eth0 30,120 000000 000000}
 
 ${color2}MONITOR ${hr 2}${color}
 

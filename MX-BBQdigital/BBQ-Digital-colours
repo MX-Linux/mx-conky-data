@@ -94,6 +94,7 @@ ${goto 15}|
 ${goto 12}+----${color3}Net${color}
 ${goto 15} ${goto 40}|
 ${goto 15} ${goto 38}+-- eth0${goto 125}${addr eth0}
+${goto 15}|${goto 38}+-- wlan0${goto 125}${addr wlan0}
 ${goto 15} ${goto 38}+-- Up
 ${goto 15} ${goto 40}|${goto 60}+-- Speed${goto 125}${upspeedf wlan0}KiB
 ${goto 15} ${goto 40}|${goto 60}+-- Total${goto 125}${totalup wlan0}KiB

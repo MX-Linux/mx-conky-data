@@ -44,8 +44,7 @@ own_window_argb_visual no
 own_window_colour 000000
 TEXT
 ${font Roboto-Light:pixelsize=15}${alignc}${time  %A, %H:%M:%S }${font}
-${color2}${font Roboto-Light:pixelsize=65}${alignc}${time %d %B, %Y}${font}${color}
+${color2}${font Roboto-Light:pixelsize=65}${alignc}${time %d %B  |  %Y}${font}${color}
 
 
-${font Roboto-Light:pixelsize=12}${alignc} CPU1: ${cpu cpu0}% ${offset 10}CPU2: ${cpu cpu1}% ${offset 10}CPU3: ${cpu cpu2}% ${offset 10}CPU4: ${cpu cpu3}% 
-${font Roboto-Light:pixelsize=12}${alignc} RAM: ${mem} ${offset 10} NET:${offset 5}Up ${upspeed eth0} ${offset 5} Down ${downspeed eth0}
+${font Roboto-Light:pixelsize=12}${alignc} CPU: ${cpu cpu0}% ${offset 10}${font Roboto-Light:pixelsize=12}${alignc} MEM: ${memperc}% ${offset 10} NET:${offset 5}Up ${upspeed wlan0} ${offset 5} Down ${downspeed wlan0}

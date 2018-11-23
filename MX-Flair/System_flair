@@ -53,8 +53,8 @@ text_buffer_size 2048
 use_spacer none
 override_utf8_locale yes
 
-color1 212021
-color2 E8E1E6
+color1 E8E1E6
+color2 212021
 color3 E82A2A
 
 own_window_argb_value 0
@@ -62,13 +62,13 @@ own_window_colour 000000
 TEXT
 
 ${goto 124}${voffset 50}${font GeosansLight:light:size=70}${time %l:%M}${image line.png -p 350,27 -s 3x220}
-${offset 130}${voffset -55}${font GeosansLight:size=17}${time %A, %d %B}
-${offset 380}${voffset -177}${font GeosansLight:size=22}
+${offset 130}${color1}${voffset -55}${font GeosansLight:size=17}${time %A, %d %B}
+${offset 380}${color1}${voffset -177}${font GeosansLight:size=22}
 ${offset 400}${voffset 15}${font GeosansLight:size=15}$acpitemp'C
 ${offset 400}${voffset 10}${cpu cpu0}% / 100%
 ${offset 400}${voffset 4}$memfree / $memmax${font GeosansLight:size=15}
-${offset 400}${voffset 5}${upspeed eth0} kb/s / ${totalup eth0}
-${offset 400}${voffset 5}${downspeed eth0} kb/s / ${totaldown eth0}
+${offset 400}${voffset 5}${upspeed wlan0} kb/s / ${totalup wlan0}
+${offset 400}${voffset 5}${downspeed wlan0} kb/s / ${totaldown wlan0}{color}
 
 ${goto 373}${voffset -162}${font Dingytwo:size=17}M$font 
 ${goto 373}${voffset 7}${font Dingytwo:size=17}7$font 

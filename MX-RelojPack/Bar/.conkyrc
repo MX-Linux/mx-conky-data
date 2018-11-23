@@ -1,4 +1,4 @@
-alignment top_right
+alignment top_middle
 background yes
 border_margin 5
 border_width 5
@@ -11,7 +11,7 @@ draw_borders no
 draw_graph_borders no
 draw_outline no
 draw_shades no
-gap_x 355
+gap_x 20
 gap_y 30
 max_specials 1024
 max_user_text 10000
@@ -21,7 +21,7 @@ net_avg_samples 2
 no_buffers yes
 override_utf8_locale yes
 own_window yes
-own_window_colour 000000	
+own_window_colour 000000
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 own_window_transparent yes
 own_window_type override 
@@ -36,6 +36,8 @@ use_spacer right
 use_xft yes
 xftalpha 1
 
+own_window_argb_value 0
+own_window_argb_visual no
 TEXT
 ${offset 477}${voffset 9}${font OldSansBlack:size=22}${color #232323}${time %I}${offset 13}${time %M}${font}
 ${font pftempestafivecondensed:size=6}${offset 408}${voffset -42}${color white}Cpu:$cpu%  ${hwmon 0 temp 1}°C       
@@ -52,7 +54,7 @@ ${font pftempestafivecondensed:size=6}${offset 180}${voffset -44}CPU:${top cpu 1
                                                             ${top_mem name 1}  
 ${font pftempestafivecondensed:size=6}${offset 65}${voffset -44} Signal: ${wireless_link_qual wlan0}%                
                        IP:${addr wlan0}
-                       Ul:${upspeed wla0}
+                       Ul:${upspeed wlan0}
                        Dl:${downspeed wlan0}
  
 ${image ~/.conky/MX-RelojPack/Bar/relojbarconky.png  575x63 -p 0,0}
