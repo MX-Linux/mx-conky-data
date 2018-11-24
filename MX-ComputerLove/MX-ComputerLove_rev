@@ -73,6 +73,6 @@ ${font Roboto:bold:size=8}${goto 95}${color1}/root ${goto 220}${fs_used /home} /
 ${goto 95}${fs_bar /home}
 
 ${font Roboto:bold:size=10}${color0}TIME ${color1}${hr 2}${voffset 20}
-${color0} ${font :size=30}${goto 155}${time %I:%M}
+${color0} ${font :size=30}${goto 155}${if_match "pmfix${time %p}" == "pmfix"}${time %H:%M}${else}${time %I:%M}${endif}
 ${voffset -30}${font Roboto:bold:size=10}${goto 185}${time %d %B   %Y}
 ${font Roboto:bold:size=8}${goto 200}${time %A}

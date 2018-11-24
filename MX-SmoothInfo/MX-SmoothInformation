@@ -61,7 +61,7 @@ own_window_argb_value 0
 own_window_colour 000000
 own_window_argb_visual no
 TEXT
-${goto 50}${color1}${font ITC Avant Garde Gothic Pro:size=80} ${time %I}${font ITC Avant Garde Gothic Pro:size=25}${voffset -30}${time %P}${color3}${font ITC Avant Garde Gothic Pro:size=80}${voffset -23}${time %M}${color1}
+${goto 50}${color1}${font ITC Avant Garde Gothic Pro:size=80} ${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %I}${endif}${font ITC Avant Garde Gothic Pro:size=25}${voffset -30}${time %P}${color3}${font ITC Avant Garde Gothic Pro:size=80}${voffset -23}${time %M}${color1}
 ${goto -10}${voffset -162}${font ITC Avant Garde Gothic Pro:size=22} ${time %a}
 ${goto 7}${voffset -1}${font ITC Avant Garde Gothic Pro:bold:size=22} ${time %b} 
 ${goto 23}${voffset 1}${color3}${font ITC Avant Garde Gothic Pro:bold:size=23}${time %d}${color1}${font ITC Avant Garde Gothic Pro:size=18}

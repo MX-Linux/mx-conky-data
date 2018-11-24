@@ -48,6 +48,6 @@ color6 AAAAAA
 color7 DDDDDD
 
 TEXT
-${voffset -10}${offset 46}${font Open Sans Light:pixelsize=60}${time %I:%M}${font Open Sans Light:pixelsize=14}${time %P}$font
+${voffset -10}${offset 46}${font Open Sans Light:pixelsize=60}${if_match "pmfix${time %p}" == "pmfix"}${time %H:%M}${else}${time %I:%M}${endif}${font Open Sans Light:pixelsize=14}${time %P}$font
 ${voffset 5}${color6}${hr}${color}
 ${alignc}${time %A} $font${color1}${time %d}$color ${time  %B} ${time %Y}$font${voffset -30}

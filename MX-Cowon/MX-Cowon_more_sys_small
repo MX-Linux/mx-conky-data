@@ -60,9 +60,9 @@ own_window_colour 000000
 TEXT
 ${font Dinreg:size=12}
 ${font}
-${voffset -180}${time %I}
+${voffset -180}${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %I}${endif}
 ${color2}${offset 30}${voffset -100}${time %M}
 ${voffset -140}${offset 10}${font Roboto-Light:size=12 :bold}${color}${time %A} ${offset 10}${color2}${color}${time %B %d}
-${offset 150}${voffset -175}${font Roboto-Light:size=12}${color2}${if_match ${time %I}<12}AM${else} ${if_match ${time %I}>12}PM${endif}${endif}
+${offset 150}${voffset -175}${font Roboto-Light:size=12}${color2}${time %p}
 #system
 ${offset 10}${voffset 160}${font Roboto-Light:pixelsize=18}USED:${offset 9} ${color3}hdd ${offset 9}${color4}${fs_used_perc /}${offset 9}${color3}cpu ${offset 9}${color4}${cpu cpu0}%
