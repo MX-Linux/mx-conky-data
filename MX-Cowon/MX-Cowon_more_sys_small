@@ -1,0 +1,68 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Dinreg:size=100
+override_utf8_locale yes
+text_buffer_size 2048
+xftalpha 0.9
+
+#############################
+# - Window specifications - #
+#############################
+own_window_class Conky
+own_window yes
+own_window_type conky
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+#own_window_argb_visual yes
+#own_window_argb_value 100
+
+alignment top_middle
+gap_x 0
+gap_y 30
+minimum_size 290 280
+
+
+default_bar_size 60 8
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+
+default_color BDB5A1
+default_shade_color 1d1d1d
+color0 ffffff
+color1 bdb5a1
+color2 af872f
+color3 b7b39e
+
+
+#lua_load ~/.conky/conkybg.lua
+#lua_draw_hook_pre conky_draw_bg
+
+own_window_argb_value 0
+own_window_argb_visual no
+own_window_colour 000000
+TEXT
+${font Dinreg:size=12}
+${font}
+${voffset -180}${time %I}
+${color2}${offset 30}${voffset -100}${time %M}
+${voffset -140}${offset 10}${font Roboto-Light:size=12 :bold}${color}${time %A} ${offset 10}${color2}${color}${time %B %d}
+${offset 150}${voffset -175}${font Roboto-Light:size=12}${color2}${if_match ${time %I}<12}AM${else} ${if_match ${time %I}>12}PM${endif}${endif}
+#system
+${offset 10}${voffset 160}${font Roboto-Light:pixelsize=18}USED:${offset 9} ${color3}hdd ${offset 9}${color4}${fs_used_perc /}${offset 9}${color3}cpu ${offset 9}${color4}${cpu cpu0}%
