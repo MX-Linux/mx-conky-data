@@ -1,3 +1,9 @@
+mx-conky-data (20181124.mx17) mx; urgency=medium
+
+  * additional revisions, Cowan 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 24 Nov 2018 10:08:26 -0500
+
 mx-conky-data (20181118.mx17) mx; urgency=medium
 
   * new conky configs, MX-18 
