@@ -132,7 +132,7 @@ own_window_argb_visual no
 own_window_colour 000000
 TEXT
 ${color3}${alignc}MX Linux
-${color8}$alignc${font DejaVu Sans:size=12}${time %I:%M}   $font
+${color8}$alignc${font DejaVu Sans:size=12}${if_match "pmfix${time %p}" == "pmfix"}${time %H:%M}${else}${time %I:%M}${endif}   $font
 ${color}${alignc}${time %a %d %b}
 ${color}${alignc}Uptime: $uptime
 

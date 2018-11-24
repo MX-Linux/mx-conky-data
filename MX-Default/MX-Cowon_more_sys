@@ -56,7 +56,7 @@ own_window_argb_visual no
 own_window_colour 000000
 TEXT
 
-${voffset -350}${time %I}
+${voffset -350}${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %I}${endif}
 ${color2}${voffset -170}${offset 100}${time %M}${color}
 ${offset 30}${voffset -250}${font Droid Sans:size=12}${time %A} ${time %B %d}
 #system

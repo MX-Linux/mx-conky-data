@@ -55,7 +55,7 @@ own_window_argb_visual no
 own_window_colour 000000
 own_window_argb_value 0
 TEXT
-${voffset 11} ${goto 30}${time %I} ${goto 110}${time %M}
+${voffset 11} ${goto 30}${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %I}${endif} ${goto 110}${time %M}
 ${image ./b.png -p 0,0 -s 188x100}
 ${voffset -175} ${goto 224}${font AvantGarde LT Medium:size=10}${time %A} ${font}
 ${font AvantGarde LT Medium:size=38}${voffset -60}${goto 224}${time %d}

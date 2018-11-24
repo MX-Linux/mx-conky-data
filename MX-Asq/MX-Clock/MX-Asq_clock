@@ -43,7 +43,7 @@ own_window_argb_value 0
 own_window_colour 000000
 
 TEXT
-${voffset 10}${font Infini:pixelsize=90}${time %l:%M}${font}${voffset -84}${offset 40}${font Infini:pixelsize=42}${time %d} ${voffset -15}${font Infini:pixelsize=22}${time  %b} ${time '%y}${font}${voffset 24}${font Infini:pixelsize=58}${offset -140}${time %a}${font}
+${voffset 10}${font Infini:pixelsize=90}${if_match "pmfix${time %p}" == "pmfix"}${time %k:%M}${else}${time %l:%M}${endif}${font}${voffset -84}${offset 40}${font Infini:pixelsize=42}${time %d} ${voffset -15}${font Infini:pixelsize=22}${time  %b} ${time '%y}${font}${voffset 24}${font Infini:pixelsize=58}${offset -140}${time %a}${font}
 
 ${font Infini:pixelsize=17}${color1}${offset 30}${execi 1000 cat /etc/mx-version}
 #bottom system line

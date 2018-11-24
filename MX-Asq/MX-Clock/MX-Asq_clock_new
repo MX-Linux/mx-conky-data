@@ -46,7 +46,7 @@ own_window_argb_value 0
 own_window_colour 000000
 
 TEXT
-${voffset 10}${font Roboto-Light:pixelsize=90}${color0}${time %l:%M}${color}${font}${color1}${voffset -84}${offset 40}${font Roboto-Light:pixelsize=28}${time %d} ${font Roboto-Light:pixelsize=28}${time %b} '${time %y}${font}${voffset 22}${font Roboto-Light:pixelsize=50}${offset -140}${time %A}${font}
+${voffset 10}${font Roboto-Light:pixelsize=90}${color0}${if_match "pmfix${time %p}" == "pmfix"}${time %k:%M}${else}${time %l:%M}${endif}${color}${font}${color1}${voffset -84}${offset 40}${font Roboto-Light:pixelsize=28}${time %d} ${font Roboto-Light:pixelsize=28}${time %b} '${time %y}${font}${voffset 22}${font Roboto-Light:pixelsize=50}${offset -140}${time %A}${font}
 
 ${font Roboto-Light:pixelsize=17}${color2}${offset 30}${execi 1000 awk '{print $1,$2}' /etc/mx-version}
 #bottom system line

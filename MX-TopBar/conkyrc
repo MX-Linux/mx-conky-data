@@ -102,5 +102,5 @@ color3 e9eaea
 TEXT
 ${font clean:size=12}${offset 170}${color1}CPU ${cpubar 5,75}${offset 85}HDD ${fs_bar 3,75}${offset 85}MEM ${membar 5,75}${offset 85}BAT ${battery_bar 5,75}${offset 85}SWP ${swapbar 5,75}
 ##TIME##
-${font BirchStd:pixelsize=110}${color2}${alignc}${time %l:%M}${font}
+${font BirchStd:pixelsize=110}${color2}${alignc}${if_match "pmfix${time %p}" == "pmfix"}${time %k:%M}${else}${time %l:%M}${endif}${font}
 ${voffset 10}${font BirchStd:pixelsize=45}${color3}${alignc}${time %A} | ${time %d} ${time  %B} ${font}

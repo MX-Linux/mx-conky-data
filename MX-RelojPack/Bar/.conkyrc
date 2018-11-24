@@ -39,7 +39,7 @@ xftalpha 1
 own_window_argb_value 0
 own_window_argb_visual no
 TEXT
-${offset 477}${voffset 9}${font OldSansBlack:size=22}${color #232323}${time %I}${offset 13}${time %M}${font}
+${offset 477}${voffset 9}${font OldSansBlack:size=22}${color #232323}${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %I}${endif}${offset 13}${time %M}${font}
 ${font pftempestafivecondensed:size=6}${offset 408}${voffset -42}${color white}Cpu:$cpu%  ${hwmon 0 temp 1}°C       
                                                                                                                                         Core:${freq_g (1)}GHz
                                                                                                                                         Mem: $mem 

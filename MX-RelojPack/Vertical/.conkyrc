@@ -37,7 +37,7 @@ xftalpha 1
 own_window_argb_value 0
 own_window_argb_visual no
 TEXT
-${offset 8}${voffset 16}${font OldSansBlack:size=22}${color #232323}${time %I}${offset 12}${time %M}${font}
+${offset 8}${voffset 16}${font OldSansBlack:size=22}${color #232323}${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %I}${endif}${offset 12}${time %M}${font}
 ${font pftempestafivecondensed:size=6}        
         
                  ${color white}Cpu: $cpu%

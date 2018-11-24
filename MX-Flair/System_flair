@@ -61,7 +61,7 @@ own_window_argb_value 0
 own_window_colour 000000
 TEXT
 
-${goto 124}${voffset 50}${font GeosansLight:light:size=70}${time %l:%M}${image line.png -p 350,27 -s 3x220}
+${goto 124}${voffset 50}${font GeosansLight:light:size=70}${if_match "pmfix${time %p}" == "pmfix"}${time %k:%M}${else}${time %l:%M}${endif}${image line.png -p 350,27 -s 3x220}
 ${offset 130}${color1}${voffset -55}${font GeosansLight:size=17}${time %A, %d %B}
 ${offset 380}${color1}${voffset -177}${font GeosansLight:size=22}
 ${offset 400}${voffset 15}${font GeosansLight:size=15}$acpitemp'C

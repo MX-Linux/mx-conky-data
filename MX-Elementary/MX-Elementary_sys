@@ -37,7 +37,7 @@ own_window_argb_visual no
 own_window_colour 000000
 TEXT
 #time
-${alignc}${color}${font Quicksand - U:pixelsize=70}${time %l:%M}${font}${font}${voffset -45}${offset 10}${font Roboto-Light - U:pixelsize=35}${time %P}${font}
+${alignc}${color}${font Quicksand - U:pixelsize=70}${if_match "pmfix${time %p}" == "pmfix"}${time %k:%M}${else}${time %l:%M}${endif}${font}${font}${voffset -45}${offset 10}${font Roboto-Light - U:pixelsize=35}${time %P}${font}
 
 
 
