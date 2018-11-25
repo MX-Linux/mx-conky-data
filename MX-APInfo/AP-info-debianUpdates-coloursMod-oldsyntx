@@ -77,7 +77,6 @@ color1 ffffff
 
 ########################
 
-
 ##  End Colour Settings  ###
 
 ##  Borders Section  ##
@@ -138,12 +137,11 @@ double_buffer yes
 update_interval 1
 
 minimum_size 0 0
+
 TEXT
 
 ${font Roboto-Light:Light:size=72}$alignr${time %H}${color1}:${time %M}${font}${color}
-${font Roboto-Light:Light:size=24}${voffset 12}$alignr${color1}${execi 300 LANG=${template9} LC_TIME=${template9} date +"%A"},${color}\
- ${execi 300 LANG=${template9} LC_TIME=${template9} date +"%d"}\
-${color0} ${execi 300 LANG=${template9} LC_TIME=${template9} date +"%B"}${font}${voffset 2}
+${font Roboto-Light:Light:size=24}${voffset 12}$alignr${color1}${time %A},${color} ${time %d}${color0} ${time %B}${font}${voffset 2}
 ${hr}${color}${voffset 4}
 ${font Roboto-Light:pixelsize=13}${alignr} USER: ${color1}${execi 5000 whoami}${color} ${color1}I${color} MACHINE: ${color1}$nodename${color} ${color1}I${color} UPTIME: ${color1}$uptime${color}
 ${font Roboto-Light:pixelsize=13}${alignr} DISTRIBUTION: ${color1}${execi 6000 cat /etc/mx-version}${color}

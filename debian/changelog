@@ -1,3 +1,9 @@
+mx-conky-data (20181125.mx17) mx; urgency=medium
+
+  * bumped changelog 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 24 Nov 2018 20:05:59 -0500
+
 mx-conky-data (20181124.mx17) mx; urgency=medium
 
   * additional revisions, Cowan 
