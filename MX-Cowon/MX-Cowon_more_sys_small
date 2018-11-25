@@ -33,7 +33,7 @@ own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 alignment top_middle
 gap_x 0
 gap_y 30
-minimum_size 290 280
+minimum_size 140 140
 
 
 default_bar_size 60 8
@@ -65,4 +65,4 @@ ${color2}${offset 30}${voffset -100}${time %M}
 ${voffset -140}${offset 10}${font Roboto-Light:size=12 :bold}${color}${time %A} ${offset 10}${color2}${color}${time %B %d}
 ${offset 150}${voffset -175}${font Roboto-Light:size=12}${color2}${time %p}
 #system
-${offset 10}${voffset 160}${font Roboto-Light:pixelsize=18}USED:${offset 9} ${color3}hdd ${offset 9}${color4}${fs_used_perc /}${offset 9}${color3}cpu ${offset 9}${color4}${cpu cpu0}%
+${offset 10}${voffset 160}${font Roboto-Light:pixelsize=18}USED:${offset 9} ${color3}hdd ${offset 9}${color4}${fs_used_perc /}%${offset 9}${color3}cpu ${offset 9}${color4}${cpu cpu0}%
