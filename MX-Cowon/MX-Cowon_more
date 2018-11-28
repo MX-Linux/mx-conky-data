@@ -30,7 +30,7 @@ own_window_hints undecorated,below,skip_taskbar,skip_pager
 #own_window_argb_visual yes
 #own_window_argb_value 100
 
-alignment top_right
+alignment top_middle
 gap_x 50
 gap_y 40
 minimum_size 140 140
@@ -56,6 +56,6 @@ own_window_argb_visual no
 own_window_colour 000000
 TEXT
 ${voffset -220}${font Dinreg:size=13}${color2}${time %p} ${color}${font}
-${voffset -350}${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %I}${endif}
+${voffset -350}${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %H}${endif}
 ${color2}${voffset -170}${offset 100}${time %M}${color}
 ${voffset -250}${font Droid Sans:size=16}${time %A} ${time %B %d}
