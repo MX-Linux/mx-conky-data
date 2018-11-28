@@ -1,0 +1,38 @@
+#avoid flicker
+double_buffer yes
+use_xft yes
+xftfont norasi:size=40
+#own window to run simultanious 2 or more conkys
+own_window  yes
+own_window_transparent yes
+own_window_type conky
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager,below 
+
+#borders
+draw_borders no
+
+color0 9FC951
+color1 9FC951
+color2 ffffff
+ 
+draw_shades no
+
+#position
+alignment top_middle
+gap_x 50
+gap_y 30
+
+minimum_size 660 0
+
+
+#behaviour
+update_interval 1
+use_xft yes
+
+own_window_argb_value 0
+own_window_argb_visual no
+own_window_colour 000000
+TEXT
+  ${font norasi:size=100}${time %d}${font}${voffset -40}${time %a}${voffset 50}${offset -60}${font}${time %b}${voffset -85} ${font Loma:size=100}${color2}${voffset}${if_match "pmfix${time %p}" == "pmfix"}${time %k:%M}${else}${time %l:%M}${endif}${font}${color}${image ./clockbg.png  -s 853x304 -p -30,-40}
+  ##SYS##
+${font norasi:size=15}${offset 100}${color1}CPU ${offset 9}${color}${cpu cpu0}%${offset 9}${color1}HD ${color}root${offset 9}$color${fs_used_perc /}%${offset 9} home ${fs_used_perc /home}%${offset 9}${color1}RAM ${offset 9}${color}${memperc}%
