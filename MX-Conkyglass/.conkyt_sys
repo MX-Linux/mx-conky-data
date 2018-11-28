@@ -35,4 +35,4 @@ own_window_colour 000000
 TEXT
   ${font norasi:size=100}${time %d}${font}${voffset -40}${time %a}${voffset 50}${offset -60}${font}${time %b}${voffset -85} ${font Loma:size=100}${color2}${voffset}${if_match "pmfix${time %p}" == "pmfix"}${time %k:%M}${else}${time %l:%M}${endif}${font}${color}${image ./clockbg.png  -s 853x304 -p -30,-40}
   ##SYS##
-${font norasi:size=15}${alignc}${color1}CPU ${offset 9}${color}${cpu cpu0}%${offset 9}${cpu cpu1}%${offset 9}${color1}HD ${color}root${offset 9}$color${fs_used_perc /}%${offset 9} home ${fs_used_perc /home}%${offset 9}${color1}RAM ${offset 9}${color}${memperc}%${offset 9}${offset 9}
+${font norasi:size=15}${alignc}${color1}CPU ${offset 9}${color}${cpu cpu0}%${offset 9}${color1}HD ${color}root${offset 9}$color${fs_used_perc /}%${offset 9} home ${fs_used_perc /home}%${offset 9}${color1}RAM ${offset 9}${color}${memperc}%${offset 9}${offset 9}
