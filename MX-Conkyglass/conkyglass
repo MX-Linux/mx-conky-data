@@ -1,6 +1,0 @@
-#!/bin/bash
-cd ~/.conkyglass
-conky -c ./.conkyt &
-conky -c ./.conkyw &
-conky -c ./.conkyx &
-conky -c ./.conkys
