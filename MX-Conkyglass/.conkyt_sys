@@ -5,7 +5,7 @@ xftfont norasi:size=40
 #own window to run simultanious 2 or more conkys
 own_window  yes
 own_window_transparent yes
-own_window_type desktop
+own_window_type conky
 own_window_hints undecorated,sticky,skip_taskbar,skip_pager,below 
 
 #borders
