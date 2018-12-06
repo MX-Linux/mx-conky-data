@@ -1,7 +1,7 @@
 # Use Xft?
 use_xft yes
 xftfont cure:size=8
-minimum_size 200 5
+minimum_size 320 5
 maximum_width 200
 
 # Update interval in seconds
@@ -76,7 +76,7 @@ use_spacer yes
 own_window_argb_value 0
 own_window_argb_visual no
 TEXT
-${image ~/.conky/MX-Conkyglass/conkyground.png  -s 220x360 -p 10 10}
+${image ~/.conky/MX-Conkyglass/conkyground.png  -s 220x320 -p 10,10}
 
 ${alignc}${voffset 10}${alignc}${color FFFFFF}$kernel
 
@@ -88,8 +88,8 @@ ${alignc} MEM: ${alignc}${color ffffff}$mem
 ${alignc} ${membar 6,80} 
 
 ${alignc} NET: 
-${alignc}Up:  ${upspeedgraph wlan0 6,40 f1f1f1} 
-${alignc}Dwn: ${downspeedgraph wlan0 6,40 f1f1f1} 
+${alignc}Up:  ${if_up wlan0}${upspeedgraph wlan0 6,40 f1f1f1} ${else}${upspeedgraph eth0 6,40 f1f1f1} ${endif}
+${alignc}Dwn: ${if_up wlan0}${downspeedgraph wlan0 6,40 f1f1f1} ${else}${downspeedgraph eth0 6,40 f1f1f1} ${endif} 
 
 ${alignc} HDD: ${color ffffff}${fs_free_perc /}% ${alignc} ${fs_bar 6,60 /}
 
@@ -97,4 +97,6 @@ ${alignc} TOP: ${alignc}${color FFFFFF}%
 ${alignc} ${top name 1}${color ffffff} ${top cpu 1} 
 ${alignc} ${top name 2}${color ffffff} ${top cpu 2} 
 ${alignc} ${top name 3}${color ffffff} ${top cpu 3} 
-
+ 
+ 
+ 
