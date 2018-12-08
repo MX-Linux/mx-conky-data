@@ -1,0 +1,39 @@
+#avoid flicker
+double_buffer yes
+use_xft yes
+xftfont norasi:size=40
+#own window to run simultanious 2 or more conkys
+own_window  yes
+own_window_transparent no
+own_window_type conky
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager,below 
+
+#borders
+draw_borders no
+
+color0 9FC951
+color1 9FC951
+color2 ffffff
+ 
+draw_shades no
+
+#position
+alignment top_middle
+gap_x 50
+gap_y 30
+
+maximum_width 700
+maximum_height 300
+
+
+#behaviour
+update_interval 1
+use_xft yes
+
+own_window_argb_value 0
+own_window_argb_visual no
+own_window_colour 000000
+minimum_size 0 0
+TEXT
+${voffset 20}  ${font Loma:size=75}${time %d}${font}${voffset -40}${offset 20}${font Roboto-Light:size=30}${time %a}${voffset 50}${offset -40}${time %b}${font}${voffset -55} ${font Loma:size=75}${color2}${voffset}${if_match "pmfix${time %p}" == "pmfix"}${time %k:%M}${else}${time %l:%M}${endif}   ${font}${color}${image ~/.conky/MX-Conkyglass/clockbg.png  -s 700x250 -p -30,-40}
+  ##
