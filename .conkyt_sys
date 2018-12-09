@@ -33,7 +33,7 @@ own_window_argb_value 0
 own_window_argb_visual no
 own_window_colour 000000
 #------------------------------
-# locales dependend image size
+# locales dependent image size
 # 
 template0 ${execi 3600  sh -c 'printf $LANG | sed -E -e "/^ja|^zh|^ko/csmall" -e "/^ar|^he/cshort" -e "/^be|^de|^en|^mk|^fr_FR|^pt|^sr/cwide"  -e "/^es|^ga/clarge" -e "/^fa_IR/cbig" -e "1cnormal"'}
 

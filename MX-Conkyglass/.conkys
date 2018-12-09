@@ -66,6 +66,7 @@ cpu_avg_samples 2
 # number of net samples to average
 # set to 1 to disable averaging
 net_avg_samples 2
+if_up_strictness address
 
 # Force UTF8? note that UTF8 support required XFT
 override_utf8_locale yes
