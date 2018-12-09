@@ -22,9 +22,9 @@ draw_graph_borders no
 #default_color white
 default_shade_color red
 default_outline_color green
-alignment top_right
+alignment top_middle
 gap_x 10
-gap_y 10
+gap_y 600
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
@@ -51,7 +51,7 @@ color5 blue
 TEXT
 
 #top line
-${voffset 10}${color0}${font Roboto-Light:pixelsize=120}${if_match "pmfix${time %p}" == "pmfix"}${time %H:%M}${else}${time %I:%M}${endif}${font}${voffset -84}${offset 20}${color1}${font Roboto-Light:pixelsize=42}${time %d} ${voffset -15}${color2}${font Roboto-Light:pixelsize=22}${time %b} ${time %Y}${font}${voffset 24}${font Roboto-Light:pixelsize=48}${offset -148}${time %A}${font}
+${voffset 10}${color0}${font Roboto-Light:pixelsize=120}${if_match "pmfix${time %p}" == "pmfix"}${time %H:%M}${else}${time %H:%M}${endif}${font}${voffset -84}${offset 20}${color1}${font Roboto-Light:pixelsize=42}${time %d} ${voffset -15}${color2}${font Roboto-Light:pixelsize=22}${time %b} ${time %Y}${font}${voffset 24}${font Roboto-Light:pixelsize=48}${offset -148}${time %A}${font}
 
 #bottom line
 ${voffset 1}${offset 20}${font Roboto-Light:pixelsize=15}${color5}USED: ${offset 15}${color3}hdd${offset 9}${color4}${fs_used /} / ${fs_size /}${offset 15}${color3}mem ${offset 9}${color4}$mem / $memmax${offset 15}${color3}cpu ${offset 9}${color4}${cpu cpu0}%
