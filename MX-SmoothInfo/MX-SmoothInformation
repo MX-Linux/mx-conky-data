@@ -53,7 +53,7 @@ use_spacer none
 override_utf8_locale yes
 default_color CFCFCF
 color1 CFCFCF
-color2 121111
+color2 d87a11
 color3 d97a11
 
 own_window_type normal
@@ -66,13 +66,13 @@ ${goto -10}${voffset -162}${font ITC Avant Garde Gothic Pro:size=22} ${time %a}
 ${goto 7}${voffset -1}${font ITC Avant Garde Gothic Pro:bold:size=22} ${time %b} 
 ${goto 23}${voffset 1}${color3}${font ITC Avant Garde Gothic Pro:bold:size=23}${time %d}${color1}
 ##SYS##
-${font ITC Avant Garde Gothic Pro:size=18}${goto 20}Kernel  ${execi 360 uname -r}${font ITC Avant Garde Gothic Pro:size=12}
-${goto 380}${voffset -105}${font ITC Avant Garde Gothic Pro:bold:size=17}${color3}
+${font ITC Avant Garde Gothic Pro:size=15}${goto 20}Kernel ${color2} ${execi 360 uname -r}${font ITC Avant Garde Gothic Pro:size=12}
+${goto 380}${voffset -105}${font ITC Avant Garde Gothic Pro:bold:size=17}
 ${color1}
 
 
-${goto 22}${voffset 18}${font ITC Avant Garde Gothic Pro:size=15}Mem:${color3} ${font ITC Avant Garde Gothic Pro:bold:size=15}$memperc%${color1}${font ITC Avant Garde Gothic Pro:size=15}
+${goto 22}${voffset 18}${font ITC Avant Garde Gothic Pro:size=15}Mem:${color2} ${font ITC Avant Garde Gothic Pro:size=15}${membar 8,40}${color1}${font ITC Avant Garde Gothic Pro:size=15}
 
-${goto 144}${voffset -42}Cpu:${color3} ${font ITC Avant Garde Gothic Pro:Bold:size=15}${cpu cpu0}%${color1}${font ITC Avant Garde Gothic Pro:size=15}
+${goto 140}${voffset -42}Cpu:${color2} ${font ITC Avant Garde Gothic Pro:size=15}${cpubar 8,40}${color1}${font ITC Avant Garde Gothic Pro:size=15}
 
-${goto 245}${voffset -42}Batt:${color3} ${font ITC Avant Garde Gothic Pro:bold:size=15}${battery_bar 8,70 BAT0} ${font ITC Avant Garde Gothic Pro:size=15}
+${goto 250}${voffset -42}Batt:${color2} ${font ITC Avant Garde Gothic Pro:size=15}${battery_bar 8,40 BAT0} ${font ITC Avant Garde Gothic Pro:size=15}
