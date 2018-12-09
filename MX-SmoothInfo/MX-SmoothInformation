@@ -61,9 +61,9 @@ own_window_argb_value 0
 own_window_colour 000000
 own_window_argb_visual no
 TEXT
-${goto 50}${color1}${font ITC Avant Garde Gothic Pro:size=80} ${time %I}${font ITC Avant Garde Gothic Pro:size=25}${voffset -30}${time %P}${color3}${font ITC Avant Garde Gothic Pro:size=80}${voffset -23}${time %M}${color1}
-${goto -10}${voffset -162}${font ITC Avant Garde Gothic Pro:size=22} ${time %a}
-${goto 7}${voffset -1}${font ITC Avant Garde Gothic Pro:bold:size=22} ${time %b} 
+${goto 50}${color1}${font ITC Avant Garde Gothic Pro:size=80} ${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %I}${endif}${font Robot-Light:light:size=25}${voffset -30}${if_match "pmfix${time %p}" == "pmfix"}  ${else}${time %P}${endif}${color3}${font ITC Avant Garde Gothic Pro:size=80}${voffset -23}${time %M}${color1}
+${goto -10}${voffset -162}${font Robot-Light:light:size=22} ${time %a}
+${goto 7}${voffset -1}${font Robot-Light:size=22} ${time %b} 
 ${goto 23}${voffset 1}${color3}${font ITC Avant Garde Gothic Pro:bold:size=23}${time %d}${color1}
 ##SYS##
 ${font ITC Avant Garde Gothic Pro:size=15}${goto 20}Kernel ${color2} ${execi 360 uname -r}${font ITC Avant Garde Gothic Pro:size=12}
@@ -75,4 +75,4 @@ ${goto 22}${voffset 18}${font ITC Avant Garde Gothic Pro:size=15}Mem:${color2} $
 
 ${goto 140}${voffset -42}Cpu:${color2} ${font ITC Avant Garde Gothic Pro:size=15}${cpubar 8,40}${color1}${font ITC Avant Garde Gothic Pro:size=15}
 
-${goto 250}${voffset -42}Batt:${color2} ${font ITC Avant Garde Gothic Pro:size=15}${battery_bar 8,40 BAT0} ${font ITC Avant Garde Gothic Pro:size=15}
+${if_match "x${battery_short BAT0}" == "x"}${else}${if_match "${battery_short BAT0}" == "N"}${else}${goto 250}${voffset -42}Batt:${color2} ${font ITC Avant Garde Gothic Pro:size=15}${battery_bar 8,40 BAT0} ${font ITC Avant Garde Gothic Pro:size=15}${endif}${endif}
