@@ -51,18 +51,25 @@ minimum_size 320 100
 
 gap_x 15
 gap_y 196
+if_up_strictness address
 
 own_window_colour 000000
 TEXT
 ${image img/network.png -p 0,0 -s 30x30}
 ${offset 35}${font Good Times:size=12}${color Tan1}NETWORK ${color}${hr 2}${font}
 ${voffset -1}
-${offset 5}WAN IP Address: ${texeci 10000 wget -q -O - checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'}
+${offset 5}WAN IP Address: ${texeci 3600 dig @resolver1.opendns.com A myip.opendns.com +short -4}
 ${voffset -1}
-${if_match "${addr wlp1s0}"}${goto 10}Wireless: ${color3}wlp1s0${color}${goto 160}     IP local:${color3}${addr wlp1s0}
+${if_up wlan0}${goto 10}Wireless: ${color3} wlan0${color}${goto 160}     IP local:${color3}${addr wlan0}
 ${hr 1}
 ${voffset -1}
 ${goto 14}${color2}Up: ${color3}${upspeed wlan0}${color1}${alignr}${goto 180}${color2}Down:${color1} ${color3}${downspeed wlan0}${color0}
 ${goto 14}${color2}Sent:${color1} ${color2}${totalup wlan0}${color1}${alignr}${goto 180}${color2}Received:${color}${color2}${totaldown wlan0}
 ${goto 14}${upspeedgraph wlan0  50,140 000000 FFBF00}${goto 180}${downspeedgraph wlan0 50,140 000000 00FF00}$
+${voffset -1}${endif}${if_up eth0}${goto 10}Ethernet: ${color3} eth0${color}${goto 160}     IP local:${color3}${addr eth0}
+${hr 1}
+${voffset -1}
+${goto 14}${color2}Up: ${color3}${upspeed eth0}${color1}${alignr}${goto 180}${color2}Down:${color1} ${color3}${downspeed eth0}${color0}
+${goto 14}${color2}Sent:${color1} ${color2}${totalup eth0}${color1}${alignr}${goto 180}${color2}Received:${color}${color2}${totaldown eth0}
+${goto 14}${upspeedgraph eth0  50,140 000000 FFBF00}${goto 180}${downspeedgraph eth0 50,140 000000 00FF00}$
 ${voffset -1}${endif}

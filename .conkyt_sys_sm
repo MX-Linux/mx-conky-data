@@ -35,7 +35,7 @@ own_window_colour 000000
 minimum_size 0 324
 
 #------------------------------
-# locales dependend image size
+# locales dependent image size
 #
 template0 ${execi 3600  sh -c 'printf $LANG | sed -E -e "/^zh|^ko/csmall" -e "/^ja|^ar|^he/cshort" -e "/^be|^fr_FR|^ga/cwide" -e "1cnormal"'}
 

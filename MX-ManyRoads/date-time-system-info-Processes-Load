@@ -72,18 +72,18 @@ own_window_colour 000000
 
 TEXT
 #--- New Clock- version----
-${color tan1}${font Infini:pixelsize=80}${if_match "pmfix${time %R}" == "pmfix"}${time %k:%M}${else}${time %l:%M}${endif}${font}${voffset -89}${offset 20}${color1}${font Infini:pixelsize=42}${time %d}${voffset -21}${font Infini:pixelsize=22}${time  %b} ${time '%y}${font}${voffset 15}${font Infini:pixelsize=58}${offset -100}${time %a}${font}
+${color tan1}${font Infini:pixelsize=80}${if_match "pmfix${time %p}" == "pmfix"}${time %k:%M}${else}${time %l:%M}${endif}${font}${voffset -89}${offset 20}${color1}${font Infini:pixelsize=42}${time %d}${voffset -21}${font Infini:pixelsize=22}${time  %b} ${time '%y}${font}${voffset 15}${font Infini:pixelsize=58}${offset -100}${time %a}${font}
 #-----------------------System information-----------------------
 ${voffset 15}
 ${image img/information.png -p 0,115 -s 30x30}${offset 35}${font Good Times:size=12}${color Tan1}SYSTEM INFORMATION ${color}${hr 2}${font}
 
-${font}${color1}${offset 30}${execi 1000 cat /etc/mx-version}
+${font}${color1}${offset 30}${execi 3600 cat /etc/mx-version}
 #${goto 80}${color #34BE5B}${font Ubuntu-Title:size=11}Manjaro${font}${color} | xfce 4.13
-${goto 80}User: mark@eirenicon.org
+${goto 80}User: ${execi 3600 whoami}
 ${goto 80}Kernel: $kernel $machine
 ${goto 80}Uptime: $uptime
 #${font DJB Get Digital:size=30}${tab 90}${time %H:%M:%S}
-${goto 80}${color}Battery: ${color8}${battery_bar 10,100 BAT0} ${color0}${battery_percent BAT0}%  ${image img/MX_big_logo.png -p 5,165 -s 64x64}
+${goto 80}${if_match "x${battery_short BAT0}" == "x"}${else}${if_match "${battery_short BAT0}" == "N"}${else}${color}Battery: ${color8}${battery_bar 10,100 BAT0} ${color0}${battery_percent BAT0}%  ${endif}${endif}${image img/MX_big_logo.png -p 5,165 -s 64x64}
 #-----------------------Processes & Load information-----------------------
 ${image img/gearwheels.png -p 0,235 -s 30x30}
 ${offset 35}${font Good Times:size=12}${color Tan1}PROCESSES & LOAD ${color}${hr 2}${font}
