@@ -1,3 +1,9 @@
+mx-conky-data (20181209.mx17) mx; urgency=medium
+
+  * final revisions for release for mx18 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 09 Dec 2018 20:11:42 -0500
+
 mx-conky-data (20181208.mx17) mx; urgency=medium
 
   * updated for final mx18 
