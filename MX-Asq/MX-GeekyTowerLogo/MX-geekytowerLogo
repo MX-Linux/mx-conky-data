@@ -18,17 +18,16 @@ total_run_times 0
 # own_window = yes fixes cairo-compmgr issue...
 own_window yes
 own_window_transparent yes
-#own_window_type normal
-#own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_type normal
+own_window_hints undecorated,below,skip_taskbar,skip_pager  #sticky,
 
 # Use double buffering (reduces flicker, may not work for everyone)
 double_buffer yes
 
 # Minimum size of text area
-#minimum_size 230 0
+minimum_size 230 0
 #maximum_width 200
-maximum_width 270
+#maximum_width 270
 
 # Draw shades?
 draw_shades no
@@ -47,7 +46,7 @@ stippled_borders 0
 # border width
 border_width 1
 
-own_window_colour 000000
+own_window_colour white
 
 ############Colors#########
 default_color white   #use ${color} to revert to default
@@ -62,7 +61,7 @@ color3 26C7D1
 
 # Text alignment, other possible values are commented
 #alignment top_left
-alignment top_middle
+alignment top_right
 #alignment bottom_left
 #alignment bottom_right
 
@@ -92,52 +91,33 @@ override_utf8_locale yes
 #certain objects.
 use_spacer none
 
-own_window_type desktop
+#own_window_type desktop
 
 ##############################################
 #  Output
 ##############################################
-own_window_argb_value 0
-own_window_argb_visual no
-minimum_size 0 0
 TEXT
    ${alignc}${font Arial Black:size=28}${color1}${time %H:%M}${font}
-
    ${alignc}${time %A %d %B %Y}
-
 ${color2}SYSTEM ${hr 2}${color}
 
-   ${image $HOME/.conky/MX-Asq/MX-GeekyTowerLogo/MXLogoStart.png -p 97,90 -s 50x50}
-   
-  
 
- ${alignc}${color1}${execi 1000 cat /etc/mx-version}
-
+${image $HOME/.conky/MX-Asq/MX-GeekyTowerLogo/MXLogoStart.png -p 147,90 -s 50x50}
+${alignc}${color1}${execi 1000 cat /etc/mx-version}
 ${voffset 2}${color3}   Kernel: ${alignr}${color}${kernel}
-
    ${color3}CPU: ${color}${cpu cpu0}% ${alignr}${color}${cpubar cpu0 8,60}
-
    ${color3}RAM: ${color}$memperc% ${alignr}${color}${membar 8,60}
-
    ${color3}SWAP: ${color}$swap/ $swapmax ${alignr}${color}${swapbar 8,60}
-
    ${color3}Uptime: ${alignr}${color}${uptime}
-
 ${color2}MEDIA ${hr 2}${color}
-
 ${execpi 10 $HOME/.conky/MX-Asq/MX-GeekyTowerLogo/conky-harddisks.sh}
 ${color2}ETHERNET (${addr eth0}) ${hr 2}${color}
-
    Down: ${downspeedf eth0}kB/s ${alignr}Up: ${upspeedf eth0}kB/s
    ${downspeedgraph eth0 30,120 000000 000000} ${alignr}${upspeedgraph eth0 30,120 000000 000000}
-
-${color2}WIRELESS (${addr wlan0}) [${wireless_link_qual_perc eth0}%] ${hr 2}${color}
-
-   Down: ${downspeedf eth0}kB/s ${alignr}Up: ${upspeedf eth0}kB/s
-   ${downspeedgraph eth0 30,120 000000 000000} $alignr${upspeedgraph eth0 30,120 000000 000000}
-
+${color2}WIRELESS (${addr wlan0}) [${wireless_link_qual_perc wlan0}%] ${hr 2}${color}
+   Down: ${downspeedf wlan0}kB/s ${alignr}Up: ${upspeedf wlan0}kB/s
+   ${downspeedgraph wlan0 30,120 000000 000000} $alignr${upspeedgraph wlan0 30,120 000000 000000}   
 ${color2}MONITOR ${hr 2}${color}
-
    NAME $alignr PID CPU
    ${color3}${top name 1} $alignr${color} ${top pid 1} ${top cpu 1}
    ${color3}${top name 2} $alignr${color} ${top pid 2} ${top cpu 2}
