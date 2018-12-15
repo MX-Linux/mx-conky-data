@@ -3,7 +3,7 @@
 ##############################################
 # Use Xft?
 use_xft yes
-xftfont Droid Sans:size=7.2
+xftfont Droid Sans:size=7
 xftalpha 0.8
 text_buffer_size 2048
 
@@ -62,7 +62,8 @@ color3 26C7D1
 
 # Text alignment, other possible values are commented
 #alignment top_left
-alignment top_middle
+alignment top_right
+#alignment top_middle
 #alignment bottom_left
 #alignment bottom_right
 
@@ -92,7 +93,7 @@ override_utf8_locale yes
 #certain objects.
 use_spacer none
 
-own_window_type desktop
+own_window_type normal
 
 ##############################################
 #  Output
