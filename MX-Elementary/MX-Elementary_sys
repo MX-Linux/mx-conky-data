@@ -47,4 +47,4 @@ ${offset 170}${color}${font Quicksand - U:pixelsize=70}${if_match "pmfix${time %
 ${voffset 5}${offset 100}${color2}${font Droid:pixelsize=30}${time %A}${font}${goto 275}${voffset -18}${color2}${font Droid:pixelsize=30}  ${time %x}${font}
 
 #sys
-${offset 150}${font Roboto-Light:pixelsize=20}${color1}cpu${offset 9}${color}${cpu}%${offset 9}${offset 9}${color1}hdd ${color}${offset 9}$color${fs_used_perc /}%${offset 9}${color1}mem ${offset 9}${color}${memperc}%${offset 9}${offset 9}${font}
+${offset 130}${font Roboto-Light:pixelsize=20}${offset 9}${offset 9}${color1}hdd ${color}${offset 9}$color${fs_used_perc /}%${offset 9}${color1}mem ${offset 9}${color}${memperc}%${offset 9}${offset 9}${color1}cpu${offset 9}${color}${cpu}%${font}

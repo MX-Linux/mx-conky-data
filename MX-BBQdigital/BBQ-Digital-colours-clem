@@ -105,10 +105,10 @@ ${goto 15}|${goto 40} ${goto 60}+-- Total${goto 125}${totaldown wlan0}KiB
 ${goto 15}|
 ${goto 12}+----${color3}Music (Clementine)${color}
 ${goto 15} ${goto 40}|
-${if_match "${execi 10 python3 $HOME/.conky/BBQ-Digital/mediaplayer.py clementine -i}"=="yes"}${goto 15} ${goto 38}+-- ${execpi 4 python3 $HOME/.conky/BBQ-Digital/mediaplayer.py clementine -a -w 45}
-${goto 15} ${goto 38}+-- ${execpi 4 python3 $HOME/.conky/BBQ-Digital/mediaplayer.py clementine -m -w 43}
-${goto 15} ${goto 38}+-- ${execpi 4 python3 $HOME/.conky/BBQ-Digital/mediaplayer.py clementine -t -w 43}
-${goto 15} ${goto 40} ${goto 60}+-- ${execpi 4 python3 $HOME/.conky/BBQ-Digital/mediaplayer.py clementine -l -w 43}
-${goto 15} ${goto 40} ${goto 60}+-- ${execpi 4 python3 $HOME/.conky/BBQ-Digital/mediaplayer.py clementine -e -w 43}
+${if_match "${execi 10 python3 $HOME/.conky/MX-BBQdigital/mediaplayer.py clementine -i}"=="yes"}${goto 15} ${goto 38}+-- ${execpi 4 python3 $HOME/.conky/MX-BBQdigital/mediaplayer.py clementine -a -w 45}
+${goto 15} ${goto 38}+-- ${execpi 4 python3 $HOME/.conky/MX-BBQdigital/mediaplayer.py clementine -m -w 43}
+${goto 15} ${goto 38}+-- ${execpi 4 python3 $HOME/.conky/MX-BBQdigital/mediaplayer.py clementine -t -w 43}
+${goto 15} ${goto 40} ${goto 60}+-- ${execpi 4 python3 $HOME/.conky/MX-BBQdigital/mediaplayer.py clementine -l -w 43}
+${goto 15} ${goto 40} ${goto 60}+-- ${execpi 4 python3 $HOME/.conky/MX-BBQdigital/mediaplayer.py clementine -e -w 43}
 ${else}${goto 15} ${goto 38}+-- Clementine Not Running\
 ${endif}
