@@ -68,7 +68,7 @@ ${offset 400}${voffset 15}${font GeosansLight:size=15}$acpitemp'C
 ${offset 400}${voffset 10}${cpu cpu0}% / 100%
 ${offset 400}${voffset 4}$memfree / $memmax${font GeosansLight:size=15}
 ${offset 400}${voffset 5}${upspeed wlan0} kb/s / ${totalup wlan0}
-${offset 400}${voffset 5}${downspeed wlan0} kb/s / ${totaldown wlan0}{color}
+${offset 400}${voffset 5}${downspeed wlan0} kb/s / ${totaldown wlan0}${color}
 
 ${goto 373}${voffset -162}${font Dingytwo:size=17}M$font 
 ${goto 373}${voffset 7}${font Dingytwo:size=17}7$font 
