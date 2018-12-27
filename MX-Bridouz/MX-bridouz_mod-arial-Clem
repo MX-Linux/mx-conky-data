@@ -113,5 +113,4 @@ ${endif}\
 ${else}
 ${color3}${font Open Sans:size=9}Clementine Not Running\
 ${endif}
-##
-own_window_hints 
+
