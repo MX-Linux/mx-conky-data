@@ -76,9 +76,7 @@ Avg. Load ${goto 60} : ${cpu cpu0}% ${lua gradbar {100, 135, "${cpu cpu0}", 100,
 #-----------------------Memory Load-----------------------
 ${offset 10}${font Good Times:size=12}${color Tan1}MEMORY ${color}${hr 2}${font}
 ${color}RAM Available${color}${alignr}$memmax 
-${voffset -6}
-${lua gradbar {6, 310, "${memperc}", 200, 310, 2, 10, 1, 0xFFFFFF, 0.25, 0x00FF00, 1, 0xFFFF00, 1, 0xFF0000, 1}}
-${color}$mem used${alignr}${memperc}% used
+${color}$mem used${alignr}${memperc}%
 
 #-----------------------Processes & Load information-----------------------
 ${voffset +1}
