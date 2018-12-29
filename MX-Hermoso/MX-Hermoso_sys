@@ -48,4 +48,4 @@ TEXT
 ${goto 35}${color1}${font Roboto-Light:size=80}${if_match "pmfix${time %p}" == "pmfix"}${time %H }${else}${time %H }${endif}${font Roboto-Light:size=36}${color2}${time %a}#$
 ${color2}${goto 35}${voffset 45}${font Roboto-Light:size=16}${time %d} ${font Roboto-Light:size=36}${voffset -15}${time %b} ${font Roboto-Light:size=16}${goto 65}${voffset 34}${time %Y}${font Roboto-Light:size=80}${goto 155}${voffset -54}${color1}${time %M}
 #system
-${goto 45}${voffset -110}${font Roboto-Light:pixelsize=18}${color2}USED:${offset 9} ${color3}hdd ${offset 9}${color4}${fs_used_perc /}%${offset 9}${color3}cpu ${offset 9}${color4}${cpu}%
+${goto 45}${voffset -110}${font Roboto-Light:pixelsize=18}${color2}${offset 9} ${color3}hdd ${offset 9}${color4}${fs_used_perc /}%${offset 9}${color3}mem  ${color4}${memperc}%${offset 9}${color3}cpu ${offset 9}${color4}${cpu}%

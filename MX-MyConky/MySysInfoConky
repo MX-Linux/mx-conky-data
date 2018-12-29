@@ -43,16 +43,16 @@ no_buffers yes
 uppercase no
 
 color0 white
-color1 green
+
 color2 white
 color3 1793d0
 
 
 pad_percents 2
 top_name_width 7
-minimum_size 320 610
+minimum_size 320 700
 
-gap_x 60
+gap_x 10
 gap_y 30
 
 lua_load allcombined.lua
@@ -61,7 +61,7 @@ own_window_colour 000000
 TEXT
 #-----------------------System information-----------------------
 ${offset 5}${font Good Times:size=12}${color Tan1}SYSTEM INFORMATION ${color}${hr 2}${font}
-${font}${color}${offset 9}${execi 3600 cat /etc/mx-version}
+${font}${color1}${offset 6}${execi 3600 cat /etc/mx-version}
 #${goto 80}${color #34BE5B}${font Ubuntu-Title:size=11}Manjaro${font}${color} | xfce 4.13
 ${goto 10}Kernel: $kernel $machine
 ${goto 10}${time %a %d %b %Y - %H:%M}
@@ -71,15 +71,23 @@ ${offset 10}${font Good Times:size=12}${color Tan1}CPU ${color}${hr 2}${font}
 ${font}${color}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq}
 ${color lightgrey}Temperature:${hwmon 1 temp 1}°C
 # CPU0
-Avg. Load ${goto 60} : ${cpu cpu0}% ${lua gradbar {100, 135, "${cpu cpu0}", 100, 40, 2, 10, 1, 0xFFFFFF, 0.25, 0x00FF00, 1, 0xFFFF00, 1, 0xFF0000, 1}}${goto 230}${color}${freq 1} MHz
+Avg.${goto 50} : ${cpu cpu0}% ${lua gradbar {100, 135, "${cpu cpu0}", 100, 40, 2, 10, 1, 0xFFFFFF, 0.25, 0x00FF00, 1, 0xFFFF00, 1, 0xFF0000, 1}}${goto 230}${color}${freq 1} MHz
+# CPU1
+CPU-1${goto 50} : ${cpu cpu1}% ${lua gradbar {100, 150, "${cpu cpu1}", 100, 40, 2, 10, 1, 0xFFFFFF, 0.25, 0x00FF00, 1, 0xFFFF00, 1, 0xFF0000, 1}}${goto 230}${color}${freq 2} MHz
+# CPU2
+CPU-2${goto 50} : ${cpu cpu2}% ${lua gradbar {100, 165, "${cpu cpu2}", 100, 40, 2, 10, 1, 0xFFFFFF, 0.25, 0x00FF00, 1, 0xFFFF00, 1, 0xFF0000, 1}}${goto 230}${color}${freq 3} MHz
+# CPU3
+CPU-3${goto 50} : ${cpu cpu3}% ${lua gradbar {100, 180, "${cpu cpu3}", 100, 40, 2, 10, 1, 0xFFFFFF, 0.25, 0x00FF00, 1, 0xFFFF00, 1, 0xFF0000, 1}}${goto 230}${color}${freq 4} MHz
+# CPU4
+CPU-4${goto 50} : ${cpu cpu4}% ${lua gradbar {100, 195, "${cpu cpu4}", 100, 40, 2, 10, 1, 0xFFFFFF, 0.25, 0x00FF00, 1, 0xFFFF00, 1, 0xFF0000, 1}}${goto 230}${color}${freq 5} MHz
 
 #-----------------------Memory Load-----------------------
 ${offset 10}${font Good Times:size=12}${color Tan1}MEMORY ${color}${hr 2}${font}
 ${color}RAM Available${color}${alignr}$memmax 
-${color}$mem used${alignr}${memperc}%
+${color}$mem used${alignr}${memperc}% used
+${lua gradbar {6, 275, "${memperc}", 200, 275, 2, 10, 1, 0xFFFFFF, 0.25, 0x00FF00, 1, 0xFFFF00, 1, 0xFF0000, 1}}
 
 #-----------------------Processes & Load information-----------------------
-${voffset +1}
 ${offset 10}${font Good Times:size=12}${color Tan1}PROCESSES & LOAD ${color}${hr 2}${font}
 ${offset 5}${voffset 5}${color}Avg. Load: ${loadavg 1}
 #${running_processes} ${running_threads} ${processes}
@@ -96,16 +104,17 @@ ${offset 5}${top name 5} ${alignr}${top cpu 5}%      ${top mem_res 5}     ${alig
 #-----------------------Network-----------------------
 ${offset 10}${font Good Times:size=12}${color Tan1}NETWORK ${color}${hr 2}${font}
 ${voffset -1}
-${if_up wlan0}${goto 10}Wireless: ${color3} wlan0${color}${goto 160}
+${if_up wlan0}${goto 10}Wireless:${color3} wlan0${color}${goto 160}
 ${hr 1}
 ${voffset -1}
 ${goto 14}${color2}Up: ${color3}${upspeed wlan0}${color1}${alignr}${goto 180}${color2}Down:${color1} ${color3}${downspeed wlan0}${color0}
 ${goto 14}${color2}Sent:${color1} ${color2}${totalup wlan0}${color1}${alignr}${goto 180}${color2}Received:${color}${color2}${totaldown wlan0}
-${goto 14}${upspeedgraph wlan0  50,140 000000 FFBF00}${goto 180}${downspeedgraph wlan0 50,140 000000 00FF00}$
-${voffset -1}${endif}${if_up eth0}${goto 10}Ethernet: ${color3} eth0${color}${goto 160}     IP local:${color3}${addr eth0}
+${goto 14}${upspeedgraph wlan0  50,120 000000 FFBF00}${goto 180}${downspeedgraph wlan0 50,120 000000 00FF00}
+${endif}
+${if_up eth0}${goto 10}Ethernet
 ${hr 1}
 ${voffset -1}
-${goto 14}${color2}Up: ${color3}${upspeed eth0}${color1}${alignr}${goto 180}${color2}Down:${color1} ${color3}${downspeed eth0}${color0}
-${goto 14}${color2}Sent:${color1} ${color2}${totalup eth0}${color1}${alignr}${goto 180}${color2}Received:${color}${color2}${totaldown eth0}
-${goto 14}${upspeedgraph eth0  50,140 000000 FFBF00}${goto 180}${downspeedgraph eth0 50,140 000000 00FF00}$
-${voffset -1}${endif}
+${goto 14}${color2}Up: ${color3}${upspeed wlan0}${color1}${alignr}${goto 180}${color2}Down:${color1} ${color3}${downspeed wlan0}${color0}
+${goto 14}${color2}Sent:${color1} ${color2}${totalup wlan0}${color1}${alignr}${goto 180}${color2}Received:${color}${color2}${totaldown wlan0}
+${goto 14}${upspeedgraph wlan0  50,120 000000 FFBF00}${goto 180}${downspeedgraph wlan0 50,120 000000 00FF00}
+${endif}

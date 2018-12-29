@@ -44,20 +44,18 @@ ${font pftempestafivecondensed:size=6}
                  Core:${hwmon 0 temp 1}°C
                  Mem: $mem 
                  Batt: ${battery_percent BAT0}%
-                   
-
+                
                  HOME:${fs_used_perc /home}%
                  ROOT:${fs_used_perc /root}%
                  FREE:${fs_free_perc /home}%
                  Swap:${swapperc}%
-   
+                 
                  
                 CPU:${top cpu 1}%
                 ${top name 1}
                 MEM:${top_mem mem 1}%
                 ${top_mem name 1}                     
                  
-
                  Signal:                                                                                        
                  ${wireless_link_qual wlan0}% 
                  Ul:${upspeed wlan0}

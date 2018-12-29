@@ -38,12 +38,12 @@ border_width 1
 default_color EDEBEB
 default_shade_color 000000
 default_outline_color 000000
-alignment bottom_right
+alignment top_right
 minimum_size 600 600
 maximum_width 900
 gap_x 20
-gap_y -100
-alignment bottom_right
+gap_y 30
+alignment top_right
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
