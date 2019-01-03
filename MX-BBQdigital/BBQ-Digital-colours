@@ -53,7 +53,7 @@ ${goto 15}|${goto 38}+-- Machine${goto 125}${machine}
 ${goto 15}|
 ${goto 12}+----${color3}Memory${color}
 ${goto 15}|${goto 38}+-- Total${goto 125}${memmax}
-${goto 15}|${goto 38}+-- ${color4}In Use${color}${goto 125}${mem} (${memperc}%)
+${goto 15}|${goto 38}+-- In Use${color}${goto 125}${mem} (${memperc}%)
 ${goto 15}|${goto 38}+-- Free${goto 125}${memfree}
 ${goto 15}|${goto 38}+-- Up to${goto 125}${memeasyfree} freed easily
 ${goto 15}|${goto 38}+-- Swap
@@ -94,7 +94,7 @@ ${goto 15}|
 ${goto 12}+----${color3}Net${color}
 ${goto 15} ${goto 40}|
 ${goto 15} ${goto 38}+-- eth0${goto 125}${addr eth0}
-${goto 15}|${goto 38}+-- wlan0${goto 125}${addr wlan0}
+${goto 15} ${goto 38}+-- wlan0${goto 125}${addr wlan0}
 ${goto 15} ${goto 38}+-- Up
 ${goto 15} ${goto 40}|${goto 60}+-- Speed${goto 125}${upspeedf wlan0}KiB
 ${goto 15} ${goto 40}|${goto 60}+-- Total${goto 125}${totalup wlan0}KiB

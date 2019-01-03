@@ -29,8 +29,8 @@ minimum_size 250 300
 maximum_width 250
 
 alignment top_right
-gap_x 10
-gap_y 0
+gap_x 40
+gap_y 90
 
 # Graphics settings #
 draw_shades no
@@ -89,7 +89,7 @@ ${color 0ABFFF}${voffset 2}${hr 1}
 ${color 0ABFFF}${voffset 5}Hostname: $color$alignr$nodename
 ${color 0ABFFF}wlan0: $color$alignr${addr wlan0}
 ${color 0ABFFF}Current: $color${alignr}${execi 10 /sbin/iwconfig wlan0|grep Rate|cut -d"M" -f1|cut -b20-24} Mbits/sec
-${color 0ABFFF}enp6s0: $color$alignr${addr enp6s0}
+${color 0ABFFF}eth0: $color$alignr${addr eth0}
 
 ${color #0ABFFF}Down: $color${downspeed wlan0} k/s ${alignr}${color #0ABFFF}Up:$color ${upspeed wlan0} k/s
 ${downspeedgraph wlan0 30,120 000000 0ABFFF} ${alignr}${upspeedgraph wlan0 30,120 000000 0ABFFF}$color
@@ -124,4 +124,3 @@ ${color 0ABFFF}Hostname:$color${alignr}${nodename}
 ${color 0ABFFF}OS:$color${alignr}${exec cat /etc/issue.net} $machine
 ${color 0ABFFF}Kernel:$color${alignr}${kernel}$color
 #----------------------------------------------------------------------------------------------------------------------------------------
-

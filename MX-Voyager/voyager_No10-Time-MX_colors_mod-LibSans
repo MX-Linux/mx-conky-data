@@ -82,4 +82,4 @@ ${voffset 8}${font Pricedown:size=60}${color1}${time %H:%M %p}${font}${voffset -
   ${voffset 8}${font Roboto-Light:size=16}${color2}${time %A} ${time %e} ${time %B}${font}${voffset -8}
   ${voffset 8}${font Roboto-Light:size=9.5}${color3}MEM   ${color} $mem/$memmax   ${color3}HDD   ${color} ${fs_free /}/${fs_size /}${font}${voffset -8}
   ${voffset 8}${font Roboto-Light:size=9.5}${color3}KERNEL   ${color} $kernel${font}${voffset -8}
-  ${voffset 8}${font Roboto-Light:size=9.5}${color3}CPU   ${color} $freq_g GHz   $cpu%   ${if_up wlan0}${font Roboto-Light:size=9.5}${color3}WIFI   ${color}${wireless_link_qual wlan0}${font}%${voffset -8}${endif}${if_up eth0}${font Roboto-Light:size=9.5}${color3}WLAN   ${color}${downspeed eth0}${font}%${voffset -8}${endif}
+  ${voffset 8}${font Roboto-Light:size=9.5}${color3}CPU   ${color} $freq_g GHz   $cpu%   ${if_up wlan0}${font Roboto-Light:size=9.5}${color3}WIFI   ${color}${wireless_link_qual wlan0}${font}%${voffset -6}${endif}  ${if_up eth0}${font Roboto-Light:size=9.5}${color3}WLAN   ${color}${downspeed eth0}/sec${endif}
