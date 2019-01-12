@@ -1,0 +1,136 @@
+conky.config = {
+	background = false,
+	use_xft = true,
+	font = 'Noto Sans:size=9',
+	xftalpha = 0.4,
+	update_interval = 1.0,
+	total_run_times = 0,
+	own_window = true,
+    own_window_class = 'Conky',
+	own_window_type = 'desktop',
+	own_window_transparent = true,
+	own_window_argb_visual = true,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	double_buffer = true,
+    maximum_width = 350,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+	default_color = 'FFFFFF',
+	default_shade_color = 'FF0000',
+	default_outline_color = '66CC00',
+	alignment = 'top_right',
+	gap_x = 60,
+    gap_y = 25,
+	no_buffers = true,
+	uppercase = false,
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
+	override_utf8_locale = true,
+	use_spacer = 'none',
+    own_window_colour = '000000',
+	minimum_width = 290, minimum_height = 0,
+};
+
+conky.text = [[
+${alignc}${font Open Sans:size=10}${time %A}, ${time %d %B %Y    %l:%M %P}
+
+# SYSTEM
+${alignc}${voffset -8}${font Open Sans:Bold:size=10}${color}/// ~~~ ${color #0066CC} SYSTEM ${color} ~~~ \\\${font}
+${alignc}$sysname $kernel $alignc $machine
+${alignc}Uptime : $uptime
+
+# CPU
+${alignc}${font Open Sans:Bold:size=10}${color}/// ~~~ ${color #0066CC} CPU ${color} ~~~ \\\${font}
+${alignc}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -n 1p | sed -e  's/model name.*: //'}${font}
+${alignc}Core 0  ${color #F0FF00}${cpubar cpu1 4,40}   ${color}${cpu cpu1}%   ${freq 1}mhz ${color #F0FF00} ${execi 5 /usr/bin/sensors | grep Core\ 0| paste -s | cut -d+ -f2 | cut -c1-7}${color} 
+${alignc}Core 1  ${color #F0FF00}${cpubar cpu2 4,40}   ${color}${cpu cpu2}%   ${freq 2}mhz ${color #F0FF00} ${execi 5 /usr/bin/sensors | grep Core\ 1| paste -s | cut -d+ -f2 | cut -c1-7}${color}
+${alignc}Core 2  ${color #F0FF00}${cpubar cpu3 4,40}   ${color}${cpu cpu3}%   ${freq 3}mhz ${color #F0FF00} ${execi 5 /usr/bin/sensors | grep Core\ 2| paste -s | cut -d+ -f2 | cut -c1-7}${color}
+${alignc}Core 3  ${color #F0FF00}${cpubar cpu4 4,40}   ${color}${cpu cpu4}%   ${freq 4}mhz ${color #F0FF00} ${execi 5 /usr/bin/sensors | grep Core\ 3| paste -s | cut -d+ -f2 | cut -c1-7}${color}
+${alignc}${top cpu 1} %${color #00FF00} ~/ ${color}${top name 1}${alignc}${color #00FF00}\~${color}${top mem 1} %
+${alignc}${top cpu 2} %${color #00FF00} ~/ ${color}${top name 2}${alignc}${color #00FF00}\~${color}${top mem 2} %
+${alignc}${top cpu 3} %${color #00FF00} ~/ ${color}${top name 3}${alignc}${color #00FF00}\~${color}${top mem 3} %
+${alignc}${top cpu 4} %${color #00FF00} ~/ ${color}${top name 4}${alignc}${color #00FF00}\~${color}${top mem 4} %
+
+# MEMORY
+${alignc}${font Open Sans:Bold:size=10}${color}/// ~~~ ${color #0066CC} RAM ${color} ~~~ \\\${font}
+${alignc}Used : $mem of $memmax $memperc %
+${alignc}Free : $memeasyfree
+${alignc}Buffers / Cached:$font $buffers / $cached
+${alignc}${top_mem name 1}${top_mem mem 1} %
+${alignc}${top_mem name 2}${top_mem mem 2} %
+${alignc}${top_mem name 3}${top_mem mem 3} %
+${alignc}${top_mem name 4}${top_mem mem 4} %
+
+# DISKS
+${alignc}${font Open Sans:Bold:size=10}${color}/// ~~~ ${color #0066CC} DISKS ${color} ~~~ \\\${font}
+${alignc}SDA : ${color #F0FF00}${exec hddtemp /dev/sda -n --unit=C}° ${color} SDB : ${color #F0FF00}${exec hddtemp /dev/sdb -n --unit=C}°${font}${color} 
+${alignc}ROOT : ${fs_used /} / ${fs_size /} ${fs_type /}
+${alignc}${color #F0FF00}${fs_bar 4,100}  ${fs_used_perc /}%${color}
+${alignc}write : ${diskio_write /dev/sda}${color}${alignc -20} read: ${diskio_read /dev/sda}
+
+# GPU
+${alignc}${font Open Sans:Bold:size=10}${color}/// ~~~ ${color #0066CC} GPU ${color} ~~~ \\\${font}
+${alignc}${font Open Sans:Bold:size=8}${color FF0000}MSI GTX 970 4GB ${font}${color}
+${alignc}Fan speed : ${exec nvidia-settings -q [fan:0]/GPUCurrentFanSpeed -t} %
+${alignc}Temp : ${color #F0FF00}${exec nvidia-settings -q [thermalsensor:0]/ThermalSensorReading -t} °C ${color}
+${alignc}Clock : ${exec nvidia-settings -q [gpu:0]/GPUCurrentClockFreqs -t} MHz
+${alignc}Memory : ${exec nvidia-settings -q [gpu:0]/UsedDedicatedGPUMemory -t} / ${exec nvidia-settings -q [gpu:0]/TotalDedicatedGPUMemory -t} MiB
+
+# FAN SPEEDS
+${alignc}${font Open Sans :Bold:size=10}${color}/// ~~~ ${color #0066CC} FANS RPM ${color} ~~~ \\\${font}
+${alignc}${color}RaD-Fan : ${color #F0FF00}${hwmon 3 fan 1} RPM
+${alignc}${color}PumP : ${color #F0FF00}${hwmon 3 fan 2} RPM
+${alignc}${color}RaD-Fan : ${color #F0FF00}${hwmon 3 fan 3} RPM
+
+# NETWORK
+${alignc}${font Open Sans:Bold:size=10}${color}/// ~~~ ${color #0066CC} NETWORK ${color} ~~~ \\\${font}
+
+${if_up eth0}${alignc}Ethernet ${addr eth0}
+${alignc} ▲${upspeed eth0} ${upspeedgraph eth0 10,50  ffff00 00ff00} ${totalup eth0}
+${alignc} ▼${downspeed eth0} ${downspeedgraph eth0 10,50  ffff00 00ff00} ${totaldown eth0}${endif}
+
+${if_up wlan0}${alignc}${font Open Sans:bold:size=8.5}WiFi $font${wireless_bitrate wlan0} ${addr wlan0}
+${alignc}${wireless_essid wlan0}
+${alignc}${color #E9E101}${wireless_link_bar 4,100 wlan0}${color}
+${alignc}↑ ${upspeed wlan0} ${totalup wlan0}
+${alignc}${upspeedgraph wlan0 10,120 ff0000 0000ff}
+${alignc}↓ ${downspeed wlan0} ${totaldown wlan0}
+${alignc}${downspeedgraph wlan0 10,120 ff0000 0000ff}${endif}
+
+
+
+#------------------------KEEPS--------------------------
+
+# WEATHER
+#${alignc}${font Open Sans:Bold:size=10}${color}/// ~~~ ${color #0066CC} WEATHER ${color} ~~~ \\\${font}
+
+#${execi 600 bash $HOME/1d_accuweather_rss/1d}\
+#${alignc}${font conkyweather:size=20}${color #F0FF00}${execpi 600  sed -n '2p' $HOME/1d_accuweather_rss/weather}${color}${font}
+#${alignc}${execpi 600 sed -n '1p' $HOME/1d_accuweather_rss/weather|cut -d ' ' -f-6}
+
+#${alignc}${font conkyweather:size=20}${color #F0FF00}${execpi 600  sed -n '5p' $HOME/1d_accuweather_rss/weather}${color}${font}
+#${alignc}${execi 3600 echo `date --date "0 day" | awk '{print $1" "$3" "$2" "$6}'`}
+#${alignc}${execpi 600 sed -n '4p' $HOME/1d_accuweather_rss/weather|cut -d ' ' -f-6}
+#${alignc}${execpi 600 sed -n '4p' $HOME/1d_accuweather_rss/weather|cut -d ' ' -f7-|fold -s }
+
+#${alignc}${font conkyweather : size=20}${color #F0FF00}${execpi 600  sed -n '8p' $HOME/1d_accuweather_rss/weather}${color}${font}
+#${alignc}${execi 3600 echo `date --date "1 day" | awk '{print $1" "$3" "$2" "$6}'`}
+#${alignc}${execpi 600 sed -n '7p' $HOME/1d_accuweather_rss/weather|cut -d ' ' -f-6}
+#${alignc}${execpi 600 sed -n '7p' $HOME/1d_accuweather_rss/weather|cut -d ' ' -f7-|fold -s }
+
+#${voffset -8}${font Open Sans:Bold:size=10}${alignc}${color}///~~~ ${color dodgerblue3} SWAP #${color} ~~~\\\${font}
+#${alignc}$color${font Open Sans:bold:size=8.5}Used:$font $swap of $swapmax$alignc $swapperc%
+#${alignc}$color${font Open Sans:bold:size=8.5}Free:$font $swapfree
+
+#${font Open Sans:Bold:size=8}${alignc}${color}///~~~ ${color dodgerblue3} DeadBeeF ${color} ~~~\\\${color #EC01 00}
+#${alignc}${color 04F912}${execbar 4,100 ~/db.sh}
+#${alignc}${execi 10 deadbeef --nowplaying '%a - %t'}
+
+# DISKS-MOUNTS
+#${voffset -8}${font Open Sans:Bold:size=10}${alignc 0}${color}///~~~ ${color dodgerblue3} DISK-MOUNTS ${color} ~~~\\\${color #EC0100}$font
+#font = 'Ubuntu Regular:size=8',
+#${execpi 10 ~/semplice-conky-harddisks.sh}
+
+]];

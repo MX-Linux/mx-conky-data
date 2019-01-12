@@ -10,9 +10,8 @@ own_window_transparent yes
 own_window_argb_visual yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
-#default_bar_size 0 6
- 
-maximum_width 290
+
+maximum_width 360
 draw_shades no
 draw_outline no
 draw_borders no
@@ -21,8 +20,7 @@ default_color white
 default_shade_color red
 default_outline_color green
 alignment top_right
-gap_x 5
-#gap_y 240
+gap_x 40
 gap_y 5
 no_buffers yes
 uppercase no
@@ -35,6 +33,8 @@ own_window_argb_value 0
 own_window_colour 000000
 minimum_size 0 0
 
+if_up_strictness address
+
 color0 dodgerblue3
 color1 EC0100
 color2 E9E101
@@ -43,25 +43,41 @@ color4 66aaff
 
 TEXT
 
-${alignc -0}${font Open Sans:size=15}${color0}MX Linux$font$color
-${voffset 4}$color${font}${font Open Sans:size=10}$alignr${voffset -15}$font
-${voffset -4}${color0}${font Open Sans:Bold:size=10}DATE ${color1}${hr 3}$color$font
-$color${font Open Sans:size=10}$alignc${time %A}, ${if_match "pmfix${time %p}" == "pmfix"}${time %d %B %Y    %k:%M %P}${else}${time %d %B %Y    %l:%M %P}${endif}$font$color 
-
-# SYS
-${voffset -8}${font Open Sans:Bold:size=10}${color0}SYSTEM ${color EC0100}${hr 3}$color${font}
+${alignc}${font Open Sans:size=15}MX Linux 18
+${color0}${font Open Sans:Bold:size=10}DATE ${color1}${hr 2}${font}${color}
+${alignc}${font Open Sans:size=10}${time %A}, ${time %d %B %Y    %l:%M %P}
+# SYSTEM
+${font Open Sans:Bold:size=10}${color0}SYSTEM ${color1}${hr 2}${font}${color}
 Kernel$alignr$sysname $kernel 
 OS $alignr${exec cat 30 /etc/antix-version}
 Uptime $alignr $uptime
 
-# MEMORY
-${voffset -8}${font Open Sans:Bold:size=10}${color0}MEMORY ${color EC0100}${hr 3}
-${color2}${membar 4} 
-$color${font Open Sans:bold:size=8.5}Used:$alignr$font $mem of $memmax
-$color${font Open Sans:bold:size=8.5}Free:$alignr$font $memeasyfree
-$color${font Open Sans:bold:size=8.5}Buffers / Cached:$alignr$font$buffers / $cached
+# CPU
+${voffset -8}${font Open Sans:Bold:size=10}${color0}CPU ${color1}${hr 2}${font}${color}
+${alignc}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -n 1p | sed -e  's/model name.*: //'}
+Core 0  ${color3}${freq 1}mhz  ${execi 5 /usr/bin/sensors | grep Core\ 0| paste -s | cut -d+ -f2 | cut -c1-7}   ${cpu cpu0}% ${color2}${cpubar cpu0}
+${color}Core 1  ${color3}${freq 2}mhz  ${execi 5 /usr/bin/sensors | grep Core\ 1| paste -s | cut -d+ -f2 | cut -c1-7}   ${cpu cpu1}% ${color2}${cpubar cpu1}
+${color}Core 2  ${color3}${freq 3}mhz  ${execi 5 /usr/bin/sensors | grep Core\ 2| paste -s | cut -d+ -f2 | cut -c1-7}   ${cpu cpu2}% ${color2}${cpubar cpu2}
+${color}Core 3  ${color3}${freq 4}mhz  ${execi 5 /usr/bin/sensors | grep Core\ 3| paste -s | cut -d+ -f2 | cut -c1-7}   ${cpu cpu3}% ${color2}${cpubar cpu3}${color}
 
-${voffset -10}------------------------------------------------- ${font Open Sans:Bold:size=10}${color0}${voffset -2}RAM${color}${font}${voffset -1} ---- ${font Open Sans:Bold:size=10}${color0}${voffset -2}CPU${color}${font}${voffset -1} -
+${color}${voffset -10}------------------------------------------${font Open Sans:Bold:size=10}${color0}${voffset -2}RAM${color}${font}${voffset -2}--------${font Open Sans:Bold:size=10}${color0}${voffset -2}CPU${color}${font}${voffset -2}--
+${top name 1}${alignr}${top cpu 1} %
+${voffset -13}${alignr}${offset -60}${top mem 1} %
+${top name 2}${alignr}${top cpu 2} %
+${voffset -13}${alignr}${offset -60}${top mem 2} %
+${top name 3}${alignr}${top cpu 3} %
+${voffset -13}${alignr}${offset -60}${top mem 3} %
+${top name 4}${alignr}${top cpu 4} %
+${voffset -13}${alignr}${offset -60}${top mem 4} %
+
+# MEMORY
+${font Open Sans:Bold:size=10}${color0}MEMORY ${color1}${hr 2}
+${color2}${membar 6} 
+${color}${font Open Sans:bold:size=8.5}Used:${alignr}${font} $mem of $memmax
+${font Open Sans:bold:size=8.5}Free:$alignr$font $memeasyfree
+${font Open Sans:bold:size=8.5}Buffers / Cached:$alignr$font$buffers / $cached
+
+${voffset -10}------------------------------------------${font Open Sans:Bold:size=10}${color0}${voffset -2}RAM${color}${font}${voffset -2}--------${font Open Sans:Bold:size=10}${color0}${voffset -2}CPU${color}${font}${voffset -2}--
 ${top_mem name 1}${alignr}${top_mem cpu 1} %
 ${voffset -13}${alignr}${offset -60}${top_mem mem 1} %
 ${top_mem name 2}${alignr}${top_mem cpu 2} %
@@ -71,57 +87,33 @@ ${voffset -13}${alignr}${offset -60}${top_mem mem 3} %
 ${top_mem name 4}${alignr}${top_mem cpu 4} %
 ${voffset -13}${alignr}${offset -60}${top_mem mem 4} %
 
-# CPU
-${voffset -8}${font Open Sans:Bold:size=10}${color0}CPU ${color EC0100}${hr 3}
-$color${font}Intel® Xeon® Processor E3-1241   ${freq_g cpu0}GHz $alignr $cpu%  
-${font}Core 0  ${color3}${execi 4 sensors | grep 'Core 0' | cut -c18-24} ${alignc 60}${color2}${cpubar cpu0}${color}
-${font}Core 1  ${color3}${execi 4 sensors | grep 'Core 1' | cut -c18-24} ${alignc 60}${color2}${cpubar cpu1}${color}
-${font}Core 2  ${color3}${execi 4 sensors | grep 'Core 2' | cut -c18-24} ${alignc 60}${color2}${cpubar cpu2}${color}
-${font}Core 3  ${color3}${execi 4 sensors | grep 'Core 3' | cut -c18-24} ${alignc 60}${color2}${cpubar cpu3}${color}
-
-${voffset -10}------------------------------------------------- ${font Open Sans:Bold:size=10}${color0}${voffset -2}RAM${color}${font}${voffset -1} ---- ${font Open Sans:Bold:size=10}${color0}${voffset -2}CPU${color}${font}${voffset -1} -
-#${hr 1}
-${top name 1}${alignr}${top cpu 1} %
-${voffset -13}${alignr}${offset -60}${top mem 1} %
-${top name 2}${alignr}${top cpu 2} %
-${voffset -13}${alignr}${offset -60}${top mem 2} %
-${top name 3}${alignr}${top cpu 3} %
-${voffset -13}${alignr}${offset -60}${top mem 3} %
-${top name 4}${alignr}${top cpu 4} %
-${voffset -13}${alignr}${offset -60}${top mem 4} %
-# ${top name 5}${alignr}${top cpu 5} %
-#${voffset -13}${alignr}${offset -60}${top mem 5} %
+#GPU
+${font Open Sans:Bold:size=10}${color0}GPU ${color1}${hr 2}${font}${color}
+GTX 970  ${alignr}${exec nvidia-settings -q [thermalsensor:0]/ThermalSensorReading -t}°C    ${exec nvidia-settings -q [gpu:0]/GPUCurrentClockFreqs -t} MHz 
 
 # NETWORK
-${voffset -8}${font Open Sans:Bold:size=10}${color0}NETWORK ${color EC0100}${hr 3}$color
-#$color${font Open Sans:bold:size=8.5}External IP ${font}${alignr}${execi 60 curl http://google.com --connect-timeout 2 | grep -o "[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*"}$font
-#${voffset -14}$alignc${execpi 4 echo "\${font}\${color}ping: \${font Open Sans:bold:size=8.5}\${color6}$(ping -W 1 -c 1 8.8.8.8 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1)\${font}\${color} ms"}
+${if_up eth0}${font Open Sans:Bold:size=10}${color0}NETWORK ${color1}${hr 2}
+${color}${font Open Sans:bold:size=8.5}Ethernet ${font}${alignr}${addr eth0}
+↑ ${upspeed eth0}  ${alignr} ${totalup eth0}
+${voffset -14}${alignc}${upspeedgraph eth0 10,120  ff0000 0000ff}
+↓ ${downspeed eth0}  $alignr ${totaldown eth0}
+${voffset -14}${alignc}${downspeedgraph eth0 10,120  ff0000 0000ff}${endif}
 
-${voffset -10}${font Open Sans:bold:size=8.5}Ethernet $font$alignr ${addr eth0}
-↑ ${upspeedf eth0} kb/s $alignr ${totalup eth0}
-${voffset -14}$alignc${upspeedgraph eth0 10,120  ff0000 0000ff}
-↓ ${downspeedf eth0} kb/s $alignr ${totaldown eth0}
-${voffset -14}$alignc${downspeedgraph eth0 10,120  ff0000 0000ff}
-
-${voffset -10}${font Open Sans:bold:size=8.5}WiFi $font${wireless_bitrate wlan0} $alignr ${addr wlan0}
-${voffset -14}$alignc${wireless_essid wlan0}
-$alignc${color2}${wireless_link_bar 4,260 wlan0}${color E9E9E9} 
-↑ ${upspeedf wlan0} kb/s $alignr ${totalup wlan0}
+${if_up wlan0}${font Open Sans:bold:size=10}${color0}WiFi $font${wireless_bitrate wlan0} ${color}${font}${alignr}${addr wlan0}
+${color2}${wireless_link_bar 6 wlan0} ${color}
+↑ ${upspeed wlan0}  $alignr ${totalup wlan0}
 ${voffset -14}$alignc${upspeedgraph wlan0 10,120 ff0000 0000ff}
-↓ ${downspeedf wlan0} kb/s $alignr ${totaldown wlan0}
-${voffset -14}$alignc${downspeedgraph wlan0 10,120 ff0000 0000ff}
+↓ ${downspeed wlan0}  $alignr ${totaldown wlan0}
+${voffset -14}$alignc${downspeedgraph wlan0 10,120 ff0000 0000ff}${endif}
 
 # HDD
-${voffset -8}${font Open Sans:Bold:size=10}${color0}DISKS ${color EC0100}${hr 3}
-$color${font Open Sans:bold:size=8.5}${font Open Sans:bold:size=8.5}ROOT$font                    ${color}${fs_used /} / ${fs_size /}$alignr${fs_type /}
-${color aaddff}write: ${diskio_write /dev/sdc}${color6}${alignc -20} read:${diskio_read /dev/sdc}$color$alignr ${fs_used_perc /}%   
+${voffset -8}${font Open Sans:Bold:size=10}${color0}DISKS ${color1}${hr 2}${font}
 ${color2}${fs_bar /}${color}
+/  ${fs_used_perc /}%  ${fs_used /} / ${fs_size /}   W:${diskio_write /dev/sda}      R:${diskio_read /dev/sda}  
 
-# Mounted
-#the script in the following line does not seem to function
-${exec 10 ~/semplice-conky-harddisks.sh}
-${voffset -8}${font Open Sans:Bold:size=10}${color0}Disk Mounts ${color1}${hr 3}$color$font
+${font Open Sans:Bold:size=10}${color0}Temps & Fans ${color1}${hr 2}${font}${color}
 
-${voffset -10}${font Open Sans:bold:size=8.5}HOME $font$alignr ${fs_type /home}
-${fs_used /home} / ${fs_size /home} $alignr ${fs_used_perc /home} % 
-${fs_bar /home}
+HDD Temps ${alignc}${color3}SDA: ${exec hddtemp /dev/sda -n --unit=C}° SDB: ${exec hddtemp /dev/sdb -n --unit=C}°${color} 
+Fans ${alignc}${color3}${hwmon 3 fan 1} RPM ${hwmon 3 fan 1} RPM ${hwmon 3 fan 1} RPM
+
+${color1}${hr 1}
