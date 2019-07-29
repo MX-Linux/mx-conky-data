@@ -64,7 +64,11 @@ own_window_argb_value 0
 own_window_colour 000000
 TEXT
 
+<<<<<<< HEAD:MX-Flair/System_flair_Updated_white
 ${goto 124}${voffset -}${font GeosansLight:light:size=70}${if_match "pmfix${time %p}" == "pmfix"}${time %I:%M}${else}${time %I:%M}${endif}${image line.png -p 350,27 -s 3x150}
+=======
+${goto 124}${voffset -}${font GeosansLight:light:size=70}${if_match "pmfix${time %p}" == "pmfix"}${time %H:%M}${else}${time %I:%M}${endif}${image line.png -p 350,27 -s 3x150}
+>>>>>>> 2bd412f84a7856811cf7764be0329a847018a28b:MX-Flair/System_flair_Updated_white
 ${offset 180}${voffset -55}${font GeosansLight:size=17}${time %a %d %b}
 ${offset 380}${voffset -177}${font GeosansLight:size=25}${font GeosansLight:size=22}
 ${offset 400}${voffset 5}${font GeosansLight:size=15}$acpitemp'C

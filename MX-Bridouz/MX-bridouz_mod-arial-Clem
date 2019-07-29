@@ -114,4 +114,7 @@ ${else}
 ${color3}${font Open Sans:size=9}Clementine Not Running\
 ${endif}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2bd412f84a7856811cf7764be0329a847018a28b
