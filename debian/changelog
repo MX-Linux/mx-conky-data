@@ -1,3 +1,15 @@
+mx-conky-data (20190728.mx19) mx; urgency=medium
+
+  * mx-19 updates
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 28 Jul 2019 21:15:38 -0400
+
+mx-conky-data (20181217.mx17) mx; urgency=medium
+
+  * bump changelog 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 16 Dec 2018 11:54:15 -0500
+
 mx-conky-data (20181216.mx17) mx; urgency=medium
 
   * updated elementary_sys 
