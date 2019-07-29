@@ -31,8 +31,8 @@ own_window_hints undecorated,below,skip_taskbar,skip_pager,sticky
 #own_window_argb_visual yes
 #own_window_argb_value 100
 
-alignment top_middle
-gap_x 0
+alignment top_right
+gap_x 50
 gap_y -60
 minimum_size 180 0
 
@@ -44,19 +44,19 @@ default_bar_size 60 8
 #########################
 draw_shades no
 
-default_color BDB5A1
+default_color 237e36
 default_shade_color 1d1d1d
 color0 ffffff
 color1 bdb5a1
-color2 af872f
-color3 b7b39e
+color2 25618b
+color3 237e36
 
 
 #lua_load ~/.conky/conkybg.lua
 #lua_draw_hook_pre conky_draw_bg
 
 own_window_argb_value 0
-own_window_argb_visual no
+own_window_argb_visual yes
 own_window_colour 000000
 TEXT
 ${font Dinreg:size=12}
@@ -66,4 +66,4 @@ ${color2}${offset 30}${voffset -100}${time %M}
 ${voffset -140}${offset 10}${font Roboto-Light:size=12 :bold}${color}${time %A} ${offset 10}${color2}${color}${time %B %d}
 ${offset 150}${voffset -175}${font Roboto-Light:size=12}${color2}${time %p}
 #system
-${offset 10}${voffset 160}${font Roboto-Light:pixelsize=12}USED:${offset 4}${color3}cpu ${offset 4}${color4}${cpu cpu0}% ${offset 4} ${color3}hdd ${offset 4}${color4}${fs_used_perc /}%
+${offset 0}${voffset 160}${font Roboto-Light:pixelsize=12}${offset 14}${color3}hdd ${offset 4}${color4}${fs_used_perc /}%${offset 4}${color3} mem ${offset 4}${color4}${memperc}%${offset 4} ${color3}cpu ${offset 4}${color4}${cpu cpu0}%

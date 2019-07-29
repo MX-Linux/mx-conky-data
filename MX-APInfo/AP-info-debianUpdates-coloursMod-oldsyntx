@@ -24,7 +24,7 @@ own_window_transparent yes
 ## NOTE that a composite manager is required for real transparency.
 ## This option will not work as desired (in most cases) in conjunction with
 ## own_window_type normal
-own_window_argb_visual no
+own_window_argb_visual yes
 
 ## When ARGB visuals are enabled, use this to modify the alpha value
 ## Use: own_window_type normal
@@ -38,7 +38,7 @@ minimum_height 200
 maximum_width 400
 
 gap_x 20
-gap_y 50
+gap_y 0
 
 alignment top_middle
 

@@ -13,8 +13,8 @@ total_run_times 0
 
 # Create own window instead of using desktop (required in nautilus)
 own_window yes
-own_window_transparent yes
-own_window_type override
+own_window_transparent no
+own_window_type desktop
 #own_window_type override
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
@@ -85,7 +85,7 @@ override_utf8_locale yes
 use_spacer none
 
 own_window_argb_value 0
-own_window_argb_visual no
+own_window_argb_visual yes
 TEXT
 ${alignc}${color E04613}System:${color} $sysname $kernel $machine  |  ${color E04613}Hostname:${color} $nodename  |  ${color E04613}User:${color} $USER  |  ${color E04613}Time:${color} ${time %T}  |  ${color E04613}Uptime:${color} ${uptime}  |  ${color E04613}CPU:${color} ${cpu cpu0}% ${cpugraph cpu0 8,60}  |  ${color E04613}CPU Temperature:${color} ${acpitemp}°C  |  ${color E04613}Highest CPU:${color} ${top name 1}${top name 2}${top name 3} |  ${color E04613}Processes:${color} $processes ($running_processes running)  |  ${color E04613}Load:${color} $loadavg  |  ${color E04613}RAM:${color} $memperc% ${memgraph 8,60}   
-${alignc}${color E04613}Highest MEM:${color} ${top_mem name 1}${top_mem name 2}${top name 3} |  ${color E04613}SWAP:${color} $swapperc% ${swapbar 8,60}  |  ${color E04613}Home:${color} ${fs_free /home} / ${fs_size /} ${fs_bar 8,60 /}  |  ${color E04613}Network ${color}(${addr wlan0})  |  ${color E04613}Down:${color} $color${downspeedf wlan0}KB/s ${downspeedgraph wlan0 8,60} $color  |  ${color E04613}Total Download:${color} ${totaldown wlan0}  |  ${color E04613}Up:${color} ${upspeedf wlan0}KB/s ${upspeedgraph wlan0 8,60}  |  ${color E04613}Total Upload:${color} ${totalup wlan0}
+${alignc}${color E04613}Highest MEM:${color} ${top_mem name 1}${top_mem name 2}${top name 3} |  ${color E04613}SWAP:${color} $swapperc% ${swapbar 8,60}  |  ${color E04613}Home:${color} ${fs_free /home} / ${fs_size /} ${fs_bar 8,60 /}  |  ${color E04613}Wireless ${color}(${addr wlan0})  |  ${color E04613}Down:${color} $color${downspeedf wlan0}KB/s ${downspeedgraph wlan0 8,60} $color  |  ${color E04613}Total Download:${color} ${totaldown wlan0}  |  ${color E04613}Up:${color} ${upspeedf wlan0}KB/s ${upspeedgraph wlan0 8,60}  |  ${color E04613}Total Upload:${color} ${totalup wlan0}

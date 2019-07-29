@@ -36,7 +36,7 @@ xftfont DejaVu Sans:bold:size=9
 
 # Create own window instead of using desktop (required in nautilus, pcmanfm and rox desktops)
 own_window yes
-own_window_transparent yes
+own_window_transparent no
 own_window_hints undecorated,sticky,skip_taskbar
 
 # Text alpha when using Xft
@@ -128,11 +128,11 @@ uppercase no
 # stuff after 'TEXT' will be formatted on screen
 
 own_window_argb_value 0
-own_window_argb_visual no
+own_window_argb_visual yes
 own_window_colour 000000
 TEXT
 ${color3}${alignc}MX Linux
-${color8}$alignc${font DejaVu Sans:size=12}${if_match "pmfix${time %p}" == "pmfix"}${time %H:%M}${else}${time %I:%M}${endif}   $font
+${color8}$alignc${font DejaVu Sans:size=12}${if_match "pmfix${time %p}" == "pmfix"}${time %H:%M}${else}${time %H:%M}${endif}   $font
 ${color}${alignc}${time %a %d %b}
 ${color}${alignc}Uptime: $uptime
 
@@ -143,22 +143,22 @@ ${color}cpu freq:${color3}${alignr}${freq}
 ${color}$alignr${cpugraph cpu0 30,170 5599cc 5599cc}
 ${color}disk I/O:${alignr}${color3}${diskio}
 ${color}${alignr}${diskiograph 30,170 5599cc 5599cc}${if_up eth0}
-${color}eth0 up: $alignr${color3} ${upspeed eth0}
-${color}$alignr${upspeedgraph   eth0 30,170 5599cc 5599cc}
-${color}eth0 down: $alignr${color3} ${downspeed eth0}
-${color2}$alignr${downspeedgraph eth0 30,170  5599cc 5599cc}${endif}${if_up eth1}
-${color}eth1 up: $alignr${color3} ${upspeed eth1}
-${color}$alignr${upspeedgraph   eth1 30,170 5599cc 5599cc}
-${color}eth1 down: $alignr${color3} ${downspeed eth1}
-${color2}$alignr${downspeedgraph eth1 30,170  5599cc 5599cc}${endif}${if_up wlan0}
+${color}eth0 up: $alignr${color3} ${upspeed wlan0}
+${color}$alignr${upspeedgraph   wlan0 30,170 5599cc 5599cc}
+${color}eth0 down: $alignr${color3} ${downspeed wlan0}
+${color2}$alignr${downspeedgraph wlan0 30,170  5599cc 5599cc}${endif}${if_up eth1}
+${color}eth1 up: $alignr${color3} ${upspeed wlan0}
+${color}$alignr${upspeedgraph   wlan0 30,170 5599cc 5599cc}
+${color}eth1 down: $alignr${color3} ${downspeed wlan0}
+${color2}$alignr${downspeedgraph wlan0 30,170  5599cc 5599cc}${endif}${if_up wlan0}
 ${color}wlan0 up: $alignr${color3} ${upspeed wlan0}
 ${color2}$alignr${upspeedgraph   wlan0 30,170 5599cc 5599cc}
 ${color}wlan0 down: $alignr${color3} ${downspeed wlan0}
 ${color2}$alignr${downspeedgraph wlan0 30,170 5599cc 5599cc}${endif}${if_up wlan1}
-${color}wlan1 up: $alignr${color3} ${upspeed wlan1}
-${color2}$alignr${upspeedgraph   wlan1 30,170 5599cc 5599cc}
-${color}wlan1 down: $alignr${color3} ${downspeed wlan1}
-${color2}$alignr${downspeedgraph wlan1 30,170 5599cc 5599cc}${endif}
+${color}wlan1 up: $alignr${color3} ${upspeed wlan0}
+${color2}$alignr${upspeedgraph   wlan0 30,170 5599cc 5599cc}
+${color}wlan1 down: $alignr${color3} ${downspeed wlan0}
+${color2}$alignr${downspeedgraph wlan0 30,170 5599cc 5599cc}${endif}
 ${color}${alignr}${color8}Used / Total
 ${color}mem:${alignr}$mem ${color3} /${color} $memmax
 ${color}swap:${alignr}$swap ${color3} /${color} $swapmax

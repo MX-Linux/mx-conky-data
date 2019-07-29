@@ -1,0 +1,80 @@
+# By Jesse_Avalos , See me on Eye Candy Linux_  on Google +
+background yes
+use_xft yes
+xftfont Roboto:size=9
+xftalpha 0.8
+update_interval 1
+total_run_times 0
+own_window yes
+own_window_transparent yes
+##############################################
+# Compositing tips:
+# Conky can play strangely when used with
+# different compositors. I have found the
+# following to work well, but your mileage
+# may vary. Comment/uncomment to suit.
+##############################################
+## no compositor
+#own_window_type override
+#own_window_argb_visual no
+
+## xcompmgr
+#own_window_type override
+#own_window_argb_visual yes
+
+## cairo-compmgr
+own_window_type normal
+own_window_argb_visual yes
+##############################################
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+stippled_borders 0
+border_margin 5
+border_width 1
+default_color EDEBEB
+default_shade_color 000000
+default_outline_color 000000
+alignment top_right
+minimum_size 600 600
+maximum_width 900
+gap_x 20
+gap_y 30
+alignment top_right
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+net_avg_samples 2
+short_units yes
+text_buffer_size 2048
+use_spacer none
+override_utf8_locale yes
+
+color1 212021
+color2 E8E1E6
+color3 E82A2A
+
+#own_window_argb_value 0
+#own_window_colour 000000
+#own_window_colour 000000
+own_window_argb_value 0
+own_window_colour 000000
+TEXT
+
+${goto 124}${voffset -}${font GeosansLight:light:size=70}${if_match "pmfix${time %p}" == "pmfix"}${time %I:%M}${else}${time %I:%M}${endif}${image line.png -p 350,27 -s 3x150}
+${offset 180}${voffset -55}${font GeosansLight:size=17}${time %a %d %b}
+${offset 380}${voffset -177}${font GeosansLight:size=25}${font GeosansLight:size=22}
+${offset 400}${voffset 5}${font GeosansLight:size=15}$acpitemp'C
+${offset 400}${voffset 10}${cpu cpu0}% / 100%
+${offset 400}${voffset 4}$memfree / $memmax${font GeosansLight:size=15}
+${offset 400}${voffset 5}${upspeed wlan0} kb/s / ${totalup wlan0}
+${offset 400}${voffset 5}${downspeed wlan0} kb/s / ${totaldown wlan0}
+
+${goto 373}${voffset -162}${font Dingytwo:size=17}M$font 
+${goto 373}${voffset 7}${font Dingytwo:size=17}7$font 
+${goto 373}${voffset 1}${font Dingytwo:size=17}O$font 
+${goto 373}${voffset 1}${font Dingytwo:size=17}5$font 
+${goto 373}${voffset 1}${font Dingytwo:size=17}4$font 

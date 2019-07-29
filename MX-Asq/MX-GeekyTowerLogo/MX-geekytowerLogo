@@ -17,10 +17,10 @@ total_run_times 0
 # Create own window instead of using desktop (required in nautilus)
 # own_window = yes fixes cairo-compmgr issue...
 own_window yes
-own_window_transparent yes
+own_window_transparent no
 #own_window_type normal
 #own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_hints undecorated,below,skip_taskbar,skip_pager
 
 # Use double buffering (reduces flicker, may not work for everyone)
 double_buffer yes
@@ -99,7 +99,7 @@ own_window_type normal
 #  Output
 ##############################################
 own_window_argb_value 0
-own_window_argb_visual no
+own_window_argb_visual yes
 minimum_size 0 0
 TEXT
    ${alignc}${font Arial Black:size=28}${color1}${time %H:%M}${font}
@@ -127,15 +127,15 @@ ${voffset 2}${color3}   Kernel: ${alignr}${color}${kernel}
 ${color2}MEDIA ${hr 2}${color}
 
 ${execpi 10 $HOME/.conky/MX-Asq/MX-GeekyTowerLogo/conky-harddisks.sh}
-${color2}ETHERNET (${addr eth0}) ${hr 2}${color}
+${if_up eth0}${color2}ETHERNET (${addr eth0}) ${hr 2}${color}
 
    Down: ${downspeedf eth0}kB/s ${alignr}Up: ${upspeedf eth0}kB/s
-   ${downspeedgraph eth0 30,120 000000 000000} ${alignr}${upspeedgraph eth0 30,120 000000 000000}
+   ${downspeedgraph eth0 30,120 000000 000000} ${alignr}${upspeedgraph eth0 30,120 000000 000000}${endif}
 
-${color2}WIRELESS (${addr wlan0}) [${wireless_link_qual_perc eth0}%] ${hr 2}${color}
+${color2}WIRELESS (${addr wlan0}) [${wireless_link_qual_perc wlan0}%] ${hr 2}${color}
 
-   Down: ${downspeedf eth0}kB/s ${alignr}Up: ${upspeedf eth0}kB/s
-   ${downspeedgraph eth0 30,120 000000 000000} $alignr${upspeedgraph eth0 30,120 000000 000000}
+   Down: ${downspeedf wlan0}kB/s ${alignr}Up: ${upspeedf wlan0}kB/s
+   ${downspeedgraph wlan0 30,120 000000 000000} $alignr${upspeedgraph wlan0 30,120 000000 000000}
 
 ${color2}MONITOR ${hr 2}${color}
 

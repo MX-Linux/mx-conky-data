@@ -19,7 +19,7 @@ minimum_size 300 300
     own_window_type normal  #desktop
     #own_window_type panel # Just use with KWin for example in Xfce
 own_window_transparent yes
-own_window_argb_visual no
+own_window_argb_visual yes
     own_window_class conky-semi
     own_window_hints undecorated,sticky,skip_taskbar,skip_pager,below
     border_inner_margin 10
@@ -59,7 +59,7 @@ color4 5294e2
     ## System information using conky capabilities
 
     # Header with base system info
-own_window_argb_value 180
+own_window_argb_value 0
 own_window_colour 000000
 
    TEXT
@@ -86,7 +86,7 @@ $font${top_mem name 2}${alignr}${top_mem mem 2}%
 $font${top_mem name 3}${alignr}${top_mem mem 3}%
 
 ${font Roboto-Light:bold:size=10}${color white}NETWORK ${color2}${hr 2}
-$font${color DimGray}IP on eth0 $alignr ${addr eth0}
+${if_up eth0}$font${color DimGray}IP on eth0 $alignr ${addr eth0}${endif}
 $font${color DimGray}IP on wlan0 $alignr ${addr wlan0}
 
 Down $alignr ${downspeed wlan0} kb/s
@@ -113,5 +113,5 @@ ${endif}\
 ${else}
 ${color3}${font Open Sans:size=9}Clementine Not Running\
 ${endif}
-##
-own_window_hints 
+
+

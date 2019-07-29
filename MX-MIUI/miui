@@ -23,7 +23,7 @@ text_buffer_size 2048
 #############################
 own_window yes
 own_window_type normal
-own_window_transparent yes
+own_window_transparent no
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 #own_window_argb_visual yes
 #own_window_argb_value 100
@@ -51,13 +51,13 @@ color2 ffffff
 #lua_load ~/.conky/conkybg.lua
 #lua_draw_hook_pre conky_draw_bg
 
-own_window_argb_visual no
+own_window_argb_visual yes
 own_window_colour 000000
 own_window_argb_value 0
 TEXT
-${voffset 11} ${goto 30}${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %I}${endif} ${goto 110}${time %M}
+${voffset 11} ${goto 30}${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %H}${endif} ${goto 110}${time %M}
 ${image ./b.png -p 0,0 -s 188x100}
-${voffset -175} ${goto 224}${font AvantGarde LT Medium:size=10}${time %A} ${font}
+${voffset -175} ${goto 224}${font AvantGarde LT Medium:size=10}${offset 12}${time %a} ${font}
 ${font AvantGarde LT Medium:size=38}${voffset -60}${goto 224}${time %d}
 ${image ./c.png -p 200,0 -s 93x100}
 

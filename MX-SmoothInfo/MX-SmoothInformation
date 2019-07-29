@@ -42,7 +42,7 @@ minimum_size 500 0
 maximum_width 800
 gap_x 20
 gap_y 40
-alignment top_middle
+alignment top_right
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
@@ -59,9 +59,9 @@ color3 d97a11
 own_window_type normal
 own_window_argb_value 0
 own_window_colour 000000
-own_window_argb_visual no
+own_window_argb_visual yes
 TEXT
-${goto 50}${color1}${font ITC Avant Garde Gothic Pro:size=80} ${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %I}${endif}${font Robot-Light:light:size=25}${voffset -30}${if_match "pmfix${time %p}" == "pmfix"}  ${else}${time %P}${endif}${color3}${font ITC Avant Garde Gothic Pro:size=80}${voffset -23}${time %M}${color1}
+${goto 50}${color1}${font ITC Avant Garde Gothic Pro:size=80} ${if_match "pmfix${time %p}" == "pmfix"}${time %I}${else}${time %I}${endif}${font Robot-Light:light:size=25}${voffset -30}${if_match "pmfix${time %p}" == "pmfix"}  ${else}${time %P}${endif}${color3}${font ITC Avant Garde Gothic Pro:size=80}${voffset -23}${time %M}${color1}
 ${goto -10}${voffset -162}${font Robot-Light:light:size=22} ${time %a}
 ${goto 7}${voffset -1}${font Robot-Light:size=22} ${time %b} 
 ${goto 23}${voffset 1}${color3}${font ITC Avant Garde Gothic Pro:bold:size=23}${time %d}${color1}

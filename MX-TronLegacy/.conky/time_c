@@ -40,8 +40,8 @@ xftfont future:size=10
 # Color scheme #
 default_color 66eafb
 color1 fa4f6a
-s
-own_window_argb_value 0
+
+#own_window_argb_value 0
 TEXT
 ${image ./conky_icons/circle.png -s 200x100}${voffset 10}${offset 10}Time & Date
 ${voffset 10}${offset 10}${font future:size=26}${time %H} ${time %M} ${time %S} ${alignr 10}${time %p}$font

@@ -5,7 +5,7 @@ update_interval 3
 total_run_times 0
 own_window yes
 own_window_type normal
-own_window_transparent yes
+own_window_transparent no
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
 minimum_size 300 120
@@ -31,10 +31,10 @@ color1 FCD97B
 color2 dddddd
 
 own_window_argb_value 0
-own_window_argb_visual no
+own_window_argb_visual yes
 own_window_colour 000000
 TEXT
-${voffset 10}${color2}${font Janda Cheerful Script:pixelsize=103}${if_match "pmfix${time %p}" == "pmfix"}${time %_H:%M}${else}${time %%_I:%M%P}${endif}${font}${voffset -84}${offset 10}${color1}${font Ubuntu:pixelsize=42}${time %d}${voffset -14}${color2}${font Ubuntu:pixelsize=22} ${time  %B} ${time %Y}${font}${voffset 24}${font Amaze:pixelsize=58}${offset -165}${time %a}${font}
+${voffset 10}${color2}${font Janda Cheerful Script:pixelsize=103}${if_match "pmfix${time %p}" == "pmfix"}${time %H:%M}${else}${time %H:%M%P}${endif}${font}${voffset -84}${offset 10}${color1}${font Ubuntu:pixelsize=42}${time %d}${voffset -14}${color2}${font Ubuntu:pixelsize=22} ${time  %B} ${time %Y}${font}${voffset 24}${font Amaze:pixelsize=45}${offset -125}${time %a}${font}
 ${voffset 15}${offset 50}${font Ubuntu:pixelsize=12}${color1}HDD free ${offset 5}$color${fs_free /home} / ${fs_size /home}${offset 15}${color1}MEM free ${offset 5}$color$mem / $memmax${offset 15}${color1}CPU ${offset 5}$color${cpu cpu0}%
 
 

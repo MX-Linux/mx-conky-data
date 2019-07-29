@@ -7,14 +7,14 @@ background no
 # Update interval in seconds
 update_interval 1
 xftalpha 0.8
-own_window_argb_visual no
+own_window_argb_visual yes
 # This is the number of times Conky will update before quitting.
 # Set to zero to run forever.
 total_run_times 0
 
 # Create own window instead of using desktop (required in nautilus)
 own_window yes
-own_window_transparent yes
+own_window_transparent no
 own_window_type conky
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 

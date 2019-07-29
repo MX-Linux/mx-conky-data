@@ -30,13 +30,13 @@ lua_load ./lsd_rings.lua
 lua_draw_hook_post main
 
 own_window_argb_value 0
-own_window_argb_visual no
+own_window_argb_visual yes
 own_window_colour 000000
 
 TEXT
 ${goto 185}${voffset -8}${color0}${font Zekton:style=bold:size=12}${execi 3600 whoami}
 ${goto 60}${voffset 20}${color}${font}Temperature: 
-${goto 10}${voffset 75}${font Zekton:style=bold:size=30}${time %H:%M}${font}
+${goto 10}${voffset 75}${font Zekton:style=bold:size=30}${time %I:%M}${font}
 ${goto 166}${voffset -10}${font Zekton:style=Bold:size=9}Battery
 ${alignc -48}${font Zekton:style=Bold:size=9}${if_match "x${battery_short BAT0}" == "x"}${else}${if_match "${battery_short BAT0}" == "N"}${else}${battery_percent BAT0}%${endif}${endif}
 ${goto 49}${voffset 45}CPU${voffset -5}${color}${goto 128}RAM

@@ -7,8 +7,8 @@ own_window yes
 # own_window_type desktop
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 #own_window_type override
-own_window_argb_visual yes
-own_window_argb_value 140
+own_window_argb_visual no
+own_window_argb_value 0
 out_to_console no
 own_window_transparent no
 own_window_class conky-semi
@@ -69,7 +69,7 @@ ${goto 14}${upspeedgraph wlan0  50,140 000000 FFBF00}${goto 180}${downspeedgraph
 ${voffset -1}${endif}${if_up eth0}${goto 10}Ethernet: ${color3} eth0${color}${goto 160}     IP local:${color3}${addr eth0}
 ${hr 1}
 ${voffset -1}
-${goto 14}${color2}Up: ${color3}${upspeed eth0}${color1}${alignr}${goto 180}${color2}Down:${color1} ${color3}${downspeed eth0}${color0}
-${goto 14}${color2}Sent:${color1} ${color2}${totalup eth0}${color1}${alignr}${goto 180}${color2}Received:${color}${color2}${totaldown eth0}
-${goto 14}${upspeedgraph eth0  50,140 000000 FFBF00}${goto 180}${downspeedgraph eth0 50,140 000000 00FF00}$
+${goto 14}${color2}Up: ${color3}${upspeed wlan0}${color1}${alignr}${goto 180}${color2}Down:${color1} ${color3}${downspeed wlan0}${color0}
+${goto 14}${color2}Sent:${color1} ${color2}${totalup wlan0}${color1}${alignr}${goto 180}${color2}Received:${color}${color2}${totaldown wlan0}
+${goto 14}${upspeedgraph wlan0  50,140 000000 FFBF00}${goto 180}${downspeedgraph wlan0 50,140 000000 00FF00}$
 ${voffset -1}${endif}

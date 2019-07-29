@@ -10,14 +10,14 @@ double_buffer yes
 no_buffers yes
 text_buffer_size 2048
 alignment top_right
-gap_x 50
+gap_x 10
 gap_y 15
 minimum_size 550 550
 maximum_width 550
 own_window yes
 own_window_type Conky
-own_window_transparent yes
-own_window_argb_visual no
+own_window_transparent no
+own_window_argb_visual yes
 own_window_argb_value 0
 own_window_colour 000000
 own_window_hints undecorated,skip_taskbar,skip_pager,below
@@ -45,6 +45,6 @@ own_window_colour 000000
 
 TEXT
 
-${goto 35}${color1}${font Feena Casual:size=80}${if_match "pmfix${time %p}" == "pmfix"}${time %H }${else}${time %I }${endif}${font Feena Casual:size=36}${color2}${time %A}#$
+${goto 35}${color1}${font Feena Casual:size=80}${if_match "pmfix${time %p}" == "pmfix"}${time %H }${else}${time %H }${endif}${font Feena Casual:size=36}${color2}${time %A}#$
 ${color2}${goto 35}${voffset 55}${font Feena Casual:size=16}${time %d} ${font Feena Casual:size=36}${voffset -15}${time %B} ${font Feena Casual:size=16}${goto 65}${voffset 34}${time %Y}${font Feena Casual:size=80}${goto 155}${voffset -54}${color1}${time %M}${font Feena Casual:size=16}${color2} ${time %P}
 

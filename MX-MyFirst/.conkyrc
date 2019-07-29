@@ -8,7 +8,7 @@ draw_borders no
 draw_outline no
 draw_shades no
 gap_x 0
-gap_y 150
+gap_y 50
 maximum_width 1000
 minimum_size 0 0
 no_buffers yes
@@ -40,10 +40,10 @@ color2 f23232
 color3 d7d7d7
 
 own_window_argb_value 0
-own_window_argb_visual no
+own_window_argb_visual yes
 own_window_colour 000000
 TEXT
-${font Roboto-Light:pixelsize=15}${alignc}${time  %A, %H:%M:%S }${font}
+${font Roboto-Light:pixelsize=15}${alignc}${time  %A, %I:%M:%S }${font}
 ${color2}${font Roboto-Light:pixelsize=65}${alignc}${time %d %B  |  %Y}${font}${color}
 
 

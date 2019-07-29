@@ -9,7 +9,7 @@ temperature_unit celsius
 double_buffer yes
 no_buffers yes
 text_buffer_size 2048
-alignment top_middle
+alignment top_right
 gap_x 20
 gap_y 20
 minimum_size 550 550
@@ -17,7 +17,7 @@ maximum_width 550
 own_window yes
 own_window_type normal
 own_window_transparent yes
-own_window_argb_visual no
+own_window_argb_visual yes
 own_window_argb_value 0
 own_window_hints undecorated,skip_taskbar,skip_pager,below
 border_inner_margin 0
@@ -43,5 +43,5 @@ own_window_colour 000000
 TEXT
 
 
-${goto 35}${font Tall Films:size=170} ${if_match "pmfix${time %p}" == "pmfix"}${time %H:%M}${else}${time %I:%M}${endif}${font Tall Films:size=38}${time %P}
+${goto 35}${font Tall Films:size=170} ${if_match "pmfix${time %p}" == "pmfix"}${time %I:%M}${else}${time %I:%M}${endif}${font Tall Films:size=38}${time %P}
 ${goto 60}${voffset }$color1${font Tall Films:size=55} ${time %A} |${font Tall Films:size=30} ${time %B %d %Y}

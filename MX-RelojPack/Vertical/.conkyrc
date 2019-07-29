@@ -1,4 +1,4 @@
-alignment top_middle
+alignment top_right
 background yes
 cpu_avg_samples 2
 default_color 000000		
@@ -9,12 +9,12 @@ draw_borders no
 draw_graph_borders no
 draw_outline no
 draw_shades no
-gap_x 15
+gap_x 55
 gap_y 30
 max_specials 1024
 max_user_text 10000
 maximum_width 100
-minimum_size 300 400
+minimum_size 300 200
 net_avg_samples 2
 no_buffers yes
 override_utf8_locale yes
@@ -35,9 +35,9 @@ use_xft yes
 xftalpha 1
 
 own_window_argb_value 0
-own_window_argb_visual no
+own_window_argb_visual yes
 TEXT
-${offset 8}${voffset 16}${font OldSansBlack:size=22}${color #232323}${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %I}${endif}${offset 12}${time %M}${font}
+${offset 8}${voffset 16}${font OldSansBlack:size=22}${color #232323}${if_match "pmfix${time %p}" == "pmfix"}${time %I}${else}${time %I}${endif}${offset 12}${time %M}${font}
 ${font pftempestafivecondensed:size=6}        
         
                  ${color white}Cpu: $cpu%
