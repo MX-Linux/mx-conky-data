@@ -39,15 +39,9 @@ own_window_argb_visual yes
 own_window_colour 000000
 TEXT
 ${voffset 25}${goto 35}Kernel: ${kernel}
-<<<<<<< HEAD
 ${voffset 12}${goto 52}Uptime: ${uptime}
 ${voffset 70}${alignc -20}${color}${font Segoe UI:size=25}${time %I}${voffset -2}${offset 10}:${offset 10}${voffset 2}${time %M}${color}${font}
 ${voffset 10}${offset 25}${time %A}${goto 85}${color}${time %d}${color}${goto 110}${time %B}${color}
-=======
-${voffset 10}${goto 62}Uptime: ${uptime}
-${voffset 70}${alignc -30}${color}${font Segoe UI:size=25}${time %H}${voffset -2}${offset 10}:${offset 10}${voffset 2}${time %M}${color}${font}
-${voffset 10}${offset 35}${time %A}${goto 95}${color}${time %d}${color}${goto 120}${time %B}${color}
->>>>>>> 2bd412f84a7856811cf7764be0329a847018a28b
 ##SYS##
 ${goto 40}${voffset 20}${font StyleBats:size=13}A${font}   ${voffset -3}CPU: ${alignr 50}${cpu cpu0}% 
 ${goto 40}${voffset 10}${font StyleBats:size=13}g${font}   ${voffset -3}RAM: ${alignr 50}$memperc% 
@@ -57,4 +51,4 @@ ${goto 40}${voffset -5}${font Pie charts for maps:size=12}7${font}   ${voffset -
 ##NET##
 ${goto 40}${voffset -5}${font PizzaDude Bullets:size=12}N${font}   Upload:  ${goto 130}${totalup wlan0}${goto 40}${voffset 25}${font PizzaDude Bullets:size=12}T${font}   Download:  ${goto 130}${totaldown wlan0} 
 
-${image ~/.conky/MX-Simple/Conky/base.png -p 0,0 -s 220x350}
+${image ~/.conky/MX-Simple/Conky/base.png -p 0,0 -s 200x350}
