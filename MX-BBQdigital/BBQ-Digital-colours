@@ -1,5 +1,5 @@
 #alignment tl
-alignment top_middle
+alignment top_right
 background no
 border_inner_margin 0
 border_width 0
@@ -17,7 +17,7 @@ minimum_size 250 0
 no_buffers yes
 override_utf8_locale yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-own_window_transparent no
+own_window_transparent yes
 own_window yes
 #own_window_type desktop
 pad_percents 2

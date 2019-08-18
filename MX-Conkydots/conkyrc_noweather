@@ -79,10 +79,10 @@ color2 000000
 #own_window_colour 000000
 own_window_argb_value 0
 own_window_argb_visual no
-own_window_colour 4E9A06
+own_window_colour 8AE234
 TEXT
 ${image ./dots.png}${alignc 30}
 ${offset 30}${voffset 4}${font sesame:pixelsize=56}${time %I}${voffset -16}${font sesame:bold:pixelsize=36}:${time %m}${font sesame:size=8:bold}${offset 2}${voffset -32}${time %S}${voffset -5}${alignc -30}${font sesame:pixelsize=26}${color  white}${cpu}% 
-${alignr 10}${voffset -35}$memperc%  ${offset 0}${fs_used_perc /}%
+${alignr 30}${voffset -35}$memperc%  ${offset 0}${fs_used_perc /}%
 ${alignc 50}${voffset 30}${font sesame-shadow:size=6}${time %d %b %Y}${offset -15}${voffset -32}${time %a}${alignr 10}${voffset 5}${wireless_link_qual_perc wlan0}%
 

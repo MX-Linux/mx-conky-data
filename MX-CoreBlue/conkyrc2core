@@ -18,8 +18,8 @@ temperature_unit fahrenheit
 # Window specifications #
 own_window yes
 own_window_type normal
-own_window_transparent no
-own_window_transparent no
+own_window_transparent yes
+own_window_transparent yes
 own_window_hints undecorated,skip_taskbar,skip_pager,below
 
 border_inner_margin 0
@@ -29,7 +29,7 @@ minimum_size 250 300
 maximum_width 250
 
 alignment top_right
-gap_x 30
+gap_x 10
 gap_y 0
 
 # Graphics settings #
@@ -70,7 +70,7 @@ ${color 0ABFFF}${goto 202}${voffset 25}Battery
 #----------------------------------------------------------------------------------------------------------------------------------------
 #						Weather 
 #----------------------------------------------------------------------------------------------------------------------------------------
-${font conkyweather:size=35}${color FFFFFF}${goto 200}${voffset 20}${execpi 6000  sed -n '2p' ~/.conky/accu_weather/rss/weather}$color${font}${font Radio Space:size=11}${color 0ABFFF}${goto 202}${voffset 12}
+${font conkyweather:size=35}${color FFFFFF}${goto 200}${voffset 20}${execpi 6000  sed -n '2p' ~/.conky/accu_weather/rss/weather}$color${font}${font Radio Space:size=11}${color 0ABFFF}${goto 202}${voffset 12}HOME
 ${execi 600 bash ~/.conky/accu_weather/rss/acc_rss}${font Radio Space:size=15}${goto 201}${voffset -4}${execpi 600 sed -n '1p' ~/.conky/accu_weather/rss/weather|awk '{print $NF}'}${font}$color
 ${font caviar dreams:size=8}${goto 47}${voffset 5}Uptime: ${uptime_short}
 #----------------------------------------------------------------------------------------------------------------------------------------
@@ -112,10 +112,7 @@ ${color #0ABFFF}${voffset 5}NAME${goto 122}PID${goto 163}CPU%${goto 210}MEM%$col
 ${top name 1}${goto 115}${top pid 1}${goto 160}${top cpu 1}${goto 205}${top mem 1}
 ${top name 2}${goto 115}${top pid 2}${goto 160}${top cpu 2}${goto 205}${top mem 2}
 ${top name 3}${goto 115}${top pid 3}${goto 160}${top cpu 3}${goto 205}${top mem 3}
-${top name 5}${goto 115}${top pid 5}${goto 160}${top cpu 5}${goto 205}${top mem 5}
-${top name 6}${goto 115}${top pid 6}${goto 160}${top cpu 6}${goto 205}${top mem 6}
-${top name 7}${goto 115}${top pid 7}${goto 160}${top cpu 7}${goto 205}${top mem 7}
-${top name 8}${goto 115}${top pid 8}${goto 160}${top cpu 8}${goto 205}${top mem 8}
+
 #----------------------------------------------------------------------------------------------------------------------------------------
 #					     Computer info
 #----------------------------------------------------------------------------------------------------------------------------------------

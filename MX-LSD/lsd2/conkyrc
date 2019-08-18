@@ -22,9 +22,9 @@ default_bar_size 30 8
 draw_shades no
 default_color ffffff
 default_shade_color 000000
-color0 white
-color1 white
-color2 green
+color0 00d9ff
+color1 ffffff
+color2 ffffff
 
 lua_load ./lsd_rings.lua
 lua_draw_hook_post main
@@ -34,23 +34,14 @@ own_window_argb_visual yes
 own_window_colour 000000
 
 TEXT
-<<<<<<< HEAD
 ${goto 185}${voffset -8}${color0}${font Zekton:style=bold:size=12}${execi 3600 whoami}
 ${goto 60}${voffset 20}${color}${font}Temperature: 
-${goto 10}${voffset 75}${font Zekton:style=bold:size=30}${time %I:%M}${font}
+${goto 10}${voffset 75}${font Zekton:style=bold:size=30}${time %H:%M}${font}
 ${goto 166}${voffset -10}${font Zekton:style=Bold:size=9}Battery
 ${alignc -48}${font Zekton:style=Bold:size=9}${if_match "x${battery_short BAT0}" == "x"}${else}${if_match "${battery_short BAT0}" == "N"}${else}${battery_percent BAT0}%${endif}${endif}
 ${goto 49}${voffset 45}CPU${voffset -5}${color}${goto 128}RAM
-=======
-${goto 185}${voffset -8}${color2}${font Zekton:style=bold:size=12}${execi 3600 whoami}
-${goto 80}${voffset 20}${color1}${font}TEMP 
-${goto 10}${voffset 70}${color0}${font Zekton:style=bold:size=30}${if_match "pmfix${time %p}" == "pmfix"}${time %k:%M}${else}${time %l:%M}${endif}${font}${color}
-${goto 173}${voffset -10}${color1}${font Zekton:style=Bold:size=9}BAT
-${alignc -48}${color1}${font Zekton:style=Bold:size=9}${if_match "x${battery_short BAT0}" == "x"}${else}${if_match "${battery_short BAT0}" == "N"}${else}${battery_percent BAT0}%${endif}${endif}
-${goto 49}${voffset 45}CPU${voffset -5}${color1}${goto 128}RAM
->>>>>>> 2bd412f84a7856811cf7764be0329a847018a28b
 ${goto 130}${font Zekton:style=Bold:size=9}${memperc}%
-${goto 85}${voffset 20}${font Zekton:style=Bold:size=9}HDD
-${goto 85}${font Zekton:style=Bold:size=9}${fs_used_perc}%
+${goto 75}${voffset 20}${font Zekton:style=Bold:size=9}HDused
+${goto 80}${font Zekton:style=Bold:size=9}${fs_used /home}
 
 ${image ~/.conky/MX-LSD/lsd2/lsd.png -p 10,0 -s 255x412}
