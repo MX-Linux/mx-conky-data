@@ -47,6 +47,6 @@ own_window_colour 000000
 
 TEXT
 
-${goto 35}${color1}${font Feena Casual:size=80}${if_match "pmfix${time %p}" == "pmfix"}${time %I }${else}${time %I }${endif}${font Feena Casual:size=36}${color2}${time %A}#$
+${goto 35}${color1}${font Feena Casual:size=80}${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %I}${endif}${font Feena Casual:size=36}${color2}${time %A}#$
 ${color2}${goto 35}${voffset 55}${font Feena Casual:size=18}${time %d} ${font Feena Casual:size=36}${voffset -15}${time %B} ${font Feena Casual:size=16}${goto 65}${voffset 34}${time %Y}${font Feena Casual:size=80}${goto 175}${voffset -54}${color1}${time %M}${font Feena Casual:size=16}${color2} ${time %P}
 ${goto 35}${voffset 8}${font Roboto-Light:pixelsize=12}${color2}${offset 9} ${color3}hdd ${offset 9}${color4}${fs_used_perc /}%${offset 9}${color3}mem  ${color4}${memperc}%${offset 9}${color3}cpu ${offset 9}${color4}${cpu}%

@@ -43,5 +43,5 @@ own_window_colour 000000
 TEXT
 
 
-${goto 35}${font Tall Films:size=170} ${if_match "pmfix${time %p}" == "pmfix"}${time %I:%M}${else}${time %I:%M}${endif}${font Tall Films:size=38}${time %P}
+${goto 35}${font Tall Films:size=170} ${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %I}${endif}${time %I:%M}${endif}${font Tall Films:size=38}${time %P}
 ${goto 60}${voffset }$color1${font Tall Films:size=55} ${time %A} |${font Tall Films:size=30} ${time %B %d %Y}
