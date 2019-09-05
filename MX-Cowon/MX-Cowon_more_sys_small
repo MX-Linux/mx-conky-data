@@ -1,6 +1,6 @@
 ######################
 # - Conky settings - #
-##################### 
+######################
 update_interval 1
 total_run_times 0
 net_avg_samples 1
@@ -37,6 +37,8 @@ gap_y 40
 minimum_size 220 220
 
 
+
+
 #########################
 # - Graphics settings - #
 #########################
@@ -44,10 +46,12 @@ draw_shades no
 
 default_color 025101
 default_shade_color 1d1d1d
-color0 ffffff
+color0 90ac11
 color1 0f0c03
 color2 0f225d
 color3 1c1911
+color4 782f9f
+
 
 #lua_load ~/.conky/conkybg.lua
 #lua_draw_hook_pre conky_draw_bg
@@ -55,13 +59,10 @@ color3 1c1911
 own_window_argb_value 0
 own_window_argb_visual yes
 own_window_colour 000000
-
-lua_load ~/.conky/MX-Cowon/conky_hours.lua
-
 TEXT
-${voffset -20}${lua hours}
+${voffset -20}${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %I}${endif}
 ${color2}${offset 40}${voffset -100}${time %M}
 ${voffset -140}${offset 10}${font Roboto-Light:bold:size=12}${color2}${time %A} ${offset 10}${color2}${time %B %d}
-${offset 150}${voffset -175}${font Roboto-Light:size=12}${color2}${lua AM_PM}
+${offset 150}${voffset -175}${font Roboto-Light:size=12}${color2}${time %p}
 #system
-${offset 0}${voffset 160}${font Roboto-Light:pixelsize=12}${offset 14}${color3}hdd ${offset 4}${color4}${fs_used_perc /}%${offset 4}${color3} mem ${offset 4}${color4}${memperc}%${offset 4} ${color3}cpu ${offset 4}${color4}${cpu cpu0}%
+${offset 0}${voffset 160}${font Roboto-Light:bold:pixelsize=12}${offset 14}${color3}hdd ${offset 4}${color4}${fs_used_perc /}%${offset 4}${color3} mem ${offset 4}${color4}${memperc}%${offset 4} ${color3}cpu ${offset 4}${color4}${cpu cpu0}%
