@@ -62,7 +62,7 @@ own_window_colour 000000
 TEXT
 
 
-${voffset -52}${color1}${font Roboto:size=16}${time %A}${font}${voffset -8}${alignr 40}${color0}${font Roboto:size=38}${time %e}${font}
+${voffset -48}${color1}${font Roboto:size=16}${time %A}${font}${voffset -6}${alignr 30}${color0}${font Roboto:size=38}${time %e}${font}
 ${color0}${voffset -30}${color0}${font Roboto:size=18}${time %b}${font}${voffset -3}  ${color0}${font Roboto:size=20}${time %Y}${font}${color1}
 ${voffset 160}${hr}
 ${image ./MX_logo.png -p 120,265 -s 75x75}

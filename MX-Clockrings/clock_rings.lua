@@ -25,7 +25,7 @@ settings_table = {
         bg_alpha=0.2,
         fg_colour=0xFF0055,
         fg_alpha=0.8,
-        x=163, y=360,
+        x=163, y=340,
         radius=25,
         thickness=25,
         start_angle=-90,

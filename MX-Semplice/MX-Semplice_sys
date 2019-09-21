@@ -46,7 +46,7 @@ own_window_colour 000000
 TEXT
 
 
-${goto 20}${font Tall Films:size=170} ${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %I}${endif}${font Tall Films:size=38}${time %P}
+${goto 20}${font Tall Films:size=170} ${if_match "pmfix${time %p}" == "pmfix"}${time %H}:${time %M}${else}${time %I}:${time %M}${endif}${font Tall Films:size=38}${time %P}
 ${goto 60}${voffset 10}$color1${font Tall Films:size=55} ${time %A} ${font Tall Films:size=30} ${time %x}
 #system
 ${goto 75}${voffset -10}${font Roboto-Light:pixelsize=18}${color2}   ${offset 9} ${color3}hdd ${offset 9}${color4}${fs_used_perc /}%${offset 9}${color3}cpu ${offset 9}${color4}${cpu}%
