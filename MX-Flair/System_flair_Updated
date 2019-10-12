@@ -64,7 +64,7 @@ own_window_argb_value 0
 own_window_colour 000000
 TEXT
 
-${image ./images/whiteline.png -p 350,27 -s 3x150}${color0}${goto 124}${voffset -}${font GeosansLight:light:size=70}${if_match "pmfix${time %p}" == "pmfix"}${time %H}:${time %I}${else}${time %I}:${time %M}${endif}
+${image ./images/whiteline.png -p 350,27 -s 3x150}${color0}${goto 124}${voffset -}${font GeosansLight:light:size=70}${if_match "pmfix${time %p}" == "pmfix"}${time %H}:${time %M}${else}${time %I}:${time %M}${endif}
 ${offset 180}${voffset -55}${font GeosansLight:size=17}${time %a %d %b}${color}
 ${color0}${offset 380}${voffset -177}${font GeosansLight:size=25}${font GeosansLight:size=22}
 ${offset 400}${voffset 5}${font GeosansLight:size=15}$acpitemp'C

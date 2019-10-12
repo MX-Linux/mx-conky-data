@@ -131,7 +131,6 @@ ${if_up eth0}${color2}ETHERNET (${addr eth0}) ${hr 2}${color}
 
    Down: ${downspeedf eth0}kB/s ${alignr}Up: ${upspeedf eth0}kB/s
    ${downspeedgraph eth0 30,120 000000 000000} ${alignr}${upspeedgraph eth0 30,120 000000 000000}${endif}
-
 ${if_up wlan0}${color2}WIRELESS (${addr wlan0}) [${wireless_link_qual_perc wlan0}%] ${hr 2}${color}
 
    Down: ${downspeedf wlan0}kB/s ${alignr}Up: ${upspeedf wlan0}kB/s
