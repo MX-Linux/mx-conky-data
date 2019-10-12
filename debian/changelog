@@ -1,3 +1,9 @@
+mx-conky-data (20190922.mx19) mx; urgency=medium
+
+  * updated some conky configs 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Sun, 22 Sep 2019 15:39:03 -0400
+
 mx-conky-data (20190905.mx29) mx; urgency=medium
 
   * revised for mx19 beta 2 
