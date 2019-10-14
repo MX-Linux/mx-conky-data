@@ -1,3 +1,9 @@
+mx-conky-data (20191014.mx19) nx; urgency=medium
+
+  * revert 6 conky configs back to b3 versions 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 14 Oct 2019 15:14:22 -0400
+
 mx-conky-data (20191013.mx19) mx; urgency=medium
 
   * updated configs 
