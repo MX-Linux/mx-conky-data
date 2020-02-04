@@ -1,3 +1,10 @@
+mx-conky-data (20200203.mx19) mx; urgency=medium
+
+  * update Mx-cowonblue (fehlix)
+  * add missing fonts to MX-Cowon 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 03 Feb 2020 22:54:56 -0500
+
 mx-conky-data (20191014.mx19) nx; urgency=medium
 
   * revert 6 conky configs back to b3 versions 
