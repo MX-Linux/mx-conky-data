@@ -72,7 +72,7 @@ ${voffset -13}${alignr}${offset -60}${top_mem mem 4} %
 
 # CPU
 ${voffset -8}${font Open Sans:Bold:size=10}${color0}CPU ${color EC0100}${hr 3}
-$color${font}Intel® Xeon® Processor E3-1241   ${freq_g cpu0}GHz $alignr $cpu%  
+$color${font}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq} ${freq_g cpu0}GHz $alignr $cpu%  
 ${font}Core 0  ${color3}${execi 4 sensors | grep 'Core 0' | cut -c18-24} ${alignc 60}${color2}${cpubar cpu0}${color}
 ${font}Core 1  ${color3}${execi 4 sensors | grep 'Core 1' | cut -c18-24} ${alignc 60}${color2}${cpubar cpu1}${color}
 ${font}Core 2  ${color3}${execi 4 sensors | grep 'Core 2' | cut -c18-24} ${alignc 60}${color2}${cpubar cpu2}${color}
