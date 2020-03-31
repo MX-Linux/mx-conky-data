@@ -94,4 +94,24 @@ Up $alignr ${upspeed wlan0} kb/s
 
 Downloaded: $alignr  ${totaldown wlan0}
 Uploaded: $alignr  ${totalup wlan0}
+${font Arial:bold:size=10}${color white}MUSIC ${color2}${hr 2}
+##
+##Clementine using mediaplayer.py script; orig ${font Open Sans:size=9}
+${if_match "${execi 10 python3 $HOME/.conky/MX-Bridouz/mediaplayer.py clementine -i}"=="yes"}
+${color3}${font Open Sans:size=9}${execpi 4 python3 $HOME/.conky/MX-Bridouz/mediaplayer.py clementine -tamlr -w 45}
+${if_match "${execi 4 python3 $HOME/.conky/MX-Bridouz/mediaplayer.py clementine -p}"=="Unknown"}\
+Progress: ${alignr}Unknown
+${else}\
+Progress:
+${color2}${execibar 4 python3 $HOME/.conky/MX-Bridouz/mediaplayer.py clementine -p}
+${execi 20 python $HOME/.conky/MX-Bridouz/mediaplayer.py clementine -c /tmp/cover.jpg}${image /tmp/cover.jpg -p 114,633 -s 75x75 -n}
+
+
+
+
+
+${endif}\
+${else}
+${color3}${font Open Sans:size=9}Clementine Not Running\
+${endif}
 
