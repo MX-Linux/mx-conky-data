@@ -1,7 +1,7 @@
 Source: mx-conky-data
 Section: x11
 Priority: optional
-Maintainer: Steven Pusser (Stevo) <maintainer@mepiscommunity.org>
+Maintainer: Dolphin Oracle <dolphinoracle@gmail.com>
 Build-Depends: debhelper (>=9)
 Standards-Version: 3.9.5
 Homepage: https://github.com/MX-Linux/mx-conky-data

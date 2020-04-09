@@ -1,3 +1,9 @@
+mx-conky-data (20200203.mx19+1) mx; urgency=medium
+
+  * update control file 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 30 Mar 2020 22:34:24 -0400
+
 mx-conky-data (20200203.mx19) mx; urgency=medium
 
   * update Mx-cowonblue (fehlix)
