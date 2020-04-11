@@ -62,7 +62,7 @@ color4 5294e2
 own_window_argb_value 0
 own_window_colour 000000
 
-   TEXT
+TEXT
 
 ${image $HOME/.conky/MX-Bridouz/sardiStart-shadow.png -p 1,0 -s 50x50}${voffset 8}${offset 58}$font${font Roboto-Light:bold:size=11}${color 4F91FB}${execi 1000 cat /etc/mx-version}
 
