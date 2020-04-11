@@ -10,14 +10,14 @@ double_buffer yes
 no_buffers yes
 text_buffer_size 2048
 alignment top_right
-gap_x 20
-gap_y 20
-minimum_size 350 550
-maximum_width 550
+gap_x 40
+gap_y 150
+minimum_size 350 450
+maximum_width 850
 own_window yes
 own_window_type normal
 own_window_transparent yes
-own_window_argb_visual yes
+own_window_argb_visual no
 own_window_argb_value 0
 own_window_hints undecorated,skip_taskbar,skip_pager,below
 border_inner_margin 0
@@ -37,12 +37,14 @@ xftalpha 1
 uppercase yes
 
 default_color CACCCB
-color1 f71818
+color1 ca5656
+color2 a09784
+color3 aa832e
+color4 c9cbca
 
 own_window_colour 000000
-
 TEXT
 
 
-${goto 35}${font Tall Films:size=170} ${if_match "pmfix${time %p}" == "pmfix"}${time %H}${else}${time %I}${endif}${time %I:%M}${endif}${font Tall Films:size=38}${time %P}
-${goto 60}${voffset }$color1${font Tall Films:size=55} ${time %A} |${font Tall Films:size=30} ${time %B %d %Y}
+${goto 20}${voffset 50}${font Tall Films:size=170} ${if_match "pmfix${time %p}" == "pmfix"}${time %H}:${time %M}${else}${time %H}:${time %M}${endif}${font Tall Films:size=38}${time %P}
+${goto 50}${voffset 10}$color1${font Tall Films:size=55} ${time %A} ${font Tall Films:size=30} ${time %x}
