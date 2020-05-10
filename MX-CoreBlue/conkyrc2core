@@ -1,124 +1,168 @@
-# Conky settings #
-background no
-update_interval 1
+conky.config = {
+-- Conky settings #
+    background = false,
+    update_interval = 1,
 
-cpu_avg_samples 2
-net_avg_samples 2
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
 
-override_utf8_locale yes
+    override_utf8_locale = true,
 
-double_buffer yes
-no_buffers yes
+    double_buffer = true,
+    no_buffers = true,
 
-text_buffer_size 2048
-#imlib_cache_size 0
+    text_buffer_size = 2048,
+--imlib_cache_size 0
 
-temperature_unit fahrenheit
 
-# Window specifications #
-own_window yes
-own_window_type normal
-own_window_transparent yes
-own_window_transparent yes
-own_window_hints undecorated,skip_taskbar,skip_pager,below
+-- Window specifications #
+    own_window = true,
+    own_window_type = 'normal',
+    own_window_transparent = true,
+    own_window_transparent = true,
+    own_window_hints = 'undecorated,skip_taskbar,skip_pager,below',
 
-border_inner_margin 0
-border_outer_margin 5
+    border_inner_margin = 0,
+    border_outer_margin = 5,
 
-minimum_size 250 300
-maximum_width 250
+    minimum_width = 250, minimum_height = 300,
+    maximum_width = 250,
 
-alignment top_right
-gap_x 10
-gap_y 0
+    alignment = 'top_right',
+    gap_x = 10,
+    gap_y = 0,
 
-# Graphics settings #
-draw_shades no
-draw_outline no
-draw_borders no
-draw_graph_borders yes
+-- Graphics settings #
+    draw_shades = false,
+    draw_outline = false,
+    draw_borders = false,
+    draw_graph_borders = true,
 
-# Text settings #
-use_xft yes
-xftfont caviar dreams:size=8
-xftalpha 0.5
+-- Text settings #
+    use_xft = true,
+    font = 'caviar dreams:size=8',
+    xftalpha = 0.5,
 
-uppercase no
+    uppercase = false,
 
-temperature_unit celsius
+--  temperature_unit = 'fahrenheit',
+    temperature_unit = 'celsius',
 
-default_color FFFFFF
+    -- default_color = 'FFFFFF',
+    -- color0 = 'FFFFFF',
+    -- color1 = '0ABFFF',
+    default_color = 'ffffff',
+    color0 = 'ffffff',
+    color1 = '0abfff',
 
-# Lua Load  #
-lua_load ./clock01_rings.lua
-lua_draw_hook_pre clock_rings
 
-own_window_argb_value 0
-own_window_argb_visual yes
-own_window_colour 000000
-TEXT
+-- Lua Load  #
+    lua_load = './clock01_rings.lua',
+    lua_draw_hook_pre = 'clock_rings',
+
+    own_window_argb_value = 0,
+    own_window_argb_visual = true,
+    own_window_colour = '000000',
+
+-- network templates
+    if_up_strictness = 'address',
+
+    template0 = [[${color1}\1: $color$alignr${addr \1}
+${color1}Current: $color${alignr}${execi 10 test -e /sys/class/net/\1 && /sbin/iwconfig \1 | awk '/Bit Rate=/ { sub(/Rate=/,"", $2); print $2 }'} Mbits/sec]],
+
+    template1 = [[
+${color1}\1: $color$alignr${addr \1}\n]],
+
+    template2 = [[${color1}Down: $color${downspeed \1} k/s ${alignr}${color1}Up:$color ${upspeed \1} k/s
+${downspeedgraph \1 30,120 000000 0ABFFF} ${alignr}${upspeedgraph \1 30,120 000000 0ABFFF}$color
+${color1}Total:$color ${totaldown \1} ${alignr}${color1}\1          ${alignr}${color1}Total:$color ${totalup \1}]],
+
+   template4 = 'eth0',
+   template5 = 'eth1',
+   template6 = 'wlan0',
+   template7 = 'wlan1',
+
+
+-- wheather templates
+
+   template8 = '~/.conky/accu_weather/rss/weather',
+   template9 = '~/.conky/accu_weather/rss/acc_rss',
+
+   
+};
+
+-- fluxbox adjustment
+if os.getenv("XDG_SESSION_DESKTOP") == 'fluxbox' then
+   conky.config.own_window_transparent = true
+   conky.config.own_window_argb_visual = false
+end
+
+conky.text = [[
 #----------------------------------------------------------------------------------------------------------------------------------------
-#					         Time and date 
+#                            Time and date 
 #----------------------------------------------------------------------------------------------------------------------------------------
-${voffset 7}${font Radio Space:size=16}${color 0ABFFF}${time %A}${font}$color${font Radio Space:size=38}${goto 167}${voffset -8} ${time %e}${font}
-${font Radio Space:size=18}${voffset -30}${time %b}${font}${voffset -3} ${font Radio Space:size=20}${time %Y}${font}${color 0ABFFF} ${hr 1}
+${voffset 7}${font Radio Space:size=16}${color1}${time %A}${font}$color${font Radio Space:size=38}${goto 167}${voffset -8} ${time %e}${font}
+${font Radio Space:size=18}${voffset -30}${time %b}${font}${voffset -3} ${font Radio Space:size=20}${time %Y}${font}${color1} ${hr 1}
 #----------------------------------------------------------------------------------------------------------------------------------------
-#					         Battery Circle 
+#                            Battery Circle 
 #----------------------------------------------------------------------------------------------------------------------------------------
-${color FFFFFF}${goto 209}${voffset 34}${battery_percent BAT0}%
-${color 0ABFFF}${goto 202}${voffset 25}Battery
+${color FFFFFF}${goto 209}${voffset 34}\
+${if_existing /sys/class/power_supply/BAT0}${battery_percent BAT0}%\
+${else}${if_existing /sys/class/power_supply/BAT1}${battery_percent BAT1}%${endif}${endif}
+${color1}${goto 202}${voffset 25}Battery
 #----------------------------------------------------------------------------------------------------------------------------------------
-#						Weather 
+#                       Weather 
 #----------------------------------------------------------------------------------------------------------------------------------------
-${font conkyweather:size=35}${color FFFFFF}${goto 200}${voffset 20}${execpi 6000  sed -n '2p' ~/.conky/accu_weather/rss/weather}$color${font}${font Radio Space:size=11}${color 0ABFFF}${goto 202}${voffset 12}HOME
-${execi 600 bash ~/.conky/accu_weather/rss/acc_rss}${font Radio Space:size=15}${goto 201}${voffset -4}${execpi 600 sed -n '1p' ~/.conky/accu_weather/rss/weather|awk '{print $NF}'}${font}$color
+${font conkyweather:size=35}${color FFFFFF}${goto 200}${voffset 20}${execpi 6000  test -f ${template8} && sed -n '2p' ${template8}}$color${font}${font Radio Space:size=11}${color1}${goto 202}${voffset 12}${if_existing ${template8}}HOME${endif}
+${execi 600 test -f ${template9} && bash ${template9}}${font Radio Space:size=15}${goto 201}${voffset -4}${execpi 600 test -f ${template8} && ( sed -n '1p' ${template8}|awk '{print $NF}') }${font}$color
 ${font caviar dreams:size=8}${goto 47}${voffset 5}Uptime: ${uptime_short}
 #----------------------------------------------------------------------------------------------------------------------------------------
-#					           CPU usage 
+#                              CPU usage 
 #----------------------------------------------------------------------------------------------------------------------------------------
-${color #0ABFFF}${hr 1}$color
-${color #0ABFFF}${voffset 6}Temp: $color ${acpitemp}°C
-${color #0ABFFF}${voffset 6}Processes:$color $processes	
-${color #0ABFFF}${voffset 6}Running: $color  $running_processes${goto 116}${voffset 8}${cpu cpu0}% ${color 0ABFFF}${goto 116}${voffset 13}CPU1$color${goto 191}${voffset -12}${cpu cpu1}% ${color 0ABFFF}${goto 191}${voffset 12}CPU2$color
-${color #0ABFFF}${voffset -12}FREQ:$color ${freq}MHz
-${color #0ABFFF}${voffset 6}Load:$color ${loadavg}
+${color1}${hr 1}$color
+${color1}${voffset 6}Temp: $color ${if_existing /sys/class/thermal/thermal_zone0/temp}${eval ${acpitemp}}${else} ${endif}°C
+${color1}${voffset 6}Processes:$color $processes    
+${color1}${voffset 6}Running: $color  $running_processes${goto 116}${voffset 8}${cpu cpu0}% ${color1}${goto 116}${voffset 13}CPU1$color${goto 191}${voffset -12}${cpu cpu1}% ${color1}${goto 191}${voffset 12}CPU2$color
+${color1}${voffset -12}FREQ:$color ${freq}MHz
+${color1}${voffset 6}Load:$color ${loadavg}
 #----------------------------------------------------------------------------------------------------------------------------------------
-#						Network
+#                       Network
 #----------------------------------------------------------------------------------------------------------------------------------------
-${color 0ABFFF}${voffset 2}${hr 1}
-${color 0ABFFF}${voffset 5}Hostname: $color$alignr$nodename
-${color 0ABFFF}wlan0: $color$alignr${addr wlan0}
-${color 0ABFFF}Current: $color${alignr}${execi 10 /sbin/iwconfig wlan0|grep Rate|cut -d"M" -f1|cut -b20-24} Mbits/sec
-${color 0ABFFF}enp6s0: $color$alignr${addr enp6s0}
-
-${color #0ABFFF}Down: $color${downspeed wlan0} k/s ${alignr}${color #0ABFFF}Up:$color ${upspeed wlan0} k/s
-${downspeedgraph wlan0 30,120 000000 0ABFFF} ${alignr}${upspeedgraph wlan0 30,120 000000 0ABFFF}$color
-${color #0ABFFF}Total:$color ${totaldown wlan0} ${alignr}${color #0ABFFF}Total:$color ${totalup wlan0}
+${color1}${voffset 2}${hr 1}
+${color1}${voffset 5}Hostname: $color$alignr$nodename
+${if_up ${template7}}${template0 ${template7}}${else}${template0 ${template6}}${endif}
+${if_up ${template5} }${template1 ${template5} }${else}${template1 ${template4} }${endif}
+${if_up ${template7}}${template2 ${template7}}${else}${if_up ${template6}}${template2 ${template6}}${else}${if_up ${template5}}${template2 ${template5}}${else}${if_up ${template4}}${template2 ${template4}}${else}${template2 no-link}      ${endif}${endif}${endif}${endif}
 #----------------------------------------------------------------------------------------------------------------------------------------
-#					DISK/RAM/SWAP usage
+#                   DISK/RAM/SWAP usage
 #----------------------------------------------------------------------------------------------------------------------------------------
-${color 0ABFFF}${voffset 2}${hr 1}
+${color1}${voffset 2}${hr 1}
 ${color FFFFFF}${goto 7}${voffset 39}${fs_used_perc /}%
-${color 0ABFFF}${goto 7}DISK
+${color1}${goto 7}DISK
 ${color FFFFFF}${goto 102}${voffset -27}${memperc}%
-${color 0ABFFF}${goto 102}RAM
+${color1}${goto 102}RAM
 ${color FFFFFF}${goto 192}${voffset -26}${swapperc}%
-${color 0ABFFF}${goto 191}SWAP
+${color1}${goto 191}SWAP
 #----------------------------------------------------------------------------------------------------------------------------------------
-#					   Running processes
+#                      Running processes
 #----------------------------------------------------------------------------------------------------------------------------------------
-${color 0ABFFF}${voffset 2} ${hr 1}
-${color #0ABFFF}${voffset 5}NAME${goto 122}PID${goto 163}CPU%${goto 210}MEM%$color${voffset 5}
+${color1}${voffset 2} ${hr 1}
+${color1}${voffset 5}NAME${goto 122}PID${goto 163}CPU%${goto 210}MEM%$color${voffset 5}
 ${top name 1}${goto 115}${top pid 1}${goto 160}${top cpu 1}${goto 205}${top mem 1}
 ${top name 2}${goto 115}${top pid 2}${goto 160}${top cpu 2}${goto 205}${top mem 2}
 ${top name 3}${goto 115}${top pid 3}${goto 160}${top cpu 3}${goto 205}${top mem 3}
 
 #----------------------------------------------------------------------------------------------------------------------------------------
-#					     Computer info
+#                        Computer info
 #----------------------------------------------------------------------------------------------------------------------------------------
-${color 0ABFFF}${voffset 2}${hr 1}${voffset 5}
-${color 0ABFFF}Hostname:$color${alignr}${nodename}
-${color 0ABFFF}OS:$color${alignr}${exec cat /etc/issue.net} $machine
-${color 0ABFFF}Kernel:$color${alignr}${kernel}$color
+${color1}${voffset 2}${hr 1}${voffset 5}
+${color1}Hostname:$color${alignr}${nodename}
+#${color1}OS:$color${alignr}${execi 3600 awk 'NF{NF-=3}1' /etc/mx-version}
+${color1}OS:$color${alignr}${head /etc/mx-version 1 3600}\
+${color1}Kernel:$color${alignr}${kernel}$color
 #----------------------------------------------------------------------------------------------------------------------------------------
+
+]];
+
+
 

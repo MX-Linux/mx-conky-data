@@ -15,6 +15,22 @@ Changelog:
 *v 2011mint -- reEdit despot77 (18.02.2011)
 ]]
 
+--[[
+Update: fehlix@mxlinux.org , May, 2020
+
+	to use the default color value set below with colorN
+	use the same name colorN as defined with conky.config table in conkyrc
+
+]]
+
+color_table = {
+
+	color0=0xffffff,
+	color1=0xd60650,
+	color2=0xff6600,
+	
+}
+
 settings_table = {
     {
         -- Edit this table to customise your rings.
@@ -26,11 +42,11 @@ settings_table = {
         -- "max" is the maximum value of the ring. If the Conky variable outputs a percentage, use 100.
         max=12,
         -- "bg_colour" is the colour of the base ring.
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         -- "bg_alpha" is the alpha value of the base ring.
         bg_alpha=0.1,
         -- "fg_colour" is the colour of the indicator part of the ring.
-        fg_colour=0xD60650,
+        fg_colour=color_table.color1,
         -- "fg_alpha" is the alpha value of the indicator part of the ring.
         fg_alpha=0.2,
         -- "x" and "y" are the x and y coordinates of the centre of the ring, relative to the top left corner of the Conky window.
@@ -48,9 +64,9 @@ settings_table = {
         name='time',
         arg='%M.%S',
         max=60,
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         bg_alpha=0.1,
-        fg_colour=0xD60650,
+        fg_colour=color_table.color1,
         fg_alpha=0.4,
         x=100, y=150,
         radius=56,
@@ -62,9 +78,9 @@ settings_table = {
         name='time',
         arg='%S',
         max=60,
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         bg_alpha=0.1,
-        fg_colour=0xD60650,
+        fg_colour=color_table.color1,
         fg_alpha=0.6,
         x=100, y=150,
         radius=62,
@@ -76,9 +92,9 @@ settings_table = {
         name='time',
         arg='%d',
         max=31,
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         bg_alpha=0.1,
-        fg_colour=0xD60650,
+        fg_colour=color_table.color1,
         fg_alpha=0.8,
         x=100, y=150,
         radius=70,
@@ -90,9 +106,9 @@ settings_table = {
         name='time',
         arg='%m',
         max=12,
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         bg_alpha=0.1,
-        fg_colour=0xD60650,
+        fg_colour=color_table.color1,
         fg_alpha=1,
         x=100, y=150,
         radius=76,
@@ -104,11 +120,11 @@ settings_table = {
         name='cpu',
         arg='cpu0',
         max=100,
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         bg_alpha=0.2,
-        fg_colour=0xD60650,
+        fg_colour=color_table.color1,
         fg_alpha=0.8,
-        x=50, y=300,
+        x=50, y=290,
         radius=25,
         thickness=5,
         start_angle=-90,
@@ -118,11 +134,11 @@ settings_table = {
         name='memperc',
         arg='',
         max=100,
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         bg_alpha=0.2,
-        fg_colour=0xD60650,
+        fg_colour=color_table.color1,
         fg_alpha=0.8,
-        x=75, y=350,
+        x=75, y=340,
         radius=25,
         thickness=5,
         start_angle=-90,
@@ -132,11 +148,11 @@ settings_table = {
         name='swapperc',
         arg='',
         max=100,
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         bg_alpha=0.2,
-        fg_colour=0xD60650,
+        fg_colour=color_table.color1,
         fg_alpha=0.8,
-        x=100, y=400,
+        x=100, y=390,
         radius=25,
         thickness=5,
         start_angle=-90,
@@ -146,11 +162,11 @@ settings_table = {
         name='fs_used_perc',
         arg='/',
         max=100,
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         bg_alpha=0.2,
-        fg_colour=0xD60650,
+        fg_colour=color_table.color1,
         fg_alpha=0.8,
-        x=125, y=450,
+        x=125, y=440,
         radius=25,
         thickness=5,
         start_angle=-90,
@@ -160,11 +176,11 @@ settings_table = {
         name='downspeedf',
         arg='wlan0',
         max=100,
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         bg_alpha=0.2,
-        fg_colour=0xD60650,
+        fg_colour=color_table.color1,
         fg_alpha=0.8,
-        x=150, y=500,
+        x=150, y=490,
         radius=25,
         thickness=4,
         start_angle=-90,
@@ -174,17 +190,35 @@ settings_table = {
         name='upspeedf',
         arg='wlan0',
         max=100,
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         bg_alpha=0.2,
-        fg_colour=0xff6600,
+        fg_colour=color_table.color2,
         fg_alpha=0.8,
-        x=150, y=500,
+        x=150, y=490,
         radius=20,
         thickness=4,
         start_angle=-90,
         end_angle=180
     },
 }
+
+-- redefine/adjust  fg_colour and bg_colour of ring
+-- comment out fg_colour or bg_colour in the above settings_table
+-- to use the default valuse set below with colorN
+-- use the name colorN  as defined with conky.config table in conkyrc
+
+--color0=0xffffff
+--color1=0xD6f65f
+
+--for k = 1, #settings_table
+--do
+--   if settings_table[k].bg_colour == nil then	
+--	settings_table[k].bg_colour = color0
+--   end
+--   if settings_table[k].fg_colour == nil then	
+--	settings_table[k].fg_colour = color1
+--   end 
+--end
 
 -- Use these settings to define the origin and extent of your clock.
 
@@ -231,13 +265,13 @@ function draw_clock_hands(cr,xc,yc)
     local secs,mins,hours,secs_arc,mins_arc,hours_arc
     local xh,yh,xm,ym,xs,ys
     
-    secs=os.date("%S")    
-    mins=os.date("%M")
-    hours=os.date("%I")
+    secs = os.date("%S")    
+    mins = os.date("%M")
+    hours= os.date("%I")
         
-    secs_arc=(2*math.pi/60)*secs
-    mins_arc=(2*math.pi/60)*mins+secs_arc/60
-    hours_arc=(2*math.pi/12)*hours+mins_arc/12
+    secs_arc  = (2*math.pi/60)*secs
+    mins_arc  = (2*math.pi/60)*mins+secs_arc/60
+    hours_arc = (2*math.pi/12)*hours+mins_arc/12
         
     -- Draw hour hand
     
@@ -278,11 +312,38 @@ function conky_clock_rings()
     local function setup_rings(cr,pt)
         local str=''
         local value=0
+        local arg=pt['arg']
         
-        str=string.format('${%s %s}',pt['name'],pt['arg'])
-        str=conky_parse(str)
+        if  pt['name'] == 'upspeedf' or pt['name'] == 'downspeedf' then
+            if     tonumber(conky_parse('${if_up wlan0}1${else}0${endif}')) == 1 then 
+                   arg='wlan0' 
+            elseif tonumber(conky_parse('${if_up wlan1}1${else}0${endif}')) == 1 then 
+                   arg='wlan1'
+            elseif tonumber(conky_parse('${if_up  eth0}1${else}0${endif}')) == 1 then 
+                   arg='eth0'
+            else   arg='eth1'
+            end
+        end
         
-        value=tonumber(str)
+        if pt['name'] == 'time' then
+            if arg == '%I.%M' then 
+               value = math.fmod(os.date("%H"),12) +os.date("%M")/60 
+            elseif arg == '%M.%S' then 
+                value = os.date("%M")+os.date("%S")/60 
+            else
+                value = os.date(arg)
+            end
+        elseif pt['name'] == 'battery_percent' then
+         
+            str='${if_existing /sys/class/power_supply/BAT0}${battery_percent BAT0}${else}${if_existing /sys/class/power_supply/BAT1}${battery_percent BAT1}${else}0${endif}${endif}'
+            str=conky_parse(str)
+            value=tonumber(str)
+         
+        else 
+            str=string.format('${%s %s}',pt['name'], arg)
+            str=conky_parse(str)
+            value=tonumber(str)
+        end
         pct=value/pt['max']
         
         draw_ring(cr,pct,pt)

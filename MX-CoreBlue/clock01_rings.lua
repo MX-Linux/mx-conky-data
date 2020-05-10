@@ -16,21 +16,21 @@
 #
 # To call this script in Conky, use the following in your conkyrc:
 #
-#	lua_load ~/.conky/clock01_rings.lua
-#	lua_draw_hook_pre clock_rings
+#   lua_load ~/.conky/clock01_rings.lua
+#   lua_draw_hook_pre clock_rings
 #
 # Changelog:
 #   * v1.0 -->  Original release (30.09.2009)
 #   * v1.1p -->   Jpope edit londonali1010 (05.10.2009)
 #   * vX 2011mint --> reEdit despot77 (18.02.2011)
 #   * vX 2012 --> Altin reEdit (22.07.2012)
-# 	* Added weather function (Accu Weather)
-# 	* Added battery monitoring
-# 	* Syslog monitoring
-# 	* Running processes monitoring
-# 	* Rearanged rings
-# 	* Exctra network functions/monitoring
-# 	* Changed Fonts
+#   * Added weather function (Accu Weather)
+#   * Added battery monitoring
+#   * Syslog monitoring
+#   * Running processes monitoring
+#   * Rearanged rings
+#   * Exctra network functions/monitoring
+#   * Changed Fonts
 ]]
 
 settings_table = {
@@ -303,10 +303,26 @@ function conky_clock_rings()
         local str=''
         local value=0
         
-        str=string.format('${%s %s}',pt['name'],pt['arg'])
-        str=conky_parse(str)
-        
-        value=tonumber(str)
+        if pt['name'] == 'time' then
+            if  pt['arg'] == '%I.%M' then 
+                value = math.fmod(os.date("%I"),12) + os.date("%M")/60 
+            elseif pt['arg'] == '%M.%S' then 
+                value = os.date("%M") + os.date("%S")/60 
+            else
+                value = os.date(pt['arg'])
+            end
+        elseif pt['name'] == 'battery_percent' then
+         
+            str='${if_existing /sys/class/power_supply/BAT0}${battery_percent BAT0}${else}${if_existing /sys/class/power_supply/BAT1}${battery_percent BAT1}${else}0${endif}${endif}'
+            str=conky_parse(str)
+            value=tonumber(str)
+         
+        else 
+            str=string.format('${%s %s}',pt['name'],pt['arg'])
+            str=conky_parse(str)
+            value=tonumber(str)
+        end
+
         pct=value/pt['max']
         
         draw_ring(cr,pct,pt)

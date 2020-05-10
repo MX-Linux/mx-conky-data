@@ -1,12 +1,24 @@
 #! /bin/bash
 # An album art script for Deadbeef
 
+# check deadbeef 
+#
+if ! which deadbeef >/dev/null; then
+   # no deadbeef found
+   exit 1
+fi
 ARTCACHE=~/.config/deadbeef/artcache
 ARTIST="`deadbeef --nowplaying "%a"`"
 ALBUM="`deadbeef --nowplaying "%b"`"
 CURCOVER="$ARTCACHE/$ARTIST/$ALBUM.jpg"
-CONKYDIR="$HOME/.config/conky"
+#CONKYDIR="$HOME/.config/conky"
+# conky dir is current dir
+CONKYDIR="."
 COVER="$CONKYDIR/conkyCover.png"
+
+if [ ! -f "$CONKYDIR/Vinyl/base.png" ]; then
+	exit 1
+fi
 
 if [ ! -f "$CURCOVER" ]; then
     convert $CONKYDIR/Vinyl/base.png $CONKYDIR/Vinyl/top.png \

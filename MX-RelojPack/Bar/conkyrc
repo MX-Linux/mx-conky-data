@@ -1,0 +1,95 @@
+conky.config = {
+	alignment = 'top_middle',
+	background = true,
+--border_margin 5
+	border_width = 5,
+	cpu_avg_samples = 2,
+	default_color = '000000',
+	default_outline_color = '000000',
+	default_shade_color = '000000',
+	double_buffer = true,
+	draw_borders = false,
+	draw_graph_borders = false,
+	draw_outline = false,
+	draw_shades = false,
+	gap_x = 20,
+	gap_y = 30,
+--max_specials 1024
+	max_user_text = 10000,
+	maximum_width = 580,
+	minimum_width = 580, minimum_height = 60,
+	net_avg_samples = 2,
+	no_buffers = true,
+	override_utf8_locale = true,
+	own_window = true,
+	own_window_colour = '000000',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_transparent = false,
+	own_window_type = 'normal',
+	pad_percents = 2,
+	short_units = true,
+	stippled_borders = 3,
+	text_buffer_size = 8000,
+	total_run_times = 0,
+	update_interval = 3.0,
+	uppercase = false,
+	use_spacer = 'right',
+	use_xft = true,
+	xftalpha = 1,
+
+	own_window_argb_value = 0,
+	own_window_argb_visual = false,
+
+-- battery templates
+
+template4 = [[${if_existing /sys/class/power_supply/BAT0}Batt: ${battery_percent BAT0}%${else}${if_existing /sys/class/power_supply/BAT1}Batt: ${battery_percent BAT1}%${endif}${endif}]],
+
+-- network templates
+
+	template0 = 'wlan0', 
+	template1 = 'wlan1', 
+	template2 = 'eth0', 
+	template3 = 'eth1', 
+
+};
+
+-- fluxbox adjustment
+
+if os.getenv("XDG_SESSION_DESKTOP") == 'fluxbox' then
+   conky.config.own_window_transparent = true
+   conky.config.own_window_argb_visual = false
+end
+
+conky.text = [[
+${offset 477}${voffset 9}${font OldSansBlack:size=22}${color #232323}${if_match "pmfix${time %p}" == "pmfix"}${time %\
+H}${else}${time %I}${endif}${offset 13}${time %M}${font}
+${font pftempestafivecondensed:size=6}${offset 408}${voffset -42}${color white}Cpu:$cpu%  ${if_existing /sys/class/hwmon/hwmon0/temp1_input}${eval ${hwmon 0 temp 1}}°C${endif}       
+                                                                                                                                        Core:${freq_g (1)}GHz
+                                                                                                                                        Mem: $mem 
+                                                                                                                                        ${template4}
+${font pftempestafivecondensed:size=6}${offset 294}${voffset -44}HOME:${fs_used /home}        
+                                                                                                  ROOT:${fs_used /root}   
+                                                                                                  FREE:${fs_free /home}
+                                                                                                  Swap:${swap}
+${font pftempestafivecondensed:size=6}${offset 180}${voffset -44}CPU:${top cpu 1}%                 
+                                                            ${top name 1}
+                                                            MEM:${top_mem mem 1}%
+                                                            ${top_mem name 1}  
+${font pftempestafivecondensed:size=6}${offset 65}${voffset -44} \
+${if_up $template0}Signal: ${wireless_link_qual $template0}%                
+                       IP:${addr $template0}
+                       Ul:${upspeed $template0}
+                       Dl:${downspeed $template0}${else}\
+${if_up $template1}Signal: ${wireless_link_qual $template1}%                
+                       IP:${addr $template1}
+                       Ul:${upspeed $template1}
+                       Dl:${downspeed $template1}${else}\
+${if_up $template2}IP:${addr $template2}
+                       Ul:${upspeed $template2}
+                       Dl:${downspeed $template2}${else}\
+${if_up $template3}IP:${addr $template3}
+                       Ul:${upspeed $template3}
+                       Dl:${downspeed $template3}\
+${endif}${endif}${endif}${endif} 
+${image  relojbarconky.png  575x63 -p 0,0}
+]];

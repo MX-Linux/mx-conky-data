@@ -1,50 +1,68 @@
-#alignment tl
-alignment top_right
-background no
-border_inner_margin 0
-border_width 0
-default_color FFFFFF
-default_outline_color black
-default_shade_color black
-double_buffer yes
-draw_borders no
-draw_graph_borders no
-draw_outline no
-draw_shades no
-gap_x 26
-gap_y 6
-minimum_size 250 0
-no_buffers yes
-override_utf8_locale yes
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-own_window_transparent yes
-own_window yes
-#own_window_type desktop
-pad_percents 2
-short_units yes
-stippled_borders 0
-top_name_width 5
-update_interval 1
-uppercase yes
-use_spacer right
-use_xft yes
-xftalpha 1.0 #0.2
-xftfont Terminus:bold:size=7
+conky.config = {
+--alignment tl
+	alignment = 'top_right',
+	background = false,
+	border_inner_margin = 0,
+	border_width = 0,
+	default_color = 'FFFFFF',
+	default_outline_color = 'black',
+	default_shade_color = 'black',
+	double_buffer = true,
+	draw_borders = false,
+	draw_graph_borders = false,
+	draw_outline = false,
+	draw_shades = false,
+	gap_x = 26,
+	gap_y = 6,
+	minimum_width = 250, minimum_height = 0,
+	no_buffers = true,
+	override_utf8_locale = true,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_transparent = true,
+	own_window = true,
+--own_window_type desktop
+	pad_percents = 2,
+	short_units = true,
+	stippled_borders = 0,
+	top_name_width = 5,
+	update_interval = 1,
+	uppercase = true,
+	use_spacer = 'right',
+	use_xft = true,
+	xftalpha = 1.0,--0.2
+	font = 'Terminus:bold:size=7',
 
-# Color scheme #
-default_color ffffff
+-- Color scheme #
+	default_color = 'ffffff',
 
-color1 FFFFFF
-color2 FF9616
-color3 1CE3BB
-color4 FF0000
-###########################
+	color1 = 'FFFFFF',
+	color2 = 'FF9616',
+	color3 = '1CE3BB',
+	color4 = 'FF0000',
+--##########################
 
 
-own_window_argb_value 0
-own_window_argb_visual yes
-own_window_colour 000000
-TEXT
+	own_window_argb_value = 0,
+	own_window_argb_visual = true,
+	own_window_colour = '000000',
+
+-- network templates
+   template0 = 'wlan0',
+   template1 = 'wlan1',
+   template2 = 'eth0',
+   template3 = 'eth1',
+
+
+};
+
+-- fluxbox adjustment
+
+if os.getenv("XDG_SESSION_DESKTOP") == 'fluxbox' then
+   conky.config.own_window_transparent = true
+   conky.config.own_window_argb_visual = false
+end
+
+conky.text = [[
 ${goto 12}+----${color2}${nodename}${color}
 ${goto 15}|${goto 40}|
 ${goto 15}|${goto 38}+-- OS${goto 125}${sysname}
@@ -92,15 +110,43 @@ ${goto 15}|${goto 60}+-- ${top_mem name 2}${goto 125}${top_mem cpu 2}${top_mem m
 ${goto 15}|${goto 60}+-- ${top_mem name 3}${goto 125}${top_mem cpu 3}${top_mem mem 3}
 ${goto 15}|
 ${goto 12}+----${color3}Net${color}
-${goto 15} ${goto 40}|
-${goto 15} ${goto 38}+-- eth0${goto 125}${addr eth0}
-${goto 15} ${goto 38}+-- wlan0${goto 125}${addr wlan0}
+${goto 40}|
+${if_up $template3}\
+${goto 15} ${goto 38}+-- $template3${goto 125}${addr $template3}${else}\
+${goto 15} ${goto 38}+-- $template2${goto 125}${addr $template2}${endif}
+${if_up $template1}\
+${goto 15} ${goto 38}+-- $template1${goto 125}${addr $template1}${else}\
+${goto 15} ${goto 38}+-- $template0${goto 125}${addr $template0}${endif}
+${if_up $template1}\
 ${goto 15} ${goto 38}+-- Up
-${goto 15} ${goto 40}|${goto 60}+-- Speed${goto 125}${upspeedf wlan0}KiB
-${goto 15} ${goto 40}|${goto 60}+-- Total${goto 125}${totalup wlan0}KiB
+${goto 15} ${goto 40}|${goto 60}+-- Speed${goto 125}${upspeedf $template1}KiB
+${goto 15} ${goto 40}|${goto 60}+-- Total${goto 125}${totalup  $template1}KiB
 ${goto 15} ${goto 40}|
 ${goto 15} ${goto 38}+-- Down
-${goto 15} ${goto 40} ${goto 60}+-- Speed${goto 125}${downspeedf wlan0}KiB
-${goto 15} ${goto 40} ${goto 60}+-- Total${goto 125}${totaldown wlan0}KiB
-
-
+${goto 15} ${goto 40} ${goto 60}+-- Speed${goto 125}${downspeedf $template1}KiB
+${goto 15} ${goto 40} ${goto 60}+-- Total${goto 125}${totaldown  $template1}KiB${else}\
+${if_up $template0}\
+${goto 15} ${goto 38}+-- Up
+${goto 15} ${goto 40}|${goto 60}+-- Speed${goto 125}${upspeedf $template0}KiB
+${goto 15} ${goto 40}|${goto 60}+-- Total${goto 125}${totalup  $template0}KiB
+${goto 15} ${goto 40}|
+${goto 15} ${goto 38}+-- Down
+${goto 15} ${goto 40} ${goto 60}+-- Speed${goto 125}${downspeedf $template0}KiB
+${goto 15} ${goto 40} ${goto 60}+-- Total${goto 125}${totaldown  $template0}KiB${else}\
+${if_up $template3}\
+${goto 15} ${goto 38}+-- Up
+${goto 15} ${goto 40}|${goto 60}+-- Speed${goto 125}${upspeedf $template3}KiB
+${goto 15} ${goto 40}|${goto 60}+-- Total${goto 125}${totalup  $template3}KiB
+${goto 15} ${goto 40}|
+${goto 15} ${goto 38}+-- Down
+${goto 15} ${goto 40} ${goto 60}+-- Speed${goto 125}${downspeedf $template3}KiB
+${goto 15} ${goto 40} ${goto 60}+-- Total${goto 125}${totaldown  $template3}KiB${else}\
+${goto 15} ${goto 38}+-- Up
+${goto 15} ${goto 40}|${goto 60}+-- Speed${goto 125}${upspeedf $template2}KiB
+${goto 15} ${goto 40}|${goto 60}+-- Total${goto 125}${totalup  $template2}KiB
+${goto 15} ${goto 40}|
+${goto 15} ${goto 38}+-- Down
+${goto 15} ${goto 40} ${goto 60}+-- Speed${goto 125}${downspeedf $template2}KiB
+${goto 15} ${goto 40} ${goto 60}+-- Total${goto 125}${totaldown  $template2}KiB\
+${endif}${endif}${endif}
+]];
