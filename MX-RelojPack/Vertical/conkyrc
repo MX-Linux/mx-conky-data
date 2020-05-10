@@ -1,0 +1,105 @@
+conky.config = {
+	alignment = 'top_right',
+	background = true,
+	cpu_avg_samples = 2,
+	default_color = '000000',
+	default_outline_color = '000000',
+	default_shade_color = '000000',
+	double_buffer = true,
+	draw_borders = false,
+	draw_graph_borders = false,
+	draw_outline = false,
+	draw_shades = false,
+	gap_x = 55,
+	gap_y = 30,
+--max_specials 1024
+	max_user_text = 10000,
+	maximum_width = 100,
+	minimum_width = 300, minimum_height = 200,
+	net_avg_samples = 2,
+	no_buffers = true,
+	override_utf8_locale = true,
+	own_window = true,
+	own_window_colour = '000000',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_transparent = true,
+	own_window_type = 'normal',
+	pad_percents = 2,
+	short_units = true,
+	stippled_borders = 3,
+	text_buffer_size = 8000,
+	total_run_times = 0,
+	update_interval = 3.0,
+	uppercase = false,
+	use_spacer = 'right',
+	use_xft = true,
+	xftalpha = 1,
+
+	own_window_argb_value = 0,
+	own_window_argb_visual = true,
+
+-- battery templates
+
+template4 = [[${if_existing /sys/class/power_supply/BAT0}Batt: ${battery_percent BAT0}%${else}${if_existing /sys/class/power_supply/BAT1}Batt: ${battery_percent BAT1}%${endif}${endif}]],
+
+-- network templates
+
+	template0 = 'wlan0', 
+	template1 = 'wlan1', 
+	template2 = 'eth0', 
+	template3 = 'eth1', 
+
+
+};
+
+-- fluxbox adjustment
+
+if os.getenv("XDG_SESSION_DESKTOP") == 'fluxbox' then
+   conky.config.own_window_transparent = true
+   conky.config.own_window_argb_visual = false
+end
+
+conky.text = [[
+${offset 8}${voffset 16}${font OldSansBlack:size=22}${color #232323}${if_match "pmfix${time %p}" == "pmfix"}${time %\
+H}${else}${time %I}${endif}${offset 12}${time %M}${font}
+${font pftempestafivecondensed:size=6}        
+        
+                 ${color white}Cpu: $cpu%
+                 Core:${if_existing /sys/class/hwmon/hwmon0/temp1_input}${eval ${hwmon 0 temp 1}}°C${else}${freq_g (1)}GHz${endif}
+                 Mem: $mem 
+                 ${template4}
+
+
+                 HOME:${fs_used_perc /home}%
+                 ROOT:${fs_used_perc /root}%
+                 FREE:${fs_free_perc /home}%
+                 Swap:${swapperc}%
+                                 
+
+                CPU:${top cpu 1}%
+                ${top name 1}
+                MEM:${top_mem mem 1}%
+                ${top_mem name 1}                     
+
+
+                 ${if_up $template0}Signal:                                                                                        
+                 ${wireless_link_qual $template0}% 
+                 Ul:${upspeed $template0}
+                 Dl:${downspeed $template0}${else}\
+${if_up $template1}Signal:                                                                                        
+                 ${wireless_link_qual $template1}% 
+                 Ul:${upspeed $template1}
+                 Dl:${downspeed $template1}${else}\
+${if_up $template2}IP:${addr $template2} 
+                 Ul:${upspeed $template2}
+                 Dl:${downspeed $template2}${else}\
+${if_up $template3}IP:${addr $template3} 
+                 Ul:${upspeed $template3}
+                 Dl:${downspeed $template3}\
+${endif}${endif}${endif}${endif}
+${image ./BackPRO.png  115x63 -p -1,204}  
+${image ./BackDISK.png  115x63 -p -1,138}  
+${image ./Back.png  115x63 -p -1,6}
+${image ./BackSYS.png   115x63  -p   -1,72}
+${image ./BackNET.png  115x63 -p -1,270} 
+]];

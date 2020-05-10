@@ -15,17 +15,35 @@ Changelog:
 *v Mint-lua -- reEdit despot77 (18.02.2011)
 ]]
 
+--[[
+
+Update: fehlix@mxlinux.org , May, 2020
+
+	to use the default color value set below with colorN
+	use the same name 'colorN' as defined with conky.config table in conkyrc
+
+]]
+
+color_table = {
+
+	color0 = 0xFFFFFF,  -- FFFFFF
+	color1 = 0xFE0055,  -- FE0055 
+	color2 = 0xFF0055,  -- FF0055
+
+}
+
+
 settings_table = {
     
     {
         name='cpu',
         arg='cpu0',
         max=100,
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         bg_alpha=0.2,
-        fg_colour=0xFF0055,
+        fg_colour=color_table.color2,
         fg_alpha=0.8,
-        x=163, y=340,
+        x=145, y=270,
         radius=25,
         thickness=25,
         start_angle=-90,
@@ -35,11 +53,11 @@ settings_table = {
         name='memperc',
         arg='',
         max=100,
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         bg_alpha=0.2,
-        fg_colour=0xFF0055,
+        fg_colour=color_table.color2,
         fg_alpha=0.8,
-        x=163, y=440,
+        x=145, y=355,
         radius=25,
         thickness=25,
         start_angle=-90,
@@ -49,11 +67,11 @@ settings_table = {
         name='fs_used_perc',
         arg='/',
         max=100,
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         bg_alpha=0.2,
-        fg_colour=0xFF0055,
+        fg_colour=color_table.color2,
         fg_alpha=0.8,
-        x=163, y=520,
+        x=145, y=440,
         radius=25,
         thickness=25,
         start_angle=-90,
@@ -63,11 +81,11 @@ settings_table = {
         name='fs_used_perc',
         arg='/home',
         max=100,
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         bg_alpha=0.2,
-        fg_colour=0xFF0055,
+        fg_colour=color_table.color2,
         fg_alpha=0.8,
-        x=165, y=600,
+        x=145, y=525,
         radius=25,
         thickness=25,
         start_angle=-90,
@@ -77,11 +95,11 @@ settings_table = {
         name='downspeedf',
         arg='wlan0',
         max=210,
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         bg_alpha=0.2,
-        fg_colour=0xFF0055,
+        fg_colour=color_table.color2,
         fg_alpha=0.8,
-        x=165, y=680,
+        x=145, y=610,
         radius=30,
         thickness=12,
         start_angle=-90,
@@ -91,11 +109,11 @@ settings_table = {
         name='upspeedf',
         arg='wlan0',
         max=100,
-        bg_colour=0xffffff,
+        bg_colour=color_table.color0,
         bg_alpha=0.2,
-        fg_colour=0xFF0055,
+        fg_colour=color_table.color2,
         fg_alpha=0.8,
-        x=165, y=680,
+        x=145, y=610,
         radius=16,
         thickness=12,
         start_angle=-90,
@@ -162,8 +180,19 @@ function conky_clock_rings()
     local function setup_rings(cr,pt)
         local str=''
         local value=0
+        local arg=pt['arg']
         
-        str=string.format('${%s %s}',pt['name'],pt['arg'])
+        if  pt['name'] == 'upspeedf' or pt['name'] == 'downspeedf' then
+			if     tonumber(conky_parse('${if_up wlan0}1${else}0${endif}')) == 1 then 
+				   arg='wlan0' 
+			elseif tonumber(conky_parse('${if_up wlan1}1${else}0${endif}')) == 1 then 
+				   arg='wlan1'
+			elseif tonumber(conky_parse('${if_up  eth0}1${else}0${endif}')) == 1 then 
+				   arg='eth0'
+			else   arg='eth1'
+			end
+		end
+        str=string.format('${%s %s}',pt['name'], arg)
         str=conky_parse(str)
         
         value=tonumber(str)

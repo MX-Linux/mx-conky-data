@@ -1,59 +1,69 @@
-# **********************************************************************
-# "CPU Panel (8-core)" theme for Conky by Tony George (teejee2008@gmail.com)
-#
-# Webpage: http://teejeetech.blogspot.in/
-# **********************************************************************
+conky.config = {
+-- **********************************************************************
+-- "CPU Panel (8-core)" theme for Conky by Tony George (teejee2008@gmail.com)
+
+-- Webpage: http://teejeetech.blogspot.in/
+-- **********************************************************************
 
 
-background yes
-double_buffer yes
+	background = true,
+	double_buffer = true,
 
-alignment top_right
+	alignment = 'top_right',
 
-border_width 1
-cpu_avg_samples 2
-default_color white
-default_outline_color white
-default_shade_color white
-draw_borders no
-draw_graph_borders yes
-draw_outline no
-draw_shades no
+	border_width = 1,
+	cpu_avg_samples = 2,
+	default_color = 'white',
+	default_outline_color = 'white',
+	default_shade_color = 'white',
+	draw_borders = false,
+	draw_graph_borders = true,
+	draw_outline = false,
+	draw_shades = false,
 
-gap_x 100
-gap_y 20
-net_avg_samples 2
-no_buffers yes
-out_to_console no
-out_to_stderr no
-extra_newline no
+	gap_x = 100,
+	gap_y = 20,
+	net_avg_samples = 2,
+	no_buffers = true,
+	out_to_console = false,
+	out_to_stderr = false,
+	extra_newline = false,
 
-own_window yes
-own_window_type normal
-own_window_transparent yes
-own_window_colour 000000
-own_window_argb_visual yes
-own_window_argb_value 0
-own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+	own_window = true,
+	own_window_type = 'normal',
+	own_window_transparent = true,
+	own_window_colour = '000000',
+	own_window_argb_visual = true,
+	own_window_argb_value = 0,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 
-minimum_size 170 0
-stippled_borders 0
-update_interval 2.0
-uppercase no
-use_spacer none
+	minimum_width = 170, minimum_height = 0,
+	stippled_borders = 0,
+	update_interval = 2.0,
+	uppercase = false,
+	use_spacer = 'none',
 
-show_graph_scale no
-show_graph_range no
+	show_graph_scale = false,
+	show_graph_range = false,
 
-use_xft yes
-xftalpha 0.1
-xftfont Droid Sans:size=10
-color0 white
-color1 EAEAEA
-color2 FFA300
-color3 grey
+	use_xft = true,
+	xftalpha = 0.1,
+	font = 'Droid Sans:size=10',
+	color0 = 'white',
+	color1 = 'EAEAEA',
+	color2 = 'FFA300',
+	color3 = 'grey',
 
-TEXT
+};
+
+-- fluxbox adjustment
+
+if os.getenv("XDG_SESSION_DESKTOP") == 'fluxbox' then
+   conky.config.own_window_transparent = true
+   conky.config.own_window_argb_visual = false
+end
+
+conky.text = [[
 ${color2}CPU ${color0}${alignr}${cpu cpu0}%
 ${cpubar cpu0 5,}
 ${top name 1} $alignr ${top cpu 1}%
@@ -70,3 +80,4 @@ ${top_mem name 3} $alignr ${top_mem mem_res 3}
 ${top_mem name 4} $alignr ${top_mem mem_res 4}
 ${top_mem name 5} $alignr ${top_mem mem_res 5}
 
+]];

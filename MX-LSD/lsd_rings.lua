@@ -176,14 +176,22 @@ end
 function go_gauge_rings(display)
     local function load_gauge_rings(display, data)
         local str, value = '', 0
-        str = string.format('${%s %s}',data['name'], data['arg'])
-        str = conky_parse(str)
-        value = tonumber(str)
+        if data['name'] == 'acpitemp' then
+			str = '${if_existing /sys/class/thermal/thermal_zone0/temp}${eval ${acpitemp}}${else}0${endif}'
+        else 
+			str = string.format('${%s %s}',data['name'], data['arg'])
+        end
+        str=conky_parse(str)
+        value=tonumber(str)
         draw_gauge_ring(display, data, value)
     end
     local function load_gauge_rings_1(display, data)
         local str, value = '', 0
-        str = string.format('${%s %s}',data['name'], data['arg'])
+        if data['name'] == 'acpitemp' then
+			str = '${if_existing /sys/class/thermal/thermal_zone0/temp}${eval ${acpitemp}}${else}0${endif}'
+        else 
+			str = string.format('${%s %s}',data['name'], data['arg'])
+        end
         str = conky_parse(str)
         value = tonumber(str)
         draw_gauge_ring_t(display, data, value)
