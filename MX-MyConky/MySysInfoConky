@@ -67,7 +67,7 @@ conky.config = {
    template3 = 'eth1',
 
 -- time template
-   template0 = '%a %d %b %Y - %H:%M',
+   template7 = '%a %d %b %Y - %H:%M',
 
 };
 
@@ -84,7 +84,7 @@ ${offset 5}${font Good Times:size=12}${color Tan1}SYSTEM INFORMATION ${color}${h
 ${font}${color}${offset 6}${execi 86400 cat /etc/mx-version}
 #${goto 80}${color #34BE5B}${font Ubuntu-Title:size=11}Manjaro${font}${color} | xfce 4.13
 ${goto 10}Kernel: $kernel $machine
-${goto 10}${if_match "pmfix${time %p}" == "pmfix"}${time $template0}${else}${time %a %d %b %Y - %I:%M}${endif}
+${goto 10}${if_match "pmfix${time %p}" == "pmfix"}${time $template7}${else}${time %a %d %b %Y - %I:%M}${endif}
 
 #-----------------------CPU-----------------------
 ${offset 10}${font Good Times:size=12}${color Tan1}CPU ${color}${hr 2}${font}
