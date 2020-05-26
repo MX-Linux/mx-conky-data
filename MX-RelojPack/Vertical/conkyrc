@@ -42,6 +42,10 @@ conky.config = {
 
 template4 = [[${if_existing /sys/class/power_supply/BAT0}Batt: ${battery_percent BAT0}%${else}${if_existing /sys/class/power_supply/BAT1}Batt: ${battery_percent BAT1}%${endif}${endif}]],
 
+-- if_up_strictness link:  up | link | address
+    if_up_strictness = 'address',
+
+
 -- network templates
 
 	template0 = 'wlan0', 
@@ -54,7 +58,7 @@ template4 = [[${if_existing /sys/class/power_supply/BAT0}Batt: ${battery_percent
 
 -- fluxbox adjustment
 
-if os.getenv("XDG_SESSION_DESKTOP") == 'fluxbox' then
+if os.getenv("DESKTOP_SESSION"):find("fluxbox") then
    conky.config.own_window_transparent = true
    conky.config.own_window_argb_visual = false
 end
@@ -69,7 +73,6 @@ ${font pftempestafivecondensed:size=6}
                  Mem: $mem 
                  ${template4}
 
-
                  HOME:${fs_used_perc /home}%
                  ROOT:${fs_used_perc /root}%
                  FREE:${fs_free_perc /home}%
@@ -80,7 +83,6 @@ ${font pftempestafivecondensed:size=6}
                 ${top name 1}
                 MEM:${top_mem mem 1}%
                 ${top_mem name 1}                     
-
 
                  ${if_up $template0}Signal:                                                                                        
                  ${wireless_link_qual $template0}% 

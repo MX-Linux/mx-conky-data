@@ -55,7 +55,7 @@ template4 = [[${if_existing /sys/class/power_supply/BAT0}Batt: ${battery_percent
 
 -- fluxbox adjustment
 
-if os.getenv("XDG_SESSION_DESKTOP") == 'fluxbox' then
+if os.getenv("DESKTOP_SESSION"):find("fluxbox") then
    conky.config.own_window_transparent = true
    conky.config.own_window_argb_visual = false
 end
@@ -67,15 +67,15 @@ ${font pftempestafivecondensed:size=6}${offset 408}${voffset -42}${color white}C
                                                                                                                                         Core:${freq_g (1)}GHz
                                                                                                                                         Mem: $mem 
                                                                                                                                         ${template4}
-${font pftempestafivecondensed:size=6}${offset 294}${voffset -44}HOME:${fs_used /home}        
+${font pftempestafivecondensed:size=6}${offset 294}${voffset -48}HOME:${fs_used /home}        
                                                                                                   ROOT:${fs_used /root}   
                                                                                                   FREE:${fs_free /home}
                                                                                                   Swap:${swap}
-${font pftempestafivecondensed:size=6}${offset 180}${voffset -44}CPU:${top cpu 1}%                 
+${font pftempestafivecondensed:size=6}${offset 180}${voffset -50}CPU:${top cpu 1}%                 
                                                             ${top name 1}
                                                             MEM:${top_mem mem 1}%
                                                             ${top_mem name 1}  
-${font pftempestafivecondensed:size=6}${offset 65}${voffset -44} \
+${font pftempestafivecondensed:size=6}${offset 65}${voffset -48} \
 ${if_up $template0}Signal: ${wireless_link_qual $template0}%                
                        IP:${addr $template0}
                        Ul:${upspeed $template0}

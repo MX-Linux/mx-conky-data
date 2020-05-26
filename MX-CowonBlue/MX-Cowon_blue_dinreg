@@ -63,7 +63,7 @@ conky.config = {
 
 -- fluxbox adjustment
 
-if os.getenv("XDG_SESSION_DESKTOP") == 'fluxbox' then
+if os.getenv("DESKTOP_SESSION"):find("fluxbox") then
    conky.config.own_window_transparent = true
    conky.config.own_window_argb_visual = false
 end
