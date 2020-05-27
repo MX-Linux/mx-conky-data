@@ -55,7 +55,7 @@ ${execi 3600  sh -c 'printf $LANG | sed -E -e "/^zh|^ko/csmall" -e "/^ja|^ar|^he
 };
 
 -- fluxbox adjustment
-if os.getenv("DESKTOP_SESSION"):find("fluxbox") then
+if math.floor(os.execute("pgrep -x fluxbox>/dev/null")/256) == 0 then
    conky.config.own_window_transparent = true
    conky.config.own_window_argb_visual = false
 end

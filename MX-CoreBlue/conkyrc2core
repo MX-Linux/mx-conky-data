@@ -92,7 +92,7 @@ ${color1}Total:$color ${totaldown \1} ${alignr}${color1}\1          ${alignr}${c
 };
 
 -- fluxbox adjustment
-if os.getenv("DESKTOP_SESSION"):find("fluxbox") then
+if math.floor(os.execute("pgrep -x fluxbox>/dev/null")/256) == 0 then
    conky.config.own_window_transparent = true
    conky.config.own_window_argb_visual = false
 end
