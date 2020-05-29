@@ -69,8 +69,8 @@ end
 conky.text = [[
 ${image img/cpu2.png -p 0,0 -s 30x30}
 ${offset 35}${font Good Times:size=12}${color Tan1}CPU Use ${color}${hr 2}
-${font}${color}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq}
-${color lightgrey}Temperature:${hwmon 1 temp 1}°C
+${font}${color}${execi 86400 grep -m1 -oP '^model name\s+:\s\K(.*)' /proc/cpuinfo}
+${color lightgrey}Temperature:${if_existing /sys/class/hwmon/hwmon1/temp1_input}${eval ${hwmon 1 temp 1}}°C${else}${if_existing /sys/class/hwmon/hwmon0/temp1_input}${eval ${hwmon 0 temp 1}}°C${endif}${endif}
 ${alignc}${color #000000}${cpugraph 20,318 000000 FFD710}${color}
 # CPU0
 Avg.${goto 50} : ${cpu cpu0}% ${lua gradbar {100, 110, "${cpu cpu0}", 100, 40, 2, 10, 1, 0xFFFFFF, 0.25, 0x00FF00, 1, 0xFFFF00, 1, 0xFF0000, 1}}${goto 230}${color}${freq 1} MHz
