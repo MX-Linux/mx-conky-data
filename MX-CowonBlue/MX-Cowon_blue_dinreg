@@ -15,8 +15,8 @@ conky.config = {
 -- - Text settings - #
 --####################
 	use_xft = true,
-	font = 'Dinreg:size=100',
---xftfont Roboto-Light:size=100
+    font = 'Dinreg:size=100',
+--  font = 'Roboto-Light:size=100',
 	override_utf8_locale = true,
 	text_buffer_size = 2048,
 	xftalpha = 0.9,
@@ -63,16 +63,33 @@ conky.config = {
 
 -- fluxbox adjustment
 
+-- if os.getenv("XDG_SESSION_DESKTOP") == 'fluxbox' then
 if math.floor(os.execute("pgrep -x fluxbox>/dev/null")/256) == 0 then
    conky.config.own_window_transparent = true
    conky.config.own_window_argb_visual = false
 end
 
 conky.text = [[
+# -- set date-time format 
+${if_match "${lua time A}" == "${time %A}"}${lua set_time A}${else}${lua set_time a}${endif}\
+${if_match "${lua time B}" == "${time %B}"}${lua set_time B}${else}${lua set_time b}${endif}\
 ${voffset -20}${lua hours}
 ${color2}${offset 40}${voffset -100}${time %M}
-${voffset -140}${offset 10}${font Roboto-Light:bold:size=12}${color2}${time %A} ${offset 10}${color2}${time %B %d}
-${offset 150}${voffset -175}${font Roboto-Light:size=12}${color2}${lua AM_PM}
+${voffset -140}${offset 10}\
+${if_match "${lua cjk}" == "false"}\
+${font Roboto-Light:bold:size=12}\
+${else}\
+${font wqy-microhei:bold:size=12}\
+${endif}\
+${color2}\
+${lua date}
+${offset 150}${voffset -175}\
+${if_match "${lua cjk}" == "false"}\
+${font Roboto-Light:size=12}\
+${else}\
+${font wqy-microhei:size=12}\
+${endif}\
+${color2}${lua AM_PM}
 #system
 ${offset 0}${voffset 160}${font Roboto-Light:bold:pixelsize=14}${offset 12}${color3}hdd ${offset 2}${color4}${font RobotoMono-Light:bold:pixelsize=12}${fs_used_perc /}%${font Roboto-Light:bold:pixelsize=14}${offset 4}${color3} mem ${offset 2}${color4}${font RobotoMono-Light:bold:pixelsize=12}${lua memperc}%${font Roboto-Light:bold:pixelsize=14}${offset 4} ${color3}cpu${offset 2}${color4}${font RobotoMono-Light:bold:pixelsize=12}${lua cpu}%
 ]];
