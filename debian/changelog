@@ -1,3 +1,9 @@
+mx-conky-data (20201012mx19) mx; urgency=medium
+
+  * adjust date order and font for CJK locale in MX-CowonBlue
+
+ -- fehlix <fehlix@mxlinux.org>  Mon, 12 Oct 2020 09:49:19 -0400
+
 mx-conky-data (20200529mx19) mx; urgency=medium
 
   * bug fixes and additions
