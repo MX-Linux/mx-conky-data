@@ -1,3 +1,9 @@
+mx-conky-data (20200529mx19) mx; urgency=medium
+
+  * bug fixes and additions
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 29 May 2020 21:36:20 -0400
+
 mx-conky-data (20200524mx19) mx; urgency=medium
 
   * misc. additions 
