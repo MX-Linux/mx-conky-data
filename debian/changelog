@@ -1,3 +1,9 @@
+mx-conky-data (20201012mx20) mx; urgency=medium
+
+  * update control file 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 12 Feb 2021 22:47:16 -0500
+
 mx-conky-data (20201012mx19) mx; urgency=medium
 
   * adjust date order and font for CJK locale in MX-CowonBlue
