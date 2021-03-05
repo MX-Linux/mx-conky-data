@@ -1,3 +1,9 @@
+mx-conky-data (20210301mx21) mx; urgency=medium
+
+  * add support for Lua 5.3 based conky
+
+ -- fehlix <fehlix@mxlinux.org>  Fri, 05 Mar 2021 19:22:51 -0400
+
 mx-conky-data (20201012mx20) mx; urgency=medium
 
   * update control file 
