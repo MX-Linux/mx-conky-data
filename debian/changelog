@@ -1,3 +1,10 @@
+mx-conky-data (20210301mx21+nmu1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * corrected error in conkydots (m instead of the correct M)
+
+ -- Jerry Bond <jb@X1Cmx>  Mon, 31 May 2021 15:44:43 -0400
+
 mx-conky-data (20210301mx21) mx; urgency=medium
 
   * add support for Lua 5.3 based conky

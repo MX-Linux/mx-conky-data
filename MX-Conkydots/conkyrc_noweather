@@ -104,7 +104,7 @@ conky.text = [[
 ${image ./dots.png}${alignc 30}
 ${offset 30}${voffset 4}${font sesame:pixelsize=56}\
 ${if_match "pmfix${time %p}" == "pmfix"}${time $template7}${else}${time %I}${endif}\
-${voffset -16}${font sesame:bold:pixelsize=36}:${time %m}${font sesame:size=8:bold}${offset 2}${voffset -32}${time %S}${voffset -5}${alignc -30}${font sesame:pixelsize=26}${color  white}${cpu}% 
+${voffset -16}${font sesame:bold:pixelsize=36}:${time %M}${font sesame:size=8:bold}${offset 2}${voffset -32}${time %S}${voffset -5}${alignc -30}${font sesame:pixelsize=26}${color  white}${cpu}% 
 ${alignr 30}${voffset -35}$memperc%  ${offset 0}${fs_used_perc /}%
 ${alignc 50}${voffset 30}${font sesame-shadow:size=6}${time %d %b %Y}${offset -15}${voffset -32}${time %a}${alignr 10}${voffset 5}\
 ${if_up $template0}${wireless_link_qual_perc $template0}%${else}\
