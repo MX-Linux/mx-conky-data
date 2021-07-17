@@ -1,3 +1,10 @@
+mx-conky-data (20210717mx21) mx; urgency=medium
+
+  * adjust python3 in MX-Bridouz
+  * adjust window size in MX-CowonBlue
+
+ -- fehlix <fehlix@mxlinux.org>  Sat, 17 Jul 2021 15:29:08 -0400
+
 mx-conky-data (20210301mx21+nmu1) UNRELEASED; urgency=medium
 
   * Non-maintainer upload.
