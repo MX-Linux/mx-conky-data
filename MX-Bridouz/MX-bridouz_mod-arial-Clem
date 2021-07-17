@@ -145,7 +145,7 @@ Progress: ${alignr}Unknown
 ${else}\
 Progress:
 ${color2}${execibar 4 python3 ./mediaplayer.py clementine -p}
-${execi 20 python ./mediaplayer.py clementine -c /tmp/cover.jpg}${if_existing /tmp/cover.jpg}${image /tmp/cover.jpg -p 114,633 -s 75x75 -n}${endif}
+${execi 20 python3 ./mediaplayer.py clementine -c /tmp/cover.jpg}${if_existing /tmp/cover.jpg}${image /tmp/cover.jpg -p 114,633 -s 75x75 -n}${endif}
 
 
 
