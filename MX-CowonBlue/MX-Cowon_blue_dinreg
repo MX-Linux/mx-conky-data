@@ -62,7 +62,6 @@ conky.config = {
 };
 
 -- fluxbox adjustment
-
 -- if os.getenv("XDG_SESSION_DESKTOP") == 'fluxbox' then
 return_code = os.execute('pidof -q fluxbox')
 if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
@@ -72,10 +71,12 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
 end
 
 conky.text = [[
-# -- set date-time format 
-${if_match "${lua time A}" == "${time %A}"}${lua set_time A}${else}${lua set_time a}${endif}\
-${if_match "${lua time B}" == "${time %B}"}${lua set_time B}${else}${lua set_time b}${endif}\
-${voffset -20}${lua hours}
+${if_match "${lua time A}" == "${time %A}"}${lua set_time A}\
+${else}${lua set_time a}${endif}\
+${if_match "${lua time B}" == "${time %B}"}${lua set_time B}\
+${else}${lua set_time b}${endif}\
+${voffset -196}
+${lua hours}
 ${color2}${offset 40}${voffset -100}${time %M}
 ${voffset -140}${offset 10}\
 ${if_match "${lua cjk}" == "false"}\
@@ -83,8 +84,7 @@ ${font Roboto-Light:bold:size=12}\
 ${else}\
 ${font wqy-microhei:bold:size=12}\
 ${endif}\
-${color2}\
-${lua date}
+${color2}${lua date}
 ${offset 150}${voffset -175}\
 ${if_match "${lua cjk}" == "false"}\
 ${font Roboto-Light:size=12}\
@@ -93,5 +93,16 @@ ${font wqy-microhei:size=12}\
 ${endif}\
 ${color2}${lua AM_PM}
 #system
-${offset 0}${voffset 160}${font Roboto-Light:bold:pixelsize=14}${offset 12}${color3}hdd ${offset 2}${color4}${font RobotoMono-Light:bold:pixelsize=12}${fs_used_perc /}%${font Roboto-Light:bold:pixelsize=14}${offset 4}${color3} mem ${offset 2}${color4}${font RobotoMono-Light:bold:pixelsize=12}${lua memperc}%${font Roboto-Light:bold:pixelsize=14}${offset 4} ${color3}cpu${offset 2}${color4}${font RobotoMono-Light:bold:pixelsize=12}${lua cpu}%
+${offset 0}${voffset 160}\
+${font Roboto-Light:bold:pixelsize=14}${offset 12}${color3}hdd \
+${offset 2}${color4}\
+${font RobotoMono-Light:bold:pixelsize=12}${fs_used_perc /}%\
+${font Roboto-Light:bold:pixelsize=14}\
+${offset 4}${color3} mem \
+${offset 2}${color4}\
+${font RobotoMono-Light:bold:pixelsize=12}${lua memperc}%\
+${font Roboto-Light:bold:pixelsize=14}\
+${offset 4} ${color3}cpu\
+${offset 2}${color4}${font RobotoMono-Light:bold:pixelsize=12}\
+${lua cpu}%${voffset -190}
 ]];
