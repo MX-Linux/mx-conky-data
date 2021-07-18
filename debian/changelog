@@ -1,3 +1,9 @@
+mx-conky-data (20210718mx21) mx; urgency=medium
+
+  * adjust clock position in MX-CowonBlue
+
+ -- fehlix <fehlix@mxlinux.org>  Sun, 18 Jul 2021 19:48:10 -0400
+
 mx-conky-data (20210717mx21) mx; urgency=medium
 
   * adjust python3 in MX-Bridouz

@@ -75,7 +75,7 @@ ${if_match "${lua time A}" == "${time %A}"}${lua set_time A}\
 ${else}${lua set_time a}${endif}\
 ${if_match "${lua time B}" == "${time %B}"}${lua set_time B}\
 ${else}${lua set_time b}${endif}\
-${voffset -196}
+${voffset -176}
 ${lua hours}
 ${color2}${offset 40}${voffset -100}${time %M}
 ${voffset -140}${offset 10}\
