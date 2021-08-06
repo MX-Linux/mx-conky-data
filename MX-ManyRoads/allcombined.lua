@@ -16,7 +16,7 @@ local updates=tonumber(conky_parse('${updates}'))
 if updates>5 then
 --#########################################################################################################
 --convert to table
-local bartab=loadstring("return" .. bartab)()
+local bartab=load("return" .. bartab)()
 local bar_startx=bartab[1]
 local bar_starty=bartab[2]
 local number=bartab[3]
@@ -84,7 +84,7 @@ local cs = cairo_xlib_surface_create(conky_window.display, conky_window.drawable
 local cr = cairo_create(cs)
 --#########################################################################################################
 --convert to table
-local bgtab=loadstring("return" .. bgtab)()
+local bgtab=load("return" .. bgtab)()
 local r=bgtab[1]
 local x=bgtab[2]
 local y=bgtab[3]
@@ -152,7 +152,7 @@ if conky_window == nil then return end
 local cs = cairo_xlib_surface_create(conky_window.display, conky_window.drawable, conky_window.visual, conky_window.width, conky_window.height)
 local cr = cairo_create(cs)
 --####################################################################################################
-local caltab=loadstring("return" .. caltab)()
+local caltab=load("return" .. caltab)()
 local cal_x=caltab[1]
 local cal_y=caltab[2]
 local tfont=caltab[3]
@@ -277,7 +277,7 @@ if conky_window == nil then return end
 local cs = cairo_xlib_surface_create(conky_window.display, conky_window.drawable, conky_window.visual, conky_window.width, conky_window.height)
 local cr = cairo_create(cs)
 --#########################################################################################################
-local imtab=loadstring("return" .. imtab)()
+local imtab=load("return" .. imtab)()
 local im_x=imtab[1]
 local im_y=imtab[2]
 local im_w=imtab[3]
@@ -314,7 +314,7 @@ return ""
 end-- end main function
 
 function conky_tex_bg(textab)
-local textab=loadstring("return" .. textab)()
+local textab=load("return" .. textab)()
 local tex_file=textab[6]
 local surface = cairo_image_surface_create_from_png(tostring(tex_file))
 local cw,ch = conky_window.width, conky_window.height
@@ -378,7 +378,7 @@ local cs = cairo_xlib_surface_create(conky_window.display, conky_window.drawable
 local cr = cairo_create(cs)
 --#########################################################################################################
 --convert to table
-local txttab=loadstring("return" .. txttab)()
+local txttab=load("return" .. txttab)()
 local x=txttab[1]
 local y=txttab[2]
 local c=txttab[3]

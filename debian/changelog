@@ -1,3 +1,9 @@
+mx-conky-data (20210806mx21) mx; urgency=medium
+
+  * update mx-manyroads
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 06 Aug 2021 16:16:41 -0400
+
 mx-conky-data (20210718mx21) mx; urgency=medium
 
   * adjust clock position in MX-CowonBlue
