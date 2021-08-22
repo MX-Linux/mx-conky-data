@@ -15,7 +15,8 @@ conky.config = {
 -- - Text settings - #
 --####################
 	use_xft = true,
-	font = 'Dinreg:size=100',
+    font = 'Dinreg:size=100',
+--  font = 'Roboto-Light:size=100',
 	override_utf8_locale = true,
 	text_buffer_size = 2048,
 	xftalpha = 0.9,
@@ -37,15 +38,12 @@ conky.config = {
 	gap_y = 40,
 	minimum_width = 220, minimum_height = 220,
 
-
-
-
 --########################
 -- - Graphics settings - #
 --########################
 	draw_shades = false,
 
-	default_color = '025101',
+	default_color = '#d81d63',
 	default_shade_color = '1d1d1d',
 	color0 = '90ac11',
 	color1 = '0f0c03',
@@ -53,18 +51,18 @@ conky.config = {
 	color3 = '1c1911',
 	color4 = '782f9f',
 
-
 --lua_load ~/.conky/conkybg.lua
 --lua_draw_hook_pre conky_draw_bg
 
 	own_window_argb_value = 0,
 	own_window_argb_visual = true,
 	own_window_colour = '000000',
-	lua_load = 'conky_hours.lua',
+	lua_load = 'lua/conky.lua',
+
 };
 
 -- fluxbox adjustment
-
+-- if os.getenv("XDG_SESSION_DESKTOP") == 'fluxbox' then
 return_code = os.execute('pidof -q fluxbox')
 if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
    _VERSION ~= 'Lua 5.1' and return_code then
@@ -73,10 +71,38 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
 end
 
 conky.text = [[
-${voffset -20}${lua hours}
+${if_match "${lua time A}" == "${time %A}"}${lua set_time A}\
+${else}${lua set_time a}${endif}\
+${if_match "${lua time B}" == "${time %B}"}${lua set_time B}\
+${else}${lua set_time b}${endif}\
+${voffset -176}
+${lua hours}
 ${color2}${offset 40}${voffset -100}${time %M}
-${voffset -140}${offset 10}${font Roboto-Light:bold:size=12}${color2}${time %A} ${offset 10}${color2}${time %B %d}
-${offset 150}${voffset -175}${font Roboto-Light:size=12}${color2}${lua AM_PM}
+${voffset -140}${offset 10}\
+${if_match "${lua cjk}" == "false"}\
+${font Roboto-Light:bold:size=12}\
+${else}\
+${font wqy-microhei:bold:size=12}\
+${endif}\
+${color2}${lua date}
+${offset 150}${voffset -175}\
+${if_match "${lua cjk}" == "false"}\
+${font Roboto-Light:size=12}\
+${else}\
+${font wqy-microhei:size=12}\
+${endif}\
+${color2}${lua AM_PM}
 #system
-${offset 0}${voffset 160}${font Roboto-Light:bold:pixelsize=12}${offset 14}${color3}hdd ${offset 4}${color4}${fs_used_perc /}%${offset 4}${color3} mem ${offset 4}${color4}${memperc}%${offset 4} ${color3}cpu ${offset 4}${color4}${cpu cpu0}%
+${offset 0}${voffset 160}\
+${font Roboto-Light:bold:pixelsize=14}${offset 12}${color3}hdd \
+${offset 2}${color4}\
+${font RobotoMono-Light:bold:pixelsize=12}${fs_used_perc /}%\
+${font Roboto-Light:bold:pixelsize=14}\
+${offset 4}${color3} mem \
+${offset 2}${color4}\
+${font RobotoMono-Light:bold:pixelsize=12}${lua memperc}%\
+${font Roboto-Light:bold:pixelsize=14}\
+${offset 4} ${color3}cpu\
+${offset 2}${color4}${font RobotoMono-Light:bold:pixelsize=12}\
+${lua cpu}%${voffset -190}
 ]];
