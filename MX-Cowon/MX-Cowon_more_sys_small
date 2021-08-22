@@ -45,14 +45,13 @@ conky.config = {
 --########################
 	draw_shades = false,
 
-	default_color = '025101',
+	default_color = '#d81d63',
 	default_shade_color = '1d1d1d',
 	color0 = '90ac11',
 	color1 = '0f0c03',
 	color2 = '0f225d',
 	color3 = '1c1911',
 	color4 = '782f9f',
-
 
 --lua_load ~/.conky/conkybg.lua
 --lua_draw_hook_pre conky_draw_bg
@@ -78,5 +77,5 @@ ${color2}${offset 40}${voffset -100}${time %M}
 ${voffset -140}${offset 10}${font Roboto-Light:bold:size=12}${color2}${time %A} ${offset 10}${color2}${time %B %d}
 ${offset 150}${voffset -175}${font Roboto-Light:size=12}${color2}${lua AM_PM}
 #system
-${offset 0}${voffset 160}${font Roboto-Light:bold:pixelsize=12}${offset 14}${color3}hdd ${offset 4}${color4}${fs_used_perc /}%${offset 4}${color3} mem ${offset 4}${color4}${memperc}%${offset 4} ${color3}cpu ${offset 4}${color4}${cpu cpu0}%
+${offset 0}${voffset 160}${font Roboto-Light:bold:pixelsize=14}${offset 0}${color3}hdd ${offset 4}${color2}${fs_used_perc /}%${offset 4}${color3} mem ${offset 4}${color2}${memperc}%${offset 4} ${color3}cpu ${offset 4}${color2}${cpu cpu0}%
 ]];
