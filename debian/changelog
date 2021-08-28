@@ -1,3 +1,9 @@
+mx-conky-data (20210827mx21) mx; urgency=medium
+
+  * add MX-CowonPink 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 27 Aug 2021 21:41:32 -0400
+
 mx-conky-data (20210806mx21) mx; urgency=medium
 
   * update mx-manyroads
