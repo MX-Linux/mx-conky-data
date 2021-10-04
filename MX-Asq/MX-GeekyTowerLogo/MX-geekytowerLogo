@@ -108,6 +108,7 @@ conky.config = {
     template0 = [[${if_match "pmfix${time %p}" == "pmfix"}${time \1}${else}${time %I:%M}${endif}]],
 
 -- interface templates - to disable conky-manager2 changes  
+   if_up_strictness = 'address',
    template4 = 'eth0',
    template5 = 'eth1',
    template6 = 'wlan0',

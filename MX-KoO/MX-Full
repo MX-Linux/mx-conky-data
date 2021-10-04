@@ -42,6 +42,7 @@ conky.config = {
 	color4 = '66aaff',
 	
 -- network $templates
+    if_up_strictness = 'address',
 	template0 = 'eth0',
 	template1 = 'eth1',
 	template2 = 'wlan0',
@@ -122,15 +123,16 @@ ${voffset -10}${font Open Sans:bold:size=8}Ethernet $font$alignr ${addr $templat
 ↑ ${upspeedf $template0} kb/s $alignr ${totalup $template0}
 ${voffset -14}$alignc${upspeedgraph $template0 10,120  ff0000 0000ff}
 ↓ ${downspeedf $template0} kb/s $alignr ${totaldown $template0}
-${voffset -14}$alignc${downspeedgraph $template0 10,120  ff0000 0000ff}${else}\
-${voffset -10}${font Open Sans:bold:size=8}templateernet $font$alignr ${addr $template1}
+${voffset -14}$alignc${downspeedgraph $template0 10,120  ff0000 0000ff}
+
+${else}${if_up $template1}\
+${voffset -10}${font Open Sans:bold:size=8}Ethernet $font$alignr ${addr $template1}
 ↑ ${upspeedf $template1} kb/s $alignr ${totalup $template1}
 ${voffset -14}$alignc${upspeedgraph $template1 10,120  ff0000 0000ff}
 ↓ ${downspeedf $template1} kb/s $alignr ${totaldown $template1}
-${voffset -14}$alignc${downspeedgraph $template1 10,120  ff0000 0000ff}${endif}
+${voffset -14}$alignc${downspeedgraph $template1 10,120  ff0000 0000ff}
 
-${if_up $template2}\
-${voffset -10}${font Open Sans:bold:size=8}WiFi $font${wireless_bitrate $template2} $alignr ${addr $template2}
+${endif}${endif}${if_up $template2}${voffset -10}${font Open Sans:bold:size=8}WiFi  $font${wireless_bitrate $template2} $alignr ${addr $template2}
 ${voffset -14}$alignc${wireless_essid $template2}
 $alignc${color2}${wireless_link_bar 4,260 $template2}${color E9E9E9} 
 ↑ ${upspeedf $template2} kb/s $alignr ${totalup $template2}

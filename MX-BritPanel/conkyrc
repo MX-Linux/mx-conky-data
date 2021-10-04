@@ -93,7 +93,7 @@ conky.config = {
    color1 = 'E04613',  -- E04613
 
 -- network templates
-
+   if_up_strictness = 'address',
    template0 = 'eth0',
    template1 = 'eth1',
    template2 = 'wlan0',
