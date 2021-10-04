@@ -1,3 +1,9 @@
+mx-conky-data (20211004mx21) mx; urgency=medium
+
+  * adjust if_up_strictness
+
+ -- fehlix <fehlix@mxlinux.org>  Mon, 04 Oct 2021 21:56:08 +0000
+
 mx-conky-data (20210827mx21) mx; urgency=medium
 
   * add MX-CowonPink 

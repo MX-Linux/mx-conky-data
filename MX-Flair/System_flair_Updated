@@ -64,7 +64,9 @@ conky.config = {
 	own_window_argb_value = 0,
 	own_window_colour = '000000',
 
+
 -- network templates
+    if_up_strictness = 'address',
 	template0 = 'eth0',
 	template1 = 'eth1',
 	template2 = 'wlan0',
