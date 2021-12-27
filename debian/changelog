@@ -1,3 +1,10 @@
+mx-conky-data (20211226) mx; urgency=medium
+
+  * Non-maintainer upload.
+  * Added new conky FluxKeys
+
+ -- fehlix <jb@mx>  Sun, 26 Dec 2021 19:52:32 -0500
+
 mx-conky-data (20211004mx21) mx; urgency=medium
 
   * adjust if_up_strictness
