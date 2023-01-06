@@ -1,3 +1,9 @@
+mx-conky-data (20230105) mx; urgency=medium
+
+  * add MX-Cowon "tangram" variant
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Thu, 05 Jan 2023 21:53:45 -0500
+
 mx-conky-data (20211226) mx; urgency=medium
 
   * Non-maintainer upload.
