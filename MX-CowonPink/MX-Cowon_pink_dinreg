@@ -20,6 +20,13 @@ conky.config = {
 	override_utf8_locale = true,
 	text_buffer_size = 2048,
 	xftalpha = 0.9,
+	
+--########################
+-- - Templates - 		#
+--########################
+
+template1 = '${color4}${font RobotoMono-Light:bold:pixelsize=12}${offset 8}',
+template2 = '${offset 4} ${color3}batt${offset 6}',
 
 --############################
 -- - Window specifications - #
@@ -104,5 +111,14 @@ ${font RobotoMono-Light:bold:pixelsize=12}${lua memperc}%\
 ${font Roboto-Light:bold:pixelsize=14}\
 ${offset 4} ${color3}cpu\
 ${offset 2}${color4}${font RobotoMono-Light:bold:pixelsize=12}\
-${lua cpu}%${voffset -190}
+${lua cpu}%
+#battery
+${offset 0}${voffset -8}\
+${if_existing /sys/class/power_supply/BAT0/present/ 1}${template1}
+${template2}${battery_bar 8,80 BAT0} ${battery_percent BAT0}% ${endif}\
+${if_existing /sys/class/power_supply/BAT0}${template1}
+${template2}${battery_bar 8,80 BAT0} ${battery_percent BAT0}% ${endif}\
+${if_existing /sys/class/power_supply/BAT1}${template1}
+${template2}${battery_bar 8,80 BAT1} ${battery_percent BAT1}% ${endif}
+${voffset -190}
 ]];

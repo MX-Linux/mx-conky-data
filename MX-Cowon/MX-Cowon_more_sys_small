@@ -37,7 +37,12 @@ conky.config = {
 	gap_y = 40,
 	minimum_width = 220, minimum_height = 220,
 
+--########################
+-- - Templates - 		#
+--########################
 
+template1 = '${color4}${font RobotoMono-Light:bold:pixelsize=12}${offset 8}',
+template2 = '${offset 4} ${color3}batt${offset 6}',
 
 
 --########################
@@ -79,4 +84,13 @@ ${voffset -140}${offset 10}${font Roboto-Light:bold:size=12}${color2}${time %A} 
 ${offset 150}${voffset -175}${font Roboto-Light:size=12}${color2}${lua AM_PM}
 #system
 ${offset 0}${voffset 160}${font Roboto-Light:bold:pixelsize=12}${offset 14}${color3}hdd ${offset 4}${color4}${fs_used_perc /}%${offset 4}${color3} mem ${offset 4}${color4}${memperc}%${offset 4} ${color3}cpu ${offset 4}${color4}${cpu cpu0}%
+#battery
+${offset 0}${voffset -8}\
+${if_existing /sys/class/power_supply/BAT0/present/ 1}${template1}
+${template2}${battery_bar 8,80 BAT0} ${battery_percent BAT0}% ${endif}\
+${if_existing /sys/class/power_supply/BAT0}${template1}
+${template2}${battery_bar 8,80 BAT0} ${battery_percent BAT0}% ${endif}\
+${if_existing /sys/class/power_supply/BAT1}${template1}
+${template2}${battery_bar 8,80 BAT1} ${battery_percent BAT1}% ${endif}
+${voffset -190}
 ]];
