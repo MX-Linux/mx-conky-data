@@ -1,3 +1,10 @@
+mx-conky-data (20230501) mx; urgency=medium
+
+  * new mx-comfort conky themes
+  * battery displays 
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 15 May 2023 21:01:53 -0400
+
 mx-conky-data (20230105) mx; urgency=medium
 
   * add MX-Cowon "tangram" variant
