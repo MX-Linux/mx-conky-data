@@ -1,3 +1,10 @@
+mx-conky-data (20230601+nmu1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * add compact date-time by user Ceeslans 
+
+-- Jerry <jb@mx>  Wed, 21 Jun 2023 10:52:00 -0400
+
 mx-conky-data (20230601) mx; urgency=medium
 
   * add midblue cowon variant
