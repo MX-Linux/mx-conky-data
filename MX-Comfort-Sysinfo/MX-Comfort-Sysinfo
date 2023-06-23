@@ -1,7 +1,7 @@
 conky.config = {
 -- MX-Comfort-Sysinfo
--- by Melber December 2022
-
+-- Version20230622
+-- by Melber with thanks to Ceeslans for code edits
 
 --#  Begin Window Settings  #####################
 
@@ -147,10 +147,16 @@ end
 
 conky.text = [[
 ${hr 4}${font Noto Sans:size=6}
-${font Noto Sans Bold:size=11}${color2}${time %A}           ${font Noto Sans:size=26}${voffset -8}${alignr}${color1}${if_match "pmfix${time %p}" == "pmfix"} ${time $template0}${else} ${time %I}${endif}${color1}:${time %M}
+${font Noto Sans Bold:size=11}${color2}${time %A}\
+${font Noto Sans:size=26}${voffset -8}${alignr}${color1}${if_match "pmfix${time %p}" == "pmfix"} ${time $template0}${else} ${time %I}${endif}${color1}:${time %M}
 ${font Noto Sans:size=14}${voffset -47}${color1}${time %d}${font Noto Sans:size=11}${color2} ${time %B}
-${voffset 6}${color2}${font Noto Sans:size=11}Root${font Noto Sans:size=11}${color1}${offset 22} ${fs_used_perc}${font Noto Sans:size=11}%${color2}${font Noto Sans:size=11}${alignr}${offset 4}Home${color1}${font Noto Sans:size=11}${color1}${alignr} ${fs_used_perc /home}${font Noto Sans:size=11}%
-${color2}${font Noto Sans:size=11}CPU${font Noto Sans:size=11}${color1}${offset 26} ${cpu cpu0}${font Noto Sans:size=11}%${color2}${font Noto Sans:size=11}${alignr}${offset 4}Mem${font Noto Sans:size=11}${color1}${alignr} ${memperc}${font Noto Sans:size=11}%
-${color2}${font Noto Sans:size=11}Swap${font Noto Sans:size=11}${color1}${offset 18} ${swapperc}${font Noto Sans:size=11}%${color2}${font Noto Sans:size=11}${alignr}${offset -6}Temp${font Noto Sans:size=11}${color1}${alignr} ${hwmon temp 1}${font Noto Sans:size=11}°C
-${color2}${font Noto Sans:size=11}Uptime${color}${font Noto Sans:size=11}${color1}${offset 4} $uptime_short${color2}${font Noto Sans:size=11}${alignr}${offset 8}Batt${font Noto Sans:size=11}${color1}${alignr} ${battery_percent}${font Noto Sans:size=11}%
+###
+${voffset 6}${font Noto Sans:size=11}\
+${color2}Root ${goto 70}${color1}${fs_used_perc}% ${color2}${goto 170}Home ${alignr}${color1}${fs_used_perc /home}%
+${color2}CPU  ${goto 70}${color1}${cpu cpu0}% ${color2}${goto 170}Mem  ${alignr}${color1}${memperc}%
+${color2}Swap ${goto 70}${color1}${swapperc}% ${color2}${goto 170}Temp ${alignr}${color1}${hwmon temp 1}°C
+${color2}Uptime ${goto 70}${color1}${uptime_short} ${color2}${goto 170}\
+${if_existing /sys/class/power_supply/BAT0/present/ 1}Batt ${alignr}${color1}${battery_percent BAT0}%${endif}\
+${if_existing /sys/class/power_supply/BAT0}Batt ${alignr}${color1}${battery_percent BAT0}%${endif}\
+${if_existing /sys/class/power_supply/BAT1}Batt ${alignr}${color1}${battery_percent BAT1}%${endif}
 ]];
