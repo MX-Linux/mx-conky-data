@@ -1,18 +1,17 @@
-mx-conky-data (20230626) mx; urgency=medium
+mx-conky-data (20230601+nmu2) UNRELEASED; urgency=medium
 
   * Non-maintainer upload.
   * add compact date-time by user Ceeslans 
   * add MX-Comfort-Sysinfo_noswaptemp
-  * ready for RC packaging
 
- -- Jerry <jb@mx>  Mon, 26 Jun 2023 16:10:58 -0400
+-- Jerry <jb@mx>  Wed, 26 Jun 2023 10:52:00 -0400
 
 mx-conky-data (20230601+nmu1) UNRELEASED; urgency=medium
 
   * Non-maintainer upload.
   * add midblue cowon variant
 
- -- Jerry <jb@mx>  Mon, 21 Jun 2023 08:07:51 -0400
+ --   
 
 mx-conky-data (20230501) mx; urgency=medium
 
