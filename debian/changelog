@@ -1,7 +1,9 @@
-mx-conky-data (20230601+nmu1) UNRELEASED; urgency=medium
+mx-conky-data (20230601+nmu2) UNRELEASED; urgency=medium
 
+  [ Dolphin Oracle ]
   * Non-maintainer upload.
   * add compact date-time by user Ceeslans 
+  * add MX-Comfort-Sysinfo_noswaptemp
 
 -- Jerry <jb@mx>  Wed, 21 Jun 2023 10:52:00 -0400
 
@@ -9,7 +11,10 @@ mx-conky-data (20230601) mx; urgency=medium
 
   * add midblue cowon variant
 
- -- Dolphin Oracle <dolphinoracle@gmail.com>  Thu, 15 Jun 2023 17:19:19 -0400
+  [ Jerry ]
+  * 
+
+ -- Jerry <jb@mx>  Mon, 26 Jun 2023 08:07:51 -0400
 
 mx-conky-data (20230501) mx; urgency=medium
 
