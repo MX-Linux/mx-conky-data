@@ -1,3 +1,10 @@
+mx-conky-data (20230627) UNRELEASED; urgency=medium
+
+  * removed extra character in separator
+  * added alt q to screen grab
+
+ -- Jerry <jb@mx>  Tue, 27 Jun 2023 05:03:13 -0400
+
 mx-conky-data (20230626) mx; urgency=medium
 
   * Non-maintainer upload.
