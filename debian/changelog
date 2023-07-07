@@ -1,10 +1,14 @@
 mx-conky-data (20230627) mx; urgency=medium
 
+  [ Jerry ]
   * removed extra character in separator
   * added alt q to screen grab
   * added screen magnifier
 
- -- Jerry <jb@mx>  Tue, 27 Jun 2023 16:16:27 -0400
+  [ Dolphin Oracle ]
+  * new build
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Tue, 27 Jun 2023 16:16:27 -0400
 
 mx-conky-data (20230626) mx; urgency=medium
 
