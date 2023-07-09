@@ -156,19 +156,19 @@ ${if_up ${template4}}
 
 ${color2}ETHERNET (${addr ${template4}}) ${hr 2}${color}
    Down: ${downspeedf ${template4}}kB/s ${alignr}Up: ${upspeedf ${template4}}kB/s
-   ${downspeedgraph ${template4} 30,120 808080 808080} ${alignr}${upspeedgraph ${template4} 30,120 000000 000000}${else}\
+   ${downspeedgraph ${template4} 30,120 808080 808080} ${alignr}${upspeedgraph ${template4} 30,120 808080 808080}${else}\
 ${if_up ${template5}}${color2}
 ETHERNET (${addr ${template5}}) ${hr 2}${color}
    Down: ${downspeedf ${template5}}kB/s ${alignr}Up: ${upspeedf ${template5}}kB/s
-   ${downspeedgraph ${template5} 30,120 808080 808080} ${alignr}${upspeedgraph ${template5} 30,120 000000 000000}${endif}${endif}\
+   ${downspeedgraph ${template5} 30,120 808080 808080} ${alignr}${upspeedgraph ${template5} 30,120 808080 808080}${endif}${endif}\
 ${if_up ${template6}}${color2}
 WIRELESS (${addr ${template6}}) [${wireless_link_qual_perc ${template6}}%] ${hr 2}${color}
    Down: ${downspeedf ${template6}}kB/s ${alignr}Up: ${upspeedf ${template6}}kB/s
-   ${downspeedgraph ${template6} 30,120 808080 808080} $alignr${upspeedgraph ${template6} 30,120 000000 000000}${else}
+   ${downspeedgraph ${template6} 30,120 808080 808080} $alignr${upspeedgraph ${template6} 30,120 808080 808080}${else}
 ${if_up ${template7}}${color2}
 WIRELESS (${addr ${template7}}) [${wireless_link_qual_perc ${template7}}%] ${hr 2}${color}
    Down: ${downspeedf ${template7}}kB/s ${alignr}Up: ${upspeedf ${template7}}kB/s
-   ${downspeedgraph ${template7} 30,120 808080 808080} $alignr${upspeedgraph ${template7} 30,120 000000 000000}${endif}${endif}
+   ${downspeedgraph ${template7} 30,120 808080 808080} $alignr${upspeedgraph ${template7} 30,120 808080 808080}${endif}${endif}
 
 ${color2}MONITOR ${hr 2}${color}
 
