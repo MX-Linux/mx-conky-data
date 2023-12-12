@@ -1,0 +1,5 @@
+############## USE ###############
+1) Make file: ~/Documents/todo.txt
+2) Enter tasks you want to list
+3) Save the todo.txt file
+4) Your tasks will show up here
