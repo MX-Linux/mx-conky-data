@@ -75,6 +75,12 @@ ${color3}${voffset 5}${alignc}mem ${color1}${memperc}%  ${color4}cpu ${color1}${
 ${color2}${voffset 5}${alignc}  \
 ${if_existing /sys/class/power_supply/BAT0/status}bat ${voffset 1}${color6}${battery_bar 6,50 BAT0}  ${voffset -1}${color3}${battery_percent BAT0}%${endif}\
 ${if_existing /sys/class/power_supply/BAT1/status}bat ${voffset 1}${color6}${battery_bar 6,50 BAT1}  ${voffset -1}${color3}${battery_percent BAT1}%${endif}
+
+
+###### CAPS LOCK ####
+${alignc}${if_match "${key_caps_lock}" == "On"}${color ORANGE}${font :bold:size=12}caps lock: ${key_caps_lock} ${endif}
+ 
 ###### CORRECTION WIDGET HEIGHT ###
 ${voffset -90}
 ]];
+

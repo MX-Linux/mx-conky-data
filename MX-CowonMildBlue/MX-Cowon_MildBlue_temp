@@ -15,18 +15,10 @@ conky.config = {
 -- - Text settings - #
 --####################
 	use_xft = true,
-    font = 'Dinreg:size=100',
---  font = 'Roboto-Light:size=100',
+    font = 'Roboto-Light:size=100',
 	override_utf8_locale = true,
 	text_buffer_size = 2048,
 	xftalpha = 0.9,
-	
---########################
--- - Templates - 		#
---########################
-
-template1 = '${color4}${font RobotoMono-Light:bold:pixelsize=12}${offset 8}',
-template2 = '${offset 4} ${color3}bat${offset 6}',
 
 --############################
 -- - Window specifications - #
@@ -36,27 +28,41 @@ template2 = '${offset 4} ${color3}bat${offset 6}',
 	own_window_type = 'normal',
 	own_window_transparent = true,
 
-	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager',
+	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
 --own_window_argb_visual yes
 --own_window_argb_value 100
 
 	alignment = 'top_right',
 	gap_x = 40,
 	gap_y = 40,
-	minimum_width = 220, minimum_height = 220,
+	minimum_width = 200, minimum_height = 220,
 
+	
+--########################
+-- - Templates - 		#
+--########################
+
+template1 = '${color3}${font RobotoMono-Light:bold:pixelsize=12}${offset 8}',
+template2 = '${offset 3} ${color3}bat${offset 6}',
+
+	
 --########################
 -- - Graphics settings - #
 --########################
 	draw_shades = false,
 
-	default_color = '#d81d63',
+	--hour
+	default_color = 'aabbcc',
 	default_shade_color = '1d1d1d',
-	color0 = '90ac11',
-	color1 = '0f0c03',
-	color2 = '0f225d',
-	color3 = '1c1911',
-	color4 = '782f9f',
+	color0 = 'ffffff',
+	--date
+	color1 = 'aabbcc',
+	--min
+	color2 = '77ddff',
+	--text
+	color3 = '77ddff',
+	--percentages
+	color4 = 'aabbcc',
 
 --lua_load ~/.conky/conkybg.lua
 --lua_draw_hook_pre conky_draw_bg
@@ -84,14 +90,14 @@ ${if_match "${lua time B}" == "${time %B}"}${lua set_time B}\
 ${else}${lua set_time b}${endif}\
 ${voffset -176}
 ${lua hours}
-${color2}${offset 40}${voffset -100}${time %M}
-${voffset -140}${offset 10}\
+${color2}${offset 36}${voffset -95}${time %M}
+${voffset -130}${offset 10}\
 ${if_match "${lua cjk}" == "false"}\
 ${font Roboto-Light:bold:size=12}\
 ${else}\
 ${font wqy-microhei:bold:size=12}\
 ${endif}\
-${color2}${lua date}
+${color1}${lua date}
 ${offset 150}${voffset -175}\
 ${if_match "${lua cjk}" == "false"}\
 ${font Roboto-Light:size=12}\
@@ -109,16 +115,15 @@ ${offset 4}${color3} mem \
 ${offset 2}${color4}\
 ${font RobotoMono-Light:bold:pixelsize=12}${lua memperc}%\
 ${font Roboto-Light:bold:pixelsize=14}\
-${offset 4} ${color3}cpu\
-${offset 2}${color4}${font RobotoMono-Light:bold:pixelsize=12}\
-${lua cpu}%
-#battery
-${offset 0}${voffset -8}\
-${if_existing /sys/class/power_supply/BAT0/present/ 1}${template1}
-${template2}${battery_bar 8,80 BAT0} ${battery_percent BAT0}% ${endif}\
+${offset 2}${offset 4}${color3}cpu\
+${color4}${font RobotoMono-Light:bold:pixelsize=12}${lua cpu}%\
+#battery and temperature
+${offset 4}${voffset 4}\
 ${if_existing /sys/class/power_supply/BAT0}${template1}
-${template2}${battery_bar 8,80 BAT0} ${battery_percent BAT0}% ${endif}\
+${template2} ${color4}${battery_percent BAT0}% ${endif}\
 ${if_existing /sys/class/power_supply/BAT1}${template1}
-${template2}${battery_bar 8,80 BAT1} ${battery_percent BAT1}% ${endif}
+${template2} ${color4}${battery_percent BAT1}% ${endif}\
+${offset 20}${color3}temp ${color4}${if_existing /sys/class/thermal/thermal_zone0/temp}${eval ${acpitemp}}${endif}°C
+
 ${voffset -190}
 ]];

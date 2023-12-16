@@ -43,7 +43,7 @@ conky.config = {
 --########################
 
 template1 = '${color4}${font RobotoMono-Light:bold:pixelsize=12}${offset 8}',
-template2 = '${offset 4} ${color3}batt${offset 6}',
+template2 = '${offset 4} ${color3}bat${offset 6}',
 
 --########################
 -- - Graphics settings - #
