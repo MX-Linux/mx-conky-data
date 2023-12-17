@@ -1,10 +1,9 @@
-mx-conky-data (20231201+nmu1) UNRELEASED; urgency=medium
+mx-conky-data (20231217) mx; urgency=medium
 
-  * Non-maintainer upload.
   * new default for RPi with temp
   * various small corrections and changes
 
- -- Dolphin Oracle <mxdevs@mx>  Sat, 16 Dec 2023 09:13:35 -0500
+ -- Dolphin Oracle <mxdevs@mx>  Sun, 17 Dec 2023 09:13:35 -0500
 
 mx-conky-data (20231201) mx; urgency=medium
 
