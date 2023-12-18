@@ -1,3 +1,9 @@
+mx-conky-data (20231218) UNRELEASED; urgency=medium
+
+  * correction of RPi temp conky text and image
+
+ -- Dolphin Oracle <mxdevs@mx>  Mon, 18 Dec 2023 09:24:42 -0500
+
 mx-conky-data (20231217) mx; urgency=medium
 
   * new default for RPi with temp

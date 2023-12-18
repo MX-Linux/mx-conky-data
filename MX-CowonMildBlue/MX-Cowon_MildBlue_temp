@@ -1,4 +1,5 @@
 conky.config = {
+
 --#####################
 -- - Conky settings - #
 --#####################
@@ -15,7 +16,7 @@ conky.config = {
 -- - Text settings - #
 --####################
 	use_xft = true,
-    font = 'Roboto-Light:size=100',
+    font = 'Roboto Light:size=100',
 	override_utf8_locale = true,
 	text_buffer_size = 2048,
 	xftalpha = 0.9,
@@ -26,31 +27,25 @@ conky.config = {
 	own_window_class = 'Conky',
 	own_window = true,
 	own_window_type = 'normal',
-	own_window_transparent = true,
-
+	
+own_window_transparent = true,
+own_window_argb_visual = true,
+own_window_argb_value = 0,
+	
 	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
---own_window_argb_visual yes
---own_window_argb_value 100
 
-	alignment = 'top_right',
-	gap_x = 40,
-	gap_y = 40,
-	minimum_width = 200, minimum_height = 220,
+alignment = 'top_right',
+gap_x = 30,
+gap_y = 45,
+minimum_width = 210,
+minimum_height = 0,
 
-	
---########################
--- - Templates - 		#
---########################
-
-template1 = '${color3}${font RobotoMono-Light:bold:pixelsize=12}${offset 8}',
-template2 = '${offset 3} ${color3}bat${offset 6}',
-
-	
 --########################
 -- - Graphics settings - #
 --########################
 	draw_shades = false,
-
+own_window_colour = '000000',
+	
 	--hour
 	default_color = 'aabbcc',
 	default_shade_color = '1d1d1d',
@@ -64,66 +59,39 @@ template2 = '${offset 3} ${color3}bat${offset 6}',
 	--percentages
 	color4 = 'aabbcc',
 
---lua_load ~/.conky/conkybg.lua
---lua_draw_hook_pre conky_draw_bg
-
-	own_window_argb_value = 0,
-	own_window_argb_visual = true,
-	own_window_colour = '000000',
 	lua_load = 'lua/conky.lua',
 
 };
 
--- fluxbox adjustment
--- if os.getenv("XDG_SESSION_DESKTOP") == 'fluxbox' then
-return_code = os.execute('pidof -q fluxbox')
-if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
-   _VERSION ~= 'Lua 5.1' and return_code then
-   conky.config.own_window_transparent = true
-   conky.config.own_window_argb_visual = false
-end
+		-- fluxbox adjustment
+		-- if os.getenv("XDG_SESSION_DESKTOP") == 'fluxbox' then
+		-- return_code = os.execute('pidof -q fluxbox')
+		-- if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
+		--   _VERSION ~= 'Lua 5.1' and return_code then
+		--   conky.config.own_window_transparent = true,
+		--   conky.config.own_window_argb_visual = false,
+		-- end
 
 conky.text = [[
-${if_match "${lua time A}" == "${time %A}"}${lua set_time A}\
-${else}${lua set_time a}${endif}\
-${if_match "${lua time B}" == "${time %B}"}${lua set_time B}\
-${else}${lua set_time b}${endif}\
-${voffset -176}
+### hours
+${if_match "${lua time A}" == "${time %A}"}${lua set_time A}${else}${lua set_time a}${endif}\
+${if_match "${lua time B}" == "${time %B}"}${lua set_time B}${else}${lua set_time b}${endif}\
+${voffset -175}
 ${lua hours}
+### minutes
 ${color2}${offset 36}${voffset -95}${time %M}
+### date
 ${voffset -130}${offset 10}\
-${if_match "${lua cjk}" == "false"}\
-${font Roboto-Light:bold:size=12}\
-${else}\
-${font wqy-microhei:bold:size=12}\
-${endif}\
-${color1}${lua date}
+${if_match "${lua cjk}" == "false"}${font Roboto Light:bold:size=11}${else}${font wqy-microhei:bold:size=12}${endif}${color1}${lua date}
+### am/pm
 ${offset 150}${voffset -175}\
-${if_match "${lua cjk}" == "false"}\
-${font Roboto-Light:size=12}\
-${else}\
-${font wqy-microhei:size=12}\
-${endif}\
-${color2}${lua AM_PM}
+${if_match "${lua cjk}" == "false"}${font Roboto Light:size=12}${else}${font wqy-microhei:size=12}${endif}${color2}${lua AM_PM}
 #system
 ${offset 0}${voffset 160}\
-${font Roboto-Light:bold:pixelsize=14}${offset 12}${color3}hdd \
-${offset 2}${color4}\
-${font RobotoMono-Light:bold:pixelsize=12}${fs_used_perc /}%\
-${font Roboto-Light:bold:pixelsize=14}\
-${offset 4}${color3} mem \
-${offset 2}${color4}\
-${font RobotoMono-Light:bold:pixelsize=12}${lua memperc}%\
-${font Roboto-Light:bold:pixelsize=14}\
-${offset 2}${offset 4}${color3}cpu\
-${color4}${font RobotoMono-Light:bold:pixelsize=12}${lua cpu}%\
-#battery and temperature
-${offset 4}${voffset 4}\
-${if_existing /sys/class/power_supply/BAT0}${template1}
-${template2} ${color4}${battery_percent BAT0}% ${endif}\
-${if_existing /sys/class/power_supply/BAT1}${template1}
-${template2} ${color4}${battery_percent BAT1}% ${endif}\
-${offset 20}${color3}temp ${color4}${if_existing /sys/class/thermal/thermal_zone0/temp}${eval ${acpitemp}}${endif}°C
-
-${voffset -190}
+${font Roboto Light:bold:size=10}${goto 25}${color3}hdd ${offset 2}${color4}${fs_used_perc /}%\
+${font Roboto Light:bold:size=10}${goto 105}${color3}temp ${offset 2}${color4}${if_existing /sys/class/thermal/thermal_zone0/temp}${eval ${acpitemp}}${endif}°C 
+${voffset 2}\
+${font Roboto Light:bold:size=10}${goto 25}${color3}mem ${offset 2}${color4}${memperc}%\
+${font Roboto Light:bold:size=10}${goto 105}${color3}cpu${offset 6}${color4}${cpu}%
+${voffset -215}
 ]];
