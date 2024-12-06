@@ -63,7 +63,7 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
 end
 
 conky.text = [[
-${alignc}${voffset 25}  ${font Loma:size=75}${time %d}${font}${voffset -40}${offset 20}${font Roboto-Light:size=30}${time %a}${voffset 50}${offset -40}${time %b}${font}${voffset -55} ${font Loma:size=75}${color2}${voffset}${if_match "pmfix${time %p}" == "pmfix"}${time %k:%M}${else}${time %l:%M}${endif}   ${font}${color}${template9}
+${alignc}${voffset 25}  ${font Robot-Light:size=75}${time %d}${font}${voffset -40}${offset 20}${font Roboto-Light:size=30}${time %a}${voffset 50}${offset -40}${time %b}${font}${voffset -55} ${font Robot-Light:size=75}${color2}${voffset}${if_match "pmfix${time %p}" == "pmfix"}${time %k:%M}${else}${time %l:%M}${endif}   ${font}${color}${template9}
 ##SYS##
 ${offset 50}${font Robot-Light:size=15}${offset 80}${color1}CPU ${offset 9}${color}${cpu cpu0}%${offset 9}${color1}HDD ${offset 9}$color${fs_used_perc /}%${offset 9}${color1}RAM ${offset 9}${color}${memperc}%
 
