@@ -1,8 +1,9 @@
-mx-conky-data (20231219) UNRELEASED; urgency=medium
+mx-conky-data (20241207) mx; urgency=medium
 
+  [jerry3904]
   * made corrections to conkyglass items, added a new one with temp
 
- -- Dolphin Oracle <mxdevs@mx>  Fri, 06 Dec 2024 17:11:57 -0500
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Fri, 06 Dec 2024 17:11:57 -0500
 
 mx-conky-data (20231218) mx; urgency=medium
 
