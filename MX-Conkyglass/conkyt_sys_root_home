@@ -2,8 +2,15 @@ conky.config = {
 --avoid flicker
 	double_buffer = true,
 	use_xft = true,
-	font = 'sans:size=68',
-	font1 = 'DejaVuSans:ExtraLight:size=21',
+	font1 = 'Roboto:Light:size=24',
+	font2 = 'mono:size=14',
+
+--	uncomment one of these at a time
+--	font = 'sans:size=68',
+--	font = 'sans:bold:size=68',
+	font = 'NotoSerifDisplay:size=68',
+--	font = 'Roboto:Thin:size=78',
+--	font = 'Quattrocento:size=78',
 
 --own window to run simultanious 2 or more conkys
 	own_window = true,
@@ -21,15 +28,13 @@ own_window_argb_visual = true,
 
 --position
 alignment = 'top_middle',
-gap_x = 50,
 gap_y = 30,
 minimum_width = 504,
 
 --behaviour
 	update_interval = 1,
-own_window_argb_value = 0,
-own_window_argb_visual = true,
-own_window_colour = '000000',
+	pad_percents = 2,
+	use_spacer = 'left',
 };
 
 -- fluxbox adjustment
@@ -41,8 +46,10 @@ if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
 end
 
 conky.text = [[
-${voffset -8}${offset 10}${time %d}${alignr 10}${color2}${if_match "${time %p}" == "PM"}${time %H:%M}${else}${time %_H:%M}${endif}
-## ${voffset -8}${offset 10}${time %d}${alignr 10}${color2}${time %H:%M}
-${voffset -162}${offset 126}${font1}${time %b}${voffset 36}${color1}${offset -30}${time %a}
-${image ./clockbg.png -s 565x175 -p -25,-25} \
+## CLOCK ##
+${voffset 6}${offset 10}${time %d}${alignr 12}${color2}${if_match "${time %p}" == "PM"}${time %H:%M}${else}${time %_H:%M}${endif}
+${voffset -162}${offset 128}${font1}${time %b}${voffset 38}${color1}${offset -30}${time %a}
+## SYS ##
+${alignc -6}${font2}${voffset 14}${color1}CPU ${color}${cpu cpu0}%  ${color1}HD ${color}root ${fs_used_perc /}% home ${fs_used_perc /home}%  ${color1}RAM ${color}${memperc}%
+${image ./clockbg.png -s 565x245 -p -25,-25}
 ]];
