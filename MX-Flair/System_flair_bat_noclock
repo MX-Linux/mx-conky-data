@@ -1,0 +1,99 @@
+conky.config = {
+-- By Jesse_Avalos , See me on Eye Candy Linux_  on Google +
+	background = true,
+	use_xft = true,
+	font = 'GeosansLight:size=15',
+	xftalpha = 0.8,
+	update_interval = 1,
+	total_run_times = 0,
+	
+	own_window = true,
+	own_window_type = 'normal',	
+	own_window_colour = '000000',	
+	
+	own_window_transparent = true,
+	own_window_argb_visual = true,
+	--own_window_argb_value = 0,
+
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	double_buffer = true,
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+	stippled_borders = 0,
+	border_outer_margin = 5,
+	border_width = 1,
+	default_shade_color = '000000',
+	default_outline_color = '000000',
+	
+	alignment = 'top_left',
+	minimum_width = 250, 
+	maximum_width = 300,
+	-- minimum_height = 200,
+	gap_x = 40,
+	gap_y = 40,
+
+	no_buffers = true,
+	uppercase = false,
+	cpu_avg_samples = 2,
+	net_avg_samples = 2,
+	short_units = true,
+	text_buffer_size = 2048,
+	use_spacer = 'none',
+	override_utf8_locale = true,
+
+	color0 = 'white',
+	color1 = 'darkgreen',
+	color2 = 'darkgrey',
+	color3 = 'E82A2A',
+
+	own_window_colour = '000000',
+
+-- network templates
+-- ========
+    if_up_strictness = 'address',
+	template0 = 'eth0',
+	template1 = 'eth1',
+	template2 = 'wlan0',
+	template3 = 'wlan1',
+
+-- battery templates
+-- change to 'BAT1',  if so applicable
+-- ========
+	template5 = 'BAT0',  
+
+};
+
+-- fluxbox adjustment
+
+return_code = os.execute('pidof -q fluxbox')
+if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
+  _VERSION ~= 'Lua 5.1' and return_code then
+  conky.config.own_window_transparent = true
+  conky.config.own_window_argb_visual = false
+end
+
+conky.text = [[
+${image ./images/whiteline.png -p 10,10 -s 3x165}${color0}\
+## temp ##
+${voffset 10}${goto 35}${font Dingytwo:size=17}M
+${voffset -27}${offset 65}${font}${if_existing /sys/class/thermal/thermal_zone0/temp}${eval ${acpitemp}}${endif}°C
+## cpu ##
+${voffset 4}${goto 35}${font Dingytwo:size=17}7
+${voffset -27}${offset 65}${font}${cpu cpu0}% / 100%
+## mem ##
+${voffset 4}${goto 35}${font Dingytwo:size=17}O
+${voffset -27}${offset 65}${font}$mem / $memmax
+## battery ##
+${voffset 4}${goto 35}${font Dingytwo:size=17}U
+${voffset -27}${offset 65}${font}${if_existing /sys/class/power_supply/$template5/status}${battery_percent $template5}%${endif}
+## net-up ##
+${voffset 4}${goto 35}${font Dingytwo:size=17}5
+${if_gw}${voffset -27}${offset 65}${font}${upspeed $gw_iface}/s  /  ${totalup $gw_iface}${color}${endif}
+## net-down ##
+${voffset 4}${goto 35}${font Dingytwo:size=17}4
+${if_gw}${voffset -27}${offset 65}${font}${downspeed $gw_iface}/s  /  ${totaldown $gw_iface}${color}${endif}
+## height correction ##
+${voffset -150}
+]];
