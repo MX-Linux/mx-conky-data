@@ -138,15 +138,15 @@ Downloaded: $alignr  ${totaldown $template3}
 Uploaded: $alignr  ${totalup $template3}${endif}${endif}${endif}
 ${font Arial:bold:size=10}${color white}MUSIC ${color2}${hr 2}
 ##
-##Clementine using mediaplayer.py script; orig ${font Open Sans:size=9}
-${if_existing ./mediaplayer.py}${if_match "${execi 10 python3 ./mediaplayer.py clementine -i}"=="yes"}
-${color3}${font Open Sans:size=9}${execpi 4 python3 ./mediaplayer.py clementine -tamlr -w 45}
-${if_match "${execi 4 python3 ./mediaplayer.py clementine -p}"=="Unknown"}\
+##strawberry using mediaplayer.py script; orig ${font Open Sans:size=9}
+${if_existing ./mediaplayer.py}${if_match "${execi 10 python3 ./mediaplayer.py strawberry -i}"=="yes"}
+${color3}${font Open Sans:size=9}${execpi 4 python3 ./mediaplayer.py strawberry -tamlr -w 45}
+${if_match "${execi 4 python3 ./mediaplayer.py strawberry -p}"=="Unknown"}\
 Progress: ${alignr}Unknown
 ${else}\
 Progress:
-${color2}${execibar 4 python3 ./mediaplayer.py clementine -p}
-${execi 20 python3 ./mediaplayer.py clementine -c /tmp/cover.jpg}${if_existing /tmp/cover.jpg}${image /tmp/cover.jpg -p 114,633 -s 75x75 -n}${endif}
+${color2}${execibar 4 python3 ./mediaplayer.py strawberry -p}
+${execi 20 python3 ./mediaplayer.py strawberry -c /tmp/cover.jpg}${if_existing /tmp/cover.jpg}${image /tmp/cover.jpg -p 114,633 -s 75x75 -n}${endif}
 
 
 
@@ -154,7 +154,7 @@ ${execi 20 python3 ./mediaplayer.py clementine -c /tmp/cover.jpg}${if_existing /
 
 ${endif}\
 ${else}
-${color3}${font Open Sans:size=9}Clementine Not Running\
+${color3}${font Open Sans:size=9}strawberry Not Running\
 ${endif}${endif}
 
 ]];

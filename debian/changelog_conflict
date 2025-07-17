@@ -1,17 +1,3 @@
-mx-conky-data (2025.07.01mx25) mx; urgency=medium
-
-  * Non-maintainer upload.
-  * Added extra lua line to multiple configs
-  * Changed music app to strawberry
-
- -- Dolphin Oracle <devs@mx>  Thu, 17 Jul 2025 16:09:56 -0400
-
-mx-conky-data (20250524) mx; urgency=medium
-
-  * lastest changes
-
- -- Dolphin Oracle <dolphinoracle@gmail.com>  Sat, 24 May 2025 09:12:05 -0400
-
 mx-conky-data (20241214) mx; urgency=medium
 
   * additional changes submitted by user tzrezren

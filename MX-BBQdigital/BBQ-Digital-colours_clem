@@ -153,13 +153,13 @@ ${goto 15}|${goto 40} ${goto 60}+-- Speed${goto 125}${downspeedf $template2}KiB
 ${goto 15}|${goto 40} ${goto 60}+-- Total${goto 125}${totaldown  $template2}KiB\
 ${endif}${endif}${endif}
 ${goto 15}|
-${goto 12}+----${color3}Music (Clementine)${color}
+${goto 12}+----${color3}Music (strawberry)${color}
 ${goto 15} ${goto 40}|
-${if_match "${execi 10 python3 mediaplayer.py clementine -i}"=="yes"}${goto 15} ${goto 38}+-- ${execpi 4 python3 mediaplayer.py clementine -a -w 45}
-${goto 15} ${goto 38}+-- ${execpi 4 python3 mediaplayer.py clementine -m -w 43}
-${goto 15} ${goto 38}+-- ${execpi 4 python3 mediaplayer.py clementine -t -w 43}
-${goto 15} ${goto 40} ${goto 60}+-- ${execpi 4 python3 mediaplayer.py clementine -l -w 43}
-${goto 15} ${goto 40} ${goto 60}+-- ${execpi 4 python3 mediaplayer.py clementine -e -w 43}
-${else}${goto 15} ${goto 38}+-- Clementine Not Running\
+${if_match "${execi 10 python3 mediaplayer.py strawberry -i}"=="yes"}${goto 15} ${goto 38}+-- ${execpi 4 python3 mediaplayer.py strawberry -a -w 45}
+${goto 15} ${goto 38}+-- ${execpi 4 python3 mediaplayer.py strawberry -m -w 43}
+${goto 15} ${goto 38}+-- ${execpi 4 python3 mediaplayer.py strawberry -t -w 43}
+${goto 15} ${goto 40} ${goto 60}+-- ${execpi 4 python3 mediaplayer.py strawberry -l -w 43}
+${goto 15} ${goto 40} ${goto 60}+-- ${execpi 4 python3 mediaplayer.py strawberry -e -w 43}
+${else}${goto 15} ${goto 38}+-- strawberry Not Running\
 ${endif}
 ]];

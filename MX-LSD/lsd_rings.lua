@@ -1,4 +1,5 @@
 require 'cairo'
+pcall(function() require('cairo_xlib') end)
 
 --guage DATA
  gauge = {

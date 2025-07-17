@@ -2,6 +2,7 @@
 combines background bar and calendar functions
 ]]
 require 'cairo'
+pcall(function() require('cairo_xlib') end)
 require 'imlib2'
 
 function rgb_to_r_g_b(col_a)
