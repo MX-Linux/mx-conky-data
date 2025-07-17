@@ -1,4 +1,4 @@
-mx-conky-data (2025.07.01) mx; urgency=medium
+mx-conky-data (20250701) mx; urgency=medium
 
   [Jerry3904]
   * Added extra lua line to multiple configs
