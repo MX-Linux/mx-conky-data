@@ -1,3 +1,9 @@
+mx-conky-data (20250703) mx; urgency=medium
+
+  * simplify folder structure, remove some unused files
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Tue, 22 Jul 2025 18:57:30 -0400
+
 mx-conky-data (20250702) mx; urgency=medium
 
   [Jerry3904]
