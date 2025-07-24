@@ -1,3 +1,10 @@
+mx-conky-data (20250704) mx; urgency=medium
+
+  * seperate executable package and theme package 
+  * new default wrapper script
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 23 Jul 2025 20:20:15 -0400
+
 mx-conky-data (20250703) mx; urgency=medium
 
   * simplify folder structure, remove some unused files
