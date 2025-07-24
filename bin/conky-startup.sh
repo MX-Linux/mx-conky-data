@@ -36,5 +36,5 @@ fi
 sleep 20
 killall conky
 cd "/usr/share/mx-conky-data/themes/MX-CowonMildBlue"
-conky -c "$/usr/share/mx-conky-data/themes/MX-CowonMildBlue/MX-Cowon_MildBlue" &
+conky -c "/usr/share/mx-conky-data/themes/MX-CowonMildBlue/MX-Cowon_MildBlue" &
 exit 0
