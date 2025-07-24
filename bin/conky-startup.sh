@@ -4,7 +4,7 @@
 #check for presence of desktop autostart file
 #or if autostart is disabled in existing file
 
-if [ -e "$HOME/.config/autostart/conky.desktop" ]; then
+if [ -f "$HOME/.config/autostart/conky.desktop" ]; then
 	if [ "$(grep Hidden $HOME/.config/autostart/conky.desktop)" = "Hidden=true" ]; then
 		#autostart disabled, exit
 		exit 0
@@ -17,7 +17,7 @@ fi
 #launch HOME configured conky, if it exists
 #check for existence, because conky-manager does not make executable files
 #start with sh for compatibility
-if [ -e "$HOME/.conky/conky-startup.sh" ]; then
+if [ -f "$HOME/.conky/conky-startup.sh" ]; then
 	sh "$HOME/.conky/conky-startup.sh"
 	exit 0
 fi
