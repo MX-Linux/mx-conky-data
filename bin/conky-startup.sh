@@ -17,7 +17,7 @@ fi
 #launch HOME configured conky, if it exists
 #check for existence, because conky-manager does not make executable files
 #start with sh for compatibility
-if [ -x "$HOME/.conky/conky-startup.sh" ]; then
+if [ -e "$HOME/.conky/conky-startup.sh" ]; then
 	sh "$HOME/.conky/conky-startup.sh"
 	exit 0
 fi
