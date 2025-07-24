@@ -15,6 +15,7 @@ Description: meta package of conky themes for MX
  
 Package: mx-conky-data-themes
 Architecture: all
+Replaces: mx-conky-data
 Description: conky themes for MX Conky
  Various attractive conky themes that have been customized for MX Linux.
 
