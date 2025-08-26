@@ -1,9 +1,10 @@
-mx-conky-data (20250704+nmu1) UNRELEASED; urgency=medium
+mx-conky-data (20250801) mx; urgency=medium
 
-  * Non-maintainer upload.
+  * only create font cache if extra folder present
+  * remove check on desktop autostart since deskto file launches script anyway
   * update SideDiag config
 
- -- Dolphin Oracle <devs@mx>  Sun, 27 Jul 2025 08:48:09 -0400
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 25 Aug 2025 21:54:25 -0400
 
 mx-conky-data (20250704) mx; urgency=medium
 
