@@ -4,15 +4,6 @@
 #check for presence of desktop autostart file
 #or if autostart is disabled in existing file
 
-if [ -f "$HOME/.config/autostart/conky.desktop" ]; then
-	if [ "$(grep Hidden $HOME/.config/autostart/conky.desktop)" = "Hidden=true" ]; then
-		#autostart disabled, exit
-		exit 0
-	fi
-else
-	#file missing, also exit
-		exit 0
-fi
 
 #launch HOME configured conky, if it exists
 #check for existence, because conky-manager does not make executable files
@@ -30,7 +21,7 @@ if [ "$XDG_CURRENT_DESKTOP" = "XFCE" ]; then
 		done
 fi
 
-if [ ! -e "$HOME/.cache/fontconfig" ]; then
+if [ ! -e "$HOME/.cache/fontconfig" ] && [ -d /usr/share/fonts/extra ]; then
 	fc-cache -r /usr/share/fonts/extra
 fi
 
