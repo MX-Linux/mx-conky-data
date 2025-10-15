@@ -1,0 +1,96 @@
+----------------------
+--  MX-Infinity  --
+--  mx-devs oct 25 --
+----------------------
+
+conky.config = {
+
+no_buffers = true,
+double_buffer = true,
+update_interval = 1,
+	
+background = true,
+own_window = true,
+own_window_type = 'normal',
+own_window_transparent = true,
+own_window_argb_visual = true,
+own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
+own_window_colour = '000000',
+own_window_class = 'Conky',
+own_window_title = 'DatetimeConky',
+
+draw_borders = false,
+stippled_borders = 5,
+border_inner_margin = 5,
+border_outer_margin = 5,
+border_width = 2,
+draw_graph_borders = yes,
+draw_shades = false,
+default_shade_color = '333333',
+imlib_cache_size = 0,
+draw_outline = false,
+default_outline_color = '000000',
+
+use_xft = true,
+font = 'DejaVu Sans:size=10',
+xftalpha = 1,
+override_utf8_locale = true,
+uppercase = false,
+use_spacer = 'none',
+text_buffer_size = 6144,
+short_units = true,
+pad_percents = 2,
+
+default_color = 'd8dee9', --clear
+color1 = 'c16b29', --orange
+color2 = '92afd5', --light blue
+color3 = '6787B2', --blue
+
+minimum_width = 150,
+minimum_height = 0,
+gap_x = 50,
+gap_y = 50,
+alignment = 'top_right',
+
+lua_load = 'lua/conky.lua',
+};
+
+-- fluxbox adjustment
+-- requires fluxbox to be running, increase sleep time in conky-startup.sh if necessary
+if os.execute('pidof -q fluxbox') and not os.execute('pidof -q picom') then
+   conky.config.own_window_argb_visual = false
+end
+
+conky.text = [[
+### SET 12H/24H ###
+${if_match "${lua time A}" == "${time %A}"}${lua set_time A}\
+${else}${lua set_time a}${endif}\
+${if_match "${lua time B}" == "${time %B}"}${lua set_time B}\
+${else}${lua set_time b}${endif}\
+### HOUR ###
+${color2}${voffset -15}${font DejaVu Sans:size=81}${alignc}${lua hours}${font}
+### HIDE/SHOW AM PM ###
+${if_match "${lua cjk}" == "false"}\
+${font DejaVu Sans:size=10}\
+${else}\
+${font wqy-microhei:size=10}\
+${endif}\
+${color2}${voffset -85}${offset 160}${lua AM_PM}${font}
+### DATE ###
+${if_match "${lua cjk}" == "false"}\
+${font DejaVu Sans:size=10}\
+${else}\
+${font wqy-microhei:size=10}\
+${endif}\
+${color3}${voffset 75}${alignc}${lua date}${font}
+### MINUTES ###
+${color1}${voffset -15}${font DejaVu Sans:size=81}${alignc}${time %M}${color}${font}
+### MEM/CPU ###
+${color3}${voffset 5}${alignc}mem ${color2}${lua memperc}%  ${color3}cpu ${color2}${lua cpu}%
+### BATTERY ###
+${color3}${voffset 5}${alignc}\
+${if_existing /sys/class/power_supply/BAT0/status}bat ${voffset 1}${color3}${battery_bar 6,50 BAT0}  ${voffset -1}${color2}${battery_percent BAT0}%${endif}\
+${if_existing /sys/class/power_supply/BAT1/status}bat ${voffset 1}${color3}${battery_bar 6,50 BAT1}  ${voffset -1}${color2}${battery_percent BAT1}%${endif}
+### CORRECTION WIDGET HEIGHT ###
+${voffset -90}
+]];
