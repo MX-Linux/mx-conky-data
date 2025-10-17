@@ -86,7 +86,7 @@ ${color3}${voffset 75}${alignc}${lua date}${font}
 ### MINUTES ###
 ${color1}${voffset -15}${font DejaVu Sans:size=81}${alignc}${time %M}${color}${font}
 ### MEM/CPU ###
-${color3}${voffset 5}${alignc}mem ${color2}${lua memperc}%  ${color3}cpu ${color2}${lua cpu}%
+${color3}${voffset 15}${offset 15}mem ${color2}${lua memperc}%${offset 10}${color3}cpu ${color2}${lua cpu}%
 ### BATTERY ###
 ${color3}${voffset 5}${alignc}\
 ${if_existing /sys/class/power_supply/BAT0/status}bat ${voffset 1}${color3}${battery_bar 6,50 BAT0}  ${voffset -1}${color2}${battery_percent BAT0}%${endif}\
