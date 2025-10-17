@@ -56,10 +56,13 @@ gap_x = 50,
 gap_y = 50,
 alignment = 'top_right',
 
--- uncomment below two lines for transparent background layer
-	--lua_load = '$HOME/.conky/LUA/transbg.lua',
-	--lua_draw_hook_pre = 'draw_bg 12 0 0 0 0 0x000000 0.15',
 };
+
+-- fluxbox adjustment
+-- requires fluxbox to be running, increase sleep time in conky-startup.sh if necessary
+if os.execute('pidof -q fluxbox') and not os.execute('pidof -q picom') then
+   conky.config.own_window_argb_visual = false
+end
 
 conky.text = [[
 ###### SET 12H/24H ###

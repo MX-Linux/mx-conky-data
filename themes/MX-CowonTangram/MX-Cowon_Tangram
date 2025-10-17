@@ -75,11 +75,8 @@ template2 = '${offset 4} ${color3}bat${offset 6}',
 };
 
 -- fluxbox adjustment
--- if os.getenv("XDG_SESSION_DESKTOP") == 'fluxbox' then
-return_code = os.execute('pidof -q fluxbox')
-if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
-   _VERSION ~= 'Lua 5.1' and return_code then
-   conky.config.own_window_transparent = true
+-- requires fluxbox to be running, increase sleep time in conky-startup.sh if necessary
+if os.execute('pidof -q fluxbox') and not os.execute('pidof -q picom') then
    conky.config.own_window_argb_visual = false
 end
 
