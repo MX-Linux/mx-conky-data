@@ -1,0 +1,52 @@
+--Modulus Home Conky by AVLinux
+--Utilizes the following font: Red Hat Text
+
+conky.config = {
+	background = true,
+	cpu_avg_samples = 2,
+	default_color = '#ffffff', --predominant color
+	color2 = '#787878', -- hdd color
+        color3 = '#F8391D', -- red 
+        color4 = '#303030', -- dark grey
+ 	double_buffer = true,
+	font = 'Red Hat Text:Bold:size=10',
+	draw_shades = false,
+        gap_x =100,
+	gap_y =80,
+        border_inner_margin = 0,
+        border_width = 0,
+	no_buffers = true,
+        own_window = true,
+        own_window_type = 'normal',
+        own_window_hints  = 'sticky,undecorated,below,skip_taskbar,skip_pager',
+        own_window_argb_visual = true,
+        own_window_argb_value = 35, -- This controls opacity (Range 0-255)
+        own_window_title = 'SysStatsHomeConky',
+	update_interval = 1.0,
+	use_xft = true,
+        if_up_strictness = 'address',
+	maximum_width = 80,
+	minimum_width = 80, 
+        --minimum_height = 80,
+	alignment = 'top_middle',
+
+lua_load = './LUA/draw_bg.lua',
+lua_draw_hook_pre = 'draw_bg',
+
+        };
+
+-- fluxbox adjustment
+-- requires fluxbox to be running, increase sleep time in conky-startup.sh if necessary
+if os.execute('pidof -q fluxbox') and not os.execute('pidof -q picom') then
+   conky.config.own_window_argb_visual = false
+   conky.config.own_window_transparent = true
+end
+
+conky.text = [[
+#BACKGROUND IMAGE (Comment out if you just want the text w/o BG)
+${voffset 0}${image ./bl_conky_home.png -p 0,0 -s 80x80}
+#HOME_STATS
+${voffset 32}${color4}${alignc}${fs_used_perc /home}% 
+${voffset 8}${color2}${alignc}${fs_bar 8, 46 /home}
+${voffset -18}
+]];

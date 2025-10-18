@@ -1,0 +1,21 @@
+#!/bin/bash
+#Run Modulus Conky with Battery Module
+#Comment out 'battrc' entry for Desktop Computers
+
+conky -c ~/.conky/Modulus/termrc &
+sleep 1s
+conky -c ~/.conky/Modulus/cpurc &
+sleep 1s
+conky -c ~/.conky/Modulus/memrc &
+sleep 1s
+conky -c ~/.conky/Modulus/homerc &
+sleep 1s
+conky -c ~/.conky/Modulus/diskrc &
+sleep 1s
+conky -c ~/.conky/Modulus/netrc &
+sleep 1s 
+conky -c ~/.conky/Modulus/wttrrc &
+sleep 1s
+conky -c ~/.conky/Modulus/numcapsrc &
+sleep 1s
+conky -c ~/.conky/Modulus/battrc &

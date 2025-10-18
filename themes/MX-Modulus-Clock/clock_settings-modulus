@@ -1,0 +1,61 @@
+-- config file to be sourced by clock_conky_110.lua
+-- by damo August 2020
+------------------------------------------------------------------------
+
+-- if "nil" value is used, then a default value is set by the script
+-- Default value in comments is "[value]"
+
+clock_vars = {
+  {
+    -- if x,y = "nil", clock size is relative to conky window
+    x = nil,                  -- x and y coords (center), relative to the top left
+    y = nil,                  --  corner of conky, in px [conky_window.width/2]
+    radius = 36,             -- [x*0.95] (to fit conky window)
+
+    border = true,            -- draw clock border  [false]
+    border_width = 8,         -- border width in px [line_width]
+    border_out = true,       --iIf "true", border is drawn outside clock radius [false]
+    line_width = 2,           -- used for marks, and default border width [2]
+--    color = 0x15DA47,         -- border color. [green]
+color = 0x1E90FF,          -- border color. [blue]
+    alpha = 0.7,              -- border alpha [1]
+
+    hours_num = 12,           -- options: "12" or "24" [12]
+    color_hands = 0x000000,        -- hour and minute hands color [color]
+    alpha_hands = 0.7,        -- hour and minute hands alpha [1]
+    color_sec = 0xff0000,     -- seconds hand color [color]  -- light grey 0xC5DACF
+    alpha_sec = 0.6,          -- seconds hand alpha [1]
+
+    color_face = 0xFFA606,         -- clock face color [0xffffff]
+    alpha_face = 0.7,        -- clock face alpha [0.5]
+    color_marks = 0x000000,        -- hour and minute marks color [color]
+    alpha_marks = nil,        -- hour and minute marks alpha [alpha]
+    color_center = 0xff0000,       -- center spot color [color]
+    alpha_center = 0.8,       -- center spot alpha [1]
+
+    numerals = false,          -- write hour numerals    [false]
+    text_radius = 0.55,        -- % radius of numerals from center [0.75]
+    font_name = "Raleway",    -- ["Noto Sans"]
+    font_size = 14,           -- [12]
+    font_color = 0x1a1a1a,         -- [color]
+    font_alpha = 1.0,         -- [alpha]
+    italic = false,           -- [false]
+    oblique = false,          -- [false]
+    bold = true,              -- [false]
+
+    clock_face = true,           -- draw background clock face [false]
+    hours_marks = true,           -- draw hours marks   [true]
+    minutes_marks = true,         -- draw minutes marks [false]
+    clock_center = true,          -- draw center spot   [false]
+    clock_center_radius = 0.1,   -- % radius of clock of center spot [0.1]
+    marks_radius_mins = 1.10,     -- % radius of clock of start of mark [0.95]
+    marks_radius_hrs = 0.80,       -- % radius of clock of start of mark [0.9]
+    hour_radius = 0.50,           -- % radius of clock of hour hand     [0.65]
+    minute_radius = 0.86,         -- % radius of clock of minute hand   [0.8]
+    seconds_radius = 0.97,         -- % radius of clock of seconds hand  [0.9]
+    hour_hand_width = 8,          -- hour hand thickness, px    [6]
+    minute_hand_width = 6,        -- minute hand thickness, px  [4]
+    seconds_hand_width = 2,       -- seconds hand thickness, px [2]
+    hand_style = 0,               -- cap shape of hands, 0="round" or 1="square" [1]
+  },
+}

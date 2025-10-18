@@ -1,0 +1,89 @@
+conky.config = {
+--==============================================================================
+
+--  Created : 2022/Jul/17
+--  This theme is for conky version 1.10.8 or newer
+-- 
+--  MEROPE
+--  ( A part of Taurus Conky themes pack )
+--
+--  author  : Closebox73
+--  version : 2.9
+--  variant : Celcius
+--  license : Distributed under the terms of GPLv3
+--  notes   : Created on 1366x768 Monitor
+
+--==============================================================================
+
+-- Size and Position settings --
+  alignment = 'top_middle',
+  gap_x = -200,
+  gap_y = 85,
+  maximum_width = 80,
+  minimum_height = 80,
+  minimum_width = 80,
+  
+-- Text settings --
+  use_xft = true,
+  override_utf8_locale = true,
+  font = 'Red Hat Text:Bold:size=8',
+  
+-- Color Settings --
+  default_color = 'FFFFFF',
+  default_outline_color = 'white',
+  default_shade_color = 'white',
+  color1 = 'FFFFFF',
+  
+-- Window Settings --
+  background = false,
+  border_width = 1,
+  draw_borders = false,
+  draw_graph_borders = false,
+  draw_outline = false,
+  draw_shades = false,
+ -- own_window_class = 'Conky',
+  draw_blended = true,
+  own_window = true,
+--  own_window_transparent = true,
+  own_window_argb_visual = true,
+--  own_window_colour = '27C809',
+  own_window_colour = '000000',
+own_window_argb_value=35,
+own_window_type="normal",
+--  own_window_type = 'desktop',
+
+  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  stippled_borders = 0,
+  
+-- Others --
+  cpu_avg_samples = 2,
+  net_avg_samples = 2,
+  double_buffer = true,
+  out_to_console = false,
+  out_to_stderr = false,
+  extra_newline = false,
+  update_interval = 1,
+  uppercase = false,
+  use_spacer = 'none',
+  show_graph_scale = false,
+  show_graph_range = false,
+  
+  lua_load = './draw_bg.lua',
+lua_draw_hook_pre = 'draw_bg',
+
+  
+}
+
+-- fluxbox adjustment
+-- requires fluxbox to be running, increase sleep time in conky-startup.sh if necessary
+if os.execute('pidof -q fluxbox') and not os.execute('pidof -q picom') then
+   conky.config.own_window_argb_visual = false
+   conky.config.own_window_transparent = true
+end
+
+conky.text = [[
+${execi 300 ./weather-v2.0.sh}\
+${color}${font RedHatText:Bold:size=9}${execi 120 cat ~/.cache/weather.json | jq '.main.temp' | awk '{printf "%.0f\n",$1}'}°C
+${font RedHatText:Bold:size=9}${alignc}${voffset 54}${scroll wait 10 6 ${execi 300 jq -r .weather[0].description ~/.cache/weather.json | sed "s|\<.|\U&|g"}}${font}
+${execpi 300 cp -f ./Papirus-openW/$(jq .weather[0].icon ~/.cache/weather.json | sed -e 's/^"//' -e 's/"$//').png ~/.cache/weather-pap.png}${image ~/.cache/weather-pap.png -p 5,8 -s 69x69 -f 300}\
+]]

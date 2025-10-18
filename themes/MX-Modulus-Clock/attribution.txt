@@ -1,0 +1,7 @@
+ATTRIBUTION:
+
+Modulus-clock and Modulus-clock-green conkies created by asqwerth (MX Art Team)
+
+The clock_conky_110 lua script is from damo [of the bunsenlabs forum], as is the general structure and layout of the separate clock_settings file that has been adapted to create "clock_settings-modulus" and "clock_settings-modulus-green".
+
+
