@@ -48,4 +48,4 @@ own_window_argb_value = 35,
 
 };
 
-conky.text = '';
+conky.text = [[]]
