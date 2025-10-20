@@ -4,31 +4,26 @@
 
 conky.config = {
 
-alignment = 'top_left',
-gap_x = 10,
+alignment = 'top_middle',
+gap_x = 0,
 gap_y = 10,
 
-minimum_height = 0,
-minimum_width = 1900,
-maximum_width = 500,
+minimum_height = 10,
+maximum_height = 10,
+minimum_width = 300,
+maximum_width = 300,
 
 default_color = 'ffffff',	-- # white
 color0 = 'ffffff',			-- #
-color1 = 'FCAF3E',			-- # 
-color2 = '555555',			-- # 
-color3 = 'a82553',			-- # 
-color4 = '5e1014',			-- # 
-color5 = '64574e',			-- # 
-color6 = '2a2a2a',			-- # 
-color7 = '8888CC',			-- # 
-color8 = '9d9c61',			-- #
-color9 = '#55557f',			-- #
+color1 = 'c16b29', --orange
+color2 = '92afd5', --light blue
 
-own_window = false,
+
+own_window = true,
 own_window_type = 'normal', 
-own_window_transparent = false,
-	own_window_argb_visual = true,
-	--own_window_argb_value = 255,
+own_window_transparent = true,
+own_window_argb_visual = true,
+own_window_argb_value = 80,
 own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 own_window_colour = '000000',
 own_window_class = 'Conky',
@@ -56,7 +51,7 @@ pad_percents = 2,
 short_units = true,	
 text_buffer_size = 8000,
 
-font = 'Freesans:size=9',
+font = 'DejaVu Sans:size=9',
 xftalpha = 1.0,
 override_utf8_locale = true,
 uppercase = false,
@@ -71,9 +66,7 @@ if os.execute('pidof -q fluxbox') and not os.execute('pidof -q picom') then
    conky.config.own_window_argb_visual = false
 end
 
-conky.text = [[
-${if_running audacious}${voffset 10}\
-${color1}${font Freesans:weight=bold:size=14}${exec ./aud-artist.sh}${font}
-${color2}${font Freesans:size=11}${exec ./aud-song.sh}${font}
-${endif}
+
+conky.text = [[${color1}${alignc}${font DejaVu Sans:bold:size=14}${exec ./aud-artist.sh}${font}
+${voffset 5}${color2}${alignc}${font DejaVu Sans:size=11}${exec ./aud-song.sh}${font}
 ]];
