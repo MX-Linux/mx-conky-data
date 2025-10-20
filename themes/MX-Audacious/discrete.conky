@@ -6,22 +6,22 @@ conky.config = {
 
 alignment = 'top_middle',
 gap_x = 0,
-gap_y = 10,
+gap_y = 20,
 
 minimum_height = 10,
-maximum_height = 10,
-minimum_width = 300,
-maximum_width = 300,
+maximum_height = 20,
+minimum_width = 100,
+maximum_width = 768,
 
 default_color = 'ffffff',	-- # white
-color0 = 'ffffff',			-- #
-color1 = 'c16b29', --orange
-color2 = '92afd5', --light blue
+color0 = 'c16b29', --orange (artist name color)
+color1 = '92afd5', --light blue (album name color)
+color2 = 'f5f5f5', --very light grey (title name color)
 
 
 own_window = true,
 own_window_type = 'normal', 
-own_window_transparent = true,
+own_window_transparent = false,
 own_window_argb_visual = true,
 own_window_argb_value = 80,
 own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
@@ -51,7 +51,7 @@ pad_percents = 2,
 short_units = true,	
 text_buffer_size = 8000,
 
-font = 'DejaVu Sans:size=9',
+font = 'DejaVu Sans:size=8',
 xftalpha = 1.0,
 override_utf8_locale = true,
 uppercase = false,
@@ -64,9 +64,11 @@ use_xft = true,
 -- requires fluxbox to be running, increase sleep time in conky-startup.sh if necessary
 if os.execute('pidof -q fluxbox') and not os.execute('pidof -q picom') then
    conky.config.own_window_argb_visual = false
+   conky.config.own_window_transparent = true
 end
 
 
-conky.text = [[${color1}${alignc}${font DejaVu Sans:bold:size=14}${exec ./aud-artist.sh}${font}
-${voffset 5}${color2}${alignc}${font DejaVu Sans:size=11}${exec ./aud-song.sh}${font}
+conky.text = [[${color0}${font DejaVu Sans:bold:size=12}${exec ./aud-artist.sh}${font}\
+${color1}${alignr}  ${exec ./aud-album.sh}${font}
+${voffset 5}${color2}${alignr}${font DejaVu Sans:size=11}${exec ./aud-song.sh}${font}
 ]];
