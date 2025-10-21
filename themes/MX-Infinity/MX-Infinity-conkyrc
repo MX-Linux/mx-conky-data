@@ -46,7 +46,8 @@ color1 = 'c16b29', --orange
 color2 = '92afd5', --light blue
 color3 = '6787B2', --blue
 
-minimum_width = 150,
+minimum_width = 175,
+maximum_width = 175,
 minimum_height = 0,
 gap_x = 50,
 gap_y = 50,
@@ -86,7 +87,7 @@ ${color3}${voffset 75}${alignc}${lua date}${font}
 ### MINUTES ###
 ${color1}${voffset -15}${font DejaVu Sans:size=81}${alignc}${time %M}${color}${font}
 ### MEM/CPU ###
-${color3}${voffset 15}${goto 25}mem ${color2}${font DejaVu Sans Mono:size=10}${goto 65}${lua memperc}%${goto 110}${color3}${font}cpu ${color2}${font DejaVu Sans Mono:size=10}${goto 130}${lua cpu}%${font}
+${color3}${voffset 15}${goto 35}mem${color2}${goto 75}${font DejaVu Sans Mono:size=10}${lua memperc}%${color3}${goto 110}${font}cpu ${color2}${goto 130}${font DejaVu Sans Mono:size=10}${lua cpu}%${font}
 ### BATTERY ###
 ${color3}${voffset 5}${alignc}\
 ${if_existing /sys/class/power_supply/BAT0/status}bat  ${voffset 1}${color3}${battery_bar 6,50 BAT0}  ${voffset -1}${color2}${font DejaVu Sans Mono:size=10}${battery_percent BAT0}%${endif}\
