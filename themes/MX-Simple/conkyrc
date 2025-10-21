@@ -64,7 +64,7 @@ ${voffset 58}${alignc -20}${color}${font Segoe UI:size=25}\
 ${if_match "pmfix${time %p}" == "pmfix"}${time $template7}${else}${time %I}${endif}\
 ${voffset -2}${offset 10}:${offset 10}${voffset 2}${time %M}\
 ${color}${font}
-${voffset 10}${alignc 20}${time %A}${offset 10}${time %d}${offset 10}${time %B}${color}
+${voffset 10}${alignc}${time %A} ${time %d} ${time %B}${color}
 ##SYS##
 ${goto 50}${voffset 16}${font StyleBats:size=13}A${font}   ${voffset -3}CPU: ${alignr 50}${cpu cpu0}% 
 ${goto 50}${voffset 10}${font StyleBats:size=13}g${font}   ${voffset -3}RAM: ${alignr 50}$memperc% 
