@@ -69,13 +69,15 @@ ${else}${lua set_time a}${endif}\
 ${if_match "${lua time B}" == "${time %B}"}${lua set_time B}\
 ${else}${lua set_time b}${endif}\
 ### HOUR ###
-${color2}${voffset -15}${font DejaVu Sans:size=81}${alignc}${lua hours}${font}
+# to force 12H/24H replace ${lua hour} with ${lua hour 12H} or ${lua hour 24H} 
+${color2}${voffset -15}${font DejaVu Sans:size=81}${alignc}${lua hour}${font}
 ### HIDE/SHOW AM PM ###
 ${if_match "${lua cjk}" == "false"}\
 ${font DejaVu Sans:size=10}\
 ${else}\
 ${font wqy-microhei:size=10}\
 ${endif}\
+# to force 12H/24H replace ${lua AM_PM} with ${lua AM_PM 12H} or ${lua AM_PM 24H} 
 ${color2}${voffset -85}${offset 160}${lua AM_PM}${font}
 ### DATE ###
 ${if_match "${lua cjk}" == "false"}\
@@ -85,7 +87,7 @@ ${font wqy-microhei:size=10}\
 ${endif}\
 ${color3}${voffset 75}${alignc}${lua date}${font}
 ### MINUTES ###
-${color1}${voffset -15}${font DejaVu Sans:size=81}${alignc}${time %M}${color}${font}
+${color1}${voffset -15}${font DejaVu Sans:size=81}${alignc}${lua minute}${color}${font}
 ### MEM/CPU ###
 ${color3}${voffset 15}${goto 35}mem${color2}${goto 75}${font DejaVu Sans Mono:size=10}${lua memperc}%${color3}${goto 110}${font}cpu ${color2}${goto 130}${font DejaVu Sans Mono:size=10}${lua cpu}%${font}
 ### BATTERY ###

@@ -86,8 +86,8 @@ ${else}${lua set_time a}${endif}\
 ${if_match "${lua time B}" == "${time %B}"}${lua set_time B}\
 ${else}${lua set_time b}${endif}\
 ${voffset -176}
-${lua hours}
-${color2}${offset 36}${voffset -95}${time %M}
+${lua hour}
+${color2}${offset 36}${voffset -95}${lua minute}
 ${voffset -130}${offset 10}\
 ${if_match "${lua cjk}" == "false"}\
 ${font Roboto-Light:bold:size=12}\

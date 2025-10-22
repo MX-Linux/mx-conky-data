@@ -1,19 +1,147 @@
+
 -- some globals
-   CJK = 'false'
-   DATE_FORMAT = '${time %A   %B %d}'
-   LANG = os.getenv("LC_ALL")
-   if ( not LANG or LANG == '' ) then  LANG = os.getenv("LANG") end
-   if ( not LANG or LANG == '' ) then  LANG = "C" end
-   if string.match(LANG,"^%l%l+_%u+") then
-      LL_CC = string.sub(LANG, string.find(LANG, "^%l%l+_%u+"))
-   else
-      LL_CC = "C"
-   end
-   if  string.match(LANG,"^%l%l+") then
-       LL = string.sub(LANG, string.find(LANG, "^%l%l+"))
-   else
-       LL = "C"
-   end
+ampm = nil
+lc_time_table = nil
+
+-- some time 12h/24h am/pm format functions 
+function has_ampm()
+    local handle = io.popen("date --date='2020-01-01 17:00' '+%c' 2>/dev/null")
+    local result = handle:read("*a")
+    handle:close()
+    print(result)
+    return result:match("(17)") ~= "17"
+end
+
+if ampm == nil then
+    ampm = has_ampm()
+end
+
+
+if has_ampm() then
+    ampm = true
+else
+    ampm = false
+end
+
+print(ampm)
+-- Use force to override auto time-format detection of 12H or 24H
+-- set force either to 12H, 24H, or keep empty for auto-detection
+function conky_hour(force)
+    if force then
+        if force:match('^12') then
+            return os.date("%I")
+        elseif force:match('^24')  then
+            return os.date("%H")
+        end
+    end
+    
+    -- If no force or invalid force, use AM/PM detection
+    if ampm then
+        return os.date("%I")
+    else
+        return os.date("%H")
+    end
+end
+
+function conky_hours(force)
+    return conky_hour(force)
+end
+
+function conky_minute()
+     return conky_parse('${time %M}') 
+end
+
+function conky_minutes()
+     return conky_minute()
+end
+
+function conky_ampm(force)
+    if force then
+        if force:match('^12') then
+            return os.date("%P")
+        elseif force:match('^24')  then
+            return ''
+        end
+    end
+
+    if ampm then
+        return os.date("%P")
+    else
+        return ''
+    end
+end
+
+function conky_AMPM(force)
+
+    if force then
+        if force:match('^12') then
+            return os.date("%p")
+        elseif force:match('^24')  then
+            return ''
+        end
+    end
+
+    if ampm then
+        return os.date("%p")
+    else
+        return ''
+    end
+end
+
+function conky_am_pm(force)
+    return conky_ampm(force)
+end
+
+function conky_AM_PM(force)
+    return conky_AMPM(force)
+end
+
+
+function lc_time()
+    -- Get LC_TIME from locale
+    local handle = io.popen("/usr/bin/locale 2>/dev/null")
+    local locale_output = handle:read("*a")
+    handle:close()
+
+    -- Extract LC_TIME value
+    local lc_time_match = locale_output:match("LC_TIME=([^\n]+)")
+    
+    -- Remove quotes if present
+    if lc_time_match then
+        lc_time_match = lc_time_match:gsub('^"', ''):gsub('"$', '')
+    end
+
+    -- Handle default case
+    lc_time_match = lc_time_match or "C"
+
+    -- Split into language (LL) and country code (CC)
+    local LL, LL_CC
+    if lc_time_match == "C" or lc_time_match == "C.UTF-8" then
+        LL = "C"
+        LL_CC = "C"
+    else
+        -- Split the locale string, removing charset
+        LL = lc_time_match:match("^([^_]+)")
+        LL_CC = lc_time_match:match("^([^.]+)")
+    end
+
+    -- return the table
+    return {
+        LL = LL,
+        LL_CC = LL_CC,
+        full = lc_time_match
+    }
+end
+
+if lc_time_table == nil then
+    lc_time_table = lc_time()
+end
+
+-- some more globals
+LL = lc_time_table.LL
+LL_CC = lc_time_table.LL_CC
+
+DATE_FORMAT = '${time %A   %B %d}'
 
 -- some locals
 local date_format_table =
@@ -40,51 +168,6 @@ local cjk_table =
 }
 
 -- some functions
-function has_ampm()
-    local handle = io.popen("locale  -k d_t_fmt | grep  -sqo -E '%r|%p|%I' && echo yes || echo no")
-    local output = handle:read("*l")
-    handle:close()
-    return  output
-end
-
-if has_ampm() == "yes" then
-    ampm = true
-else
-    ampm = false
-end
-
-function conky_hours()
-    if ampm then
-        return os.date("%I")
-    else
-        return os.date("%H")
-    end
-end
-
-function conky_ampm()
-    if ampm then
-        return os.date("%P")
-    else
-        return ''
-    end
-end
-
-function conky_AMPM()
-    if ampm then
-        return os.date("%p")
-    else
-        return ''
-    end
-end
-
-function conky_am_pm()
-    return conky_ampm()
-end
-
-function conky_AM_PM()
-    return conky_AMPM()
-end
-
 function conky_lang()
      return os.getenv("LANG")
 end

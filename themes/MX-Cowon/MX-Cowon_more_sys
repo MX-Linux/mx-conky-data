@@ -55,6 +55,10 @@ conky.config = {
 	own_window_argb_value = 0,
 	own_window_argb_visual = true,
 	own_window_colour = '000000',
+
+	lua_load = 'lua/conky.lua',
+
+
 };
 
 -- fluxbox adjustment
@@ -65,9 +69,8 @@ end
 
 conky.text = [[
 
-${if_match "pmfix${time %p}" == "pmfix"}${time %\
-H}${else}${time %I}${endif}
-${color2}${voffset -170}${offset 100}${time %M}${color}
+${lua hour}
+${color2}${voffset -170}${offset 100}${lua minute}${color}
 ${offset 30}${voffset -250}${font Droid Sans:size=16}${time %A} ${time %B %d}
 #system
 ${offset 20}${voffset 20}${font Roboto-Light:pixelsize=18}${color2}${offset 9} ${color3}hdd ${offset 9}${color4}${fs_used_perc /}%${offset 9}${color3}mem ${offset 9}${color4}${memperc}%${offset 9}${color3}cpu ${offset 9}${color4}${cpu cpu0}%

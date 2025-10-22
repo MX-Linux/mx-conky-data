@@ -1,4 +1,3 @@
-
 conky.config = {
 -- Standard antiX .conkyrc file written by Team antiX.
 -- Feel free to use. 
@@ -135,7 +134,7 @@ conky.config = {
 
 -- time template
     
-    template0 = [[${if_match "pmfix${time %p}" == "pmfix"}${time \1}${else}${time %I:%M}${endif}]],
+    template0 = [[${if_match "pmfix${time %p}" == "pmfix"}${time \1}${else}${time %I:%M %P}${endif}]],
 
 -- battery templates
 
