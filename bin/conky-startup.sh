@@ -28,6 +28,6 @@ fi
 #ok we finally launch default conky if nothing all checks are passed
 sleep 20
 killall conky
-cd "/usr/share/mx-conky-data/themes/MX-CowonMildBlue"
-conky -c "/usr/share/mx-conky-data/themes/MX-CowonMildBlue/MX-Cowon_MildBlue" &
+cd "/usr/share/mx-conky-data/themes/MX-Infinity"
+conky -c "/usr/share/mx-conky-data/themes/MX-Infinity/MX-Infinity-conkyrc" &
 exit 0
