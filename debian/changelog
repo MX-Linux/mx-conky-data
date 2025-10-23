@@ -1,3 +1,22 @@
+mx-conky-data(20251001) mx; urgency=medium
+
+ [melber]
+  * set argb_visual true and update fluxbox check
+  * MX-Infinity - update memcpu formatting
+  * add MX-Modulus themes
+  * Rename Modulus-clockrc to Modulus-clock
+  * adjust modulus configs so they show in mx-conky
+  * add MX-Audacious theme
+  * fix  MX-Audacious theme
+  * Update conkyrc
+  * MX-Audacious - add help file
+  * Change default conky for MX25
+  * remove some old themes 
+  [fehlix]
+  * auto-time-format 12h/24h detection
+
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Wed, 22 Oct 2025 20:24:13 -0400
+
 mx-conky-data (20250801) mx; urgency=medium
 
   * only create font cache if extra folder present
