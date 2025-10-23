@@ -1,6 +1,6 @@
-mx-conky-data(20251001) mx; urgency=medium
+mx-conky-data (20251001) mx; urgency=medium
 
- [melber]
+  [melber]
   * set argb_visual true and update fluxbox check
   * MX-Infinity - update memcpu formatting
   * add MX-Modulus themes
