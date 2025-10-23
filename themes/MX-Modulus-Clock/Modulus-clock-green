@@ -1,0 +1,51 @@
+-- clock_conky_110
+-- by damo August 2020
+------------------------------------------------------------------------
+
+conky.config = {
+    own_window = true,
+    own_window_type = 'normal',
+    own_window_transparent = false,
+    own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
+    own_window_argb_visual = true,
+own_window_argb_value = 35,
+    own_window_colour = '000000',
+    own_window_class = 'Conky',
+    own_window_title = 'Conky Clock',
+
+    minimum_width = 86, minimum_height = 86,-- width | height
+    maximum_width = 86,
+
+    gap_x = 515,-- left | right
+    gap_y = 85,-- up | down
+
+    alignment = 'tr',-- tl, tm, tr, bl, bm, br, ml, mr
+
+    use_xft = true,
+    font = 'Sans-serif:size=10',
+    xftalpha = 1,
+    override_utf8_locale = true,
+    uppercase = false,
+
+    draw_shades = false,
+    default_shade_color = '000000',
+    draw_outline = false,-- amplifies text if true
+    default_outline_color = '000000',
+    default_color = '4b8bad', -- Lithium blue
+
+    background = true,
+    use_spacer = 'none',
+
+    no_buffers = true,
+    double_buffer = true,
+
+    update_interval = 1,
+
+    lua_load = 'clock_conky_110.lua',
+-- set the path to the config file here:
+    lua_startup_hook = 'conky_load_config ./clock_settings-modulus-green',
+    lua_draw_hook_pre = 'conky_clock',
+
+};
+
+conky.text = [[]]

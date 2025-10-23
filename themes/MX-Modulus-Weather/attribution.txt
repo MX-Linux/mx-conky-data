@@ -1,0 +1,11 @@
+ATTRIBUTION:
+
+dynamic_weather_icons conky created by asqwerth (MX Art Team)
+
+Weather icons are from the Papirus Icon set, renumbered to follow openweathermap weather condition numbering.
+https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+Licence - GPLv3
+
+
+weather-v2.0 script is from the Merope conky and other conkies by closebox73 released under the GPL3 licence
+Pling	: https://pling.com/u/closebox73x

@@ -1,0 +1,63 @@
+--Modulus Home Conky by AVLinux
+--Utilizes the following font: Red Hat Text
+
+conky.config = {
+	background = true,
+	cpu_avg_samples = 2,
+	default_color = '#ffffff', --predominant color
+	color2 = '#787878', -- hdd color
+        color3 = '#F8391D', -- red 
+        color4 = '#303030', -- dark grey
+ 	double_buffer = true,
+	font = 'Red Hat Text:Bold:size=6',
+	draw_shades = false,
+default_bar_width = 61,
+default_bar_height = 7,
+
+	alignment = 'top_right',
+    gap_x =411,
+	gap_y =80,
+
+        border_inner_margin = 0,
+        border_width = 0,
+	no_buffers = true,
+        own_window = true,
+        own_window_type = 'normal',
+        own_window_hints  = 'sticky,undecorated,below,skip_taskbar,skip_pager',
+        own_window_argb_visual = true,
+        own_window_argb_value = 35, -- This controls opacity (Range 0-255)
+        own_window_title = 'musicdisplay',
+	update_interval = 1.0,
+	use_xft = true,
+        if_up_strictness = 'address',
+	maximum_width = 80,
+	minimum_width = 80, 
+        --minimum_height = 80,
+
+lua_load = './draw_bg.lua',
+lua_draw_hook_pre = 'draw_bg',
+
+        };
+
+-- fluxbox adjustment
+-- requires fluxbox to be running, increase sleep time in conky-startup.sh if necessary
+if os.execute('pidof -q fluxbox') and not os.execute('pidof -q picom') then
+   conky.config.own_window_argb_visual = false
+   conky.config.own_window_transparent = true
+end
+
+conky.text = [[
+#BACKGROUND IMAGE (Comment out if you just want the text w/o BG)
+${image ./media-player-display.png -p 5,5 -s 70x70}
+#music info display
+${if_match "${execi 10 python3 ./mediaplayer.py strawberry -i}"=="yes"}${voffset -2}${goto 10}${execpi 4 python3 ./mediaplayer.py strawberry -a -w 40 | cut -c9-20}
+${goto 10}${voffset -2}${execpi 4 python3 ./mediaplayer.py strawberry -a -w 48 | cut -c21-35}
+${goto 10}${execpi 4 python3 ./mediaplayer.py strawberry -t -w 30  | cut -c8-20}
+${goto 10}${voffset -2}${execpi 4 python3 ./mediaplayer.py strawberry -t -w 48  | cut -c21-35}
+${voffset 24}${goto 10}${color2}${execibar 4 python3 ./mediaplayer.py strawberry -p}${voffset -6}
+${else}\
+\
+${voffset 68}${alignc}Music Info${voffset -8}
+${endif}\
+
+]];

@@ -1,0 +1,52 @@
+--Modulus CPU Conky by AVLinux
+--Utilizes the following font: Red Hat Text
+
+conky.config = {
+	background = true,
+	cpu_avg_samples = 2,
+	default_color = '#ffffff', --predominant color (white)
+	color2 = '#CBDEF2', -- light grey
+        color3 = '#9F440D', -- orange
+        color4 = '#3584E4', -- blue
+	double_buffer = true,
+	font = 'Red Hat Text:Bold:size=8',
+	draw_shades = false,
+        gap_x =300,
+	gap_y =80,
+        border_inner_margin = 0,
+        border_width = 0,
+	no_buffers = true,
+        own_window = true,
+        own_window_type = 'normal',
+        own_window_hints  = 'sticky,undecorated,below,skip_taskbar,skip_pager',
+        own_window_argb_visual = true,
+        own_window_argb_value = 255, -- This controls opacity (Range 0-255)
+        own_window_title = 'SysStatsCPUConky',
+	update_interval = 1.0,
+	use_xft = true,
+        if_up_strictness = 'address',
+	maximum_width = 80,
+	minimum_width = 80, 
+        --minimum_height = 80,
+	alignment = 'top_middle',
+
+lua_load = './LUA/draw_bg.lua',
+lua_draw_hook_pre = 'draw_bg',
+
+        };
+
+-- fluxbox adjustment
+-- requires fluxbox to be running, increase sleep time in conky-startup.sh if necessary
+if os.execute('pidof -q fluxbox') and not os.execute('pidof -q picom') then
+   conky.config.own_window_argb_visual = false
+   conky.config.own_window_transparent = true
+end
+
+conky.text = [[
+#BACKGROUND IMAGE (Comment out if you just want the text w/o BG)
+${voffset 0}${image ./conky_cpu.png -p 0,0 -s 80x80}
+#CPU_STATS
+${voffset 18}${alignc}$cpu%${color}${font}
+${voffset 32}${alignc}${freq_g} Ghz${color}${font}
+${voffset -12}
+]];

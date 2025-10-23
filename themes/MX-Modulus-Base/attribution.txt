@@ -1,0 +1,6 @@
+
+ATTRIBUTION:
+
+Icons/graphics used in the conkies are from the Papirus Icon set.
+https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+Licence - GPLv3

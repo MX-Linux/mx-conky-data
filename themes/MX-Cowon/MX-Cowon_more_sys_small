@@ -65,21 +65,18 @@ template2 = '${offset 4} ${color3}batt${offset 6}',
 	own_window_argb_value = 0,
 	own_window_argb_visual = true,
 	own_window_colour = '000000',
-	lua_load = 'conky_hours.lua',
+	lua_load = 'lua/conky.lua',
 };
 
 -- fluxbox adjustment
-
-return_code = os.execute('pidof -q fluxbox')
-if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
-   _VERSION ~= 'Lua 5.1' and return_code then
-   conky.config.own_window_transparent = true
+-- requires fluxbox to be running, increase sleep time in conky-startup.sh if necessary
+if os.execute('pidof -q fluxbox') and not os.execute('pidof -q picom') then
    conky.config.own_window_argb_visual = false
 end
 
 conky.text = [[
-${voffset -20}${lua hours}
-${color2}${offset 40}${voffset -100}${time %M}
+${voffset -20}${lua hour}
+${color2}${offset 40}${voffset -100}${lua minute}
 ${voffset -140}${offset 10}${font Roboto-Light:bold:size=12}${color2}${time %A} ${offset 10}${color2}${time %B %d}
 ${offset 150}${voffset -175}${font Roboto-Light:size=12}${color2}${lua AM_PM}
 #system

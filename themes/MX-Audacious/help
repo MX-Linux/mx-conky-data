@@ -1,0 +1,419 @@
+Audacious-Discreet conky
+
+========== EN ==========
+When enabled to autostart, this conky will display two lines of artist and song information when audacious is running. 
+
+## configuration ##
+LOCATION 
+
+MX Conky > Customize, Location tab
+--select alternate location
+
+COLOR 
+
+MX Conky > Edit
+--find the list of color numbers (color0, color1, etc.) near the top of the file
+--to change the color to use for artist or song: MX Conky > Customize, Edit tab. Scroll to the bottom and change the number (EX: color9 to color7) 
+--to change the color associated with a particular number: MX Conky > Customize, Color tab 
+
+## tips ## 
+--there is an interesting original window maker plugin named "wmusic": https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. When running it shows on the end of the MX dock--use MX Dockmaker to set the icons to 64 in order to see the basic controls better, or take a screen capture with Quickshot. It has the advantage of hiding the minimized app from the taskbar
+
+========== AR ==========
+عند تمكين التشغيل التلقائي، سيعرض هذا البرنامج خطين من معلومات الفنان والأغنية عند تشغيل برنامج audacious. 
+## التكوين ##==========
+الموقع 
+
+MX Conky > تخصيص، علامة التبويب الموقع
+--حدد موقعًا بديلاً
+
+اللون 
+
+MX Conky > تحرير
+--ابحث عن قائمة أرقام الألوان (color0، color1، إلخ) بالقرب من أعلى الملف
+--لتغيير اللون المستخدم للفنان أو الأغنية: MX Conky > تخصيص، علامة التبويب تحرير. قم بالتمرير إلى الأسفل وقم بتغيير الرقم (على سبيل المثال: color9 إلى color7) 
+--لتغيير اللون المرتبط برقم معين: MX Conky > تخصيص، علامة التبويب اللون 
+
+## نصائح ## 
+--هناك مكون إضافي أصلي مثير للاهتمام لصانع النوافذ يسمى ”wmusic“: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. عند تشغيله، يظهر في نهاية قاعدة الإرساء--استخدم MX Dockmaker لتعيين الرموز على 64 من أجل رؤية عناصر التحكم الأساسية بشكل أفضل أو التقاط لقطة شاشة باستخدام Quickshot. يتميز بإخفاء التطبيق المصغر من شريط المهام
+
+========== BG ========== 
+Когато е активирана опцията за автоматично стартиране, тази конки ще показва две реда с информация за изпълнителя и песента, когато аудиациус е в действие. 
+
+## конфигурация ##
+МЕСТОПОЛОЖЕНИЕ 
+
+MX Conky > Персонализиране, раздел „Местоположение“
+--изберете алтернативно местоположение
+
+ЦВЯТ 
+
+MX Conky > Редактиране
+--намерете списъка с номера на цветовете (color0, color1 и т.н.) в горната част на файла
+--за да промените цвета, който се използва за изпълнителя или песента: MX Conky > Персонализиране, раздел „Редактиране“. Превъртете до края и променете номера (например: color9 на color7) 
+--за да промените цвета, свързан с определен номер: MX Conky > Персонализиране, раздел Цвят 
+
+## съвети ## 
+--има интересен оригинален плъгин за прозореца, наречен „wmusic”: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. Когато се стартира, той се показва в края на дока --използвайте MX Dockmaker, за да настроите иконите на 64, за да виждате по-добре основните контроли, или направете екранна снимка с Quickshot. Има предимството, че скрива минимизираното приложение от лентата с задачи.
+
+========== ES ========== 
+Cuando se habilita el inicio automático, este conky mostrará dos líneas con información sobre el artista y la canción cuando se esté ejecutando audacious. 
+
+## Configuración ##
+UBICACIÓN 
+
+MX Conky > Personalizar, pestaña Ubicación.
+--Selecciona una ubicación alternativa.
+
+COLOR 
+
+MX Conky > Editar.
+--Busca la lista de números de color (color0, color1, etc.) cerca de la parte superior del archivo.
+--Para cambiar el color que se utilizará para el artista o la canción: MX Conky > Personalizar, pestaña Editar. Desplácese hasta la parte inferior y cambie el número (por ejemplo, color9 a color7) 
+--para cambiar el color asociado a un número concreto: MX Conky > Personalizar, pestaña Color 
+
+## consejos ## 
+--hay un interesante complemento original de Window Maker llamado «wmusic»: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. Cuando se ejecuta, aparece al final del dock; utiliza MX Dockmaker para configurar los iconos en 64 y poder ver mejor los controles básicos o haz una captura de pantalla con Quickshot. Tiene la ventaja de ocultar la aplicación minimizada de la barra de tareas.
+
+========== DA ========== 
+Når autostart er aktiveret, viser denne conky to linjer med oplysninger om kunstner og sang, når audacious kører. 
+
+## konfiguration ##
+PLACERING 
+
+MX Conky > Tilpas, fanen Placering
+--vælg alternativ placering
+
+FARVE 
+
+MX Conky > Rediger
+--find listen over farvenumre (farve0, farve1 osv.) øverst i filen
+--for at ændre den farve, der skal bruges til kunstner eller sang: MX Conky > Tilpas, fanen Rediger. Rul ned til bunden og ændr nummeret (f.eks. farve9 til farve7) 
+--for at ændre farven, der er knyttet til et bestemt nummer: MX Conky > Tilpas, fanen Farve 
+
+## tips ## 
+--der findes et interessant originalt Window Maker-plugin ved navn »wmusic«: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. Når det kører, vises det i enden af docken--brug MX Dockmaker til at indstille ikonerne til 64 for at se de grundlæggende kontrolelementer bedre, eller tag et skærmbillede med Quickshot. Det har den fordel, at det minimerede program skjules fra proceslinjen.
+
+========== DE ========== 
+## Konfiguration ##
+POSITION 
+
+MX Conky > Anpassen, Registerkarte „Speicherort“
+– Wählen Sie eine andere Position aus.
+
+FARBE 
+
+MX Conky > Bearbeiten
+– Suchen Sie die Liste der Farbnummern (color0, color1 usw.) oben in der Datei.
+– So ändern Sie die Farbe für Interpreten oder Titel: MX Conky > Anpassen, Registerkarte „Bearbeiten“. Scrollen Sie nach unten und ändern Sie die Nummer (z. B. color9 in color7). 
+– So ändern Sie die Farbe, die einer bestimmten Nummer zugeordnet ist: MX Conky > Anpassen, Registerkarte „Farbe“. 
+
+## Tipps ## 
+--Es gibt ein interessantes Original-Windowmaker-Plugin namens „wmusic”: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. Wenn es ausgeführt wird, wird es am Ende des Docks angezeigt. Verwenden Sie MX Dockmaker, um die Symbole auf 64 einzustellen, damit Sie die grundlegenden Steuerelemente besser sehen können, oder machen Sie einen Screenshot mit Quickshot. Es hat den Vorteil, dass die minimierte App aus der Taskleiste ausgeblendet wird.
+
+========== EL ========== 
+Όταν είναι ενεργοποιημένη η αυτόματη εκκίνηση, αυτό το conky θα εμφανίζει δύο γραμμές με πληροφορίες για τον καλλιτέχνη και το τραγούδι όταν εκτελείται το audacious. 
+
+## διαμόρφωση ##
+ΤΟΠΟΘΕΣΙΑ 
+
+MX Conky > Προσαρμογή, καρτέλα Τοποθεσία
+--επιλέξτε εναλλακτική τοποθεσία
+
+ΧΡΩΜΑ 
+
+MX Conky > Επεξεργασία
+--βρείτε τη λίστα με τους αριθμούς χρωμάτων (color0, color1, κ.λπ.) κοντά στην κορυφή του αρχείου
+--για να αλλάξετε το χρώμα που θα χρησιμοποιηθεί για τον καλλιτέχνη ή το τραγούδι: MX Conky > Προσαρμογή, καρτέλα Επεξεργασία. Μετακινηθείτε στο κάτω μέρος και αλλάξτε τον αριθμό (π.χ.: color9 σε color7) 
+--για να αλλάξετε το χρώμα που σχετίζεται με έναν συγκεκριμένο αριθμό: MX Conky > Προσαρμογή, καρτέλα Χρώμα 
+
+## συμβουλές ## 
+--υπάρχει ένα ενδιαφέρον πρωτότυπο πρόσθετο για τη δημιουργία παραθύρων με το όνομα «wmusic»: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. Όταν εκτελείται, εμφανίζεται στο τέλος του dock--χρησιμοποιήστε το MX Dockmaker για να ορίσετε τα εικονίδια σε 64, ώστε να βλέπετε καλύτερα τα βασικά στοιχεία ελέγχου ή να τραβήξετε ένα στιγμιότυπο οθόνης με το Quickshot. Έχει το πλεονέκτημα ότι κρύβει την ελαχιστοποιημένη εφαρμογή από τη γραμμή εργασιών
+
+========== FR ========== 
+Lorsque l'exécution automatique est activée, ce conky affiche deux lignes d'informations sur l'artiste et la chanson lorsque audacious est en cours d'exécution. 
+
+## configuration ##
+EMPLACEMENT 
+
+MX Conky > Personnaliser, onglet Emplacement
+--sélectionnez un autre emplacement
+
+COULEUR 
+
+MX Conky > Modifier
+--recherchez la liste des numéros de couleur (couleur0, couleur1, etc.) en haut du fichier
+--pour modifier la couleur à utiliser pour l'artiste ou la chanson : MX Conky > Personnaliser, onglet Modifier. Faites défiler vers le bas et modifiez le numéro (EX : color9 à color7) 
+--pour modifier la couleur associée à un numéro particulier : MX Conky > Personnaliser, onglet Couleur 
+
+## astuces ## 
+--il existe un plugin Window Maker original intéressant appelé « wmusic » : https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. Lorsqu'il est exécuté, il s'affiche à l'extrémité du dock. Utilisez MX Dockmaker pour définir les icônes sur 64 afin de mieux voir les commandes de base ou faites une capture d'écran avec Quickshot. Il présente l'avantage de masquer l'application minimisée dans la barre des tâches.
+
+========== HU ========== 
+Ha az automatikus indítás engedélyezve van, ez a conky két sorban jeleníti meg az előadó és a dal adatait, amikor az audacious fut. 
+
+## konfiguráció ##
+HELYSZÍN 
+
+MX Conky > Testreszabás, Helyszín fül
+--válasszon másik helyszínt
+
+SZÍN 
+
+MX Conky > Szerkesztés
+--keresse meg a színszámok listáját (color0, color1 stb.) a fájl teteje közelében
+--az előadó vagy dal színének megváltoztatásához: MX Conky > Testreszabás, Szerkesztés fül. Görgessen le az oldal aljára, és módosítsa a számot (pl.: color9-ről color7-re) 
+--egy adott számhoz tartozó szín megváltoztatása: MX Conky > Testreszabás, Szín fül 
+
+## tippek ## 
+--van egy érdekes, eredeti Window Maker plugin, amelynek neve „wmusic”: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. Futtatásakor a dokk végén jelenik meg – az MX Dockmaker segítségével állítsa be az ikonokat 64-re, hogy jobban lássa az alapvető vezérlőket, vagy készítsen képernyőképet a Quickshot segítségével. Előnye, hogy elrejti a minimalizált alkalmazást a tálcáról.
+
+========== ID ========== 
+Ketika diaktifkan untuk memulai secara otomatis, conky ini akan menampilkan dua baris informasi artis dan lagu saat Audacious sedang berjalan. 
+
+## konfigurasi ##
+LOKASI 
+
+MX Conky > Sesuaikan, Tab Lokasi
+--pilih lokasi alternatif
+
+WARNA 
+
+MX Conky > Edit
+--cari daftar nomor warna (color0, color1, dll.) di bagian atas file
+--untuk mengubah warna yang digunakan untuk artis atau lagu: MX Conky > Sesuaikan, Tab Edit. Gulir ke bawah dan ubah nomor (CONTOH: color9 menjadi color7) 
+--untuk mengubah warna yang terkait dengan nomor tertentu: MX Conky > Sesuaikan, Tab Warna 
+
+## tips ## 
+--ada plugin Window Maker asli yang menarik bernama “wmusic”: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. Saat dijalankan, plugin ini muncul di ujung dock--gunakan MX Dockmaker untuk mengatur ikon menjadi 64 agar kontrol dasar lebih terlihat jelas atau ambil tangkapan layar dengan Quickshot. Plugin ini memiliki keunggulan menyembunyikan aplikasi yang minimized dari taskbar.
+
+========== IT ========== 
+Quando è abilitato l'avvio automatico, questo conky visualizzerà due righe di informazioni sull'artista e sul brano quando audacious è in esecuzione. 
+
+## configurazione ##
+POSIZIONE 
+
+MX Conky > Personalizza, scheda Posizione
+--seleziona una posizione alternativa
+
+COLORE 
+
+MX Conky > Modifica
+--trova l'elenco dei numeri dei colori (colore0, colore1, ecc.) nella parte superiore del file
+--per cambiare il colore da utilizzare per l'artista o il brano: MX Conky > Personalizza, scheda Modifica. Scorrere fino in fondo e modificare il numero (ES: da color9 a color7) 
+--per modificare il colore associato a un numero specifico: MX Conky > Personalizza, scheda Colore 
+
+## suggerimenti ## 
+--esiste un interessante plugin originale per Window Maker chiamato “wmusic”: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. Quando è in esecuzione, viene visualizzato all'estremità del dock: usa MX Dockmaker per impostare le icone su 64 in modo da vedere meglio i controlli di base o acquisisci uno screenshot con Quickshot. Ha il vantaggio di nascondere l'app ridotta a icona dalla barra delle applicazioni
+
+========== JA ========== 
+自動起動を有効にすると、このコンキーはAudaciousが実行中にアーティストと曲情報の2行を表示します。
+
+## 設定 ##
+表示位置 
+
+MX Conky > カスタマイズ、表示位置タブ
+--別の表示位置を選択
+
+色 
+
+MX Conky > 編集
+--ファイル上部に色番号のリスト（color0、color1など）があります
+--アーティスト名や曲名に使用する色を変更する場合：MX Conky > カスタマイズ、編集タブ 末尾までスクロールし番号を変更（例：color9 → color7）
+--特定の番号に関連付けられた色を変更する場合：MX Conky > カスタマイズ、カラータブ
+
+## ヒント ## 
+--「wmusic」という興味深いオリジナルウィンドウメーカープラグインがあります：https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html。実行時はドックの端に表示されます。基本操作を見やすくするにはMX Dockmakerでアイコンサイズを64に設定するか、Quickshotでスクリーンショットを撮ってください。最小化アプリをタスクバーから非表示にする利点があります
+
+========== NB ========== 
+Når autostart er aktivert, vil denne conky vise to linjer med informasjon om artist og sang når audacious kjører. 
+
+## konfigurasjon ##
+PLASSERING 
+
+MX Conky > Tilpass, fanen Plassering
+--velg alternativ plassering
+
+FARGE 
+
+MX Conky > Rediger
+--finn listen over fargenumre (color0, color1 osv.) øverst i filen
+--for å endre fargen som skal brukes for artist eller sang: MX Conky > Tilpass, fanen Rediger. Bla til bunnen og endre nummeret (f.eks. farge9 til farge7) 
+--for å endre fargen som er knyttet til et bestemt nummer: MX Conky > Tilpass, fane Farge 
+
+## tips ## 
+--det finnes et interessant originalt Window Maker-plugin kalt «wmusic»: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. Når det kjører, vises det på enden av docken – bruk MX Dockmaker til å sette ikonene til 64 for å se de grunnleggende kontrollene bedre, eller ta et skjermbilde med Quickshot. Det har fordelen at det skjuler den minimerte appen fra oppgavelinjen
+
+========== NL ========== 
+Wanneer automatisch starten is ingeschakeld, geeft deze conky twee regels met informatie over de artiest en het nummer weer wanneer audacious wordt uitgevoerd. 
+
+## configuratie ##
+LOCATIE 
+
+MX Conky > Aanpassen, tabblad Locatie
+--selecteer een andere locatie
+
+KLEUR 
+
+MX Conky > Bewerken
+--zoek de lijst met kleurnummers (color0, color1, enz.) bovenaan het bestand
+--om de kleur voor artiest of nummer te wijzigen: MX Conky > Aanpassen, tabblad Bewerken. Scroll naar beneden en wijzig het nummer (bijv. kleur9 naar kleur7) 
+--om de kleur te wijzigen die aan een bepaald nummer is gekoppeld: MX Conky > Aanpassen, tabblad Kleur 
+
+## tips ## 
+--er is een interessante originele Window Maker-plug-in genaamd “wmusic”: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. Wanneer u deze uitvoert, wordt deze aan het einde van het dock weergegeven. Gebruik MX Dockmaker om de pictogrammen in te stellen op 64, zodat u de basisbedieningselementen beter kunt zien, of maak een schermafbeelding met Quickshot. Het heeft als voordeel dat de geminimaliseerde app uit de taakbalk wordt verborgen.
+
+========== PL ==========
+Po włączeniu funkcji automatycznego uruchamiania, conky wyświetli dwie linijki informacji o wykonawcy i utworze podczas działania programu audacious. 
+
+## konfiguracja ##
+LOKALIZACJA 
+
+MX Conky > Dostosuj, zakładka Lokalizacja
+--wybierz alternatywną lokalizację
+
+KOLOR 
+
+MX Conky > Edytuj
+--znajdź listę numerów kolorów (color0, color1 itp.) w górnej części pliku
+--aby zmienić kolor używany dla wykonawcy lub utworu: MX Conky > Dostosuj, zakładka Edytuj. Przewiń do dołu i zmień numer (np. color9 na color7) 
+--aby zmienić kolor powiązany z konkretnym numerem: MX Conky > Dostosuj, zakładka Kolor 
+
+## wskazówki ## 
+--istnieje interesująca oryginalna wtyczka do tworzenia okien o nazwie „wmusic”: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. Po uruchomieniu wyświetla się na końcu paska MX Dock — użyj MX Dockmaker, aby ustawić ikony na 64, aby lepiej widzieć podstawowe elementy sterujące, lub zrób zrzut ekranu za pomocą Quickshot. Ma tę zaletę, że ukrywa zminimalizowaną aplikację z paska zadań.
+
+========== pt_PT ========== 
+Quando ativado para iniciar automaticamente, este conky exibirá duas linhas de informações sobre o artista e a música quando o audacious estiver em execução. 
+
+## configuração ##
+LOCALIZAÇÃO 
+
+MX Conky > Personalizar, separador Localização
+--selecione uma localização alternativa
+
+COR 
+
+MX Conky > Editar
+--encontre a lista de números de cores (cor0, cor1, etc.) na parte superior do ficheiro
+--para alterar a cor a utilizar para o artista ou música: MX Conky > Personalizar, separador Editar. Role até o final e altere o número (EX: cor9 para cor7) 
+--para alterar a cor associada a um número específico: MX Conky > Personalizar, guia Cor 
+
+## dicas ## 
+--existe um plugin original interessante para o Window Maker chamado “wmusic”: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. Quando executado, ele aparece na extremidade do dock -- use o MX Dockmaker para definir os ícones para 64, a fim de ver melhor os controles básicos ou fazer uma captura de tela com o Quickshot. Ele tem a vantagem de ocultar o aplicativo minimizado da barra de tarefas
+
+========== pt_BR ========== 
+Quando ativado para iniciar automaticamente, este conky exibirá duas linhas de informações sobre o artista e a música quando o audacious estiver em execução. 
+
+## configuração ##
+LOCALIZAÇÃO 
+
+MX Conky > Personalizar, guia Localização
+--selecione uma localização alternativa
+
+COR 
+
+MX Conky > Editar
+--encontre a lista de números de cores (cor0, cor1, etc.) na parte superior do arquivo
+--para alterar a cor a ser usada para o artista ou música: MX Conky > Personalizar, guia Editar. Role até a parte inferior e altere o número (EX: cor9 para cor7) 
+--para alterar a cor associada a um número específico: MX Conky > Personalizar, guia Cor 
+
+## dicas ## 
+--existe um plugin original interessante para o Window Maker chamado “wmusic”: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. Quando executado, ele aparece na extremidade do dock -- use o MX Dockmaker para definir os ícones para 64, a fim de ver melhor os controles básicos ou fazer uma captura de tela com o Quickshot. Ele tem a vantagem de ocultar o aplicativo minimizado da barra de tarefas
+
+========== RO ========== 
+Când este activată opțiunea de pornire automată, acest conky va afișa două linii cu informații despre artist și melodie atunci când audacious este în funcțiune. 
+
+## configurare ##
+LOCALIZARE 
+
+MX Conky > Personalizare, fila Localizare
+--selectați o altă localizare
+
+CULOARE 
+
+MX Conky > Editare
+--găsiți lista numerelor de culori (color0, color1 etc.) în partea de sus a fișierului
+--pentru a schimba culoarea utilizată pentru artist sau melodie: MX Conky > Personalizare, fila Editare. Derulați până jos și modificați numărul (EX: color9 la color7) 
+--pentru a modifica culoarea asociată unui anumit număr: MX Conky > Personalizare, fila Culoare 
+
+## sfaturi ## 
+--există un plugin interesant pentru Windows numit „wmusic”: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. Când îl rulați, acesta apare la capătul dock-ului -- utilizați MX Dockmaker pentru a seta pictogramele la 64, astfel încât să vedeți mai bine comenzile de bază, sau faceți o captură de ecran cu Quickshot. Are avantajul de a ascunde aplicația minimizată din bara de activități.
+
+========== RU ========== 
+При включении автозапуска этот конки будет отображать две строки информации об исполнителе и песне, когда запущен audacious. 
+
+## настройка ##
+РАСПОЛОЖЕНИЕ 
+
+MX Conky > Настройка, вкладка «Расположение»
+--выберите альтернативное расположение
+
+ЦВЕТ 
+
+MX Conky > Редактировать
+--найдите список цветовых кодов (color0, color1 и т. д.) в верхней части файла
+--чтобы изменить цвет, используемый для исполнителя или песни: MX Conky > Настройка, вкладка «Редактировать». Прокрутите вниз и измените номер (например, color9 на color7) 
+--чтобы изменить цвет, связанный с определенным номером: MX Conky > Настройка, вкладка Цвет 
+
+## советы ## 
+--есть интересный оригинальный плагин для Window Maker под названием «wmusic»: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. При запуске он отображается в конце дока -- используйте MX Dockmaker, чтобы установить размер значков на 64, чтобы лучше видеть основные элементы управления, или сделайте снимок экрана с помощью Quickshot. Его преимущество в том, что он скрывает свернутое приложение из панели задач.
+
+========== SV ========== 
+När autostart är aktiverat visar denna conky två rader med information om artist och låt när audacious körs. 
+
+## konfiguration ##
+PLATS 
+
+MX Conky > Anpassa, fliken Plats
+--välj alternativ plats
+
+FÄRG 
+
+MX Conky > Redigera
+--hitta listan med färgnummer (color0, color1, etc.) nära toppen av filen
+--för att ändra färgen som ska användas för artist eller låt: MX Conky > Anpassa, fliken Redigera. Bläddra till botten och ändra numret (EX: color9 till color7) 
+--för att ändra färgen som är associerad med ett visst nummer: MX Conky > Anpassa, fliken Färg 
+
+## tips ## 
+--det finns ett intressant originalt plugin för Window Maker som heter ”wmusic”: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. När det körs visas det i slutet av dockan--använd MX Dockmaker för att ställa in ikonerna till 64 för att se de grundläggande kontrollerna bättre eller ta en skärmdump med Quickshot. Det har fördelen att det döljer den minimerade appen från aktivitetsfältet
+
+========== TR ========== 
+Otomatik başlatma etkinleştirildiğinde, bu conky, audacious çalışırken sanatçı ve şarkı bilgilerini iki satır halinde görüntüler. 
+
+## yapılandırma ##
+KONUM 
+
+MX Conky > Özelleştir, Konum sekmesi
+--alternatif konum seçin
+
+RENK 
+
+MX Conky > Düzenle
+--dosyanın üst kısmında renk numaraları listesini bulun (color0, color1, vb.)
+--sanatçı veya şarkı için kullanılacak rengi değiştirmek için: MX Conky > Özelleştir, Düzenle sekmesi. En alta kaydırın ve numarayı değiştirin (ÖRNEK: color9'u color7 olarak değiştirin) 
+--belirli bir numara ile ilişkili rengi değiştirmek için: MX Conky > Özelleştir, Renk sekmesi 
+
+## ipuçları ## 
+--“wmusic” adlı ilginç bir orijinal pencere oluşturucu eklentisi vardır: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html. Çalıştırıldığında dock'un sonunda görünür--temel kontrolleri daha iyi görebilmek için MX Dockmaker'ı kullanarak simgeleri 64 olarak ayarlayın veya Quickshot ile ekran görüntüsü alın. Görev çubuğundan simge durumuna küçültülmüş uygulamayı gizleme avantajı vardır.
+
+========== ZH ========== 
+启用自动启动后，当audacious运行时，此conky将显示两行艺术家和歌曲信息。
+
+## 配置 ##
+位置 
+
+MX Conky > 自定义 > 位置选项卡
+--选择替代位置
+
+颜色 
+
+MX Conky > 编辑
+--在文件顶部附近查找颜色编号列表（color0、color1 等）
+--修改艺人或歌曲颜色：MX Conky > 自定义 > 编辑选项卡 滚动至底部修改数字（例如：color9改为color7）
+--修改特定数字对应颜色：MX Conky > 自定义 > 颜色选项卡
+
+## 技巧 ## 
+--有个有趣的原始窗口管理器插件名为“wmusic”: https://manpages.debian.org/trixie/wmusic/wmusic.1.en.html。运行时它会显示在Dock末端——可通过MX Dockmaker将图标设置为64像素以清晰查看基本控制项，或用Quickshot截屏。其优势在于能隐藏最小化应用程序的任务栏图标
+
+---------------
+Translations by DeepL https://www.deepl.com/en/translator

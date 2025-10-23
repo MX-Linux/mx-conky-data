@@ -69,11 +69,8 @@ template2 = '${offset 4} ${color3}bat${offset 6}',
 };
 
 -- fluxbox adjustment
--- if os.getenv("XDG_SESSION_DESKTOP") == 'fluxbox' then
-return_code = os.execute('pidof -q fluxbox')
-if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
-   _VERSION ~= 'Lua 5.1' and return_code then
-   conky.config.own_window_transparent = true
+-- requires fluxbox to be running, increase sleep time in conky-startup.sh if necessary
+if os.execute('pidof -q fluxbox') and not os.execute('pidof -q picom') then
    conky.config.own_window_argb_visual = false
 end
 
@@ -84,7 +81,7 @@ ${if_match "${lua time B}" == "${time %B}"}${lua set_time B}\
 ${else}${lua set_time b}${endif}\
 ${voffset -176}
 ${lua hours}
-${color2}${offset 40}${voffset -100}${time %M}
+${color2}${offset 40}${voffset -100}${lua minute}
 ${voffset -140}${offset 10}\
 ${if_match "${lua cjk}" == "false"}\
 ${font Roboto-Light:bold:size=12}\

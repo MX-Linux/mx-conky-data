@@ -52,11 +52,8 @@ conky.config = {
 };
 
 -- fluxbox adjustment
-
-return_code = os.execute('pidof -q fluxbox')
-if _VERSION == 'Lua 5.1' and math.floor(return_code/256) == 0 or
-   _VERSION ~= 'Lua 5.1' and return_code then
-   conky.config.own_window_transparent = true
+-- requires fluxbox to be running, increase sleep time in conky-startup.sh if necessary
+if os.execute('pidof -q fluxbox') and not os.execute('pidof -q picom') then
    conky.config.own_window_argb_visual = false
 end
 
@@ -67,7 +64,7 @@ ${voffset 58}${alignc -20}${color}${font Segoe UI:size=25}\
 ${if_match "pmfix${time %p}" == "pmfix"}${time $template7}${else}${time %I}${endif}\
 ${voffset -2}${offset 10}:${offset 10}${voffset 2}${time %M}\
 ${color}${font}
-${voffset 10}${alignc 20}${time %A}${offset 10}${time %d}${offset 10}${time %B}${color}
+${voffset 10}${alignc}${time %A} ${time %d} ${time %B}${color}
 ##SYS##
 ${goto 50}${voffset 16}${font StyleBats:size=13}A${font}   ${voffset -3}CPU: ${alignr 50}${cpu cpu0}% 
 ${goto 50}${voffset 10}${font StyleBats:size=13}g${font}   ${voffset -3}RAM: ${alignr 50}$memperc% 

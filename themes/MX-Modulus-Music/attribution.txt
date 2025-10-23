@@ -1,0 +1,8 @@
+ATTRIBUTION:
+
+music_display conky created by asqwerth (MX Art Team)
+
+Icon used is from the Papirus Icon set.
+https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+Licence - GPLv3
+

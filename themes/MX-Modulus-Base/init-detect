@@ -1,0 +1,7 @@
+ 
+#! /bin/bash
+# script by ManyRoads
+# Detects sysvinit or systemd
+
+ps --no-headers -o comm 1
+ 

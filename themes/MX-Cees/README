@@ -1,1 +1,0 @@
-The lua-script is for transparent background. If you want to use it, then uncomment line 60+61 in datetime-conkyrc, making sure that the mentioned path is pointing to the actual location where you saved the executable script.
