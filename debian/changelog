@@ -1,3 +1,9 @@
+mx-conky-data (20251002) mx; urgency=medium
+
+  * Clean up lua code
+
+ -- fehlix <fehlix@mxlinux.org>  Fri, 24 Oct 2025 03:57:58 -0400
+
 mx-conky-data (20251001) mx; urgency=medium
 
   [melber]
