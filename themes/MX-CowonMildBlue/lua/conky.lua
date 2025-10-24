@@ -8,7 +8,6 @@ function has_ampm()
     local handle = io.popen("date --date='2020-01-01 17:00' '+%c' 2>/dev/null")
     local result = handle:read("*a")
     handle:close()
-    print(result)
     return result:match("(17)") ~= "17"
 end
 
@@ -16,14 +15,6 @@ if ampm == nil then
     ampm = has_ampm()
 end
 
-
-if has_ampm() then
-    ampm = true
-else
-    ampm = false
-end
-
-print(ampm)
 -- Use force to override auto time-format detection of 12H or 24H
 -- set force either to 12H, 24H, or keep empty for auto-detection
 function conky_hour(force)
@@ -236,4 +227,3 @@ function conky_date()
      str=conky_parse(format_str)
      return str
 end
-
