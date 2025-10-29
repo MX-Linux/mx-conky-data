@@ -1,0 +1,73 @@
+------------------------
+-- MX-Audacious-Discrete --
+------------------------
+
+conky.config = {
+
+alignment = 'top_middle',
+gap_x = 0,
+gap_y = 20,
+
+minimum_height = 20,
+maximum_height = 20,
+minimum_width = 400,
+maximum_width = 900,
+
+default_color = 'ffffff',	-- # white
+color0 = 'c16b29', --orange (artist name color)
+color1 = '92afd5', --light blue (album name color)
+color2 = 'f5f5f5', --very light grey (title name color)
+
+
+own_window = true,
+own_window_type = 'normal', 
+own_window_transparent = true,
+own_window_argb_visual = true,
+own_window_argb_value = 80,
+own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+own_window_colour = '000000',
+own_window_class = 'Conky',
+own_window_title = 'AudaciousDiscreteConky',
+
+background = true,
+draw_borders = false,
+draw_graph_borders = false,
+draw_outline = false,
+draw_shades = false,
+default_outline_color = '000000', 	-- #black
+default_shade_color = '000000',		-- #black
+
+border_outer_margin = 5,
+border_width = 5,
+stippled_borders = 3,
+
+total_run_times = 0,
+update_interval = 2,
+no_buffers = true,
+double_buffer = true,
+cpu_avg_samples = 2,
+net_avg_samples = 2,
+pad_percents = 2,			
+short_units = true,	
+text_buffer_size = 8000,
+
+font = 'DejaVu Sans:size=8',
+xftalpha = 1.0,
+override_utf8_locale = true,
+uppercase = false,
+use_spacer = 'right',
+use_xft = true,
+
+};
+
+-- fluxbox adjustment
+-- requires fluxbox to be running, increase sleep time in conky-startup.sh if necessary
+if os.execute('pidof -q fluxbox') and not os.execute('pidof -q picom') then
+   conky.config.own_window_argb_visual = false
+end
+
+
+conky.text = [[${voffset 5}${color0}${font DejaVu Sans:bold:size=12} ${exec ./aud-artist.sh}${font}\
+${color1}${alignr}  ${exec ./aud-album.sh}${font}
+${voffset 5}${color2}${font DejaVu Sans:size=11} ${exec ./aud-song.sh}${font}
+]];

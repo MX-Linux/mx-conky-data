@@ -1,3 +1,9 @@
+mx-conky-data (20251003) mx; urgency=medium
+
+  * MX-Audacious theme tweaks
+
+ -- Melber <melber-mx-linux@gmail.com>  Wed, 29 Oct 2025 01:42:58 -0400
+ 
 mx-conky-data (20251002) mx; urgency=medium
 
   * Clean up lua code
