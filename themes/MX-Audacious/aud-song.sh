@@ -8,5 +8,7 @@ song=`audtool --current-song-tuple-data title`
 if [ "${playback_status}" == "playing" ];
 then
     echo ${song}
+#else
+#    echo "Not Playing"
 fi
     

@@ -66,9 +66,8 @@ if os.execute('pidof -q fluxbox') and not os.execute('pidof -q picom') then
    conky.config.own_window_argb_visual = false
 end
 
-
-conky.text = [[${voffset 5}${color0}${font DejaVu Sans:bold:size=12} ${exec ./aud-artist.sh}${font}\
+conky.text = [[${voffset 5}${color0}${font DejaVu Sans:bold:size=12}  ${exec ./aud-artist.sh}${font}\
 ${color1}${alignr}  ${exec ./aud-album.sh} ${font}
-${voffset 5}${color2}${font DejaVu Sans:size=11} ${exec ./aud-song.sh}${font}
-${image ./bg-dark.png -p 0,0 -s 400x50}
+${voffset 5}${color2}${font DejaVu Sans:size=11}  ${exec ./aud-song.sh}${font}
+${if_match "${exec ./aud-background.sh}" == "show_bg"}${image ./bg-dark.png -p 0,0 -s 900x50}${endif}
 ]];
