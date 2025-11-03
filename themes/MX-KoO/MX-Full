@@ -1,7 +1,7 @@
 conky.config = {
 	background = false,
 	use_xft = true,
-	font = 'Terminus:size=8',
+	font = 'DejaVu Sans:size=8',
 	xftalpha = 0.5,
 	update_interval = 1,
 	total_run_times = 0,
@@ -31,7 +31,7 @@ conky.config = {
 	override_utf8_locale = true,
 	use_spacer = 'none',
 
-	own_window_argb_value = 0,
+	own_window_argb_value = 100,
 	own_window_colour = '000000',
 	minimum_width = 0, minimum_height = 0,
 

@@ -2,8 +2,9 @@ mx-conky-data (20251101) mx; urgency=medium
 
   * MX-Elementary remove duplicate config, minor tweak
   * MX-Audacious fix permission, add black variant
+  * MX-KoO theme tweaks
 
- -- Melber <melber-mx-linux@gmail.com>  Mon, 03 Nov 2025 23:45:58 -0400
+ -- Melber <melber-mx-linux@gmail.com>  Tue, 04 Nov 2025 00:20:58 -0400
 
 mx-conky-data (20251003) mx; urgency=medium
 
