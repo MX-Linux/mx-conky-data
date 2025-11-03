@@ -31,7 +31,6 @@ conky.config = {
 	default_color = 'edf1f6',
 	color1 = '2da83b',
 	color2 = '2da73b',
-	color3 = 'db303e',
 
 	own_window_argb_value = 0,
 	own_window_colour = '000000',
@@ -64,5 +63,5 @@ ${font}
 ${voffset 5}${alignc}${color2}${font Droid:pixelsize=30}${time %A   %x}${font}
 
 #sys
-${offset 130}${font Roboto-Light:pixelsize=20}${offset 9}${offset 9}${color1}hdd ${color}${offset 9}$color${fs_used_perc /}%${offset 9}${color1}mem ${offset 9}${color}${memperc}%${offset 9}${offset 9}${color1}cpu${offset 9}${color}${cpu}%${font}
+${font Roboto-Light:pixelsize=20}${alignc}${color1}hdd   $color${fs_used_perc /}%   ${color1}mem   ${color}${memperc}%   ${color1}cpu   ${color}${cpu}%${font}
 ]];
