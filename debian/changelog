@@ -1,10 +1,11 @@
 mx-conky-data (20251101) mx; urgency=medium
 
+  [ Melber ]
   * MX-Elementary remove duplicate config, minor tweak
   * MX-Audacious fix permission, add black variant
-  * MX-KoO theme tweaks
+  * MX-KoO theme font tweaks
 
- -- Melber <melber-mx-linux@gmail.com>  Tue, 04 Nov 2025 00:20:58 -0400
+ -- Dolphin Oracle <dolphinoracle@gmail.com>  Mon, 03 Nov 2025 20:51:48 -0500
 
 mx-conky-data (20251003) mx; urgency=medium
 
