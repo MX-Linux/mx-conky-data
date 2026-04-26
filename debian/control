@@ -2,8 +2,8 @@ Source: mx-conky-data
 Section: admin
 Priority: optional
 Maintainer: Dolphin Oracle <dolphinoracle@gmail.com>
-Build-Depends: debhelper (>=9)
-Standards-Version: 3.9.5
+Build-Depends: debhelper-compat (= 12)
+Standards-Version: 4.5.1
 Homepage: https://github.com/MX-Linux/mx-conky-data
 
 Package: mx-conky-data
