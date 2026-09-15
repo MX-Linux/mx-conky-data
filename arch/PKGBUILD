@@ -1,0 +1,52 @@
+# PKGBUILD for building on the Open Build Service.
+#
+# This package is not in AUR and has no committed source tarball, so the OBS
+# tar_scm service packs the checkout into one. That tarball has a constant name
+# rather than a versioned one, so pkgver here is free to track debian/changelog
+# and a release does not require editing the OBS service as well.
+#
+# The repository-root PKGBUILD builds in-tree from an empty source array and
+# cannot work on OBS.
+
+# Maintainer: Adrian <adrian@mxlinux.org>
+pkgname=mx-conky-data
+pkgver=20251102
+pkgrel=1
+pkgdesc="Conky themes and startup helper used by MX Conky"
+arch=('any')
+url="https://github.com/MX-Linux/mx-conky-data"
+license=('LGPL3')
+depends=('conky')
+makedepends=()
+source=("${pkgname}-source.tar")
+sha256sums=('SKIP')
+
+# tar_scm unpacks to <repository>-<versionformat>; both are fixed here.
+_srcdir="${pkgname}-source"
+PKGEXT='.pkg.tar.zst'
+
+build() {
+    cd "${srcdir}/${_srcdir}"
+    : # No build step needed; this is a data package
+}
+
+package() {
+    cd "${srcdir}/${_srcdir}"
+
+    # Install data and scripts
+    install -dm755 "${pkgdir}/usr/share/mx-conky-data"
+    install -Dm755 bin/conky-startup.sh "${pkgdir}/usr/share/mx-conky-data/conky-startup.sh"
+
+    if [ -d themes ]; then
+        cp -r themes "${pkgdir}/usr/share/mx-conky-data/"
+    fi
+
+    # Documentation
+    install -dm755 "${pkgdir}/usr/share/doc/mx-conky-data"
+    install -Dm644 README.md "${pkgdir}/usr/share/doc/mx-conky-data/README.md"
+    install -Dm644 README.txt "${pkgdir}/usr/share/doc/mx-conky-data/README.txt"
+
+    # License
+    install -dm755 "${pkgdir}/usr/share/licenses/${pkgname}"
+    install -Dm644 debian/copyright "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
