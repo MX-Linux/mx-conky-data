@@ -92,10 +92,10 @@ ${voffset -13}${alignr}${offset -60}${top_mem mem 4} %
 ${voffset -8}${font Open Sans:Bold:size=10}${color0}CPU ${color EC0100}${hr 3}
 #$color${font}${execi 1000 cat /proc/cpuinfo | grep 'model name' | sed -e 's/model name.*: //'| uniq} ${freq_g cpu0}GHz $alignr $cpu%  
 $color${font}${execi 86400 sed -ne '/model name.*: /{s///;s/@.*//;p;q}' /proc/cpuinfo} ${freq_g cpu0}GHz $alignr $cpu%  
-${font}Core 0  ${color3}${execi 4 sensors 2>/dev/null | grep 'Core 0' | cut -c18-24} ${alignc 60}${color2}${cpubar cpu0}${color}
-${font}Core 1  ${color3}${execi 4 sensors 2>/dev/null | grep 'Core 1' | cut -c18-24} ${alignc 60}${color2}${cpubar cpu1}${color}
-${font}Core 2  ${color3}${execi 4 sensors 2>/dev/null | grep 'Core 2' | cut -c18-24} ${alignc 60}${color2}${cpubar cpu2}${color}
-${font}Core 3  ${color3}${execi 4 sensors 2>/dev/null | grep 'Core 3' | cut -c18-24} ${alignc 60}${color2}${cpubar cpu3}${color}
+${font}Core 0  ${color3}${execi 4 sensors 2>/dev/null | grep 'Core 0' | cut -c17-24} ${alignc 60}${color2}${cpubar cpu0}${color}
+${font}Core 1  ${color3}${execi 4 sensors 2>/dev/null | grep 'Core 1' | cut -c17-24} ${alignc 60}${color2}${cpubar cpu1}${color}
+${font}Core 2  ${color3}${execi 4 sensors 2>/dev/null | grep 'Core 2' | cut -c17-24} ${alignc 60}${color2}${cpubar cpu2}${color}
+${font}Core 3  ${color3}${execi 4 sensors 2>/dev/null | grep 'Core 3' | cut -c17-24} ${alignc 60}${color2}${cpubar cpu3}${color}
 
 ${voffset -10}------------------------------------------------- ${font Open Sans:Bold:size=10}${color0}${voffset -2}RAM${color}${font}${voffset -1} ---- ${font Open Sans:Bold:size=10}${color0}${voffset -2}CPU${color}${font}${voffset -1} -
 #${hr 1}
